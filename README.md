@@ -1,4 +1,4 @@
-# Sei48 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
+# SEI48 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
 
 ### Steps to do
 
