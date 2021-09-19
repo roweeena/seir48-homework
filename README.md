@@ -1,4 +1,4 @@
-# Sei48 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
+# SEI48 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
 
 ### Steps to do
 
@@ -37,7 +37,7 @@ _Adding an upstream repository links the local repository on your computer to th
 
 You should put each night's homework in a new folder within the appropriate directory of your homework repo. So, for day two, where you have two tasks ("Calculator" and "Strings"), you might do something like this:
 
-1. Open Terminal/iTerm2;
+1. Open Terminal/iTerm2/Ubuntu;
 2. Go to your local homework repo (eg, `cd ~/Projects/sei48-homework`);
 3. From here, go to the folder matching your name within that repo, and the appropriate week (eg, `taylor_swift/week_01`);
 4. Create new folders for each of the day's homework tasks: (eg `mkdir calculator` and `mkdir strings`);
@@ -63,7 +63,7 @@ You need to do this every time you're submitting homework.
     In the pull request comment, tell me the following:
     "1. How difficult did you find this (out of 10)? (0 being no problems at all, 10 being impossible); 2. Was there anything that you struggled with?; 3. Is there anything that you'd like some further information on?; 4. Roughly how long did it take?"
     **If you don't mention anything in the Pull Request comments, we will assume you had no problems at all with it, and you will receive no feedback about your homework.**
-    If you want to follow up on any issues you had with the homework, the ideal time for that will be during the more unstructured lab time after lunch - come and see Joel or myself then and we can go over any outstanding questions.
+    If you want to follow up on any issues you had with the homework, the ideal time for that will be during the more unstructured lab time after lunch - come and see Joel, Pat or myself then and we can go over any outstanding questions.
     **Note:** if I haven't yet merged your Pull Request into my main homework repo before it's time to submit the next day's homework, you won't be able to create a new Pull Request. That's okay - for the new homework just add a new comment to the open (existing) Pull Request, featuring the same four points given above to describe your response to it.
   * **IMPORTANT 2:**
     When you make pull request by `git pull upstream main`, git might generate the auto merge message for you. Don't panic! Just type `:wq` (it will weirdly appear on the bottom left of your screen once you start typing) and hit `return` key on your keyboard to accept the message, then you can move on with you life!
