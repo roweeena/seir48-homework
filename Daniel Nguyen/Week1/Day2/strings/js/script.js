@@ -79,6 +79,8 @@ verbing('go');
 function notBad(string) {
   const indexOfNOT = string.toLowerCase().search("not");
   const indexOfBUT = string.toLowerCase().search("but");
+
+  console.log("Something");
 }
 
 notBad('This dinner is not that bad!');
