@@ -13,7 +13,6 @@ const drEvil = function(amount) {
   return string;
 }
 
-// TESTS
 console.log("Dr Evil tests:");
 drEvil(999999);
 drEvil(1000000);
@@ -35,3 +34,10 @@ const mixUp = function(stringOne, stringTwo) {
 mixUp("mix", "pod");
 mixUp("dog", "dinner");
 mixUp("Java", "Script");
+
+
+// FixStart
+
+function fixStart(string) {
+  
+}
