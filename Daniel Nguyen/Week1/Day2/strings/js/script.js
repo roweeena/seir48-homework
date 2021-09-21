@@ -89,6 +89,7 @@ function notBad(string) {
   }
 
   console.log(output);
+  return output;
 }
 
 notBad('This dinner is not that bad!');
