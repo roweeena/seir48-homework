@@ -44,7 +44,7 @@ areaOfCircle(8);
 
 
 // Part 2
-// with function expressions
+// with function expression
 
 const magicNumber = function(number) {
   console.log(`The magic number is ${number}`);
