@@ -26,6 +26,6 @@ function raindrops(number) {
   return output;
 }
 
-console.log(raindrops(28));
-console.log(raindrops(1755));
-console.log(raindrops(34));
+for (let i = 0; i < 106; i++) {
+  console.log(i, raindrops(i));
+}
