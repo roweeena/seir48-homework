@@ -82,7 +82,8 @@ function notBad(string) {
   let output = '';
   if (indexOfNOT > -1 && indexOfNOT < indexOfBAD) {
     output += string.substring(0, indexOfNOT);
-    output += "good";
+    output += "good"
+    output += string.substring(indexOfBAD + 3);
   } else {
     output = string;
   }
@@ -93,3 +94,5 @@ function notBad(string) {
 notBad('This dinner is not that bad!');
 notBad('This movie is not so bad!');
 notBad('This dinner is bad!');
+notBad('This dinner is not that bad that not bad!');
+notBad('This dinner is not so bad blah blah blah!');
