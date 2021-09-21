@@ -23,6 +23,7 @@ halfNumber(71);
 // returns as a string with the '%' sign
 function percentOf(a, b) {
   const percentage = a / b;
+  // Rounds percentage to be more readable as a string
   const percentageString = `${Math.round(percentage * 100)}%`;
   console.log(`${a} is ${percentageString} of ${b}.`);
   return percentageString;
@@ -33,7 +34,7 @@ percentOf(4, 17);
 // including the Bonus task
 function areaOfCircle(radius) {
   const area = radius * radius * Math.PI;
-  // BONUS ROUND:
+  // BONUS ROUND!!
   const roundedArea = area.toFixed(2);
   console.log(`The area for a circle with radius ${radius} is ${roundedArea}.`);
   return roundedArea;
