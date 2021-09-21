@@ -4,7 +4,7 @@
 // DrEvil
 
 const drEvil = function(amount) {
-  let string = `DrEvil(${amount}): ${amount} dollars`;
+  let string = `${amount} dollars`;
   // '==' rather than '===' to allow for string arguments
   if (amount == 1000000) {
     string += ' (pinky)';
@@ -24,9 +24,8 @@ drEvil(1000001);
 const mixUp = function(stringOne, stringTwo) {
   const firstWord = stringTwo.slice(0,2) + stringOne.slice(2);
   const secondWord = stringOne.slice(0,2) + stringTwo.slice(2);
-  const originalWords = stringOne + ' ' + stringTwo;
   const spoonerism = firstWord + ' ' + secondWord;
-  console.log(`${originalWords} becomes ${spoonerism}`);
+  console.log(spoonerism);
   return spoonerism;
 }
 
@@ -78,9 +77,17 @@ verbing('go');
 
 function notBad(string) {
   const indexOfNOT = string.toLowerCase().search("not");
-  const indexOfBUT = string.toLowerCase().search("but");
+  const indexOfBAD = string.toLowerCase().search("bad");
 
-  console.log("Something");
+  let output = '';
+  if (indexOfNOT > -1 && indexOfNOT < indexOfBAD) {
+    output += string.substring(0, indexOfNOT);
+    output += "good";
+  } else {
+    output = string;
+  }
+
+  console.log(output);
 }
 
 notBad('This dinner is not that bad!');
