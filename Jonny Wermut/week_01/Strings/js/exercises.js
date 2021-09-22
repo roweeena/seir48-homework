@@ -81,16 +81,14 @@ return newWord;
 
 const verbing = (string) => {
   let output = '';
-  if (string.length >= 3) {
-    if (string.slice(-3) === 'ing') {
+  if (string.length < 3) {
+    output = string;
+  }
+  else if (string.slice(-3) === 'ing') {
       output = string + 'ly';
-    }
-    else {
+  }
+  else if (string.slice(-3) !== 'ing'){
       output = string + 'ing';
-    }
-  else (string.length < 3) {
-     output = string;
-    }
   }
   return output;
 }
@@ -101,6 +99,22 @@ const verbing = (string) => {
 // - It should find the first appearance of the substring 'not' and 'bad'.
 // - If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result.
 // - If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
+
+const notBad = (string) => {
+  let result = ''
+  let indexNot = string.indexOf('not');
+  let indexBad = string.indexOf('bad');
+  if (indexNot === -1 || indexBad === -1) {
+    result = string;
+  }
+  else if (indexBad > indexNot) {
+    result = string.slice(0, indexNot) + 'good';
+  }
+  else {
+    result = string;
+  }
+return result;
+}
 
 // For example:
 // ```
