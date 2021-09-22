@@ -22,6 +22,9 @@ const displayWord = function(word) {
 // - If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
 // - When it's done iterating, it should log the current guessed letters ('F__')
 // and congratulate the user if they found a new letter.
+// - It should also figure out if there are any more letters that need to be guessed,
+// and if not, it should congratulate the user for winning the game.
+
 const guessLetter = function(guess) {
   const letter = guess.toUpperCase();
 
@@ -46,7 +49,7 @@ const displayMessage = function(letter) {
     notFound: `Sorry. ${letter} is not in the magic word.`,
     complete: `Woohoo!! You solved it!!`,
     found: `Yay! ${letter} is in the magic word!`,
-  }
+  };
 
   if (!magicWord.includes(letter)) {
     return messages.notFound;
@@ -64,11 +67,8 @@ guessLetter('o');
 guessLetter('e');
 guessLetter('u');
 
-
-// - It should also figure out if there are any more letters that need to be guessed,
-// and if not, it should congratulate the user for winning the game.
 // - Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
-//
+
 // ## Bonus: Make it more like Wheel of Fortune:
 // - Start with a reward amount of $0
 // - Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
@@ -81,7 +81,6 @@ guessLetter('u');
 
 
 // EXTRA:
-
 
 // A word bank randomly generated from the web
 const wordBank = ["enfix", "memorial", "particular", "systematic", "cooperate", "incongruous", "material", "transversality", "operational", "fastidious", "competition", "interference", "hypnothize", "autonomy", "celebration", "ideology", "criticism", "coalition", "mathematics", "simplicity", "identity", "disability", "exaggerate", "possibility", "preparation"];
