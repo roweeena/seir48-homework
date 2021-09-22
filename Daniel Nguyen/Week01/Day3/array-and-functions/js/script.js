@@ -2,6 +2,7 @@
 
 // 1. Define a function `maxOfTwoNumbers` that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript. You'll have to remember your pre-work, or do some googling to figure this out.
 const maxOfTwoNumbers = function(a, b) {
+  // Best practise would be Math.max(a, b)... but with if-else...
   if (a > b) return a;
   else return b;
 }
@@ -16,6 +17,7 @@ const testMaxOfTwoNumbers = function(iterations) {
 }
 
 testMaxOfTwoNumbers(4);
+
 
 // 2. Define a function `maxOfThree` that takes three numbers as arguments and returns the largest of them.
 const maxOfThree = function(a, b, c) {
@@ -35,11 +37,6 @@ const testMaxOfThree = function(iterations) {
 }
 
 testMaxOfThree(4);
-
-// Best practise:
-const betterMaxOfThree = function(a, b, c) {
-  return Math.max(a, b, c);
-}
 
 // 3. Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 const isVowel = function(char) {
@@ -111,7 +108,7 @@ const reverseString = function(string) {
 }
 
 console.log(reverseString("jag testar"));
-// This case returns "anãnam anãnam rab oof"
+// This case "foo 𝌆 bar mañana mañana" returns "anãnam anãnam rab oof"
 // (The tildes '~' are over the 'a' instead of 'n').
 // function needs to be refactored to account for these cases.
 console.log(reverseString("foo 𝌆 bar mañana mañana"));
