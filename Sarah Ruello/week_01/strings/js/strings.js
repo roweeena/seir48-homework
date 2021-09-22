@@ -37,8 +37,10 @@ fixStart("cyclical");
 function verbing(string) {
   if (string.length < 3) {
     return string;
+    // if last 3 letters of string are ing:
   } else if (string.slice(-3) === "ing") {
     return string + "ly";
+    // otherwise add an ing:
   } else {
     return string + "ing";
   }
@@ -53,14 +55,20 @@ function notBad(string) {
   let indexNot = string.indexOf("not");
   let indexBad = string.indexOf("bad");
 
+  // if no index of not or bad are found - return as is:
   if (indexNot === -1 || indexBad === -1) {
     return string;
   }
+  // find index of Not if it appears before Bad. Slice at that point and replace onwards:
   if (indexBad > indexNot) {
     return (changed = string.slice(0, indexNot) + "good");
+  }
+  if (indexBad < indexNot) {
+    return string;
   }
 }
 
 console.log(notBad("This dinner is not that bad!")); // ‘This dinner is good!’
 console.log(notBad("This movie is not so bad!")); // ‘This movie is good!’
-console.log(notBad("This dinner is bad!")); // ‘This dinner is bad!’
+console.log(notBad("This dinner is bad!")); // should print the same.
+console.log(notBad("Testing this bad thing, not a big deal")); // should print the same.
