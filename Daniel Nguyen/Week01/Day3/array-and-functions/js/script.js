@@ -102,5 +102,39 @@ const betterMultplyArray = function(array) {
 // ## Bonus
 
 // 5. Define a function `reverseString` that computes the reversal of a string. For example, reverseString("jag testar") should return the string "ratset gaj".
+const reverseString = function(string) {
+  let output = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    output += string[i];
+  }
+  return output;
+}
+
+console.log(reverseString("jag testar"));
+// This case returns "anãnam anãnam rab oof"
+// (The tildes '~' are over the 'a' instead of 'n').
+// function needs to be refactored to account for these cases.
+console.log(reverseString("foo 𝌆 bar mañana mañana"));
+
 // 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
+const findLongestWord = function(words) {
+  let longestWord = '';
+  for (let word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
+
+// I just used a random words generator online.
+const someWords = ["Aspiringly", "interassociation", "leetonia", "nonecclesiastic", "pledget", "banderole", "perdita", "supersulphureted", "cany", "fixtureless"];
+
+console.log(findLongestWord(someWords));
+
 // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer than i.
+const filterLongWords = function(array, i) {
+  return array.filter(word => word.length > i);
+}
+
+console.log(filterLongWords(someWords, 8));
