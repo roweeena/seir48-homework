@@ -61,7 +61,7 @@ function notBad(string) {
   }
   // find index of Not if it appears before Bad. Slice at that point and replace onwards:
   if (indexBad > indexNot) {
-    return (changed = string.slice(0, indexNot) + "good");
+    return string.slice(0, indexNot) + "good";
   }
   if (indexBad < indexNot) {
     return string;
