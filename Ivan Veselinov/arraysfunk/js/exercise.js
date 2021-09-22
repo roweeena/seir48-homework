@@ -28,7 +28,7 @@ const maxOfThreeNumbers = function(a,b,c){
     console.log(`Error entry, Please insert three numbers !!!!`);
   }
   }
-  maxOfThreeNumbers();
+  maxOfThreeNumbers(10, 20, 15);
 
 // 3. Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 const char = function(i){
@@ -79,8 +79,7 @@ console.log(reverseWord);
 }
 reverseFunc();
 
-console.log("Reversed str is:", reverseWord);
-
+// console.log("Reversed str is:", reverseWord);
 
 //6
 // 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
@@ -98,6 +97,18 @@ let sumWords= "";
   console.log(sumWords);
 }
 
-findLongestWord([]);
+findLongestWord(["Ivan","Veselinov","Is","Studying","Programming"]);
 
 // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer than i.
+//
+
+const filterLongWords = function (word){
+      let number;
+  let storage="";
+  for (let i=0; i < word.length ; i++){
+    if( word[i].length >= number ){
+       storage = word[i];
+       }console.log(storage[i]);
+   }
+}
+filterLongWords([]);
