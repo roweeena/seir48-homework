@@ -65,8 +65,6 @@ guessLetter('e');
 guessLetter('u');
 
 
-
-
 // - It should also figure out if there are any more letters that need to be guessed,
 // and if not, it should congratulate the user for winning the game.
 // - Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
