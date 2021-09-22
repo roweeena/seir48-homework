@@ -25,10 +25,8 @@ console.log(mixUp("run", "rabbit")); // ran rubbit
 console.log(mixUp("help", "me")); // melp he
 console.log(mixUp("Sarah", "Ruello")); // Rurah Saello
 
-//Create a function called fixStart. It should take a single argument, a string, and return a version where all occurences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long.
 function fixStart(string) {
   const firstLetter = string.charAt(0);
-  // console.log(firstLetter);
   let newString = string[0] + string.slice(1).replaceAll(firstLetter, "*");
   console.log(newString);
 }
