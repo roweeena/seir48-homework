@@ -50,5 +50,17 @@ console.log(verbing("no"));
 console.log(verbing("not"));
 
 function notBad(string) {
-  // nope
+  let indexNot = string.indexOf("not");
+  let indexBad = string.indexOf("bad");
+
+  if (indexNot === -1 || indexBad === -1) {
+    return string;
+  }
+  if (indexBad > indexNot) {
+    return (changed = string.slice(0, indexNot) + "good");
+  }
 }
+
+console.log(notBad("This dinner is not that bad!")); // ‘This dinner is good!’
+console.log(notBad("This movie is not so bad!")); // ‘This movie is good!’
+console.log(notBad("This dinner is bad!")); // ‘This dinner is bad!’
