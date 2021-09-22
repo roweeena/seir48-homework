@@ -84,3 +84,15 @@ function MixUp(_firstWord, _secondWord)
 }
 
 MixUp("Hello", "World");
+
+function FixStart(_string)
+{
+    _initialLetter = _string.substring(0, 1);
+    _replacedString = _string.substring(1, _string.length);
+    _re = new RegExp(_initialLetter, 'g');
+    _newString = _replacedString.replace(_re, "*");
+
+    console.log(_initialLetter + _newString);
+}
+
+FixStart("aaaaaaaaaaaah");
