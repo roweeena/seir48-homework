@@ -17,11 +17,13 @@
 // - 34 has neither 3, 5 nor 7 as a factor.
 //   - Raindrop-speak doesn't know what to make of that, so it just goes with the straightforward "34".
 
-function raindrops(number) {
-  let output = ''
-  if (number % 3 === 0) output += 'Pling';
-  if (number % 5 === 0) output += 'Plang';
-  if (number % 7 === 0) output += 'Plong';
+const raindrops = function(number) {
+  let output = '';
+  if (number !== 0) {
+    if (number % 3 === 0) output += 'Pling';
+    if (number % 5 === 0) output += 'Plang';
+    if (number % 7 === 0) output += 'Plong';
+  }
   if (output === '') output += number;
   return output;
 }
