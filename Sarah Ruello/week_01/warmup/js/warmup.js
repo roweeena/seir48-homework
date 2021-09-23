@@ -17,7 +17,6 @@ function raindrop(input) {
 console.log(raindrop(28));
 console.log(raindrop(34));
 console.log(raindrop(1755));
-<<<<<<< HEAD
 
 // Warmup - Simon Says
 // Create a function that takes an input and returns Simon's response as follows:
@@ -43,5 +42,3 @@ console.log(simonSays("LISTEN TO ME")); // Whoa chill out!
 console.log(simonSays("")); // Fine. Be that way!
 console.log(simonSays("Do your laundry.")); // Whatever
 console.log(simonSays("I'M TALKING TO YOU?")); // Whoa chill out!
-=======
->>>>>>> 2a710d982d9f1dc12f6439eab7a8efd4489c1037
