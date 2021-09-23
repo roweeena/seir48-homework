@@ -20,6 +20,16 @@ const BANK = {
     const newAccount = createAccount(owner);
     this.accounts.push(newAccount);
   },
+  transfer: function(amount, from, to) {
+    for (let i = 0; i < this.accounts.length; i++) {
+      const account = this.accounts[i];
+      if (account.owner === from) {
+        this.accounts[i].withdraw(amount);
+      } else if (account.owner === to) {
+        this.accounts[i].deposit(amount);
+      }
+    }
+  }
 }
 
 // Accounts
@@ -32,7 +42,12 @@ const createAccount = function(owner) {
       this.balance += amount;
     },
     withdraw: function(amount) {
-      this.balance -= amount;
+      if (this.balance >= amount) {
+        this.balance -= amount;
+      }
+    },
+    transfer: function(amount, to) {
+      BANK.transfer(amount, owner, to);
     }
   }
 }
@@ -42,28 +57,37 @@ const createAccount = function(owner) {
 
 // You should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected: add some accounts, show the total balance, make some deposits and withdrawals, show the new total balance.
 
-BANK.enrol("Daniel");
 BANK.enrol("Joel");
 BANK.enrol("Rowena");
 BANK.enrol("Pat");
 
 const owners = BANK.accounts.map(acc => acc.owner);
-console.log(owners);                // [ "Daniel", "Joel", "Rowena", "Pat" ]
+console.log("Accounts", owners);                // [ Joel", "Rowena", "Pat" ]
 
-console.log(BANK.totalMoneys());    //  0
+console.log("Bank Total", BANK.totalMoneys());  //  0
 
-const daniel = BANK.accounts[0];
-console.log(daniel);                //  {owner: "Daniel", balance: 0, deposit: function, withdraw: function}
+const joel = BANK.accounts[0];
+console.log("Joel", joel);                      //  {owner: "Joel", balance: 0, deposit: function, withdraw: function}
 
-daniel.deposit(150);
-console.log(daniel.balance);        //  150
+joel.deposit(150);
+console.log("Joel Balance", joel.balance);      //  150
 
-daniel.withdraw(25);
-console.log(daniel.balance);        //  125
+joel.withdraw(25);
+console.log("Joel Balance", joel.balance);      //  125
 
-const joel = BANK.accounts[1]
-joel.deposit(875);
-console.log(BANK.totalMoneys());    //  1000
+const rowena = BANK.accounts[1]
+rowena.deposit(600);
+console.log("Rowena Balance", rowena.balance);  //  600
+
+const pat = BANK.accounts[2];
+pat.withdraw(20);
+console.log("Pat Balance", pat.balance);        //  0
+
+rowena.transfer(250, "Pat")
+console.log("Rowena Balance", rowena.balance);  //  350
+console.log("Pat Balance", pat.balance);        //  200
+
+console.log("Bank Total", BANK.totalMoneys());  //  725
 
 console.log(BANK);
 
