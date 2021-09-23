@@ -28,7 +28,7 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
   }
 
   // Converts to number
-  const digits = parseInt(withoutDashes);         //  a string or a number
+  const digits = Number(withoutDashes);             //  a string or a number
 
   // Checks if only numbers
   if (digits == withoutDashes) {
@@ -36,7 +36,7 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
   }
 
   // Converts to an array of individual characters
-  const asArray = withoutDashes.split('');        //  ['9', '2', '3', 'a'...]
+  const asArray = withoutDashes.split('');          //  ['9', '2', '2', 'a'...]
 
   // Returns the amount of unique characters
   const getUnique = function() {
@@ -46,7 +46,7 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
         unique.push(asArray[i]);
       }
     }
-    return unique.length;
+    return unique.length;                           //  7
   }
 
   // Checks if at least two unique characters
@@ -63,7 +63,7 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
   const sumDigits = function() {
     let sum = 0;
     for (let i = 0; i < asArray.length; i++) {
-      sum += parseInt(asArray[i]);
+      sum += Number(asArray[i]);
     }
     return sum;
   }
