@@ -22,6 +22,8 @@ const book2 = {
 
 const library = [book1, book2];
 
+console.table(library);
+
 function CheckIfRead(books)
 {
     for (let i = 0; i < books.length; i++)
@@ -43,7 +45,7 @@ const movie1 = {
     author: "Marvel",
     hours: 3,
     minutes: 45,
-    stars: ["RDJ", " Chris Evans"]
+    stars: ["RDJ", "Chris Evans"]
 };
 
 const movie2 = {
@@ -51,16 +53,18 @@ const movie2 = {
     author: "Marvel",
     hours: 2,
     minutes: 12,
-    stars: ["RDJ", " Chris Evans"]
+    stars: ["RDJ", "Chris Evans"]
 };
 
 const theatre = [movie1, movie2];
+
+console.table(theatre);
 
 function MovieInfo(movies)
 {
     for (let i = 0; i < movies.length; i++)
     {
-        console.log(`${movies[i].title} lasts for ${movies[i].hours} hours and ${movies[i].minutes} minutes. It stars ${movies[i].stars}`);
+        console.log(`${movies[i].title} lasts for ${movies[i].hours} hours and ${movies[i].minutes} minutes. It stars ${movies[i].stars.join(", ")}`);
     }
 }
 
