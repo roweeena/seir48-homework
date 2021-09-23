@@ -42,7 +42,6 @@ char();
 
 //4. Define a function `sumArray` and a function `multiplyArray` that sums and multiplies (respectively) all the numbers in an array of numbers. For example, `sumArray([1,2,3,4])` should return 10, and `multiplyArray([1,2,3,4])` should return 24
 const multArray = function() {
-
   const array = [1, 2, 5, 7, 8, 10];
   const multiplyArray = [10, 22, 40, 2, 5, 10];
   let sum = 0;
