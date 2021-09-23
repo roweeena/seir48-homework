@@ -133,3 +133,69 @@ function isObtuse() {
 
 }
 isObtuse();
+
+
+
+
+// # The Cash Register
+//
+// Write a function called cashRegister that takes a shopping cart object.
+// The object contains item names and prices (itemName: itemPrice).
+// The function should return the total price of the shopping cart.
+// Example
+//
+
+//
+// // Output
+// cashRegister(cartForParty)); // 60.55
+
+// ```
+
+const cartForParty = {
+  banana: "1.25",
+  handkerchief: ".99",
+  Tshirt: "25.01",
+  apple: "0.60",
+  nalgene: "10.34",
+  proteinShake: "22.36"
+};
+
+
+
+ function cashRegister(cartForParty) {
+
+let result = 0;
+let tempObj = Object.values(cartForParty);
+for (let i = 0; i < tempObj.length; i ++)
+
+result = result + parseFloat(tempObj[i]);
+
+
+  console.log(result);
+
+
+
+
+
+}
+// string turn numbers for(key in data) {
+
+
+// function cashRegister() {
+//
+// const sumCart = cartForParty.
+//
+// //   let result = 0 ;
+// //   let oKeys = Object.keys(cartForParty);
+// //   for(let i = 0; i < oKeys.length; i++){
+// //     result = result + oKeys[i];
+// //   }
+// // console.log(oKeys[i]);
+//
+// }
+ cashRegister(cartForParty);
+
+
+
+
+ 
