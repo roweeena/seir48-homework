@@ -43,16 +43,18 @@ const triangleA = {
 
 // * isEquilateral - Returns whether the triangle is equilateral or not
 const isEquilateral = function(triangle) {
-  return triangle.sideA === triangle.sideB && triangle.sideA === triangle.sideC
+  return triangle.sideA === triangle.sideB && triangle.sideA === triangle.sideC;
 }
 
 console.log('isEquilateral', isEquilateral(triangleA));
 
 // * isIsosceles - Returns whether the triangle is isosceles or not
 const isIsosceles = function(triangle) {
-  const lengths = Object.values(triangle);
-  let unique = lengths.filter((side, i, arr) => arr.indexOf(side) === i);
-  return unique.length === 2;
+  const a = triangle.sideA;
+  const b = triangle.sideB;
+  const c = triangle.sideC;
+
+  return (a === b && a !== c) || (a !== b && a === c);
 }
 
 console.log('isIsosceles', isIsosceles(triangleA));
