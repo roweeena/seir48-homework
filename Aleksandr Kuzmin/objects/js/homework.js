@@ -168,7 +168,7 @@ let result = 0;
 let tempObj = Object.values(cartForParty);
 for (let i = 0; i < tempObj.length; i ++)
 
-result = result + parseFloat(tempObj[i]);
+result = result + Number(tempObj[i]);
 
 
   console.log(result);
@@ -194,8 +194,3 @@ result = result + parseFloat(tempObj[i]);
 //
 // }
  cashRegister(cartForParty);
-
-
-
-
- 
