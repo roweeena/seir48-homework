@@ -1,7 +1,6 @@
 // # Geometry Function Lab
 
 // ### Part 1, Rectangle
-
 const rectangleA = {
   length: 4,
   width: 4,
@@ -13,7 +12,6 @@ const rectangleB = {
 };
 
 function isRectangle(shape) {
-  // figure this out later str = JSON.stringify(shape);
   let square = false;
   if (shape.length === shape.width) {
     square = true;
@@ -47,6 +45,7 @@ const triangleC = {
 };
 
 function isTriangle(shape) {
+  // check side equivalency across all 3:
   let equilateral = false;
   if (shape.sideA === shape.sideB && shape.sideB === shape.sideC) {
     equilateral = true;
@@ -58,6 +57,7 @@ function isTriangle(shape) {
     s * (s - shape.sideA) * (s - shape.sideB) * (s - shape.sideC)
   );
 
+  // check for obtuseness:
   let obtuse = false;
   let aSquared = Math.floor(Math.pow(shape.sideA, 2));
   let bSquared = Math.floor(Math.pow(shape.sideB, 2));
@@ -71,6 +71,7 @@ function isTriangle(shape) {
     obtuse = true;
   }
 
+  // check for isoceles:
   let isoceles = false;
   if (
     shape.sideA === shape.sideB ||
@@ -89,13 +90,7 @@ console.log(isTriangle(triangleA));
 console.log(isTriangle(triangleB));
 console.log(isTriangle(triangleC));
 
-// # The Cash Register
-
-// Write a function called cashRegister that takes a shopping cart object. The object contains item names and prices (itemName: itemPrice). The function should return the total price of the shopping cart.
-// Example
-
-// ```
-// Input
+// ### The Cash Register:
 const cartForParty = {
   banana: "1.25",
   handkerchief: ".99",
@@ -106,36 +101,35 @@ const cartForParty = {
 };
 
 function cashRegister(object) {
+  // collect values from object and store in an array, items:
   const items = Object.values(object);
   let sum = 0;
+  // add the values of all items together whilst parsing to a number from a string:
   for (let i = 0; i < items.length; i++) {
     sum += Number(items[i]);
   }
-
   return sum;
 }
 
-// // Output
 console.log(cashRegister(cartForParty)); // 60.55
 
-// # Credit Card Validation
-
-// *Double Bonus*: Make your credit card scheme even more advanced! What are the rules, and what are some numbers that pass or fail? Ideas: check expiration date! Check out the Luhn Algorithm for inspiration.
-
+// ### Credit Card Validation:
+// seperate function (for neatness) to check all digits add up to more than 16:
 function isSumLessThanSixteen(input) {
   let sumOfAll = 0;
+  // add all digits from the numArray together, whilst converting to numbers from strings:
   for (let i = 0; i < input.length; i++) {
     sumOfAll += Number(input[i]);
   }
   return sumOfAll < 16;
 }
 
+// seperate function (for neatness) to check there are more than 2 different numbers:
 function hasDiffNumbers(input) {
-  let firstNum = input[0];
   let diffNumbers = false;
-
+  // checks the first digit in the number array against the rest of them:
   for (let i = 1; i < input.length; i++) {
-    if (firstNum !== input[i]) {
+    if (input[0] !== input[i]) {
       diffNumbers = true;
     }
   }
@@ -143,17 +137,21 @@ function hasDiffNumbers(input) {
 }
 
 function validateCreditCard(input) {
+  // remove dashes:
   const numberOnly = input.replaceAll("-", "");
+  // split remaining string into an array:
   const numArray = numberOnly.split("");
 
+  // convert numberOnly string to Number() and check with isNaN() function:
   if (isNaN(Number(numberOnly))) {
     return { valid: false, error: "Not a valid number - contains letters." };
   }
-
+  // using seperate func:
   if (isSumLessThanSixteen(numArray)) {
     return { valid: false, error: "Not a valid number - sum less than 16" };
   }
 
+  // using seperate func- if no different numbers, returns false:
   if (!hasDiffNumbers(numArray)) {
     return {
       valid: false,
@@ -161,14 +159,17 @@ function validateCreditCard(input) {
     };
   }
 
+  // if less than 16 digits:
   if (numberOnly.length < 16 || numberOnly.length > 16) {
     return { valid: false, error: "Not a valid number - less than 16 digits" };
   }
 
+  // if last number is not an even number:
   if (Number(numberOnly[numberOnly.length - 1]) % 2 == 1) {
     return { valid: false, error: "Not a valid number." };
   }
 
+  // valid number return message:
   return { valid: true, message: "Number accepted." };
 }
 
