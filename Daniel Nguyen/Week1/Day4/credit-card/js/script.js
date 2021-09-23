@@ -79,7 +79,7 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
   // Creates a comma-separated string of any errors
   const errorLog = Object.keys(errors)
                          .filter(error => !errors[error])
-                         .join(', ');
+                         .join(', ');                //   "onlyNumbers, finalDigitIsEven..."
 
 
   const output = { valid, cardNo };
