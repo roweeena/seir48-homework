@@ -5,11 +5,11 @@
 // - Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '\_', '\_', '\_' and end with 'F', 'O', 'X').
 
 //Global arrays:
-var wordArray = [ 'M', 'O', 'R', 'R', 'O', 'W' ];
+const wordArray = [ 'M', 'O', 'R', 'R', 'O', 'W' ];
 
-var guessedLetters = [ '\_', '\_', '\_', '\_', '\_', '\_' ];
+let guessedLetters = [ '\_', '\_', '\_', '\_', '\_', '\_' ];
 
-var currentReward = 0;
+let currentReward = 0;
 
 // Generates a random reward between 1 and 100
 const randomReward = () => Math.floor( Math.random() * 100 ) + 1;
