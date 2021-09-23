@@ -1,12 +1,15 @@
-const toBeGuessed = "Hello World";
-let hiddenWord = "aaaaa aaaaa";
+const toBeGuessed = "hello world";
+let hiddenWord = "_____ _____";
 let guessedLetters = [];
 
 function GuessWord(_guessedLetter) {
     if (guessedLetters.length === 0) {
         for (let i = 0; i < toBeGuessed.length; i++) {
             if (_guessedLetter === toBeGuessed[i]) {
-                hiddenWord[i] = hiddenWord[i].replace(/a/g, _guessedLetter);
+                let newWord = hiddenWord;
+                        newWord = hiddenWord.substring(i, i+1);
+                        newWord = newWord.replace(newWord, _guessedLetter);
+                        hiddenWord = hiddenWord.substring(0, i) + newWord + hiddenWord.substring(i + 1, hiddenWord.length);
             }
         }
 
@@ -26,8 +29,11 @@ function GuessWord(_guessedLetter) {
             {
                 for (let j = 0; j < toBeGuessed.length; j++) {
                     if (_guessedLetter === toBeGuessed[j]) {
-                        hiddenWord = hiddenWord.replace(/a/g, _guessedLetter);
-                        console.log("Congratulations");
+                        let newWord = hiddenWord;
+                        newWord = hiddenWord.substring(j, j+1);
+                        newWord = newWord.replace(newWord, _guessedLetter);
+                        hiddenWord = hiddenWord.substring(0, j) + newWord + hiddenWord.substring(j + 1, hiddenWord.length);
+                        console.log("Congratulations, you found a letter");
                     }
                 }
                 guessedLetters.push(_guessedLetter);
