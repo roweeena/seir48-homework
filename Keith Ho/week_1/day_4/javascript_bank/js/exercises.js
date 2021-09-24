@@ -38,7 +38,7 @@ const amountChange = function(userName, number, arr) {
 const transfer = function(userOut, userIn, amount, arr) {
   for ( let a = 0; a < arr.length; a++ ) {
     if ( arr[a].name === userOut ) {
-      if ( arr[a].balance - amount >= 0 ) {
+      if ( arr[a].balance - amount >= 0 && amount > 0 ) {
         arr[a].balance = arr[a].balance - amount;
         for ( let b = 0; b < arr.length; b++ ) {
           if ( arr[b].name === userIn ) {
