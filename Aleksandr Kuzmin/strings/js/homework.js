@@ -25,7 +25,7 @@ function DrEvil(amount) {
 
 DrEvil(1000);
 
-
+DrEvil(1000000);
 
 //
 
@@ -41,21 +41,6 @@ DrEvil(1000);
 //   mixUp('dog', 'dinner'): 'dig donner'
 // Look up the JavaScript string reference to find methods which may be useful!
 
-function mixUp(str1, str2) {
-
-
-
-
-const newStr = str1.slice(0) str2.slice(0);
-
-console.log(str1 +" "+ str2);
-
-
-return str1 +" "+ str2;
-
-
-}
-mixUp("look", "up");
 
 
 
