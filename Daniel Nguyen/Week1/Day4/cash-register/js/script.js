@@ -5,7 +5,7 @@
 const cashRegister = function(cart) {
   let total = 0;
   for (let item in cart) {
-    total += cart[item];
+    total += Number(cart[item]);
   }
   return total;
 }

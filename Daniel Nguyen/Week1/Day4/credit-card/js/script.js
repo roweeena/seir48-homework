@@ -95,20 +95,37 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
 
 
 
+const cards = [
+  `9999-9999-8888-0000`,
+  `6666-6666-6666-1666`,
+  `9999-9999-8888-00000`,
+  `9999-9999-8888-00000`,
+  `a923-3211-9c01-1112`,
+  `4444-4444-4444-4444`,
+  `1111-1111-1111-1110`,
+  `6666-6666-6666-6661`,
+]
+
+const testCards = function (cards) {
+  for (let i = 0; i < cards.length; i++) {
+
+  }
+}
+
 
 //
 // The following credit card numbers are valid:
 //
-validateCreditCard(`9999-9999-8888-0000`);
-validateCreditCard(`6666-6666-6666-1666`);
+// validateCreditCard(`9999-9999-8888-0000`);
+// validateCreditCard(`6666-6666-6666-1666`);
 //
 // The following credit card numbers are invalid:
 
-validateCreditCard(`9999-9999-8888-00000`); //  not 16 characters
-validateCreditCard(`a923-3211-9c01-1112`);  //  invalid characters
-validateCreditCard(`4444-4444-4444-4444`);  //  only one type of number
-validateCreditCard(`1111-1111-1111-1110`);  //  sum less than 16
-validateCreditCard(`6666-6666-6666-6661`);  //  odd final number
+// validateCreditCard(`9999-9999-8888-00000`); //  not 16 characters
+// validateCreditCard(`a923-3211-9c01-1112`);  //  invalid characters
+// validateCreditCard(`4444-4444-4444-4444`);  //  only one type of number
+// validateCreditCard(`1111-1111-1111-1110`);  //  sum less than 16
+// validateCreditCard(`6666-6666-6666-6661`);  //  odd final number
 //
 // ## Example
 // ```
