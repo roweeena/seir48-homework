@@ -83,21 +83,15 @@ const cards = [
   `9999-9999-8888-0000`,      // valid
   `6666-6666-6666-1666`,      // valid
   `9999-9999-8888-00000`,     // invalid {isSixteenChars}
-  `a923-3211-9c01-1112`,
-  `4444-4444-4444-4444`,
-  `1111-1111-1111-1110`,
-  `6666-6666-6666-6661`,
+  `a923-3211-9c01-1112`,      // invalid {onlyNumbers}
+  `4444-4444-4444-4444`,      // invalid {atLeastTwoUnique}
+  `6666-6666-6666-6661`,      // invalid {finalDigitIsEven}
+  `1111-1111-1111-1110`,      // invalid {sumGreaterThanSixteen}
 ]
 
 const testCards = function (cards) {
   for (let i = 0; i < cards.length; i++) {
     const card = removeDashes(cards[i])
-    // console.log(cards[i], 'isSixteenChars', isSixteenChars(card));
-    // console.log(cards[i], 'onlyNumbers', onlyNumbers(card));
-    // console.log(cards[i], 'atLeastTwoUnique', atLeastTwoUnique(card));
-    // console.log(cards[i], 'finalDigitIsEven', finalDigitIsEven(card));
-    // console.log(cards[i], 'sumGreaterThanSixteen', sumGreaterThanSixteen(card));
-    // console.log(cards[i], 'validateCreditCard', validateCreditCard(card));
     validateCreditCard(card);
   }
 }
