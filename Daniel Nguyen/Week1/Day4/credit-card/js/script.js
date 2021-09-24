@@ -93,8 +93,6 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
   return output;
 }
 
-
-
 const cards = [
   `9999-9999-8888-0000`,
   `6666-6666-6666-1666`,
