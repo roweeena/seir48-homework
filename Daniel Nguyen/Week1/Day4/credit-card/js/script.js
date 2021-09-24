@@ -8,81 +8,26 @@
 // - The final digit must be even
 // - The sum of all the digits must be greater than 16
 
-const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
+const validateCreditCard = function(rawCard) {       //  `9999-9999-8888-0000`
+  const card = removeDashes(rawCard);                //  `9999999988880000`
 
-  // All errors initialised as false; changed to true as each test is passed.
   let errors = {
-    sixteenChars: false,
-    onlyNumbers: false,
-    atLeastTwoUnique: false,
-    finalDigitIsEven: false,
-    sumGreaterThanSixteen: false,
+    sixteenChars: isSixteenChars(card),
+    onlyNumbers: onlyNumbers(card),
+    atLeastTwoUnique: atLeastTwoUnique(card),
+    finalDigitIsEven: finalDigitIsEven(card),
+    sumGreaterThanSixteen: sumGreaterThanSixteen(card),
   };
-
-  // Removes dashes from card string
-  const withoutDashes = cardNo.replaceAll('-','');  //  `9999999988880000`
-
-  // Checks if there are 16 characters
-  if (withoutDashes.length === 16) {
-    errors.sixteenChars = true;
-  }
-
-  // Converts to number
-  const digits = Number(withoutDashes);             //  a string or a number
-
-  // Checks if only numbers
-  if (digits == withoutDashes) {
-    errors.onlyNumbers = true;
-  }
-
-  // Converts to an array of individual characters
-  const asArray = withoutDashes.split('');          //  ['9', '2', '2', 'a'...]
-
-  // Returns the amount of unique characters
-  const getUnique = function() {
-    let unique = [];
-    for (let i = 0; i < asArray.length; i++) {
-      if (!unique.includes(asArray[i])) {
-        unique.push(asArray[i]);
-      }
-    }
-    return unique.length;                           //  7
-  }
-
-  // Checks if at least two unique characters
-  if (getUnique() > 1) {
-    errors.atLeastTwoUnique = true;
-  }
-
-  // Checks if final digit is even
-  if (asArray[asArray.length - 1] % 2 === 0) {
-    errors.finalDigitIsEven = true;
-  }
-
-  // Adds all the digits; returns NaN if there is a non-number
-  const sumDigits = function() {
-    let sum = 0;
-    for (let i = 0; i < asArray.length; i++) {
-      sum += Number(asArray[i]);
-    }
-    return sum;
-  }
-
-  // Checks if the digits add up to more than 16
-  if (sumDigits() > 16) {
-    errors.sumGreaterThanSixteen = true;
-  }
 
   // Returns true if there are no errors
   const valid = !Object.values(errors).includes(false);
+
+  const output = { valid, card };
 
   // Creates a comma-separated string of any errors
   const errorLog = Object.keys(errors)
                          .filter(error => !errors[error])
                          .join(', ');                //   "onlyNumbers, finalDigitIsEven..."
-
-
-  const output = { valid, cardNo };
 
   // Adds errors to output only if they exist
   if (errorLog) {
@@ -93,11 +38,51 @@ const validateCreditCard = function(cardNo) {       //  `9999-9999-8888-0000`
   return output;
 }
 
+const removeDashes = function (card) {
+  return card.replaceAll('-', '');
+}
+
+const isSixteenChars = function (card) {
+  return card.length === 16;
+}
+
+const onlyNumbers = function (card) {
+  const isAlldigits = Number(card) == card;
+  return isAlldigits;
+}
+
+const atLeastTwoUnique = function (card) {
+  const array = card.split('');
+  let unique = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!unique.includes(array[i])) {
+      unique.push(array[i]);
+    }
+  }
+  return unique.length !== 1;
+}
+
+const finalDigitIsEven = function (card) {
+  const array = card.split('');
+  return array[array.length - 1] % 2 === 0;
+}
+
+const sumGreaterThanSixteen = function (card) {
+  const array = card.split('');
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (Number(array[i])) {
+      sum += Number(array[i]);
+    }
+  }
+  return sum > 16;
+}
+
+// Some cards to test
 const cards = [
-  `9999-9999-8888-0000`,
-  `6666-6666-6666-1666`,
-  `9999-9999-8888-00000`,
-  `9999-9999-8888-00000`,
+  `9999-9999-8888-0000`,      // valid
+  `6666-6666-6666-1666`,      // valid
+  `9999-9999-8888-00000`,     // invalid {isSixteenChars}
   `a923-3211-9c01-1112`,
   `4444-4444-4444-4444`,
   `1111-1111-1111-1110`,
@@ -106,10 +91,18 @@ const cards = [
 
 const testCards = function (cards) {
   for (let i = 0; i < cards.length; i++) {
-
+    const card = removeDashes(cards[i])
+    // console.log(cards[i], 'isSixteenChars', isSixteenChars(card));
+    // console.log(cards[i], 'onlyNumbers', onlyNumbers(card));
+    // console.log(cards[i], 'atLeastTwoUnique', atLeastTwoUnique(card));
+    // console.log(cards[i], 'finalDigitIsEven', finalDigitIsEven(card));
+    // console.log(cards[i], 'sumGreaterThanSixteen', sumGreaterThanSixteen(card));
+    // console.log(cards[i], 'validateCreditCard', validateCreditCard(card));
+    validateCreditCard(card);
   }
 }
 
+testCards(cards);
 
 //
 // The following credit card numbers are valid:
