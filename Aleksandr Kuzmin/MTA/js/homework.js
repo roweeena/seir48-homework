@@ -17,18 +17,74 @@ const lineN = ["Times Square", "34th", "28th", "23rd", "Union Square","8th"];
 const line6 = ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"];
 
 
+const choiceFrom = prompt("Where would you like to start you journey?");
+const choiceTo = prompt("Where would you like to go?");
 
-function planTrip (station1, station2) {
+function planTrip (choiceFrom, choiceTo) {
   // When enter station1, function counts how many stops you need to pass
+   // 1.Choose line and station
+
+
+
+
+
+
+
+ if(choiceFrom == lineL[0] && choiceTo == lineL[4]) {
+   const thLineL8 = lineL.indexOf("8th");
+   const thLineL1 = lineL.indexOf("1st");
+   const thLineL6 = lineL.indexOf("6th");
+   const thLineL3 = lineL.indexOf("8th");
+   const thLineLUs = lineL.indexOf("Union Square");
+   const numberOfStops  = thLineL1 - thLineL8 ;
+
+
+
+  console.log(numberOfStops);
+}
+
 }
 
 
+planTrip(choiceFrom, choiceTo);
 
 
 
 
 
-// * Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
+
+
+
+
+
+
+
+
+   //2. Final destination line and station
+   // 3. calculate the number of stations in between the stations
+
+
+
+
+
+
+
+
+
+
+
+  //Tell the user the number of stops
+  //1.
+  //the stops IN ORDER that they will pass through or change at.
+
+
+
+
+
+
+
+
+// *  AND
 //
 //
 // #### Hints:
