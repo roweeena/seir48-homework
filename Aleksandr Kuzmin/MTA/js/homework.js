@@ -18,30 +18,37 @@ const line6 = ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor P
 
 
 const choiceFrom = prompt("Where would you like to start you journey?");
+const indexSearchFromL = lineL.indexOf(choiceFrom);
+
 const choiceTo = prompt("Where would you like to go?");
+const indexSearchToL = lineL.indexOf(choiceTo);
 
 function planTrip (choiceFrom, choiceTo) {
-  // When enter station1, function counts how many stops you need to pass
-   // 1.Choose line and station
+
+   let numberOfStops  = Math.abs(indexSearchToL - indexSearchFromL);
+   console.log(numberOfStops + " stops in total.");
+   if(numberOfStops < 0) {
+  const reverseL = lineL.reverse()
+  console.log(reverseL);
+  const printedStations = lineL.slice(indexSearchFromL,indexSearchToL);
+  }
+   const printedStations = lineL.slice(indexSearchFromL,indexSearchToL);
+   const separatedStations = printedStations.join();
+
+
+   console.log("Your journey continues through the following stops:" + separatedStations + ".");
+
+   const reverseL = lineL.reverse()
+   console.log(reverseL);
+
+//for(let i = indexSearchFrom ; i < indexSearchTo; i++) {
+
+  //console.log("Your journey continues through the following stops:" , i );
+
+//
 
 
 
-
-
-
-
- if(choiceFrom == lineL[0] && choiceTo == lineL[4]) {
-   const thLineL8 = lineL.indexOf("8th");
-   const thLineL1 = lineL.indexOf("1st");
-   const thLineL6 = lineL.indexOf("6th");
-   const thLineL3 = lineL.indexOf("8th");
-   const thLineLUs = lineL.indexOf("Union Square");
-   const numberOfStops  = thLineL1 - thLineL8 ;
-
-
-
-  console.log(numberOfStops);
-}
 
 }
 
