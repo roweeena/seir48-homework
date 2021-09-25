@@ -40,7 +40,7 @@ function calculatorThing(_calculatorNumber) {
     _circledArea = areaOfCircle(_squared);
     _percentaged = percentOf(_circleArea, _squared);
     console.log(`The ${_calculatorNumber} when halved is ${_halvedNumber}, which when squared is ${_squared} `
-        + `Which then used to calculate the area of a triangle is ${_circledArea}. Makes a percentage of ${_percentaged}`);
+        + `Which then used to calculate the area of a triangle is ${_circledArea}. Makes a percentage of ${_percentaged}%.`);
     return _percentaged;
 }
 
