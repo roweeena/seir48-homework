@@ -38,6 +38,7 @@ perimeter();
 const rectangleSquare = {
   w : 4
 }
+
 const square = function (){
  const q = rectangleSquare.w * rectangleSquare.w;
  console.log(`We are calculateing Square of Rectangle P = 2 * (W * W) = ${q}`);
