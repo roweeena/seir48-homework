@@ -1,55 +1,16 @@
-// # MTA Lab
+// #### MTA Lab Homework:
 
-// ## Objectives:
-// * Apply your knowledge of Javascript to solve a real world problem.
-// * Get really good at array manipulation.
-
-// #### Activity
-// * Create a program that models a simple subway system.
-
-// * The program takes the line and stop that a user is getting on at and the line
-// and stop that user is getting off at and prints the journey and the total number of stops for the trip in the console:
-
-// ```javascript
-// planTrip('N', 'Times Square', '6', '33rd'); // This is only a suggested function name and signature.
-
-// // console.log() shows output similar to this:
-// // "You must travel through the following stops on the N line: 34th, 28th, 23rd, Union Square."
-// // "Change at Union Square."
-// // "Your journey continues through the following stops: 23rd, 28th, 33rd."
-// // "7 stops in total."
-// ```
-
-// * There are 3 subway lines:
-//   * The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
-//   * The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
-//   * The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
-//   * All 3 subway lines intersect at Union Square, but there are no other intersection points. (For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line, so you'll have to differentiate this when you name your stops in the arrays.)
-
-// * Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
-
-const lineNames = {
-  N: [
-    "Times Square",
-    "34th",
-    "N Line 28th",
-    "N Line 33rd",
-    "Union Square",
-    "8th",
-  ],
+// storing each line as an object in a global array, lineObjects:
+const lineObjects = {
+  N: ["Times Square", "34th", "28th", "33rd", "Union Square", "8th"],
   L: ["8th", "6th", "Union Square", "3rd", "1st"],
-  6: [
-    "Grand Central",
-    "6 Line 33rd",
-    "6 Line 28th",
-    "23rd",
-    "Union Square",
-    "Astor Place",
-  ],
+  6: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"],
 };
 
+// function planLine - determines our station order printout and returns this as an array to our main planTrip function:
 function planLine(lineName, begin, end) {
-  const line = lineNames[lineName];
+  // looking at lineObjects and taking whatever lineName is from it, putting it into a string array:
+  const line = lineObjects[lineName];
   const startIndex = line.indexOf(begin);
   const endIndex = line.indexOf(end);
 
@@ -59,15 +20,17 @@ function planLine(lineName, begin, end) {
     direction = 1;
   }
 
-  // change to return station names array only - put messaging in main func:
-  // get it to count "7 stops in total."
-  let message = `You are travelling on line ${lineName} from `;
+  // create empty array to store the order of stations passed through:
+  let stations = [];
+  // starting at the beginning station, and travelling either forwards or backwards as determined by 'direction'.
+  // loop through the line array and stop at the endIndex:
   for (let i = startIndex; i !== endIndex; i += direction) {
-    message += line[i] + ", to ";
+    // add each station to the end of the new stations array to log their order:
+    stations.push(line[i]);
   }
-
-  message += end;
-  return message;
+  // add final station as this could not be added in the loop above due to being excluded in our for loop:
+  stations.push(end);
+  return stations;
 }
 
 function planTrip(
@@ -77,28 +40,68 @@ function planTrip(
   arrivalStationName
 ) {
   // indexer:
-  departureLine = lineNames[departureLineName];
-  arrivalLine = lineNames[arrivalLineName];
+  departureLine = lineObjects[departureLineName];
+  arrivalLine = lineObjects[arrivalLineName];
 
-  let message = "";
-  stationCount = 0;
-
+  // if/else statement required to handle routes without/with line changes:
   if (departureLineName === arrivalLineName) {
+    let stations = planLine(
+      departureLineName,
+      departureStationName,
+      arrivalStationName
+    );
     console.log(
-      planLine(departureLineName, departureStationName, arrivalStationName)
+      `To travel from ${departureLineName} line ${departureStationName}, to ${arrivalLineName} line ${arrivalStationName}:`
+    );
+    console.log(
+      `You must travel ${
+        stations.length
+      } stops on the ${departureLineName} line:  ${stations.join(", ")}.`
     );
   } else {
     // Hop to new array beginning at indexOf('Union Square'):
-    console.log(
-      planLine(departureLineName, departureStationName, "Union Square")
+    let line1 = planLine(
+      departureLineName,
+      departureStationName,
+      "Union Square"
     );
+
+    // splice Union Square off this returned array as it is already mentioned once:
+    let line2 = planLine(
+      arrivalLineName,
+      "Union Square",
+      arrivalStationName
+    ).splice(1);
+
+    console.log(
+      `To travel from ${departureLineName} line ${departureStationName}, to ${arrivalLineName} line ${arrivalStationName}:`
+    );
+
+    console.log(
+      `Travel ${
+        line1.length
+      } stops on the ${departureLineName} line: ${line1.join(", ")}.`
+    );
+
     console.log("Change at Union Square.");
 
-    console.log(planLine(arrivalLineName, "Union Square", arrivalStationName));
+    console.log(
+      `Then continue ${
+        line2.length
+      } stops on the ${arrivalLineName} line: ${line2.join(", ")}.`
+    );
+    console.log(
+      `You must travel ${line1.length + line2.length} stops in total.`
+    );
   }
 }
 
+//planLine() test:
+//planLine("N", "34th", "Union Square")
+//planLine("N", "8th", "Times Square")
+
 // output
-planTrip("L", "6th", "N", "34th");
-planTrip("6", "6 Line 33rd", "N", "Times Square");
+planTrip("L", "6th", "L", "1st");
+planTrip("L", "8th", "N", "34th");
+planTrip("6", "33rd", "N", "Times Square");
 planTrip("N", "34th", "6", "Grand Central");
