@@ -8,7 +8,7 @@
 // - Bonus: Round the result so there are only two digits after the decimal.
 //'
 
-
+//
 const  sqaureNumber = function (number){
 const result = number * number;
 
@@ -20,18 +20,27 @@ sqaureNumber (10);
 
 const halfNumber = function (number){
 const result = number / 2;
-console.log(`Half of ${number} is ${result}.`)
+console.log(`Half of ${number} is ${result}.`);
 }
 
-halfNumber (50);
+halfNumber (100);
 halfNumber (42);
+halfNumber (9);
+
+// - Write a function called percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
+
 
 const percentOf = function (number1, number2) {
 const result = (number1 / number2) * 100;
-console.log(`${number} is 50% of ${result}.`)
+console.log(`${number1} is ${result}% of ${number2}.`);
+return result
 }
 
-percentOf (50, 24);
+percentOf (50, 200);
+percentOf (230, 500);
+
+// - Write a function called areaOfCircle that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
+
 
 
 
@@ -45,3 +54,9 @@ percentOf (50, 24);
 // - Square the result of #1 and store that result.
 // - Calculate the area of a circle with the result of #2 as the radius.
 // - Calculate what percentage that area is of the squared result (#3).
+
+const calculator = function (num) {
+  const result1 = halfNumber (num),
+  result2 = sqaureNumber (result1)
+  result3 =areaOfCircle(result2)
+}
