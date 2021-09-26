@@ -25,21 +25,34 @@ const indexSearchToL = lineL.indexOf(choiceTo);
 
 function planTrip (choiceFrom, choiceTo) {
 
-   let numberOfStops  = Math.abs(indexSearchToL - indexSearchFromL);
-   console.log(numberOfStops + " stops in total.");
+  let numberOfStops  = indexSearchToL - indexSearchFromL;
+  console.log(Math.abs(numberOfStops) + " stops in total.");
+
+
+
    if(numberOfStops < 0) {
   const reverseL = lineL.reverse()
-  console.log(reverseL);
-  const printedStations = lineL.slice(indexSearchFromL,indexSearchToL);
-  }
-   const printedStations = lineL.slice(indexSearchFromL,indexSearchToL);
-   const separatedStations = printedStations.join();
+  const indexSearchToL = reverseL.indexOf(choiceTo);
+  const indexSearchFromL = reverseL.indexOf(choiceFrom);
+  const printedStations = lineL.slice(indexSearchFromL,indexSearchToL); // slicing the needed stations
+  printedStations.shift() // removes the start station
+  const separatedStations = printedStations.join(); // turn array into separate strings
+  console.log("Your journey continues through the following stops:  " + separatedStations + ".");
+  return separatedStations;
+
+}
+  if(numberOfStops > 0) {
+
+   const printedStations = lineL.slice(indexSearchFromL,indexSearchToL); // slicing the needed stations
+   printedStations.shift() // removes the start station
+   const separatedStations = printedStations.join(); // turn array into separate strings
+
+   console.log("Your journey continues through the following stops: " + separatedStations + ".");
+   return separatedStations;
+}
 
 
-   console.log("Your journey continues through the following stops:" + separatedStations + ".");
 
-   const reverseL = lineL.reverse()
-   console.log(reverseL);
 
 //for(let i = indexSearchFrom ; i < indexSearchTo; i++) {
 
