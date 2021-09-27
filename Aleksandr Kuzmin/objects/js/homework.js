@@ -261,14 +261,16 @@ onlyNums(num);
 
   // if at least two different digits
   function twoDifnums(num) {
-    for (let i = num.length - 1; i >= 0; i--) {
-      if (num[i] === num[i]){
-console.log(false)
-       }
 
-
-
-    return true
+    num.match()
+//     for (let i = num.length - 1; i >= 0; i--) {
+//       if (num[i] === num[i]){
+// console.log(false)
+//        }
+//
+//
+//
+//     return true
   }
   twoDifnums(num);
 
@@ -289,4 +291,4 @@ console.log(false)
 
 
 
-validateCreditCard ("9999-9999-9999-9999")
+validateCreditCard ("1999-9999-9999-9992")
