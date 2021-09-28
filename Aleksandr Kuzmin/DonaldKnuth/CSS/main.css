@@ -2,6 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Raleway:ital,wght@0,100;0,200;1,100;1,200&display=swap');
 
 
+
 body {
+  margin: 0;
   font-family: 'Ephesis', cursive;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1em;
+
+}
+h1 {
+text-align: center;
+font-size: 600%
+padding: 1em;
+}
+h2 {
+  font-size: 100%;
+}
+main {
+  width: 70%;
+  display: inline-block;
+
+}
+main img {
+  margin: 0 auto;
+  display: block;
+
+}
+
+aside {
+  width: 30 %;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 5px 5px grey;
 }
