@@ -1,0 +1,88 @@
+#container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+nav {
+  display: block;
+  background-color: black;
+
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.photobanner {
+  margin: 0 auto;
+}
+
+.imageshadow {
+  margin: 0;
+}
+
+#homeboxes {
+  margin: 0 auto;
+
+}
+
+footer {
+  margin: 0 auto;
+}
+
+.home-box {
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  width: 300px
+}
+
+#social-media {
+	float: right;
+}
+
+#social-media ul li {
+	 display:inline-block;
+	 width:60px;
+	 height:60px;
+	 background:blue;
+	 text-indent:-9999em;
+}
+
+#social-media ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+#social-media ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+
+#social-media ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+
+#social-media ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+
+
+
+#social-media ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+
+#social-media ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+
+#social-media ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+#social-media ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
+}

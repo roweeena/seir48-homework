@@ -56,24 +56,39 @@
 //     }
 // }
 
-function pigLatin(input) {
-  let wordArray = input.split(" ");
-  let result = [];
+// function pigLatin(input) {
+//   let wordArray = input.split(" ");
+//   let result = [];
 
-  for (i = 0; i < wordArray.length; i++) {
-    if (wordArray[i].includes("!") || wordArray[i].includes(".") || wordArray[i].includes("?")) {
-      result.push(wordArray[i]);
+//   for (i = 0; i < wordArray.length; i++) {
+//     if (wordArray[i].includes("!") || wordArray[i].includes(".") || wordArray[i].includes("?")) {
+//       result.push(wordArray[i]);
+//     } else {
+//       const firstLetter = wordArray[i].charAt(0);
+//       const restOfString = wordArray[i].substr(1);
+//       let newWord = restOfString + firstLetter + "ay";
+//       // console.log("new word: " + newWord);
+//       result.push(newWord);
+//       // console.log(result);
+//     }
+//   }
+//   return result.join(" ");
+// }
+
+// console.log(pigLatin("Cat breath smells like cat food !"));
+// console.log(pigLatin("Derrick smells like eggs ."));
+
+// sum any number of arrays using argument, numbers or arrays:
+function arraySum() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    if (Array.isArray(arguments[i])) {
+      sum += arguments[i].reduce((previous, current) => previous + current);
     } else {
-      const firstLetter = wordArray[i].charAt(0);
-      const restOfString = wordArray[i].substr(1);
-      let newWord = restOfString + firstLetter + "ay";
-      // console.log("new word: " + newWord);
-      result.push(newWord);
-      // console.log(result);
+      sum += Number(arguments[i]);
     }
   }
-  return result.join(" ");
+  console.log(sum);
 }
 
-console.log(pigLatin("Cat breath smells like cat food !"));
-console.log(pigLatin("Derrick smells like eggs ."));
+arraySum([1, 1, 1, 1, 1.5], [1, 1, 1.5, 1, 1], [1, 1, 1.5, 1, 1], 1);
