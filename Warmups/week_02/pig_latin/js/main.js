@@ -4,7 +4,7 @@ console.log('%cMondays, am I right?', "font-size: 40px; color: #b57edc")
 // Move the first letter of each word to the end of it, then add "ay" to the end of the word.
 // Leave punctuation marks untouched (it's fine to keep the space between punctuation marks and the word). Not case sensitive.
 // E.g. if your input = "Pig Latin is cool !", your output should look like => "igPay atinLay siay oolcay !"
-
+// 
 
 
 const pigIt = function(str){
@@ -42,6 +42,6 @@ const pigIt = function(str){
 //     array.forEach(word => { word.match(/[?!]/) ? result.push(word) : result.push(word.substr(1) + word.charAt(0) + "ay");
 //
 //     })
-//     return result.join(" ");
+    return result.join(" ");
 // }
 console.log(pigIt("Pig Latin is cool !"))
