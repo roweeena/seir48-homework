@@ -59,41 +59,11 @@ thiIsAFunction('u');
 // // ## Bonus
 // //
 // // 5. Define a function `reverseString` that computes the reversal of a string. For example,
+//  reverseString("jag testar") should return the string "ratset gaj".
 const reverseString = function (str) {
-  console.log(str.split('').reverse().join());
+  console.log(string.reverse());
 };
-
-reverseString('zapato');
-reverseString('leon');
-reverseString('caballo');
-
-
+reverseString(string);
 // // 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
-let longWord = 'a';
-const manyWords = ['chesse', 'water melon', 'grapeeeeeees', 'apple'];
-const findLongestWord = function (x) {
-  for (let i=0 ; i < x.length ; i++ ) {
-    if (manyWords[i].length > longWord.length) {
-      longWord = manyWords[i];
-    };
-  };
-  console.log(longWord);};
-findLongestWord(manyWords);
-
 // // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of
 // words that are longer than i.
-let x = '';
-const thisIsAnArray = ['home' , 'homeword', 'beer' , 'information' , 5];
-const filterLongWords = function (array) {
-  for (let i=0 ; i < array.length ; i++) {
-    if ((typeof array[i])==='number' ) {
-      x = array[i];
-    }
-  }
-  for (let i = 0 ; i <array.length ; i++) {
-    if (array[i].length > x) {
-      console.log(array[i]);
-    };
-  };
-};
-filterLongWords(thisIsAnArray);
