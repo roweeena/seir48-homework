@@ -1,0 +1,100 @@
+/* * { border: 1px solid limegreen; } /*easy css debuging*/} */
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+body{
+  background-color: #A9A9A9;
+}
+
+#header {
+  height:50px;
+  margin: 0 auto;
+  color: red;
+  background-color: #A9A9A9;
+  max-width: 980px;
+}
+
+#title{
+  font-family: 'Gluten', cursive;
+  background-color: black;
+  margin: 0 auto;
+  max-width: 980px;
+  line-height: 20px;
+  color: #87CEEB;
+  text-align: center;
+  line-height: 2em;
+  font-size: 35px;
+}
+
+#nav{
+   margin-top: 10px;
+   margin-bottom: 10px;
+  font-size:20px;
+  display: block;
+  text-align: right;
+  line-height: 1.5em;
+}
+
+a:hover{
+  color:red;
+}
+
+a{
+  text-decoration: none;
+  display: block;
+  color:green;
+}
+#container{
+  margin:0 auto;
+  width: 980px;
+  background-color: #A9A9A9;
+}
+
+.leftContainer{
+  width: 75%;
+  display: inline-block;
+  border:1px solid gray;
+
+}
+
+img{
+  width: 600px;
+  margin-left: 60px;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.rightContainer{
+ width: 20%;
+ margin-left: 1em;
+ display: inline-block;
+ vertical-align: top;
+ text-align: left;
+}
+
+ul{
+  display: block;
+}
+
+
+#footer{
+  width: 980px;
+  margin: 0 auto;
+  background-color: black;
+  height: 100px;
+  color:white;
+  text-align:right;
+}
+
+h1, h2, h3{
+  text-align: center;
+  color:#F5DEB3;
+}
+
+p{
+  /* border:1px solid black; */
+  color:#008080;
+  font-family: 'Exo 2', sans-serif;
+  text-align: left;
+  line-height: 1.5em;
+}
