@@ -4,6 +4,7 @@ body {
 	max-width: 960px;
 	margin:  0 auto;
 	font-family: 'Ubuntu', sans-serif;
+	background-color: #f7edf0;
 /*	margin-top: -16px;*/
 }
 
@@ -35,6 +36,10 @@ li {
 	text-align: right;
 }
 
+li:hover a{
+	color: steelblue;
+}
+
 h3 {
 	font-size: 150%;
 }
@@ -45,10 +50,30 @@ p {
 
 .text {
 	margin-top: 20px;
+	width:  960px;
 }
 
 .question {
 	margin-top: 60px;
+}
+
+.firstColumn {
+	width: 480px;
+	display: inline-block;
+	padding-right: 20px;
+}
+
+.secondColumn {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.secondColumn img {
+	width: 420px;
+	display: inline-block;
+	margin-top: 22px;
+	padding-left: 15px;
 }
 
 .answers {
@@ -56,7 +81,7 @@ p {
 	height:  100px;
 	display: inline-block;
 	text-align: center;
-	background-color: mediumaquamarine;
+	background-color: #f4afab;
 	margin-left: 10px;
 	margin-right: 10px;
 	line-height: 70px;
@@ -85,6 +110,10 @@ p {
 	display: inline-block;
 	background-color: green;
 	color: yellow;
+}
+
+.lastquestion {
+	margin-bottom: 100px;
 }
 
 
