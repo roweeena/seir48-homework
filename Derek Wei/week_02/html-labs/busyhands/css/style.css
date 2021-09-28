@@ -1,0 +1,174 @@
+/*
+Brand: busyhands
+Author: Derek
+Version: 0.1
+
+[Table Of Contents]
+
+	01- BODY
+	02- HEADERS
+	03- SOCIAL MEDIA
+	04- MAIN CONTENT
+	05- SOCIAL MEDIA
+	06- MISC
+
+*/
+
+/*-----------------------------------------------------------------------------
+=01 BODY
+-----------------------------------------------------------------------------*/
+
+body {
+  min-height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: "Arial", sans-serif;
+}
+
+#wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  background-image: url("../images/bg_wrapper.png");
+  background-repeat: repeat-x;
+}
+
+#container {
+	max-width: 960px;
+	margin: 0 auto; /*centers our container on the page */
+  padding: 0 50px;
+}
+
+
+/*-----------------------------------------------------------------------------
+=02 HEADER
+-----------------------------------------------------------------------------*/
+
+nav ul {
+  min-height: 50px;
+  padding: 0;
+  margin-left: auto;
+}
+
+nav ul li {
+  list-style-type: none;
+  color: white;
+  display: inline-block;
+  padding: 34px 22px 33px 10px;
+  margin-left: auto;
+  vertical-align: middle;
+}
+
+li a {
+	color: white;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: rgb(0,120,200);
+  background-image: url("../images/bg_nav_rollover.png");
+  background-repeat: repeat-x;
+  background-clip: padding-box;
+}
+
+
+#logo {
+  height: 100%;
+  vertical-align: middle;
+  padding: 25px 0 25px 0;
+  display: inline-block;
+}
+
+
+/*-----------------------------------------------------------------------------
+=03 SOCIAL MEDIA
+-----------------------------------------------------------------------------*/
+#social-media {
+  position: relative;
+  left: 415px;
+  bottom: 10px;
+	margin-right: 0px;
+  display: inline-block;
+
+}
+
+#social-media ul {
+	margin: 0;
+  padding: 0;
+  display: inline-block;
+
+}
+
+#social-media ul li {
+	 display:inline-block;
+	 width:60px;
+	 height:60px;
+	 background:blue;
+	 text-indent:-9999em;
+}
+
+#social-media ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+#social-media ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+
+#social-media ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+
+#social-media ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+
+/* social media on hover */
+
+#social-media ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+
+#social-media ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+
+#social-media ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+#social-media ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
+}
+
+/*-----------------------------------------------------------------------------
+=04 CONTENT
+-----------------------------------------------------------------------------*/
+
+.imageshadow {
+  position: relative;
+  bottom: 4px;
+}
+
+#blurb {
+  font-size: 17px;
+  border-style: inset;
+  border-width: thin;
+  max-height: 80px;
+  max-width: 100%;
+  display: inline-block;
+}
+
+#inset {
+ padding: 0 20px;
+ margin-right: auto;
+ margin-left: 0;
+ width: 70%;
+}
+
+#button {
+  margin-left: auto;
+  margin-right: 0;
+  display: inline-block;
+  position: relative;
+  left: 740px;
+  bottom: 60px;
+}

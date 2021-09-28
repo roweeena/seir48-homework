@@ -1,0 +1,102 @@
+/*
+
+## Style Hints:
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+/*
+Brand: Brook & Lyn
+Author: Derek
+Version: 0.1
+
+[Table Of Contents]
+
+	01- BODY
+	02- HEADERS
+	03- GLOBAL STYLES
+	04- MAIN CONTENT
+	05- SOCIAL MEDIA
+	06- MISC
+
+*/
+
+/*-----------------------------------------------------------------------------
+=01 BODY
+-----------------------------------------------------------------------------*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Times New Roman", serif;
+	color: #656565;
+	font-size: 12px;
+	line-height: 17px;
+	background: #FFF;
+}
+
+
+#container {
+	max-width: 955px;
+	margin: 0 auto; /*centers our container on the page */
+  padding: 0 100px 0 50px;
+}
+
+
+/*-----------------------------------------------------------------------------
+=02 HEADER
+-----------------------------------------------------------------------------*/
+
+#header {
+	padding: 0px 0px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+/*-----------------------------------------------------------------------------
+=03 CONTENT
+-----------------------------------------------------------------------------*/
+
+#content p {
+  line-height: 2;
+  width: 100%;
+}
+
+.img_main {
+  width: 100%;
+}
+
+h2 {
+  color: rgb(101,101,101);
+}
+
+#article_date, #read_more {
+	color: #4694d4;
+	text-decoration:none;
+}
+
+#read_more:hover {
+	color: #20222a;
+}
+
+.img_press {
+  padding: 1px;
+	border: 5px solid #CCC;
+  display: inline-block;
+  width: 23%;
+}
+
+/*-----------------------------------------------------------------------------
+=04 FOOTER
+-----------------------------------------------------------------------------*/
+
+#footer {
+  line-height: 0px;
+  margin: 0 0 50px 0;
+}
