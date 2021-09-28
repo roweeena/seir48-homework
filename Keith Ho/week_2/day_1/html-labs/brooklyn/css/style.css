@@ -1,0 +1,56 @@
+/*
+
+## Style Hints:
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+
+#container {
+  margin: 30px 100px 30px 50px;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+  line-height: 2;
+}
+
+span {
+  color: blue;
+}
+
+.date {
+  color: blue;
+}
+
+.logo {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.home {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.press {
+  display: inline-block;
+  margin: 0 3px 0 3px;
+  width: 24%;
+}
+
+.press img {
+  width: 100%;
+  border: 3px solid gray;
+}
