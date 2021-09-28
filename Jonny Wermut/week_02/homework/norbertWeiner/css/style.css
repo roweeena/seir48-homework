@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body {
+	max-width: 960px;
+	margin:  0 auto;
+	font-family: 'Ubuntu', sans-serif;
+/*	margin-top: -16px;*/
+}
+
+iframe {
+	display: block;
+  	resize: both;
+  	max-width:  960px;
+  	min-width: 960px;
+  	min-height: 600px;
+}
+
+nav {
+	display: block;
+	background-color: black;
+	color:  white;
+	height: 60px;
+    max-width: 960px;
+}
+
+ul {
+	margin: 0;
+}
+
+
+li {
+	display: inline-block;
+	padding-left: 20px;	
+	padding-top: 20px;
+	text-align: right;
+}
+
+h3 {
+	font-size: 150%;
+}
+
+p {
+	line-height: 1.5;
+}
+
+.text {
+	margin-top: 20px;
+}
+
+.question {
+	margin-top: 60px;
+}
+
+.answers {
+	width:  30%;
+	height:  100px;
+	display: inline-block;
+	text-align: center;
+	background-color: mediumaquamarine;
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 70px;
+}
+
+.answers span{
+	display: none;
+}
+
+.answers:hover {
+	transition:  3s all;
+	background-color: Black;
+	color:  White;
+	display: inline-block;
+}
+
+.answers:hover p{
+	display: none;
+}
+
+.answers:hover span{
+	display: inline-block;
+}
+
+.correct:hover {
+	display: inline-block;
+	background-color: green;
+	color: yellow;
+}
+
+
+#title {
+	text-align: left;
+	padding-right: 530px;
+}
+
+#last {
+	padding-right: 30px;
+}
+
+img {
+	display: block;
+	max-width: 960px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+
+
+
+
