@@ -1,0 +1,11 @@
+body {
+  background-color: #161B22;
+}
+
+img {
+  position: absolute;
+}
+
+#back-and-forth-cat {
+  top: 300px;
+}
