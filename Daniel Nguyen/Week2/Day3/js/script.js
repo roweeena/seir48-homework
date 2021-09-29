@@ -1,26 +1,31 @@
+const loopCat = document.getElementById('loop-cat');
+const backAndForthCat = document.getElementById('back-and-forth-cat');
+
+// The end of the screen, where the cat does something else
+const boundary = window.innerWidth - loopCat.width;
+
 // Converts a CSS pixels string into a JS Number
 const parsePixels = function (px) {
   return Number(px.split('px')[0]);
 }
 
+// Bonus #1
 const loop = function () {
-  const cat = document.getElementById('loop-cat');
-  const boundary = window.innerWidth - cat.width;
-  const current = parsePixels(cat.style.left);
+  const current = parsePixels(loopCat.style.left);
   const next = current + 1.5;
-  cat.style.left = next + 'px';
+  loopCat.style.left = next + 'px';
   if (next >= boundary) {
-    cat.style.left = '0px';
+    loopCat.style.left = '0px';
   }
 }
 
+// Cat's direction (forwards = walking to the right)
 let forwards = true;
+// Bonus #2
 const backAndForth = function () {
-  const cat = document.getElementById('back-and-forth-cat');
-  const boundary = window.innerWidth - cat.width;
-  const current = parsePixels(cat.style.left);
+  const current = parsePixels(backAndForthCat.style.left);
   const next = forwards ? current + 1.4 : current - 1.4;
-  cat.style.left = next + 'px';
+  backAndForthCat.style.left = next + 'px';
   if (forwards && next >= boundary) {
     forwards = false;
   } else if (!forwards && next <= 0) {
