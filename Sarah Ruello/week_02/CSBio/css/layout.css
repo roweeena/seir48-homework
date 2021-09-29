@@ -281,11 +281,42 @@ aside {
     right: 0;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
     z-index: 2;
-    background-size: 100% 4px, 5px 100%;
+    background-size: 100% 3px, 3px 100%;
     pointer-events: none;
     border-radius: 70px;
 }
 
 .crt {
     animation: textShadow 1.6s infinite;
+}
+
+
+/* inset shadow for crt screen */
+
+.shadow,
+.crt {
+    box-shadow: 11px 11px 0px 0px;
+    min-width: 295px;
+    min-height: 260px;
+    box-shadow: inset 0 0 25px 8px rgba(0, 0, 0);
+    z-index: 0;
+}
+
+
+/* changes crt screen image */
+
+.index {
+    background: transparent url("../img/bettyYoung.jpeg") 50% 50% no-repeat;
+}
+
+.eniac {
+    background: transparent url("../img/eniac.jpg") 50% 50% no-repeat;
+}
+
+.achievements {
+    background: transparent url("../img/achieve.png") 50% 50% no-repeat;
+}
+
+.earlylife {
+    background: transparent url("../img/bettyPortrait.jpeg") 50% 50% no-repeat;
 }
