@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
 body {
-    /* background-color: #402d2c; */
     margin: 0;
     /* takes background to the edges */
     padding: 0;
@@ -16,15 +15,14 @@ body {
 .container {
     max-width: 760px;
     height: 499px;
-    margin: 7em auto;
+    margin: 9em auto;
     background-color: #fff;
     background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee 0.1em, transparent 0.1em);
     background-size: 100% 1.2em;
     padding: 1em;
-    /* based on font size rather than px */
+    /* em based on font size rather than px */
     border-radius: 1em;
     box-shadow: 12px 12px 2px 1px;
-    /* can also do each corner seperately */
 }
 
 main {
@@ -44,13 +42,12 @@ nav {
     text-align: right;
     font-weight: bold;
     position: absolute;
-    margin-top: -310px;
+    margin-top: -315px;
     margin-left: 270px;
 }
 
 nav a {
     color: rgb(255, 147, 156);
-    /* color: #1d4b39; */
     text-decoration: none;
     padding: 15px;
 }
@@ -94,18 +91,17 @@ p {
 }
 
 aside {
-    width: 300px;
+    width: 295px;
     height: 260px;
     display: block;
     text-align: center;
-    /* moves list to the right side top */
     background-image: url("../img/teakbg.jpg");
-    padding: 1em;
-    border-radius: 20px;
+    padding: 1.4em;
+    border-radius: 25px;
     border: 1px solid rgb(0, 0, 0);
     position: relative;
     top: -590px;
-    right: -560px;
+    right: -545px;
     box-shadow: 11px 11px 0px 0px;
 }
 
@@ -119,10 +115,8 @@ aside {
     text-align: center;
     width: 280px;
     max-height: 265px;
-    height: auto;
     border-radius: 75px;
-    vertical-align: top;
-    /* can't set margins on display inline - img default!! */
+    /* can't set margins on display inline for img - default!! */
 }
 
 .p-one {
@@ -287,7 +281,7 @@ aside {
     right: 0;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
     z-index: 2;
-    background-size: 100% 2px, 3px 100%;
+    background-size: 100% 4px, 5px 100%;
     pointer-events: none;
     border-radius: 70px;
 }
