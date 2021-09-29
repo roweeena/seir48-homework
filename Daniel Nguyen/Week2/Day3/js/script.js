@@ -7,13 +7,13 @@ const parsePixels = function (px) {
   return Number(px.split('px')[0]);
 }
 
-const catWalkRight = function () {
+const catWalk = function () {
   const current = parsePixels(cat.style.left);
-  const next = current + 10;
+  const next = current + 1.5;
   cat.style.left = next + 'px';
   if (next >= boundary) {
     cat.style.left = '0px';
   }
 }
 
-const timer = setInterval(catWalkRight, 50);
+const timer = setInterval(catWalk, 1);
