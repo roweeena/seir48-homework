@@ -1,0 +1,55 @@
+body {
+	margin-top: 40px;
+	margin-left: 50px;
+	width: 90%;
+}
+
+h1, h2, p {
+   font-family: "Times New Roman", serif;
+   color: #b1afaf;
+   width:  75%;
+}
+
+h1 {
+	font-size: 250%;
+}
+
+h2 {
+	font-size: 140%;
+	color: #6d6b6b;
+}
+
+
+p {
+	font-size: 90%;
+	line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+	display: inline-block;
+}
+
+section {
+	margin-left: -40px;
+}
+
+ul img {
+	border: solid 5px;
+	border-color: #c7c7c7;
+	padding: 2px;
+	margin-right: 3px;
+}
+
+.blue, span, a {
+	color: #2c97e4;
+	text-decoration: none;
+	line-height: 0.5;
+}
+
+/*Link Hover Color = #20222a
+*/
+
