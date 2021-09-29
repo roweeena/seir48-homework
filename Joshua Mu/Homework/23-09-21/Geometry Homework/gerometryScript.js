@@ -89,3 +89,35 @@ function IsObtuse(_yetAnotherTriangle) {
 
 console.log(IsObtuse(triangleB));
 console.log(IsObtuse(triangleC));
+
+function AreaOfACircle(_triangleThing)
+{
+    let height = 0;
+    let base = 0;
+    let area = 0;
+
+    if (_triangleThing.sideA > _triangleThing.sideB && _triangleThing.sideA > _triangleThing.sideC)
+    {
+        height = _triangleThing.sideB^2 + _triangleThing.sideC^2;
+
+        base = _triangleThing.sideA;
+        area = (height * base) / 2;
+
+        return `Area of this triangle is ${area}`;
+    }
+    if (_triangleThing.sideB > _triangleThing.sideA && _triangleThing.sideB > _triangleThing.sideC)
+    {
+        height = _triangleThing.sideA^2 + _triangleThing.sideC^2;
+        base = _triangleThing.sideB;
+        area = (height * base) / 2;
+
+        return `Area of this triangle is ${area}`;
+    }
+    else{
+        height = _triangleThing.sideA^2 + _triangleThing.sideB^2;
+        base = _triangleThing.sideC;
+        area = (height * base) / 2;
+
+        return `Area of this triangle is ${area}`;
+    }
+}
