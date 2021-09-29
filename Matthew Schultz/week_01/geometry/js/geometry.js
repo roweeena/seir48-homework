@@ -36,12 +36,12 @@ const isSquare = function(shape) {
 }
 
 const findArea = function(shape) {
-  area = shape.recLength * shape.recWidth;
+  const area = shape.recLength * shape.recWidth;
   console.log('The area is: ' + area);
 }
 
 const findPerimeter = function(shape) {
-  perimeter = shape.recLength * 2 + shape.recWidth * 2;
+  const perimeter = shape.recLength * 2 + shape.recWidth * 2;
   console.log('The perimeter is: ' + perimeter);
 }
 

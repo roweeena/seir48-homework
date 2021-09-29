@@ -216,18 +216,113 @@ console.log(cashRegister(cartForParty));
 
 // *Double Bonus*: Make your credit card scheme even more advanced! What are the rules, and what are some numbers that pass or fail? Ideas: check expiration date! Check out the Luhn Algorithm for inspiration.
 
-const validateCreditCard = (number) => {
-// - Number must be 16 digits
-  if(number.length === 19) {
-    const emptyCard = [];
-    for (let i = 0; i < number.length; i++) {
-      if(emptyCard.includes(number[i]) === false) {
-        
-      }
+const validNumbers = ['1','2','3','4','5','6','7','8','9','0'];
+const hiphen = ['-'];
+
+// function which ensures the card has 16 valid numbers.
+const check16Valid = (cardNumber) => {
+  let validDigits = 0;
+  for (let i=0; i<cardNumber.length; i++) {
+    if(validNumbers.includes(cardNumber[i])) {
+      validDigits += 1;
+    }
+    else if (cardNumber[i] === '-') {    
+    }
+    else {
+      return false;
     }
   }
-  // - Number must be 16 digits, all of them must be numbers
-// - You must have at least two different digits represented (all of the digits cannot be the same)
-// - The final digit must be even
-// - The sum of all the digits must be greater than 16
+  if (validDigits === 16) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
+
+// puts card into an array and sorts lowest to highest
+const sortedCard = (cardNumber) => {
+  const cardAsArray = [];
+  for (let i=0; i<cardNumber.length; i++) {
+    if (cardNumber[i] !== '-') {
+    cardAsArray.push(parseInt(cardNumber[i]));
+    }
+  }
+  const sortedCard = cardAsArray.sort();
+  return sortedCard;
+}
+
+// sorts card into an array and checks the last digit does not equal the first digit
+const atLeastTwo = (cardNumber) => {
+  const sorted = sortedCard(cardNumber);
+  const lastDigit = sorted[sorted.length-1];
+  const firstDigit = sorted[0];
+  if (firstDigit === lastDigit) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
+// checks if the final digit is even
+const finalDigitEven = (cardNumber) => {
+  const cardAsArray = [];
+  for (let i=0; i<cardNumber.length; i++) {
+    if (cardNumber[i] !== '-') {
+    cardAsArray.push(cardNumber[i]);
+    }
+  }
+  const finalDigit = cardAsArray[cardAsArray.length-1];
+  if (finalDigit % 2 === 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+// checks if the sum is greater than 16
+const sumGreater16 = (cardNumber) => {
+  let sum = 0;
+  const sorted = sortedCard(cardNumber);
+  for (let i=0; i<sorted.length; i++) {
+    sum += sorted[i];
+  }
+  if (sum > 16) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+// validates creditCard
+const validateCreditCard = (cardNumber) => {
+  if(check16Valid(cardNumber) && atLeastTwo(cardNumber) && finalDigitEven(cardNumber) && sumGreater16(cardNumber)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+//TESTS
+// - `9999-9999-8888-0000`
+// - `6666-6666-6666-1666`
+
+// The following credit card numbers are invalid:
+
+// - `a923-3211-9c01-1112` invalid characters
+// - `4444-4444-4444-4444` only one type of number
+// - `1111-1111-1111-1110` sum less than 16
+// - `6666-6666-6666-6661` odd final number
+
+console.log(validateCreditCard(`9999-9999-8888-0000`));
+console.log(validateCreditCard(`6666-6666-6666-1666`));
+
+console.log(validateCreditCard(`a923-3211-9c01-1112`));
+console.log(validateCreditCard(`4444-4444-4444-4444`));
+console.log(validateCreditCard(`1111-1111-1111-1110`));
+console.log(validateCreditCard(`6666-6666-6666-6661`));
+

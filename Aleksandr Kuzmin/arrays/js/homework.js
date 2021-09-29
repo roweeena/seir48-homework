@@ -111,18 +111,19 @@ function reverseString(string) {
 
 function findLongestWord (array) {
 
-let longest = array[0];
-  for(let i = 0; i < array.length; i ++ ) //
+let longest= " ";
+  for(let i = 0; i < array.length; i ++ ) { //
 
-  if(longest.length > array[i].length){
-    return longest;
+  if(array[i].length > longest.length ){
+
+longest = array[i];
+
+consol.log(longest);
   }
-  if(longest[i].length < array[i].length){
-  array[i] = longest;
-  return longest;
-}
+
 
 
 }
+}
 
-console.log(`${findLongestWord(["look","up","there"])}`);
+findLongestWord(["look","up","there"]);
