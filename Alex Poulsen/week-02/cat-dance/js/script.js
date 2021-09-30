@@ -13,20 +13,33 @@
 //
 // - Bonus #4: Pretty much go nuts or whatever.
 
-const catDaddy = document.getElementById('catdaddy');
 
+const catDaddy = document.getElementById('catdaddy');
+//////////////////////////////////////////////////
 const catWalk = function() {
 
     const oldpos = parseInt(catDaddy.style.left);
     const newpos = oldpos + 10;
     catDaddy.style.left = newpos + 'px';
 
-    if (oldpos >= window.innerWidth - 296) {
+    if (oldpos >= window.innerWidth - catDaddy.width) {
       stopCatWalk();
       catDaddy.style.transform = "scaleX(-1)";
-    }
+    };
 };
+////////////////////////////////////////////////////
+const catWalkLeft = function() {
 
+    const oldpos = parseInt(catDaddy.style.left);
+    const newpos = oldpos + 10
+    catDaddy.style.left = newpos + 'px';
+
+    if (oldpos <= catDaddy.width) {
+      stopCatWalk();
+      catDaddy.style.transform = "scaleX(+1)";
+    };
+}
+///////////////////
 const stopCatWalk = function () {
   clearInterval(timerID);
 };
