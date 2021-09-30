@@ -1,8 +1,5 @@
-const loopCat = document.getElementById('loop-cat');
-const backAndForthCat = document.getElementById('back-and-forth-cat');
-
 // The end of the screen, where the cat does something else
-const boundary = window.innerWidth - loopCat.width;
+// const boundary = window.innerWidth - document.getElementsByTagName('img')[0].width;
 
 // Converts a CSS pixels string into a JS Number
 const parsePixels = function (px) {
@@ -11,11 +8,13 @@ const parsePixels = function (px) {
 
 // Bonus #1
 const loop = function () {
-  const current = parsePixels(loopCat.style.left);
-  const next = current + 1.5;
-  loopCat.style.left = next + 'px';
+  const cat = document.getElementById('loop-cat');
+  const boundary = window.innerWidth - cat.width;
+  const current = parsePixels(cat.style.left);
+  const next = current + 2;
+  cat.style.left = next + 'px';
   if (next >= boundary) {
-    loopCat.style.left = '0px';
+    cat.style.left = '0px';
   }
 }
 
@@ -23,15 +22,31 @@ const loop = function () {
 let forwards = true;
 // Bonus #2
 const backAndForth = function () {
-  const current = parsePixels(backAndForthCat.style.left);
-  const next = forwards ? current + 1.4 : current - 1.4;
-  backAndForthCat.style.left = next + 'px';
+  const cat = document.getElementById('back-and-forth-cat');
+  const boundary = window.innerWidth - cat.width;
+  const current = parsePixels(cat.style.left);
+
+  const next = forwards ? current + 2.5 : current - 2.5;
+
+  // If cat reached the middle
+  if (current >=  boundary / 2) {
+    cat.src = "images/cat-dance.gif";
+  }
+
+  cat.style.left = next + 'px';
+
+  // If cat reached the right boundary, turn around and walk left
   if (forwards && next >= boundary) {
+    cat.style.transform = 'rotateY(180deg)';
     forwards = false;
-  } else if (!forwards && next <= 0) {
+  }
+  // Else if cat reached the left boundary, turn around and walk right
+  else if (!forwards && next <= 0) {
+    cat.style.transform = 'rotateY(0deg)';
     forwards = true;
   }
 }
 
+
 setInterval(loop, 1);
-setInterval(backAndForth, 1.1);
+const walk = setInterval(backAndForth, 1);
