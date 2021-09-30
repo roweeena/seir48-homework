@@ -1,0 +1,20 @@
+body{
+  
+  background-image: url('https://i.postimg.cc/VkHYcz8V/d.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+
+
+/* this will flip an image */
+/* img {
+transform: scaleX(-1);
+} */
+
+img{
+/* width:40px; */
+left: 0px;
+top:310px;
+}
