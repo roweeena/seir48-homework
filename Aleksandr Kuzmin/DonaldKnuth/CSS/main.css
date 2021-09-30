@@ -18,12 +18,12 @@ body {
 }
 h1 {
 text-align: center;
-font-size: 30px;
+font-size: 70px;
 padding: 1em;
 }
 h2 {
-  font-size: 20px;
-  padding: 1em;
+  font-size: 30px;
+  padding: 0;
 }
 main {
   width: 70%;
@@ -33,6 +33,9 @@ main {
 main img {
   margin: 0 auto;
   display: block;
+  border-radius: 0.5em;
+
+  box-shadow: 0px 5px 5px grey;
 
 }
 
@@ -42,13 +45,13 @@ aside {
   vertical-align: top;
   padding: 1em;
   border-radius: 0.5em;
-  box-shadow: 0px 5px 5px grey;
+  box-shadow: 0px 5px 0px grey;
   font-size: 20px;
 
 }
 aside ul {
   line-height: 40px;
   padding:20px;
-  padding-bottom: 438px;
+  padding-bottom: 414px;
 
 }
