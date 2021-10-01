@@ -1,0 +1,84 @@
+/* Home Page*/
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+
+body {
+ background-color: white;
+ margin: 0;
+ padding: 0;
+ background-image: url(images/"Apollo.jpeg");
+}
+
+.container {
+ max-width: 950px;
+ margin: 0 auto;
+ background: black;
+ padding: 10em;
+ font-family: 'Rubik', sans-serif;
+
+}
+
+
+nav {
+ text-align: center;
+}
+
+nav a {
+text-decoration: none;
+color: white ;
+margin: 0 5px;
+}
+
+a:hover {
+ color: white;
+ font-size: 26px;
+}
+
+h1 {
+ text-align: center;
+ font-family: 'Gemunu Libre', sans-serif;
+ text-transform: uppercase;
+ background-color: white;
+ font-size: 300%;
+ padding: 0.5em;
+ position: relative;
+ margin-left: -16px;
+ margin-right: -16px;
+ color : black;
+
+}
+
+img   {
+ height: 679px;
+ padding-left: 50px;
+ padding-bottom: 50px;
+}
+
+h2 {
+ font-size: 12px;
+ margin: 0px;
+ font-style: italic;
+}
+
+p {
+ text-align: justify;
+ line-height: 33px;
+ letter-spacing: 0.5px;
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 407px;
+ margin-top: -8px;
+ font-family: 'Gemunu Libre', sans-serif;
+ color: white;
+}
+
+p.second-paragraph {
+ position: absolute;
+ top: 297px;
+ right: 0;
+ font-family: 'Gemunu Libre', sans-serif;
+ color: white;
+}
+main {
+ position: relative;
+}
