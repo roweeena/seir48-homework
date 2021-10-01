@@ -30,8 +30,7 @@ const testStrings = {
 };
 
 const TEST_mumble = function () {
-  for (let i = 0; i < Object.keys(testStrings).length; i++) {
-    const test = Object.keys(testStrings)[i];
+  for (let test in testStrings) {
     console.log(
       test,
       mumble(test),
