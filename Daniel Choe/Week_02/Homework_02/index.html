@@ -1,0 +1,149 @@
+<!-- # Lab: Famous computer scientists fansite
+
+## Research one (or more) of the following:
+- Ada Lovelace
+- Alan Turing
+- John von Neumann
+- Norbert Wiener
+- Frances E. Allen
+- Claude Shannon
+- Grace Hopper
+- H. Marshall Mcluhan
+- Donald Knuth
+- Richard M. Stallman
+- Larry Wall
+- Yukihiro Matsumoto
+- Sophie Wilson
+- Jenn Schiffer
+- Margaret Hamilton
+
+## Requirements
+- At least 3 pages (example: biography, trivia, hometown)
+- At least 1 Google Font
+- Whatever HTML and CSS you desire
+- Keep your code clean and DRY
+- Start working with semantic elements: http://html5doctor.com/lets-talk-about-semantics/
+- No Javascript! Even if you know how to use jQuery, see how far you can push this with pure HTML + CSS
+- Don't worry about responsiveness -- desktop resolution is fine
+
+## Your research should aim to reveal at least two things about each person:
+- Why Joel admires them
+- Something Joel doesn't already know about them
+
+## Optional extras
+- Experiment with http://fortawesome.github.io/Font-Awesome/
+- Record and embed a short podcast or vlog about your favourite scientist
+- Try embedding other media (YouTube or Vimeo video, Soundcloud)
+- Try embedding a Google map (for their hometown and/or alma mater) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Grace Hopper</title>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+    <img id="logo" src="images/logo.png" alt="logo">
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="https://en.wikipedia.org/wiki/Grace_Hopper" target="_blank">Biography</a>
+      <a href="#bottom">Hometown</a>
+      <a href="Video.html">Video</a>
+      <a href="Trivia.html">Trivia</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="banner">
+      <img src="images/Header_banner.png" alt="A Picture of the IBM Automatic Sequence Controlled Calculator" class="computer">
+      <h2 class="first-txt"> "The most damaging phrase in the language is: <br>
+        It's always been done that way."</h2>
+      <h4 class="second-txt">-Grace Hopper</h4>
+    </div>
+
+    <intro>
+      <h2 class="bio-heading">Grace Brewster Murray Hopper (December 9, 1906 - January 1, 1992)</h2>
+      <keysum>
+        <h3>Key Summary:</h3>
+        <ul id="introlist">
+          <li>Was an American computer scientist and United States Navy rear admiral.</li>
+          <li>Earned a phD in math from Yale (a rare accomplishment for anyone at the time).</li>
+          <li>One of the first computer programmers to work on the Harvard Mark I.</li>
+          <li>Invented the first compiler (translates programming code to machine language).</li>
+        </ul>
+      </keysum>
+      <img src="images/Grace_hopper_hero_shot.jpeg" alt="Photo of Grace Hopper" align="right">
+      <h3>Early Life & Education</h3>
+      <p>
+        Grace Brewster Murray was born in New York City. She was the eldest of three children.
+        Her parents, Walter Fletcher Murray and Mary Campbell Van Horne, were of Scottish and Dutch
+        descent, and attended West End Collegiate Church. Her great-grandfather, Alexander Wilson
+        Russell, an admiral in the US Navy, fought in the Battle of Mobile Bay during the Civil War.
+        Grace was very curious as a child; this was a lifelong trait. At the age of seven, she decided
+        to determine how an alarm clock worked and dismantled seven alarm clocks before her mother
+        realized what she was doing (she was then limited to one clock). For her preparatory school
+        education, she attended the Hartridge School in Plainfield, New Jersey. Grace was initially
+        rejected for early admission to Vassar College at age 16 (because her test scores in Latin
+        were too low), but she was admitted the following year. She graduated Phi Beta Kappa from
+        Vassar in 1928 with a bachelor's degree in mathematics and physics and earned her master's
+        degree at Yale University in 1930. In 1930 Grace Murray married New York University
+        professor Vincent Foster Hopper (1906–1976); they divorced in 1945. Although she did
+        not marry again, she retained his surname. In 1934, Hopper earned a Ph.D. in mathematics
+        from Yale under the direction of Øystein Ore. Her dissertation, "New Types of Irreducibility
+        Criteria", was published that same year. She began teaching mathematics at Vassar in 1931,
+        and was promoted to associate professor in 1941.
+      </p>
+    </intro>
+
+    <h3>Awards</h3>
+    <div class="row">
+      <div class="column"><img class="wing" src="images/wing.png" alt=""><br>Presidential Medal of Freedom (2016)</div>
+      <div class="column"><img class="wing" src="images/wing.png" alt=""><br>National Medal of Technology<br>& Innovation (1991)</div>
+      <div class="column"><img class="wing" src="images/wing.png" alt=""><br>IEEE Emanuel R. Piore Award (1988)</div>
+    </div>
+
+    <h3>Her Career</h3>
+      <p>
+        Hopper had tried to enlist in the Navy early in World War II. She was rejected for a few reasons.
+        At age 34, she was too old to enlist, and her weight to height ratio was too low.
+        She was also denied on the basis that her job as a mathematician and mathematics professor
+        at Vassar College was valuable to the war effort.  During the war in 1943, Hopper obtained
+        a leave of absence from Vassar and was sworn into the United States Navy Reserve; she was one
+        of many women who volunteered to serve in the WAVES. She had to get an exemption to enlist;
+        she was 15 pounds (6.8 kg) below the Navy minimum weight of 120 pounds (54 kg). She reported
+        in December and trained at the Naval Reserve Midshipmen's School at Smith College in Northampton,
+        Massachusetts.
+      </p>
+      <img src="images/infrontofcomputer.jpg" alt="Photo of Grace Hopper" id="computer-image" align="center">
+      <p>
+        Hopper graduated first in her class in 1944, and was assigned to the
+        Bureau of Ships Computation Project at Harvard University as a lieutenant, junior grade.
+        She served on the Mark I computer programming staff headed by Howard H. Aiken. Hopper and
+        Aiken co-authored three papers on the Mark I, also known as the Automatic Sequence
+        Controlled Calculator. Hopper's request to transfer to the regular Navy at the end of the
+        war was declined due to her advanced age of 38. She continued to serve in the Navy Reserve.
+        Hopper remained at the Harvard Computation Lab until 1949, turning down a full professorship
+        at Vassar in favor of working as a research fellow under a Navy contract at Harvard.
+      </p>
+  </main>
+
+  <footer>
+    <h3 id="ibmheading">IBM ASCC Information</h3>
+    <iframe width="60%" height="515" align="center" id="videoibm" src="https://www.youtube.com/embed/bN7AdQmd8So" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <h3 id="footerheading">Where Grace Hopper was born: (New York City)</h3>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.91476187683!2d-74.11976074343949!3d40.69740344513418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sau!4v1632823745157!5m2!1sen!2sau" width="100%" height="450" style="border:10;" allowfullscreen="" loading="lazy"></iframe>
+  <a id="bottom"></a>
+  </footer>
+
+  <aside>
+  </aside>
+
+</body>
+</html>
