@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: #fff;
+  background-image:
+  linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+  linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
+}
+
+.container {
+  max-width: 960px; /* lazy responsive container */
+  margin: 0 auto; /* centre */
+  background-color: #ccc;
+  padding: 1em; /* The size of the letter M in the current font */
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+nav {
+  text-align: right;
+  background-color: black;
+  padding: 0.5em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 150%;
+  padding: 1em;
+  transition: 1s;
+}
+
+nav a:hover {
+  color: blue;
+  transition: 1s;
+}
+
+h1 {
+  text-align: center;
+  background-color: #333;
+  color: #ccc;
+  font-size: 400%;
+  padding: 0.5em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 10px 5px 0.2em black
+}
+
+main {
+  width: 100%;
+  display: inline-block;
+}
+
+#quotes {
+  width: 100%
+  display: inline-block;
+}
+
+main img {
+  margin: 0 auto;
+  display: block; /* Can't set margins on display: inline */
+  max-width: 25%;
+  height: auto;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+aside ul {
+  list-style-type: none;
+}
+
+iframe {
+  display: block;
+  margin: 1em auto;
+}
+
+.mapDiv {
+  display: block;
+  margin: auto;
+}
