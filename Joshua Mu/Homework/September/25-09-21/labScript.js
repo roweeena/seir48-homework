@@ -172,6 +172,7 @@ function planTrip(destinations) {
     console.log(`You must travel through the following stops on the ${startingLine} line: ${startingStations}.`);
     console.log(`Change at ${commonPoint}.`);
     console.log(`Your journey continues through the following stops: ${secondaryStations}.`);
+    console.log(`This is a total of ${startingStations.length + secondaryStations.length} stops`)
 }
 
 

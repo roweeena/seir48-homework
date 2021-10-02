@@ -1,0 +1,18 @@
+body {
+    background-color: peachpuff;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    transition: 4s all;
+    font-size: 300%;
+    background-color: #ccc;
+    padding: 1em;
+    
+
+}
