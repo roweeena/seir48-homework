@@ -1,3 +1,4 @@
+// Contains all backend bank-related functions
 const BANK = {
   cheque: 0,
   savings: 0,
@@ -5,41 +6,41 @@ const BANK = {
   deposit: function (accountName) {
     const amount = DOM.getInputValue(accountName);
     this[accountName] += amount;
-    DOM.updateBalance(accountName);
+    DOM.updateBalanceDisplay(accountName);
   },
 
   withdraw: function (accountName) {
     const amount = DOM.getInputValue(accountName);
+
     if (amount <= this[accountName]) {
       this[accountName] -= amount;
-      DOM.updateBalance(accountName);
+      DOM.updateBalanceDisplay(accountName);
     }
-  },
+    // Overdraft; withdraws from the other account if possible
+    else if (amount <= this.cheque + this.savings) {
+      const otherAccount = accountName === 'cheque' ? 'savings' : 'cheque';
+      this[otherAccount] -= amount - this[accountName];
+      this[accountName] = 0;
+      DOM.updateBalanceDisplay(accountName);
+      DOM.updateBalanceDisplay(otherAccount);
+    }
+  }
 };
 
+// Contains all frontend DOM-related functions
 const DOM = {
   getInputValue: function (accountName) {
     return Number( $(`#${accountName}-amount`).val() );
   },
 
-  updateBalance: function (accountName) {
+  updateBalanceDisplay: function (accountName) {
     const $div = $(`#${accountName}-balance`);
     $div.text(`$${BANK[accountName]}`);
     if (BANK[accountName] === 0) {
       $div.addClass('zero');
-      // this.disableWithdrawButton(accountName);
     } else {
       $div.removeClass('zero');
-      // this.enableWithdrawButton(accountName);
     }
-  },
-
-  disableWithdrawButton: function (accountName) {
-    $(`#${accountName}-withdraw`).prop('disabled', false);
-  },
-
-  enableWithdrawButton: function (accountName) {
-    $(`#${accountName}-withdraw`).prop('disabled', true);
   },
 };
 
@@ -59,28 +60,5 @@ $(document).ready(function () {
 
   $('#savings-withdraw').on('click', function() {
     BANK.withdraw('savings');
-  });
-
-
-
-
-
-  $('button').on('click', function() {
-    console.log('clicked');
-  });
-
-  $('button').on('click', console.log('clicked'));
-
-
-
-
-
-
-});
-
-
-$(document).ready(function () {
-  $('#cheque-deposit').on('click', function() {
-    console.log('clicked');
   });
 });
