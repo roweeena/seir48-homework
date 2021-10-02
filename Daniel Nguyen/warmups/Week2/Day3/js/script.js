@@ -32,10 +32,17 @@ const beachDays = function (forecast) {
   ).join(', ');
 }
 
-// A custom function instead of Array.prototype.join()
-// that joins and adds "and" before the last element.
-const joinWithAnd = function (arr) {
-  return arr.slice(0, -1).join(', ') + ' and ' + arr.slice(-1);
-}
+console.log( beachDays(forecast) );
 
-console.log( joinWithAnd(beachDays(forecast).split(', ')) );
+
+
+
+
+//
+// // A custom function instead of Array.prototype.join()
+// // that joins and adds "and" before the last element.
+// const joinWithAnd = function (arr) {
+//   return arr.slice(0, -1).join(', ') + ' and ' + arr.slice(-1);
+// }
+//
+// console.log( joinWithAnd(beachDays(forecast).split(', ')) );
