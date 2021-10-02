@@ -1,0 +1,11 @@
+body {
+    background-image: url('../img/hobart.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 920px;
+}
+
+img.cat {
+    width: 50px;
+    padding-top: 650px;
+}
