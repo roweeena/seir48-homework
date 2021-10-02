@@ -1,131 +1,138 @@
-// Global variables for storing account balances
-let checkingBal = 0;
-let savingsBal = 0;
+$(document).ready(function() {
 
-//Updates balance html for display
-const updateBalance = function() {
-  $('#checking-balance').html(`$${checkingBal}`);
-  $('#savings-balance').html(`$${savingsBal}`);
-};
+  // Global variables for storing account balances
+  let checkingBal = 0;
+  let savingsBal = 0;
 
-updateBalance();
-
-// Function that checks account balance - if balance is zero changes background colour to red
-const checkBalance = function() {
-
-  if ( checkingBal === 0 ) {
-    $('#checking').addClass('zero');
-  }
-  if ( checkingBal > 0 && $('#checking').hasClass('zero')) {
-    $('#checking').removeClass('zero');
-    $('#checking').addClass('balance');
-  }
-  if ( savingsBal === 0 ) {
-    $('#savings').addClass('zero');
-  }
-  if ( savingsBal > 0 && $('#savings').hasClass('zero')) {
-    $('#savings').removeClass('zero');
-    $('#savings').addClass('balance');
-  }
-
-};
-
-//Deposit function
-const deposit = function (event) {
-
-  const account = this.id.split('-')[0];
-
-  const amount = $(`#${account}-amount`).val();
-
-  if (account === 'checking') {
-
-    checkingBal += Number(amount);
+  //Updates balance html for display
+  const updateBalance = function() {
     $('#checking-balance').html(`$${checkingBal}`);
-    $(`#${account}-amount`).val('');
-    checkBalance();
-  }
-  else {
-
-    savingsBal += Number(amount);
     $('#savings-balance').html(`$${savingsBal}`);
-    $(`#${account}-amount`).val('');
-    checkBalance();
   };
 
-};
+  updateBalance();
 
-//Functions connecting deposit buttons to deposit functions
-$('#checking-deposit').click( deposit );
+  // Function that checks account balance - if balance is zero changes background colour to red
+  const checkBalance = function() {
 
-$('#savings-deposit').click( deposit );
-
-//Withdrawal function
-const withdraw = function ( event ) {
-
-  //gets which account is being withdrawn from
-  const account = this.id.split('-')[0];
-
-  const amount = $(`#${account}-amount`).val();
-
-  //removes the dollar sign from the string
-  let accBal = $(`#${account}-balance`).html().substring(1);
-
-  //Withdrawal protection - prevents < 0 balances
-  if (amount > Number(accBal)) {
-
-    if ( amount > checkingBal + savingsBal) {
-    checkBalance();
-    return;
+    if ( checkingBal === 0 ) {
+      $('#checking').addClass('zero');
+    }
+    if ( checkingBal > 0 && $('#checking').hasClass('zero')) {
+      $('#checking').removeClass('zero');
+      $('#checking').addClass('balance');
+    }
+    if ( savingsBal === 0 ) {
+      $('#savings').addClass('zero');
+    }
+    if ( savingsBal > 0 && $('#savings').hasClass('zero')) {
+      $('#savings').removeClass('zero');
+      $('#savings').addClass('balance');
     }
 
-    //overdraft protection - removes funds from both accounts
+  };
+
+  //Deposit function
+  const deposit = function (event) {
+
+    const account = this.id.split('-')[0];
+
+    const amount = $(`#${account}-amount`).val();
+
+    if (account === 'checking') {
+
+      checkingBal += Number(amount);
+      $('#checking-balance').html(`$${checkingBal}`);
+      $(`#${account}-amount`).val('');
+      checkBalance();
+    }
     else {
 
-      if (account === 'checking') {
+      savingsBal += Number(amount);
+      $('#savings-balance').html(`$${savingsBal}`);
+      $(`#${account}-amount`).val('');
+      checkBalance();
+    };
 
-        let remainFunds = amount - checkingBal;
-        savingsBal -= remainFunds;
-        checkingBal = 0;
-        updateBalance();
-        checkBalance();
-        return;
+  };
+
+  //Functions connecting deposit buttons to deposit functions
+  $('#checking-deposit').click( deposit );
+
+  $('#savings-deposit').click( deposit );
+
+  //Withdrawal function
+  const withdraw = function ( event ) {
+
+    //gets which account is being withdrawn from
+    const account = this.id.split('-')[0];
+
+    const amount = $(`#${account}-amount`).val();
+
+    //removes the dollar sign from the string
+    let accBal = $(`#${account}-balance`).html().substring(1);
+
+    //Withdrawal protection - prevents < 0 balances
+    if (amount > Number(accBal)) {
+
+      if ( amount > checkingBal + savingsBal) {
+      checkBalance();
+      return;
       }
 
+      //overdraft protection - removes funds from both accounts
       else {
 
-        let remainFunds = amount - savingsBal;
-        checkingBal -= remainFunds;
-        savingsBal = 0;
-        updateBalance();
-        checkBalance();
-        return;
+        if (account === 'checking') {
+
+          let remainFunds = amount - checkingBal;
+          savingsBal -= remainFunds;
+          checkingBal = 0;
+          updateBalance();
+          checkBalance();
+          $(`#${account}-amount`).val('');
+          return;
+        }
+
+        else {
+
+          let remainFunds = amount - savingsBal;
+          checkingBal -= remainFunds;
+          savingsBal = 0;
+          updateBalance();
+          checkBalance();
+          $(`#${account}-amount`).val('');
+          return;
+        }
       }
+    };
+
+    if (account === 'checking') {
+
+      checkingBal -= Number(amount);
+      $('#checking-balance').html(`$${checkingBal}`);
+      $(`#${account}-amount`).val('');
+      checkBalance();
     }
+    else {
+
+      savingsBal -= Number(amount);
+      $('#savings-balance').html(`$${savingsBal}`);
+      $(`#${account}-amount`).val('');
+      checkBalance();
+    };
+
   };
 
-  if (account === 'checking') {
+  // Functions connecting withdraw buttons to withdraw functions
+  $('#checking-withdraw').click( withdraw );
 
-    checkingBal -= Number(amount);
-    $('#checking-balance').html(`$${checkingBal}`);
-    $(`#${account}-amount`).val('');
-    checkBalance();
-  }
-  else {
+  $('#savings-withdraw').click( withdraw);
 
-    savingsBal -= Number(amount);
-    $('#savings-balance').html(`$${savingsBal}`);
-    $(`#${account}-amount`).val('');
-    checkBalance();
-  };
+  checkBalance();
 
-};
+});
 
-// Functions connecting withdraw buttons to withdraw functions
-$('#checking-withdraw').click( withdraw );
-
-$('#savings-withdraw').click( withdraw);
-
-checkBalance();
 
 
 // * Keep track of the checking and savings balances somewhere - DONE
