@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>ATM</title>
   <link rel="stylesheet" href="css/atm.css">
-  <script src="js/jquery-1.7.2.js"></script>
+  <script src="js/jquery.js"></script>
   <script src="js/atm.js"></script>
 </head>
 <body>
@@ -16,17 +16,17 @@
       <div id="title">Bank of GA</div>
     </div>
 
-    <div class="account" id="checking">
-      <h1>Checking</h1>
-      <div class="balance" id="checking-balance">$0</div>
-      <input id="checking-amount" type="text" placeholder="enter an amount" />
-      <input id="checking-deposit" type="button" value="Deposit" />
-      <input id="checking-withdraw" type="button" value="Withdraw" />
+    <div class="account" id="cheque">
+      <h1>Cheque</h1>
+      <div class="balance zero" id="cheque-balance">$0</div>
+      <input id="cheque-amount" type="text" placeholder="enter an amount" />
+      <input id="cheque-deposit" type="button" value="Deposit" />
+      <input id="cheque-withdraw" type="button" value="Withdraw" />
     </div>
 
     <div class="account" id="savings">
       <h1>Savings</h1>
-      <div class="balance" id="savings-balance">$0</div>
+      <div class="balance zero" id="savings-balance">$0</div>
       <input id="savings-amount" type="text" placeholder="enter an amount" />
       <input id="savings-deposit" type="button" value="Deposit" />
       <input id="savings-withdraw" type="button" value="Withdraw" />
