@@ -93,6 +93,7 @@ h1, h2, h3{
 
 p{
   /* border:1px solid black; */
+  margin-left: 5px;
   color:#008080;
   font-family: 'Exo 2', sans-serif;
   text-align: left;
