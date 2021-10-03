@@ -26,8 +26,8 @@ const BANK = {
 // Contains all frontend DOM-related functions
 const DOM = {
   // The current input values
-  chequeInput: null,
-  savingsInput: null,
+  chequeInput: 0,
+  savingsInput: 0,
 
   // Re-renders account balance UIs
   updateBalanceDisplay: function (accountName) {
