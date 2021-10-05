@@ -55,6 +55,7 @@ percentOf(2,4);
 
 const areaOfCircle = function (radius) {
   const result =  (Math.PI * radius * radius) .toFixed(2);
+  // The toFixed() method converts a number into a string, rounding to a specified number of decimals.
   console.log(`The area for a circle with radius ${radius} is ${result}.`);
   return result;
 };
