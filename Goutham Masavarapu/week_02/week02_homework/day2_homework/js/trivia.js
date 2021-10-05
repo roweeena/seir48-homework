@@ -20,3 +20,14 @@ $( function() {
         $( function() {
             $( "#draggable4" ).draggable();
           } );
+
+
+          $(document).ready(function(){
+
+            // jQuery methods go here...
+
+            $("#draggable").mouseenter(function(){
+                       $("#draggable").animate({left: '200px'});
+                  });
+
+          });
