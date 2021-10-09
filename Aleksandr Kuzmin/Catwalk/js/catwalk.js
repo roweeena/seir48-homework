@@ -1,14 +1,5 @@
 const img = document.getElementsByTagName('img')[0];
-// let left = 0;
-//
-// function catWalk () {
-//   img.style.left = left +"px";
-//   left =left + 40;
-//   if (left > window.innerWidth) {
-//     left = 0;
-//   }
-// }
-// setInterval(catWalk, 50)
+
 img.style.position = 'left';
 img.style.left =  "0px";
 
@@ -23,11 +14,11 @@ img.style.left = newToRight + 'px';
 
   // console.log( newToRight, window.innerWidth)
   //
-  // if (newToRight > window.innerWidth) {
+   if (newToRight > window.innerWidth) {
     newToRight = 0;
   //
   //
-  //   }
+     }
 
 
 
