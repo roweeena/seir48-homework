@@ -1,11 +1,4 @@
-body {
-  /* background-color: #161B22; */
-}
-
-img {
+#cat {
   position: absolute;
-}
-
-#back-and-forth-cat {
-  top: 300px;
+  left: 0px;
 }
