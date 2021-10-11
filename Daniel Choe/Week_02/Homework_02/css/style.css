@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&family=Sanchez:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+
+body {
+  background-color: white;
+  margin: 10px;
+  height: 100%
+}
+
+#logo {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  width: 250px;
+}
+
+nav {
+  text-align: center;
+  font-size: 140%;
+  padding-top: 0.3em;
+  padding-bottom: 0.5em;
+  background-color: #555;
+  /* background-color: #1B1961; */
+  font-family: 'Playfair Display SC', serif;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 40px 0 0;
+}
+
+
+div img {
+  width: 100%;
+  padding: 0;
+  height: 600px;
+}
+
+.banner {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  position: relative;
+  filter: brightness(100%);
+}
+
+.first-txt:hover, .second-txt:hover {
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.first-txt {
+  position: absolute;
+  text-align: center;
+  top: 150px;
+  left: 80px;
+  right: 80px;
+  color: white;
+  font-size: 300%;
+}
+
+.second-txt {
+  position: absolute;
+  text-align: center;
+  top: 320px;
+  left: 80px;
+  right: 80px;
+  color: white;
+  font-size: 250%;
+}
+
+intro h3 {
+  text-align: center;
+}
+intro #introlist {
+  text-align: left;
+  background-color: #f4f4f4;
+  color: black;
+  border-radius: 30px;
+  margin: 2em;
+}
+
+intro img {
+  display: block;
+  width: 510px;
+  height: auto;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+.bio-heading {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: lightgrey;
+}
+.row {
+  display: flex;
+}
+
+.column {
+  width: 33.31%;
+  flex-direction: row;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  margin-top: 20px;
+  border-style: groove;
+  font-family: 'Playfair Display SC', serif;
+  border-radius: 15px;
+  background-color: #F2F4F4;
+}
+
+.column:hover {
+  color: darkblue;
+  font-size: 120%;
+  transition: 1s;
+}
+
+.wing {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+
+p {
+  line-height: 1.5;
+  font-size: 120%;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: justify;
+  font-family: 'Old Standard TT', serif;
+}
+
+h3 {
+  padding-top: 25px;
+  font-family: 'Sanchez', serif;
+  text-align: center;
+}
+
+#computer-image {
+  margin: auto;
+  display: block;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+ul {
+  line-height: 1.5;
+  font-size: 120%;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: justify;
+  font-family: 'Old Standard TT', serif;
+}
+iframe {
+  display: block;
+  margin:auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border-color: black;
+
+}
+
+#footerheading {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+#videoibm {
+  padding-bottom: : 1em;
+  display: block;
+  width: 1000px;
+  height: 450px;
+
+}
+
+#ibmheading {
+  text-align: center;
+}
+
+/* The Trivia Page Styling */
+
+#cartoon {
+  padding-bottom: 50px;
+}
+
+ul {
+  line-height: 50px;
+}
+
+/* Video Page */
+
+#videosummary {
+  text-align: center;
+}
+
+#youtube {
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}

@@ -122,50 +122,128 @@
 
 // If it's ok to go to the beach with a temperature at least 24 degrees and no more than 8mm of rain, the output of the program should be: Tuesday and Saturday
 
-function beachDay() {
-    const data = {
-        dayName: [{
-            day: "Monday",
-            temp: 20,
-            rain: 12,
-        }, {
-            day: "Tuesday",
-            temp: 25,
-            rain: 6,
-        }, {
-            day: "Wednesday",
-            temp: 27,
-            rain: 24,
-        }, {
-            day: "Thursday",
-            temp: 32,
-            rain: 65,
-        }, {
-            day: "Friday",
-            temp: 18,
-            rain: 2,
-        }, {
-            day: "Saturday",
-            temp: 26,
-            rain: 0,
-        }, {
-            day: "Sunday",
-            temp: 27,
-            rain: 14,
-        }, ],
-    };
+// function beachDay() {
+//   const data = {
+//     dayName: [
+//       {
+//         day: "Monday",
+//         temp: 20,
+//         rain: 12,
+//       },
+//       {
+//         day: "Tuesday",
+//         temp: 25,
+//         rain: 6,
+//       },
+//       {
+//         day: "Wednesday",
+//         temp: 27,
+//         rain: 24,
+//       },
+//       {
+//         day: "Thursday",
+//         temp: 32,
+//         rain: 65,
+//       },
+//       {
+//         day: "Friday",
+//         temp: 18,
+//         rain: 2,
+//       },
+//       {
+//         day: "Saturday",
+//         temp: 26,
+//         rain: 0,
+//       },
+//       {
+//         day: "Sunday",
+//         temp: 27,
+//         rain: 14,
+//       },
+//     ],
+//   };
 
-    // console.log(data.dayName[1].day);
-    // console.log(data.dayName[1].temp);
+//   // console.log(data.dayName[1].day);
+//   // console.log(data.dayName[1].temp);
 
-    let beachDays = [];
+//   let beachDays = [];
 
-    for (let i = 0; i < data.dayName.length; i++) {
-        if (data.dayName[i].temp >= 24 && data.dayName[i].rain < 8) {
-            beachDays.push(data.dayName[i].day);
-        }
-    }
-    console.log(`We can go to the beach on: ${beachDays.join(", ")}.`);
+//   for (let i = 0; i < data.dayName.length; i++) {
+//     if (data.dayName[i].temp >= 24 && data.dayName[i].rain < 8) {
+//       beachDays.push(data.dayName[i].day);
+//     }
+//   }
+//   console.log(`We can go to the beach on: ${beachDays.join(", ")}.`);
+// }
+
+// beachDay();
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------30/09/21------------------------------------
+// Write a function that announces 'Spinning the prize wheel', then randomly chooses a
+// string from the array similar to the one below, and prints it to console.
+
+// const prizes = [ "🚗 New car", "🌴 Holiday", "🥁 Drum machine", "❌ You lose" ]
+
+// Bonus 1:
+
+// Modify the function to remember the prizes the user has won so far, and log them in the ///  console on each spin. If the user spins the wheel and lands on "❌ You lose", laugh at /  them in the console and remove all prizes they have won so far.
+
+// Bonus 2:
+
+// Add a delay between spinning the wheel and showing the results for suspense.
+
+// Bonus 3:
+
+// Play the following sounds when the user spins the wheel, wins and loses: Sounds (see gist for link)
+
+// const prizes = ["🚗 New car", "🌴 Holiday", "🥁 Drum machine", "❌ You lose"];
+
+// const wheelButton = document.getElementById("wheelbutton");
+// const prizeArea = document.getElementById("prize");
+// const prizesWon = [];
+
+// function spinWheel() {
+//   let yourPrize = prizes[Math.floor(Math.random() * prizes.length)];
+
+//   // after click, waits 500ms to select the prize
+//   setTimeout(function () {
+//     document.getElementById("prize").innerText = yourPrize;
+//     if (yourPrize !== "❌ You lose") {
+//       prizesWon.push(yourPrize);
+//       let audio = new Audio("win.wav");
+//       audio.play();
+//     } else {
+//       let audio = new Audio("lose.wav");
+//       audio.play();
+//       // empty array on lose:
+//       prizesWon.length = 0;
+//       console.log(prizesWon);
+//     }
+//   }, 1000);
+
+//   document.getElementById("cache").innerText = prizesWon.join(" \n ");
+//   document.getElementById("prize").innerText = " Spinning... ";
+// }
+
+// wheelButton.addEventListener("click", spinWheel);
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------01/10/21------------------------------------
+// Write a function called mumble that accepts a single string argument:
+
+// The function should return a string that has each character repeated the number of
+// times according to its position within the string argument.Additionally, each
+// repeated section of characters should be separated by a hyphen(-).
+// Bonus: Capitalise the first character e.g. mumble('abc'); //=> 'A-Bb-Ccc'
+
+function mumble(string) {
+  let array = string.split("");
+  let result = [];
+  array.forEach(function (value, i) {
+    result.push(string[i].repeat(i + 1));
+  });
+  return result.join("-");
 }
 
-beachDay();
+console.log(mumble("bears"));
