@@ -23,7 +23,7 @@
 // Create a function called catWalk() that moves the cat 10 pixels to the right of where it started, by changing the "left" style property.
 //
 // Call that function every 50 milliseconds. Your cat should now be moving across the screen from left to right. Hurrah!
-
+//
 const img = document.getElementsByTagName("img")[0];
 img.style.top = "100px";
 img.style.left = "0px";
@@ -35,9 +35,9 @@ const catWalk = function() {
 };
 
 window.setInterval(catWalk, 50);
+// //
+// // Bonus #1: When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever.
 //
-// Bonus #1: When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever.
-
 const img = document.getElementsByTagName("img")[0];
 img.style.top = "100px";
 img.style.left = "0px";
@@ -53,9 +53,9 @@ const catWalk = function() {
 };
 //
 window.setInterval(catWalk, 50);
-
-// Bonus #2: When the cat reaches the right-hand of the screen, make them move backwards instead. They should keep walking back and forth forever and ever.
-
+//
+// // Bonus #2: When the cat reaches the right-hand of the screen, make them move backwards instead. They should keep walking back and forth forever and ever.
+//
 const img = document.getElementsByTagName("img")[0];
 img.style.top = "100px";
 img.style.left = "0px";
@@ -88,48 +88,38 @@ const catWalk = function() {
 window.setInterval(catWalk, 50);
 
 // Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk.
-//Haven't finished yet...
+//setInterval function that moves cat from left to 500px
+//if statement - once we are at 500px, cancel set timeout and run a newfunciton. To make cat dance
+//cat dance function - swap image, run for 10 seconds, after finished run a set interval to move cat from 500px to edge of screen and back
 
 const img = document.getElementsByTagName("img")[0];
 img.style.top = "100px";
 img.style.left = "0px";
 
-const catWalk = function() {
-  const oldLeft = parseInt(img.style.left);
-  let newLeft;
-  const fn = function() {
-    console.log(" ");
-  }
+let newLeft;
+let oldLeft;
 
-  if ( parseInt(img.style.left) < 500 ) {
-    newLeft = oldLeft + 10;
-    img.style.left = newLeft + "px";
-  }
+const catWalk = setInterval(function() {
+  oldLeft = parseInt(img.style.left);
+  newLeft = oldLeft + 10;
+  img.style.left = newLeft + "px";
 
-  if ( parseInt(img.style.left) === 500 ) {
+  if ( newLeft === 500 ) {
+    console.log("console.log();");
+    clearInterval(catWalk);
     img.src = "https://i.pinimg.com/originals/60/58/17/6058177225b8019bb40c365ed178ec77.gif";
     img.style.width = "296px";
     img.style.height = "296px";
-
-    const isStop = setInterval(function(){
+    setInterval(function(){
       img.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
-    }, 10000);
-    clearInterval(isStop);
-      newLeft = oldLeft + 10;
-      img.style.left = newLeft + "px";
+      setInterval(function(){
+        oldLeft = parseInt(img.style.left);
+        newLeft = oldLeft + 10;
+        img.style.left = newLeft + "px";
+      }, 50);
+    }, 1000);
   }
 
-  if ( parseInt(img.style.left) > 500 ) {
-    img.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
-    newLeft = oldLeft + 10;
-    img.style.left = newLeft + "px";
-  }
-
-  if ( parseInt(img.style.left) > (window.innerWidth - img.width) ) {
-    img.style.left = "0px";
-  }
-};
-
-window.setInterval(catWalk, 50);
+}, 50);
 
 // Bonus #4: Pretty much go nuts or whatever.
