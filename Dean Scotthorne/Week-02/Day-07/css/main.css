@@ -1,0 +1,130 @@
+/* * {border: 1px solid green} */
+
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@400;600&display=swap');
+
+body {
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+  font-family: 'Stick No Bills', sans-serif;
+}
+.container {
+  max-width: 960px; /*lazy responsive*/
+  margin: 0 auto; /*center*/
+  background-color: #c0d6e4;
+  padding: 1em; /*chunky pixels*/
+  border-bottom-left-radius: : 1em;
+  border-bottom-right-radius: : 1em;
+}
+nav {
+  text-align: center;
+
+
+}
+nav a {
+  color: #1570860;
+  font-size: 2em;
+  text-decoration: none;
+  margin-left: 1em;
+  font-weight: bold;
+
+}
+nav a:hover {
+  color: aliceblue;
+}
+h1 {
+  text-align: center;
+  background-color: #1578ed;
+  color: #ccc;
+  font-size: 600%;
+  padding: ;
+  text-transform: uppercase;
+  border-bottom-left-radius: 2em;
+  border-top-right-radius: 2em;
+}
+.container h2  {
+  color: white;
+  /* text-align: center; */
+  font-size: 3em;
+  text-shadow: 0px 5px 5px black;
+  margin-top: -10px;
+}
+main {
+  width: 75%;
+  display: inline-block;
+
+}
+main img {
+  display: block; /* */
+  margin: 0 auto;
+}
+aside {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #0ff1ce;
+  border-radius: 0.5em;
+  padding: 1em;
+  box-shadow: 15px 15px 15px black;
+
+}
+aside ul {
+  padding: 1em;
+}
+aside a {
+  font-size: 1.5em;
+  color: #a1045a;
+}
+aside h3 {
+  font-size: 1.75em;
+
+}
+
+h2 {
+  font-size: 1.75em;
+
+}
+div {
+  padding-top: 2em;
+
+}
+
+.p1 {
+  font-size: 20px;
+  text-align: justify;
+}
+.p2 {
+  font-size: 20px;
+  text-align: justify;
+  margin-left: 1em;
+
+}
+.abouth2 {
+  text-align: center;
+  margin-left: 230px;
+}
+.img2 {
+  display: block; /* */
+  margin-left: 12em;;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  line-height: 300px;
+  margin-left: 20em;
+}
+
+
+.spooky span {
+  visibility: hidden;
+}
+
+/* pseudoselector */
+.spooky:hover {
+  background-image: url("https://www.thelovequeen.com/wp-content/uploads/2019/11/capricorn-759379_640-300x300.jpg");
+  width: 300px;
+  height: 300px;
+}
