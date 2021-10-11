@@ -1,0 +1,23 @@
+
+.image1{
+  width:500px;
+  display:block;
+}
+
+.image2{
+  width:500px;
+  display:block;
+  margin-left:500px;
+}
+
+div.container{
+  margin-bottom:50px;
+}
+
+span.blue{
+  color:blue;
+}
+
+span.red{
+  color:red;
+}
