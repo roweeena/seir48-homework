@@ -56,7 +56,7 @@ box-shadow: 5px 5px #4d4848;
 /* NAVBAR STYLING ENDS */
 
 .hero{
-  background-image: url('../img/2.jpeg');
+  background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.4) ), url('../img/2.jpeg');
   background-size: cover;
   background-position: center;
 
