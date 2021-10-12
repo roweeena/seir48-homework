@@ -13,7 +13,7 @@
 //     if (input % 7 == 0) {
 //         string += "Plong";
 //     }
-//     // return as a conditional statement:
+//     // return as a conditional stascorent:
 //     return string || input.toString();
 // }
 
@@ -23,6 +23,7 @@
 
 //////////////////////////////////////////////////////////////////////////
 // ---------------------------23/09/21------------------------------------
+
 // // Warmup - Simon Says
 // // Create a function that takes an input and returns Simon's response as follows:
 // //  Simon answers 'Sure.' if you ask him a question.
@@ -50,6 +51,7 @@
 
 //////////////////////////////////////////////////////////////////////////
 // ---------------------------24/09/21------------------------------------
+
 // // # Leap Year Warmup Exercise
 
 // function isLeapYear() {
@@ -108,86 +110,90 @@
 
 //////////////////////////////////////////////////////////////////////////
 // ---------------------------29/09/21------------------------------------
-// Write a program that, given a minimum temperature and a maximum rainfall forecast, output a list of days you can go to the beach.
+
+// Write a program that, given a minimum temperature and a maximum rainfall forecast, output a list of names you can go to the beach.
 // example:
 // with the following forecast:
 
-// Monday: the temperature is 20 and there is 12mm of rain
-// Tuesday: the temperature is 25 and there is 6mm of rain
-// Wednesday: the temperature is 27 and there is 24mm of rain
-// Thursday: the temperature is 32 and there is 65mm of rain
-// Friday: the temperature is 18 and there is 2mm of rain
-// Saturday: the temperature is 26 and there is 0mm of rain
-// Sunday: the temperature is 27 and there is 14mm of rain
+// Mon: the temperature is 20 and there is 12mm of rain
+// Tues: the temperature is 25 and there is 6mm of rain
+// Wed: the temperature is 27 and there is 24mm of rain
+// Thurs: the temperature is 32 and there is 65mm of rain
+// Fri: the temperature is 18 and there is 2mm of rain
+// Sat: the temperature is 26 and there is 0mm of rain
+// Sun: the temperature is 27 and there is 14mm of rain
 
-// If it's ok to go to the beach with a temperature at least 24 degrees and no more than 8mm of rain, the output of the program should be: Tuesday and Saturday
+// If it's ok to go to the beach with a temperature at least 24 degrees and no more than 8mm of rain,
+// the output of the program should be: Tuesday and Saturday
 
-// function beachDay() {
+// function beachday() {
 //   const data = {
 //     dayName: [
 //       {
-//         day: "Monday",
-//         temp: 20,
+//         name: "Monday",
+//         score: 20,
 //         rain: 12,
 //       },
 //       {
-//         day: "Tuesday",
-//         temp: 25,
+//         name: "Tuesday",
+//         score: 25,
 //         rain: 6,
 //       },
 //       {
-//         day: "Wednesday",
-//         temp: 27,
+//         name: "Wednesday",
+//         score: 27,
 //         rain: 24,
 //       },
 //       {
-//         day: "Thursday",
-//         temp: 32,
+//         name: "Thursday",
+//         score: 32,
 //         rain: 65,
 //       },
 //       {
-//         day: "Friday",
-//         temp: 18,
+//         name: "Friday",
+//         score: 18,
 //         rain: 2,
 //       },
 //       {
-//         day: "Saturday",
-//         temp: 26,
+//         name: "Saturday",
+//         score: 26,
 //         rain: 0,
 //       },
 //       {
-//         day: "Sunday",
-//         temp: 27,
+//         name: "Sunday",
+//         score: 27,
 //         rain: 14,
 //       },
 //     ],
 //   };
 
-//   // console.log(data.dayName[1].day);
-//   // console.log(data.dayName[1].temp);
+//   // console.log(data.dayName[1].name);
+//   // console.log(data.dayName[1].score);
 
-//   let beachDays = [];
+//   let beachdays = [];
 
 //   for (let i = 0; i < data.dayName.length; i++) {
-//     if (data.dayName[i].temp >= 24 && data.dayName[i].rain < 8) {
-//       beachDays.push(data.dayName[i].day);
+//     if (data.dayName[i].score >= 24 && data.dayName[i].rain < 8) {
+//       beachdays.push(data.dayName[i].name);
 //     }
 //   }
-//   console.log(`We can go to the beach on: ${beachDays.join(", ")}.`);
+//   console.log(`We can go to the beach on: ${beachdays.join(", ")}.`);
 // }
 
-// beachDay();
+// beachday();
 
 //////////////////////////////////////////////////////////////////////////
 // ---------------------------30/09/21------------------------------------
 // Write a function that announces 'Spinning the prize wheel', then randomly chooses a
 // string from the array similar to the one below, and prints it to console.
 
-// const prizes = [ "🚗 New car", "🌴 Holiday", "🥁 Drum machine", "❌ You lose" ]
+// const prizes = [ "🚗 New car", "🌴 Holiname", "🥁 Drum machine", "❌ You lose" ]
 
 // Bonus 1:
 
-// Modify the function to remember the prizes the user has won so far, and log them in the ///  console on each spin. If the user spins the wheel and lands on "❌ You lose", laugh at /  them in the console and remove all prizes they have won so far.
+// Modify the function to remember the prizes the user has won so far, and log them in the
+//  console on each spin. If the user spins the wheel and lands on "❌ You lose", laugh at
+//  them in the console and remove all prizes they have won so far.
 
 // Bonus 2:
 
@@ -197,7 +203,7 @@
 
 // Play the following sounds when the user spins the wheel, wins and loses: Sounds (see gist for link)
 
-// const prizes = ["🚗 New car", "🌴 Holiday", "🥁 Drum machine", "❌ You lose"];
+// const prizes = ["🚗 New car", "🌴 Holiname", "🥁 Drum machine", "❌ You lose"];
 
 // const wheelButton = document.getElementById("wheelbutton");
 // const prizeArea = document.getElementById("prize");
@@ -237,13 +243,50 @@
 // repeated section of characters should be separated by a hyphen(-).
 // Bonus: Capitalise the first character e.g. mumble('abc'); //=> 'A-Bb-Ccc'
 
-function mumble(string) {
-  let array = string.split("");
-  let result = [];
-  array.forEach(function (value, i) {
-    result.push(string[i].repeat(i + 1));
-  });
-  return result.join("-");
+// function mumble(string) {
+//   let array = string.split("");
+//   let result = [];
+//   array.forEach(function (value, i) {
+//     result.push(string[i].repeat(i + 1));
+//   });
+//   return result.join("-");
+// }
+
+// console.log(mumble("bears"));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------11/10/21------------------------------------
+//
+// Add scores up to reach a target number, using object.keys:
+
+const allergen = {
+  1: "eggs",
+  2: "peanuts",
+  4: "shellfish",
+  8: "strawberries",
+  16: "tomatoes",
+  32: "chocolate",
+  64: "pollen",
+  128: "cats",
+};
+
+function badFoods(value) {
+  let allergies = [];
+  // Object.entries() method returns an array of a given object's own enumerable
+  // string - keyed property[key, value] pairs.
+  // assigning to two variables at once here:
+  for (const [id, name] of Object.entries(allergen)) {
+    //  console.log(`${id}: ${name}`);
+    if (id & value) {
+      allergies.push(name);
+    }
+  }
+  return allergies;
 }
 
-console.log(mumble("bears"));
+console.log(badFoods(34));
+console.log(badFoods(30));
+console.log(badFoods(13));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------12/10/21------------------------------------
