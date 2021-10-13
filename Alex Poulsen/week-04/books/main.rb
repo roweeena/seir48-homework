@@ -28,7 +28,8 @@ get '/result' do
 
   @book_img = @info["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
   @title = @info["items"][0]["volumeInfo"]["title"]
-  @author = @info["items"][0]["volumeInfo"]['authors']
+  @author = @info["items"][0]["volumeInfo"]['authors'][0]
+  @desc = @info['items'][0]['volumeInfo']['description']
 
   erb :result
 end
