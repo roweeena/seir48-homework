@@ -1,7 +1,7 @@
 require "pry"
 
 # Returns a hash with a count of each nucleotide in a given DNA strand
-def count_nucleotides (dna)
+def count_nucleotides dna
   nucleotides = {}
   dna.each_char { |n| nucleotides[n] = dna.count n }
   nucleotides
