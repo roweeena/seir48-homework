@@ -9,6 +9,13 @@ end
 
 get '/search' do
   response = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=title:#{ params[:query] }")
-  @thumbnail_url = response["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
+  book_info = response["items"][0]["volumeInfo"]
+
+  @title = book_info["title"]
+  @subtitle = book_info["subtitle"]
+  @authors = book_info["authors"].join(', ')
+  @thumbnail_url = book_info["imageLinks"]["thumbnail"]
+
+  binding.pry
   erb :book
 end
