@@ -1,4 +1,6 @@
-<p><%= @title %></p>
-<p><%= @subtitle %></p>
-<p><%= @authors %></p>
-<img src="<%= @thumbnail_url %>" alt="'<%= @title %>' book cover">
+<div class="">
+  <h1 class="title"><%= @title %></h1>
+  <h3 class="author">by <%= @authors %></h3>
+  <p class="description"><%= @description %></p>
+  <img src="<%= @thumbnail_url %>" alt="'<%= @title %>' book cover">
+</div>

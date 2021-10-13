@@ -14,8 +14,9 @@ get '/search' do
   @title = book_info["title"]
   @subtitle = book_info["subtitle"]
   @authors = book_info["authors"].join(', ')
+  @description = book_info["description"]
   @thumbnail_url = book_info["imageLinks"]["thumbnail"]
 
-  binding.pry
+  # binding.pry
   erb :book
 end
