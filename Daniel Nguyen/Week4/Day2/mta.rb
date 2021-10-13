@@ -42,12 +42,12 @@ end
 # Returns an array, with a hash for each leg of the trip
 def plan_trip (line_from, station_from, line_to, station_to)
   if line_from == line_to
-    single_line_trip line_from, station_from, station_to
+    [ single_line_trip(line_from, station_from, station_to) ]
   else
     if station_from == "Union Square"
-      single_line_trip line_to, "Union Square", station_to
+      [ single_line_trip(line_to, "Union Square", station_to) ]
     elsif station_to == "Union Square"
-      single_line_trip line_from, station_from, "Union Square"
+      [ single_line_trip(line_from, station_from, "Union Square") ]
     else
       multi_line_trip line_from, station_from, line_to, station_to
     end
@@ -74,4 +74,4 @@ def log_trip (trip)
   puts "#{ total_stops } stops in total."
 end
 
-# binding.pry
+binding.pry
