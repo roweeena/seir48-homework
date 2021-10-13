@@ -28,3 +28,7 @@ end
 get '/new_feature' do
   erb :new_feature
 end
+
+get '/beck' do
+  erb :beck
+end
