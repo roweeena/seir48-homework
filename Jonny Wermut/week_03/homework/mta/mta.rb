@@ -85,19 +85,26 @@ def directions (l1, s1, l2, s2)
   end
 end
 
-puts 'What line are you on?'
-line1 = gets.chomp.to_s
-puts 'Which station are you at?' 
-station1 = gets.chomp.to_s
-puts 'Which line do you need to be on?'
-line2 = gets.chomp.to_s
-puts 'Which station are you trying to get to?' 
-station2 = gets.chomp.to_s
+def directMe
+  puts 'What line are you on?'
+  line1 = gets.chomp.to_s
+  puts 'Which station are you at?' 
+  station1 = gets.chomp.to_s
+  puts 'Which line do you need to be on?'
+  line2 = gets.chomp.to_s
+  puts 'Which station are you trying to get to?' 
+  station2 = gets.chomp.to_s
+  directions line1, station1, line2, station2
+  puts 'Would you like to travel again?'
+  ta = gets.chomp.to_s
+  if ta == 'y' || ta =='yes'
+    directMe
+  else
+    puts 'Thanks for using Jwow directions'
+  end
+end
 
-directions line1, station1, line2, station2
-
-
-binding.pry
+directMe
 
 
 
