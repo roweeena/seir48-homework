@@ -1,0 +1,60 @@
+/*
+
+## Style Hints:
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+img {
+  display: block;
+  margin: 0 0 6px 0;
+  max-width: 885px;
+
+}
+
+.logo-Brook-Lyn {
+  margin: 0 0 20px 0;
+}
+
+.logos {
+  display: inline-block;
+  width: 200px;
+  height: auto;
+  border: solid grey 3px;
+  position: static;
+  margin: 0 auto;
+}
+
+#container {
+margin: 30px 25% 30px 15%;
+font-family: "Times New Roman", serif;
+color: #656565;
+max-width: 100%;
+}
+
+
+.wording {
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.date {
+  color: #74b6de;
+  margin: 0;
+}
+
+p.margin {
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+p.margin , p.date {
+  max-width: 885px
+  text-align: justify;
+  font-size: 10px;
+}

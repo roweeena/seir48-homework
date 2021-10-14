@@ -50,4 +50,3 @@ const spinWheel = function () {
 
 
 document.getElementById("spin").addEventListener("click", spinWheel);
-document.getElementById("spin").addEventListener("click", spinSound.play);
