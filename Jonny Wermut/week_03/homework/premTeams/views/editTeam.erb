@@ -1,0 +1,17 @@
+<h1> Edit team </h1>
+
+<form action="/teams/edit/<%= @info["id"] %>" method="post">
+	<label>Name
+		<input name="name" type="text" value="<%= @info["name"] %>" required>
+	</label>
+	<label>Manager
+		<input name="manager" type="text" value="<%= @info["manager"] %>" required>
+	</label>
+	<label>City
+		<input name="city" type="text" value="<%= @info["city"] %>" required>
+	</label>
+	<label>Logo
+		<input name="logo" type="url" value="<%= @info["logo"] %>">
+	</label>
+	<button>Update team</button>
+</form>
