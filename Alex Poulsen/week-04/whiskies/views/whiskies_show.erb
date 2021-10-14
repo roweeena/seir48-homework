@@ -1,0 +1,13 @@
+<h1> <%=@whisky['distillery'] %> <%=@whisky['name'] %></h1>
+
+<h2>ABV%: <%= @whisky['abv'] %></h2>
+<h2>Location: <%= @whisky['location'] %></h2>
+
+<% unless @whisky['image'].nil? || @whisky['image'].empty? %>
+<img src="<%= @whisky['image'] %>" alt=" <%= @whisky['name'] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/whiskies/<%=@whisky['id']%>/edit">Edit Whisky</a>
+  <a href="/whiskies/<%=@whisky['id']%>/delete">Delete Whisky</a>
+</div>

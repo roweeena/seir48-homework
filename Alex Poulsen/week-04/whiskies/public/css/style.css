@@ -1,0 +1,18 @@
+body {
+  background-color: #555;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0.5em;
+  padding: 1em;
+  min-height: 80vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
