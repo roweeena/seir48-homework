@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: black;
+  margin: 0 auto;
+  height: 90vh;
+  padding: 10px;
+  text-align: center;
+}
+
+p {
+  color: white;
+}
+
+button {
+  background-color: green;
+  border-radius: 4px;
+}

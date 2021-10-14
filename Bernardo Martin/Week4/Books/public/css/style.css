@@ -1,0 +1,15 @@
+body {
+  background-image: url('https://www.theyellowsparrow.com/wp-content/uploads/2016/10/bk-1050x656.jpg');
+  background-size: cover;
+}
+
+.container {
+  background-color: rgba(255, 0, 0, 0.67);
+  margin: 15px -70px;
+  padding: 1em;
+  text-align: center;
+  width: 960px;
+  height: 90vh;
+  border-radius: 8px;
+
+}
