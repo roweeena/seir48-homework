@@ -9,7 +9,7 @@ end
 # INDEX
 get '/films' do
   @films = query_db 'SELECT * FROM films ORDER BY rating DESC'
-  erb :film_index
+  erb :films_index
 end
 
 # NEW
@@ -37,7 +37,7 @@ end
 
 # UPDATE
 post '/films/:id' do
-  query_db "UPDATE films SET title='#{ params[:title]}', director='#{ params[:director] }', year='#{ params[:year] }', description='#{ params[:description] }', rating='#{ params[:rating] }' WHERE id=#{ params[:id] }"
+  query_db "UPDATE films SET title='#{ params[:title]}', director='#{ params[:director] }', year='#{ params[:year].to_i }', description='#{ params[:description] }', rating='#{ params[:rating] }' WHERE id=#{ params[:id].to_f }"
   redirect to "/films/#{ params[:id] }"
 end
 
