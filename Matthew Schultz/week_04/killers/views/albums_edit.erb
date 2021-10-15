@@ -1,0 +1,26 @@
+<h1>Edit Album</h1>
+
+<form action='/albums/<%=@album['id']%>' method="post">
+  <label>
+    Name:
+    <input name="name" value="<%= @album['name'] %>" required>
+  </label><br>
+
+  <label>
+    Year:
+    <input name="year" value="<%= @album['year'] %>">
+  </label><br>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @album['image'] %>">
+  </label><br>
+
+  <label>
+    Song:
+    <input type="url" name="song" value="<%= @album['song'] %>">
+  </label><br><br>
+
+  <button>Save changes</button>
+
+</form>
