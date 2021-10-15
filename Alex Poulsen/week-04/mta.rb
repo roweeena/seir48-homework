@@ -38,9 +38,8 @@ def single_line(line, start, stop)
 
   end
 
-
-
   return journey_array
+  
 end
 
 def journey_planner (start_line, start, stop_line, stop)
