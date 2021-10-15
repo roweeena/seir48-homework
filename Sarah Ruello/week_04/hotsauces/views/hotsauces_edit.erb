@@ -1,0 +1,28 @@
+<h2>Edit sauce</h2>
+<h3>Did ya funk it up?</h3>
+ <!-- <%= %> echoing tag ----->
+<!-- <% %>  non-echoing tag -->
+
+<form action="/hotsauces/<%= @hotsauce["id"] %>" method="post">
+    <label>
+    Name:
+    <input name="name" placeholder="Sauce Name" required value="<%= @hotsauce["name"] %>">
+    </label>
+    
+    <label>
+    Pepper:
+    <input name="pepper" placeholder="Base Pepper" value="<%= @hotsauce["pepper"] %>">
+    </label>
+
+    <label>
+    Spice Level:
+    <input name="spice_level" placeholder="1-5" value="<%= @hotsauce["spice_level"] %>">
+    </label>
+
+    <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @hotsauce["image"] %>">
+    </label>
+
+    <button>Update</button>
+</form>
