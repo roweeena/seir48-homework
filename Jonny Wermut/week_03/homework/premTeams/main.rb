@@ -2,15 +2,97 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'mydatabase.sqlite3'
+)
+
+# Optional bonus:
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
+# Model: class backed by a database table
+class Team < ActiveRecord::Base
+	has_many :players
+end
+
+class Player <ActiveRecord::Base
+	belongs_to :teams
+end 
 
 get '/' do
-	@teams = query "SELECT * FROM teams"
+	@teams = Team.all
 	@teams
 	erb :home 
 end
 
+get '/players' do
+	@players = Player.all
+	@players
+	erb :allPlayers 
+end
+
+get '/players/add' do
+	erb :addPlayer
+end
+
+post '/players/add' do
+	player = Player.new
+	player.name = params[:name]
+	player.team_id = params[:teamId]
+	player.goals = params[:goals]
+	player.assists = params[:assists]
+	player.goalVideo = params[:bestGoal]
+
+	player.save
+	redirect to ('/players')
+
+	erb :addPlayer
+end
+
+get '/players/edit/:id' do
+	@player = Player.find params[:id]
+	erb :editPlayer
+end
+
+post '/players/edit/:id' do
+	player = Player.find params[:id]
+	player.name = params[:name]
+	player.team_id = params[:teamId]
+	player.position = params[:position]
+	player.goals = params[:goals]
+	player.assists = params[:assists]
+	player.goalVideo = params[:bestGoal]
+
+	player.save
+
+	redirect to ("/players/#{params[:id]}")
+	erb :editPlayer
+end
+
+get '/players/delete/:id' do
+	Player.destroy params[:id]
+	redirect to ('/players')
+	erb :playerDetails
+end
+
+
+get '/players/:id' do
+	@player = Player.find params[:id]
+	@player
+	erb :playerDetails 
+end
+
 post '/' do
-	query "INSERT INTO teams (id, name, manager, city, logo) VALUES ('#{params[:id]}', '#{params[:name]}', '#{params[:manager]}', '#{params[:city]}', '#{params[:logo]}')"
+	team = Team.new
+	team.id = params[:id]
+	team.name = params[:name]
+	team.manager = params[:manager]
+	team.city = params[:city]
+	team.logo = params[:logo]
+
+	team.save
 	redirect to ('/')
 	erb :addTeam
 end
@@ -20,26 +102,31 @@ get '/teams/add' do
 end
 
 get '/teams/edit/:id' do
-	@info = query "SELECT * FROM teams WHERE id=#{params[:id]}"
-	@info = @info.first
+	@info = Team.find params[:id]
 	erb :editTeam
 end
 
 get '/teams/delete/:id' do
-	query "DELETE FROM teams WHERE id = #{params[:id]}"
+	Team.destroy params[:id]
 	redirect to ("/")
 	erb :team
 end
 
 post '/teams/edit/:id' do
-	query "UPDATE teams SET name = '#{params[:name]}', manager = '#{params[:manager]}', city = '#{params[:city]}', logo = '#{params[:logo]}' WHERE id = #{params[:id]}"
+	team = Team.find params[:id]
+	team.name = params[:name]
+	team.manager = params[:manager]
+	team.city = params[:city]
+	team.logo = params[:logo]
+
+	team.save
+
 	redirect to ("/teams/#{params[:id]}")
 	erb :editTeam
 end
 
 get '/teams/:id' do
-	@team = query "SELECT * FROM teams WHERE id=#{params[:id]}"
-	@team = @team.first
+	@team = Team.find params[:id]
 	erb :team 
 end
 

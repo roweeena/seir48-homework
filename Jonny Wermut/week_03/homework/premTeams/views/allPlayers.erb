@@ -1,0 +1,9 @@
+<h1>All Players</h1>
+
+<% @players.each do |player| %>
+	<a href="/players/<%= player.id %>"> 
+	<p> <%= player.name %> </p>
+	</a>
+<% end %>
+
+<a href="/players/add"><button>Add a new player</button></a>
