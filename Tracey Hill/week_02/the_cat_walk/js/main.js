@@ -31,7 +31,7 @@ const img = document.getElementsByTagName('img')[0];
 img.style.position = 'absolute';
 img.style.left = '0px';
 img.style.transform = 'scaleX(1)';
-const windowWidth = window.innerWidth - 50;
+const windowWidth = window.innerWidth - 200;
 let goingRight = true;
 
 const catWalk = function () {
@@ -55,10 +55,14 @@ const catWalk = function () {
 
 setInterval(catWalk, 20);
 
-// - Bonus #1: When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever. 
 
-// - Bonus #2: When the cat reaches the right-hand of the screen, make them move backwards instead. They should keep walking back and forth forever and ever. 
+// - ✅️ Bonus #1: When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever. 
 
-// - Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk.
+// - ✅️ Bonus #2: When the cat reaches the right-hand of the screen, make them move backwards instead. They should keep walking back and forth forever and ever. 
 
-// - Bonus #4: Pretty much go nuts or whatever.
+// - ❌️ Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk. Didn't attempt, decided to do bonus 4 and make it a more like an art work.
+
+// - ✅️ Bonus #4: Pretty much go nuts or whatever. - Put a background of Hobart, reduced the size of the cat. Still working on making the Hobart illustration fit into whatever the screensize is and the cat appear at the appropriate place on the page for walking across the.
+
+// Done - ✅️ 
+// Not done - ❌️
