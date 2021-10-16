@@ -1,0 +1,17 @@
+<h1>Edit Selected City</h1>
+<form action="/cities/<%= @city["id"]%>" method="post">
+    <label for="">
+    name : <input name="name" type="text" placeholder="city's name" required value="<%= @city["name"]%>">
+    </label>
+    <label for="">
+    Location:
+    <input name="country" type="text" placeholder="Write country" required value="<%= @city["country"]%>">
+    </label>
+    <label for="">
+    Image:
+    <input name="image" type="url" placeholder="http://.." required value="<%= @city["image"]%>">
+    </label>
+    <button>Edit the city</button>
+
+
+</form>

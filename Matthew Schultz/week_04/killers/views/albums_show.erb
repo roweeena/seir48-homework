@@ -1,0 +1,19 @@
+<h1><%= @album["name"] %></h1>
+
+<% unless @album["image"].nil? || @album["image"].empty? %>
+  <img src='<%= @album['image']%>' class='center' style='width: 500px'>
+<%end%>
+
+<h2><%= @album["year"] %></h2>
+
+<% unless @album["song"].nil? || @album["song"].empty? %>
+  <p>Best song from the album:</p>
+  <iframe width="600" height="400"
+  src="<%= @album['song'] %>" class='center'>
+  </iframe>
+<%end%>
+
+<div class='controls'>
+  <a href="/albums/<%= @album['id'] %>/edit">Edit album</a>
+  <a href="/albums/<%= @album['id'] %>/delete">Delete album</a>
+</div>
