@@ -28,14 +28,14 @@ end
 
 # SHOW - a single hotsauce:
 get '/hotsauces/:id' do
-    hotsauces = query_db "SELECT * FROM hotsauces WHERE id=#{params[:id]}"
+    hotsauces = query_db "SELECT * FROM hotsauces WHERE id=#{params[:id.to_i]}" # makes it safer from SQL injection
     @hotsauce = hotsauces.first #extract first hotsauce from array   
     erb :hotsauces_show
 end
 
 # EDIT - a single hotsauce:
 get '/hotsauces/:id/edit' do
-    hotsauces = query_db "SELECT * FROM hotsauces WHERE id=#{params[:id]}"
+    hotsauces = query_db "SELECT * FROM hotsauces WHERE id=#{params[:id.to_i]}"
     @hotsauce = hotsauces.first #extract first hotsauce from array   
     erb :hotsauces_edit
 end    
@@ -48,7 +48,7 @@ end
 
 # DELETE - deletes hotsauce:
 get '/hotsauces/:id/delete' do 
-    query_db "DELETE FROM hotsauces WHERE id=#{ params[:id] }"
+    query_db "DELETE FROM hotsauces WHERE id=#{ params[:id.to_i] }"
     redirect to("/hotsauces")
 end
 
