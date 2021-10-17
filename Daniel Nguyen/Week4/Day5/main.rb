@@ -82,12 +82,20 @@ end
 # SONGS: =======================================================================
 
 # INDEX
+get '/songs' do
+  @songs = Song.all
+  erb :songs_index
+end
 
 # NEW
 
 # CREATE
 
 # SHOW
+get '/songs/:id' do
+  @song = Song.find params[:id]
+  erb :songs_detail
+end
 
 # EDIT
 

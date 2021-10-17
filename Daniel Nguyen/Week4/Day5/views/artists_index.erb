@@ -1,5 +1,9 @@
 <h1>All Artists</h1>
 
+<form action="/artists/new">
+  <input type="submit" value="+ Add new artist" />
+</form>
+
 <% @artists.each do |artist| %>
   <p>
     <a href="/artists/<%= artist.id %>"><%= artist.name %></a>

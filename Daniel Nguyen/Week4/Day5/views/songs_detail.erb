@@ -1,0 +1,18 @@
+<h1><%= @song.title %></h1>
+
+<p>Artist: <%= @song.artist %></p>
+
+<p>Album: <%= @song.album %></p>
+
+<p>Length: <%= @song.length %> seconds</p>
+
+<p>Released: <%= @song.year %></p>
+
+<% unless @song.url.nil? %>
+  <iframe width="560" height="315" src="<%= @song.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
+
+<div class="controls">
+  <a href="/songs/<%= @song.id %>/edit">Edit</a>
+  <a href="/songs/<%= @song.id %>/delete">Delete</a>
+</div>
