@@ -1,0 +1,12 @@
+<h1>All Albums</h1>
+
+<% @albums.each do |album| %>
+  <p>
+    <a href="/albums/<%= album.id %>">
+      <%= album.name %>
+    </a>
+      <% if album.thumbs_up == 1 %>
+        <span>| 👍</span>
+      <% end %>
+  </p>
+<% end %>
