@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+
+body {
+    background-color: rgb(206, 206, 206);
+    font-family: 'Scheherazade New', serif;
+}
+
+.title {
+    text-align: center;
+    background-color: #222;
+    color: #ccc;
+    border-radius: 1em;
+}
+
+.backIcon {
+    vertical-align: top;
+    margin: 0 auto;
+    min-height: 200px;
+    max-height: 500px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+}
+
+.container {
+    max-width: 1000px;
+    border-radius: 1em;
+    padding: 10px 20px 0px 20px;
+    margin: 0 auto;
+    background-color: grey;
+    position: relative;
+    padding-bottom: 5em;
+}
+
+.bio p {
+    position: relative;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: rgb(255, 82, 82);
+}
+  
+.bio {
+    width: 75%;
+    display: inline-block;
+}
+
+.bio img {
+    width: 75%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+aside {
+    width: 24%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: beige;
+    border-radius: 1em;
+    min-height: 800px;
+}
+
+aside h2 {
+    padding: 0px 20px;
+}
+
+aside p {
+    padding: 0px 20px;
+}

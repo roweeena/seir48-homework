@@ -11,17 +11,13 @@ function findLocationIndex(startLine, startName) {
                 return i;
             }
         }
-    }
-
-    else if (startLine === "L") {
+    } else if (startLine === "L") {
         for (let i = 0; i < lineL.length; i++) {
             if (lineL[i] === startName) {
                 return i;
             }
         }
-    }
-
-    else {
+    } else {
         for (let i = 0; i < line6.length; i++) {
             if (line6[i] === startName) {
                 return i;
@@ -95,9 +91,7 @@ function findJoiningStations(primaryLine, primaryIndex, primaryCommonIndex) {
             }
 
             return stations;
-        }
-
-        else if (primaryIndex > primaryCommonIndex) {
+        } else if (primaryIndex > primaryCommonIndex) {
 
             for (let j = primaryCommonIndex; j < primaryIndex + 1; j++) {
                 stations.push(" " + lineN[j]);
@@ -114,9 +108,7 @@ function findJoiningStations(primaryLine, primaryIndex, primaryCommonIndex) {
             }
 
             return stations;
-        }
-
-        else if (primaryIndex > primaryCommonIndex) {
+        } else if (primaryIndex > primaryCommonIndex) {
 
             for (let j = primaryCommonIndex; j < primaryIndex + 1; j++) {
                 stations.push(" " + lineL[j]);
@@ -133,9 +125,7 @@ function findJoiningStations(primaryLine, primaryIndex, primaryCommonIndex) {
             }
 
             return stations;
-        }
-
-        else if (primaryIndex > primaryCommonIndex) {
+        } else if (primaryIndex > primaryCommonIndex) {
 
             for (let j = primaryCommonIndex; j < primaryIndex + 1; j++) {
                 stations.push(" " + line6[j]);
@@ -172,6 +162,7 @@ function planTrip(destinations) {
     console.log(`You must travel through the following stops on the ${startingLine} line: ${startingStations}.`);
     console.log(`Change at ${commonPoint}.`);
     console.log(`Your journey continues through the following stops: ${secondaryStations}.`);
+    console.log(`This is a total of ${startingStations.length + secondaryStations.length} stops`)
 }
 
 
