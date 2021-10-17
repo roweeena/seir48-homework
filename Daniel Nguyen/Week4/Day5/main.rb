@@ -37,6 +37,18 @@ get '/users/new' do
   erb :users_new
 end
 
+# CREATE
+post '/users' do
+  user = User.create(
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    email: params[:email],
+    image: params[:image]
+  )
+
+  redirect to('/users')
+end
+
 # SHOW
 get '/users/:id' do
   @user = User.find params[:id]
