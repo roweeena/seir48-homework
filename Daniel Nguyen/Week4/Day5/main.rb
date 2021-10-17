@@ -88,8 +88,23 @@ get '/songs' do
 end
 
 # NEW
+get '/songs/new' do
+  erb :songs_new
+end
 
 # CREATE
+post '/songs' do
+  song = Song.create(
+    title: params[:title],
+    artist: params[:artist],
+    album: params[:album],
+    year: params[:year],
+    length: params[:length],
+    url: params[:url],
+  )
+
+  redirect to("/songs/#{ song.id }")
+end
 
 # SHOW
 get '/songs/:id' do

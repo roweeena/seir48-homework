@@ -4,7 +4,7 @@
 
 <p>Album: <%= @song.album %></p>
 
-<p>Length: <%= @song.length %> seconds</p>
+<p>Length: <% unless @song.length.nil? %><%= @song.length %> seconds<% end %></p>
 
 <p>Released: <%= @song.year %></p>
 
