@@ -113,10 +113,32 @@ get '/songs/:id' do
 end
 
 # EDIT
+get '/songs/:id/edit' do
+  @song = Song.find params[:id]
+  erb :songs_edit
+end
 
 # UPDATE
+post '/songs/:id' do
+  song = Song.find params[:id]
+  song.title = params[:title]
+  song.artist = params[:artist]
+  song.album = params[:album]
+  song.year = params[:year]
+  song.length = params[:length]
+  song.url = params[:url]
+
+  song.save
+
+  redirect to("/songs/#{ song.id }")
+end
 
 # DELETE
+get '/songs/:id/delete' do
+  song = Song.find params[:id]
+  song.destroy
+  redirect to('/songs')
+end
 
 after do
   ActiveRecord::Base.connection.close
