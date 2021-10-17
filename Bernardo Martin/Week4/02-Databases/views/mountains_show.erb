@@ -1,0 +1,15 @@
+<h1><%=@mountain.name%>'s Information:</h1>
+<ul class="mountain_info">
+  <li> Name: <%=@mountain.name%> </li>
+  <li> Location: <%=@mountain.location%> </li>
+  <li> Meters above sea level: <%=@mountain.height%> </li>
+
+  <img src="<%=@mountain.image%>" alt="<%=@mountain.name%>">
+</ul>
+
+<div class="second_nav">
+
+
+<a href="/mountains/<%=@mountain.id%>/edit"> Edit </a>
+<a href="/mountains/<%=@mountain.id%>/delete"> Delete </a>
+</div>

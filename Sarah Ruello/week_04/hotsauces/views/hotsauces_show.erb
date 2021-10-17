@@ -1,0 +1,26 @@
+
+<h3 display="inline-block">Name: </h3> <%= @hotsauce["name"] %>
+
+<h3>Pepper: </h3> <%= @hotsauce["pepper"] %> 
+
+<h3>Heat level: </h3>
+
+<!-- loop to print integer * emojis -->
+<% i = 0 %>
+ <% for i in 1..@hotsauce["spice_level"] %>
+   🌶️
+<% end %>
+
+
+<!-- prevent broken empty img tags displaying-->
+<% unless @hotsauce["image"].nil? || @hotsauce["image"].empty? %>
+    <h3>Image: </h3> <img src="<%= @hotsauce["image"] %>" alt="<%= @hotsauce["name"] %>" width="200">
+<% end %>
+
+<!-- <%= %> echoing tag ----->
+<!-- <% %> non-echoing tag -->
+
+<div class="controls">
+    <a href="/hotsauces/<%= @hotsauce["id"] %>/edit">Edit hotsauce</a>  · 
+    <a href="/hotsauces/<%= @hotsauce["id"] %>/delete">Delete hotsauce</a>
+</div>    

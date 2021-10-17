@@ -1,0 +1,11 @@
+<h1>Info about <%= @country["name"] %></h1>
+<ul>
+  <li>Name: <%= @country["name"] %></li>
+  <li>Language: <%= @country["language"] %></li>
+  <li>Population: <%= @country["population"] %></li>
+  <%unless @country["flag"].nil? || @country["flag"].empty?%>
+    <img src="<%=@country["flag"]%>" alt="<%=@country["name"]%>">
+  <%end%>
+</ul>
+<a href="/countries/<%=@country["id"]%>/edit">Edit Info</a>
+<a href="/countries/<%=@country["id"]%>/delete">Delete Country</a>

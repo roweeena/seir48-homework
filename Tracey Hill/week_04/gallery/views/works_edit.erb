@@ -1,0 +1,25 @@
+<h1> Edit work</h1>
+
+<form action="/works/<%= @work.id %>" method="post">
+    <label>
+        Title:
+    </label>
+    <input name="title" placeholder="Near Heidelberg" required value="<%= @work.title %>">
+    <label>
+        Artist:
+    </label>
+    <input name="artist" placeholder="A. Streeton" value="<%= @work.artist %>">
+    <label>
+        Medium:
+    </label>
+    <input name="medium" placeholder="Oil on canvas" value="<%= @work.medium %>">
+    <label>
+        URL:
+    </label>
+    <input type="url" name="image" placeholder="http://"value="<%= @work.image %>">
+
+<button>Update work</button>        
+
+</form>
+
+
