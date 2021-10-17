@@ -55,10 +55,29 @@ get '/artists/:id' do
 end
 
 # EDIT
+get '/artists/:id/edit' do
+  @artist = Artist.find params[:id]
+  erb :artists_edit
+end
 
 # UPDATE
+post '/artists/:id' do
+  artist = Artist.find params[:id]
+  artist.name = params[:name]
+  artist.genres = params[:genres]
+  artist.image = params[:image]
+
+  artist.save
+
+  redirect to("/artists/#{ artist.id }")
+end
 
 # DELETE
+get 'artists/:id/delete' do
+  artist = Artist.find params[:id]
+  artist.destroy
+  redirect to('/artists')
+end
 
 # SONGS: =======================================================================
 

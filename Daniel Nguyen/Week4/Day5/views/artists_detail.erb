@@ -3,3 +3,8 @@
 <p>Genres: <%= @artist.genres %></p>
 
 <img src="<%= @artist.image %>" alt="[<%= @artist.name %>'s image]">
+
+<div class="controls">
+  <a href="/artists/<%= @artist.id %>/edit">Edit</a>
+  <a href="">Delete</a>
+</div>
