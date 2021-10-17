@@ -33,8 +33,9 @@ get '/users' do
 end
 
 # NEW
-
-# CREATE
+get '/users/new' do
+  erb :users_new
+end
 
 # SHOW
 get '/users/:id' do
