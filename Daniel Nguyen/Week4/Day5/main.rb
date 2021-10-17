@@ -27,12 +27,32 @@ end
 # ARTISTS: =====================================================================
 
 # INDEX
+get '/artists' do
+  @artists = Artist.all
+  erb :artists_index
+end
 
 # NEW
+get '/artists/new' do
+  erb :artists_new
+end
 
 # CREATE
+post '/artists' do
+  artist = Artist.create(
+    name: params[:name],
+    genres: params[:genres],
+    image: params[:image],
+  )
+
+  redirect to("/artists/#{ artist.id }")
+end
 
 # SHOW
+get '/artists/:id' do
+  @artist = Artist.find params[:id]
+  erb :artists_detail
+end
 
 # EDIT
 
