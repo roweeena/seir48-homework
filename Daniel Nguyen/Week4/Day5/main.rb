@@ -73,7 +73,7 @@ post '/artists/:id' do
 end
 
 # DELETE
-get 'artists/:id/delete' do
+get '/artists/:id/delete' do
   artist = Artist.find params[:id]
   artist.destroy
   redirect to('/artists')
