@@ -1,0 +1,22 @@
+<h1><%= @duelist.name %></h1>
+
+<ul>
+  <li>Age: <%= @duelist.age %></li>
+  <li>Gender: <%= @duelist.gender %></li>
+  <li>Monster cards owned:
+    <ul>
+      <% @duelist.monsters.each do |monster|%>
+        <li><a href="/monsters/<%= monster.id %>"><%= monster.name %></a></li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
+
+<% unless @duelist.image.nil? || @duelist.image.empty? %>
+  <img src="<%= @duelist.image %>" alt="<%= @duelist.name %>">
+<% end %>
+
+<div class="controls">
+  <a href="/duelists/<%= @duelist.id %>/edit">Edit duelist</a>
+  <a href="/duelists/<%= @duelist.id %>/delete">Delete duelist</a>
+</div>
