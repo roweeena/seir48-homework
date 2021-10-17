@@ -1,0 +1,60 @@
+If we start with this HTML...
+<a id="yahoo" href="http://www.yahoo.com" style="font-size:20px;">Yahoo!</a>
+
+We can find it...
+$('a#yahoo');
+
+We can store it...
+var myLink = $('a#yahoo');
+
+
+...And we can find out lots of things about it:
+
+myLink.html(); → 'Yahoo!'
+myLink.attr('href'); → 'http://www.yahoo.com'
+myLink.css('font-size'); → '20px'
+
+Changing Elements
+If we start with this HTML:
+<a href="http://www.google.com">Google</a>
+
+We can use this jQuery:
+
+$('a').html('Yahoo!');
+$('a').attr('href', 'http://www.yahoo.com');
+$('a').css({'color': 'purple'});
+
+And we'll get this:
+<a href="http://www.yahoo.com" style="color:purple">Yahoo</a>
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Step 1: Create element and store a reference:
+var p = $('<p>')
+
+Step 2: Use a method to manipulate (optional)
+p.addClass('special');
+
+Step 3: Inject into your HTML:
+$('body').append(p);
+
+jQuery:
+Create and Store
+Pass in any HTML string and jQuery will create it and return it as a jQuery object.
+
+With this jQuery...		We create this HTML:
+$('<p>'); → <p></p>
+$('<p>Welcome!</p>'); → <p>Welcome!</p>
+$('<p class="intro">Welcome!</p>'); → <p class="intro">Welcome!</p>
+
+Just like with the DOM API, we can store a reference to our new element in memory...
+
+var myParagraph = $('<p class="intro">Welcome!</p>');
+jQuery:
+
+
+Manipulate:
+Now that we've stored a reference, we can make further revisions to our element.
+
+var myParagraph = $('<p class="intro">Welcome!</p>');
+myParagraph.css('font-size','4em');
+

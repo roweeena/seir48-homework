@@ -1,0 +1,11 @@
+<div class="card">
+<div class="titles">
+    <h3>Name of the City:  &nbsp<span><%= @city["name"]%> </span></h3>
+    <h3>Location of the City: &nbsp <span><%=@city["country"]%> </span></h3>
+        <div class="control">
+            <a href="/cities/<%= @city["id"]%>/edit">Edit the city</a>
+            <a href="/cities/<%= @city["id"]%>/delete">Delete the city</a>
+        </div>
+</div>
+<img src="<%=@city["image"]%>" alt="">
+</div>

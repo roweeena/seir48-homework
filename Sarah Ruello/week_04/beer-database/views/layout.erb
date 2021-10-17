@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>The wonderful world of Beer.</title>
+</head>
+
+<body>
+
+<div class="main">
+<nav>
+    <a href="/beers">All beers</a> ⋅ 
+    <a href="/beers/new">New beer</a> ⋅ 
+    <a href="/styles">All styles</a> ⋅ 
+    <a href="/styles/new">New style</a> ⋅ 
+    <a href="/">Home</a>
+</nav>
+
+    <h1>Beers 🍺</h1>
+<div class="flex-container">
+  <div class="flex-child col1">
+    <h2>All Beers</h2>
+
+    <% @beers.each do |beer| %>
+        <p><a href=/beers/<%= beer["id"] %>><%= beer["name"] %></a></p> 
+    <% end %>
+
+      <h2>All Styles</h2>
+    <% @styles.each do |style| %>
+        <p><a href=/styles/<%= style["id"] %>><%= style["name"] %></a></p> 
+    <% end %>
+  </div>
+  
+  <div class="flex-child col2">
+    <!---------------------Dynamic Content Starts------------------------>
+    <%= yield %>
+    <!---------------------Dynamic Content Ends-------------------------->
+
+  </div>
+  
+</div>
+</div>
+
+</body>
+
+</html>

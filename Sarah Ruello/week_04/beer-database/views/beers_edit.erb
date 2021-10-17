@@ -1,0 +1,50 @@
+<h2>Edit beer</h2>
+ <!-- <%= %> echoing tag ----->
+<!-- <% %>  non-echoing tag -->
+
+<form action="/beers/<%= @beer["id"] %>" method="post">
+    <p>
+    <label>
+    <span class="label-name">Name:</span>
+    <input name="name" placeholder="Beer name" required>
+    </label> 
+    </p>
+
+    <p>
+    <label>
+        <span class="label-name">Brand:</span>
+    <input name="brand" placeholder="Brand name">
+    </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">Style:</span>
+    <input name="style_id" placeholder="Style e.g. IPA, Stout...">
+    </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">ABV:</span>
+    <input name="abv" placeholder="0.0%">
+    </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">Country:</span>
+    <input name="country" placeholder="Country">
+    </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">Image:</span>
+    <input type="url" name="image" placeholder="http://...">
+    </label>
+    </p>
+
+    <button>Update</button>
+</form>
+
