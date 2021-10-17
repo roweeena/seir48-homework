@@ -1,0 +1,10 @@
+<h1> <%= @artist.name %></h1>
+
+<% unless @artist.name.nil? || @artist.name.empty? %>
+<img src="<%= @artist.image %>" alt="<%= @artist.name %>">
+<% end %>
+
+<div class="controls">
+    <a href="/artists/<%= @artist.id %>/edit">Edit artist</a>
+    <a href="/artists/<%= @artist.id %>/delete">Delete artist</a>
+</div>
