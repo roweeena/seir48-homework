@@ -1,0 +1,35 @@
+<h1>Edit song</h1>
+
+<form action="/songs/<%= @song.id %>" method="post">
+  <label>
+    Title:
+    <input name="title" required value="<%= @song.title %>">
+  </label>
+
+  <label>
+    Artist:
+    <input name="artist" required value="<%= @song.artist %>">
+  </label>
+
+  <label>
+    Album:
+    <input name="album" value="<%= @song.album %>">
+  </label>
+
+  <label>
+    Year:
+    <input type="number" name="year" placeholder="Year released" value="<%= @song.year %>">
+  </label>
+
+  <label>
+    Length:
+    <input type="number" name="length" placeholder="Song length in seconds" value="<%= @song.length %>">
+  </label>
+
+  <label>
+    YouTube URL:
+    <input type="url" name="url" placeholder="http://" value="<%= @song.url %>">
+  </label>
+
+  <button>Submit</button>
+</form>
