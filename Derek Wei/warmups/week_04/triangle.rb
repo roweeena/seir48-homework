@@ -12,19 +12,6 @@
 # ## Bonus
 # Make it pretty and create a menu that will allow for user input
 
-puts "==="*10
-puts "Is it a triangle".center(30)
-puts "==="*10
-
-print "Enter length of first side: "
-a = gets.to_f
-
-print "Enter length of second side: "
-b = gets.to_f
-
-print "Enter length of third side: "
-c = gets.to_f
-
 def is_triangle (a, b, c)
   if a >= b + c
     puts "nope"
@@ -41,4 +28,31 @@ def is_triangle (a, b, c)
   end
 end
 
-is_triangle(a, b, c)
+def menu
+  puts "==="*10
+  puts "Is it a triangle?".center(30)
+  puts "==="*10
+  puts "Input something or press [Q] to quit."
+end
+
+menu
+user_choice = gets[0].downcase
+
+until user_choice == "q"
+
+  print "Enter length of first side: "
+  a = gets.to_f
+
+  print "Enter length of second side: "
+  b = gets.to_f
+
+  print "Enter length of third side: "
+  c = gets.to_f
+
+  is_triangle(a, b, c)
+
+  menu
+  user_choice = gets.chomp.downcase
+end
+
+puts "see you later"
