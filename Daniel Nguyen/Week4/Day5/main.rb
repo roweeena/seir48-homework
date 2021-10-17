@@ -12,10 +12,10 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 
 # MODELS: ======================================================================
 
-class User < ActiveRecord::Base
+class Artist < ActiveRecord::Base
 end
 
-class Team < ActiveRecord::Base
+class Song < ActiveRecord::Base
 end
 
 # ==============================================================================
@@ -24,44 +24,7 @@ get '/' do
   erb :home
 end
 
-# USERS: =======================================================================
-
-# INDEX
-get '/users' do
-  @users = User.all
-  erb :users_index
-end
-
-# NEW
-get '/users/new' do
-  erb :users_new
-end
-
-# CREATE
-post '/users' do
-  user = User.create(
-    first_name: params[:first_name],
-    last_name: params[:last_name],
-    email: params[:email],
-    image: params[:image]
-  )
-
-  redirect to('/users')
-end
-
-# SHOW
-get '/users/:id' do
-  @user = User.find params[:id]
-  erb :users_detail
-end
-
-# EDIT
-
-# UPDATE
-
-# DELETE
-
-# TEAMS: =======================================================================
+# ARTISTS: =====================================================================
 
 # INDEX
 
@@ -76,3 +39,23 @@ end
 # UPDATE
 
 # DELETE
+
+# SONGS: =======================================================================
+
+# INDEX
+
+# NEW
+
+# CREATE
+
+# SHOW
+
+# EDIT
+
+# UPDATE
+
+# DELETE
+
+after do
+  ActiveRecord::Base.connection.close
+end
