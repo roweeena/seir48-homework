@@ -1,0 +1,66 @@
+
+<form action="/components/<%= @cp.id %>" method="post">
+  <label>
+    <br>
+    CPU Model:
+    <input type="text" name="cpu" value="<%= @cp.cpu %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    Graphis card:
+    <input type="text" name="gpu" value="<%= @cp.gpu %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    Ram memory:
+    <input type="text" name="ram" value="<%= @cp.ram %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    SSD Drive:
+    <input type="text" name="ssd" value="<%= @cp.ssd %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    Hard Drive(hdd):
+    <input type="text" name="hdd" value="<%= @cp.hdd %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    Power supply:
+    <input type="text" name="powersupply" value="<%= @cp.powersupply %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    WIFI Included:
+    <input type="text" name="wifi" value="<%= @cp.wifi %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    Cooling type:
+    <input type="text" name="cooler" value="<%= @cp.cooler %>" required>
+    </br>
+  </label>
+
+  <label>
+    <br>
+    Blueray drive:
+    <input type="text" name="blueray" value="<%= @cp.blueray %>" required>
+    </br>
+  </label>
+<button>submit</button>
+</form>

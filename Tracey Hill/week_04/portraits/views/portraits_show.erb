@@ -1,0 +1,14 @@
+<h1> <%= @portrait["title"] %></h1>
+
+
+<% unless @portrait["image"].nil? || @portrait["image"].empty? %>
+<img src="<%= @portrait["image"] %>" alt"<%= @portrait["title"] %>">
+<% end %>
+
+<h2>Artist: <%= @portrait["artist"] %></h2>
+<h2>Medium: <%= @portrait["medium"] %></h2>
+
+<div class="controls">
+    <a href="/portraits/<%= @portrait["id"] %>/edit">Edit Portrait</a>
+    <a href="/portraits/<%= @portrait["id"] %>/delete">Delete Portrait</a>
+</div>

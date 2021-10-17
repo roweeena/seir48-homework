@@ -1,5 +1,5 @@
 def show_menu
-    puts "Calculator" # .center to make this nice lookin
+    puts "Calculator".center(40) # .center to make this nice lookin
     puts "<>" * 20  #
     puts "[A]ddition"
     puts "[S]ubtract"

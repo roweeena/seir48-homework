@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Special+Elite&family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Unica+One&display=swap');
+
+body {
+  background-image: url('https://media.istockphoto.com/photos/so-success-in-life-is-individual-growth-which-incites-collective-on-picture-id1252856961?b=1&k=20&m=1252856961&s=170667a&w=0&h=RELTB4O01iAO_AUhZ943r27zQm5MEos9lL45OmUU284=');
+  background-size: cover;
+}
+
+.container {
+  background-color: rgba(247, 240, 240, 0.5);
+  padding: 30px;
+  width: 960px;
+  height: 90vh;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 8px;
+  font-family: 'Unica One', italic;
+
+}
+.mountain_info {
+  position: relative;
+
+}
+
+nav {
+    padding: 8px 30px;
+    text-align: right;
+    background-color: rgba(0, 121, 161, 0.8);
+    margin: 0 -30px;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+a:hover{
+  color: rgba(249, 199, 132);
+  font-weight: bolder;
+}
+
+img {
+  display: block;
+  margin: 15px auto;
+  width: 500px;
+  height: auto;
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  right: 115px;
+}
+
+li {
+  margin-bottom: 15px;
+  font-family: 'Unica One', italic;
+  font-size: 20px;
+  list-style: none;
+
+}
+
+.second_nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+input {
+  display: block;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  margin-top: 8px;
+  height: 25px;
+  width: 223px;
+}
+
+button {
+margin: 10px 445px;
+padding: 9px;
+width: 70px;
+border: none;
+border-radius: 8px;
+}
+button:hover{
+  background-color: rgba(249, 199, 132);
+  color: white;
+}
+
+h1{
+  font-size: 45px;
+}

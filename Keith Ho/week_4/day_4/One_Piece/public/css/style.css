@@ -1,0 +1,13 @@
+body {
+  background-image: url("../images/One_Piece.png");
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  background-color: black;
+}

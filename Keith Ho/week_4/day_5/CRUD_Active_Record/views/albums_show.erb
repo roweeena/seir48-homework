@@ -1,0 +1,15 @@
+<h1>
+  <%= @album.name %>
+  <% if @album.thumbs_up == 1 %>
+    <span>| 👍</span>
+  <% end %>
+</h1>
+
+<% unless @album.image.nil? || @album.image.empty? %>
+  <img src="<%= @album.image %>" alt="<%= @album.name %>">
+<% end %>
+
+<div class="controls">
+  <a href="/albums/<%= @album.id %>/edit">Edit Album</a>
+  <a href="/albums/<%= @album.id %>/delete">Delete Album</a>
+</div>

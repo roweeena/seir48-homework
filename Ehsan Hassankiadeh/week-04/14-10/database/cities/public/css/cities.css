@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(11, 52, 66);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav > a + a {
+  margin-left: 3em;
+}
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  background-color: gray;
+}
+.titles {
+  flex: 1;
+  padding: 2em;
+}
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control > a + a {
+  margin-left: 4em;
+}
+.titles > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span {
+  font-style: italic;
+}
+img {
+  object-fit: contain;
+}

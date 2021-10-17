@@ -1,0 +1,20 @@
+<h1>Edit artist</h1>
+
+<form action="/artists/<%= @artist.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" required value="<%= @artist.name %>">
+  </label>
+
+  <label>
+    Genres:
+    <input name="genres" value="<%= @artist.genres %>">
+  </label>
+
+  <label>
+    Image Url:
+    <input type="url" name="image" placeholder="http://" value="<%= @artist.image %>">
+  </label>
+
+  <button>Submit</button>
+</form>

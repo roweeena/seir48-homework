@@ -1,0 +1,14 @@
+<h1><%= @player.name %></h1>
+
+<p> <strong>Position:</strong> <%= @player.position %> </p>
+<p> <strong>Goals:</strong> <%= @player.goals %> </p>
+<p> <strong>Assists:</strong> <%= @player.assists %> </p>
+<p> <strong>Best Goal</strong> <%= @player.goalVideo %> </p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @player.goalVideo %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
+<br>
+
+<a href="/players/edit/<%= @player.id %>"><button>Edit player</button></a>
+<a href="/players/delete/<%= @player.id %>"><button>Delete player</button></a>
