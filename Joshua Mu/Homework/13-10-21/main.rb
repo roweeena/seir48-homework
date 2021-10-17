@@ -18,7 +18,5 @@ get '/book-info' do
         end
         i++
     end
-    
-
     erb :bookInfo
 end
