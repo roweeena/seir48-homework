@@ -1,0 +1,26 @@
+<h1>Edit Whisky</h1>
+
+<form action="/whiskies/<%= @whisky.id %>" method='post'>
+
+<label for="">
+  Distillery:
+  <input type="text" name='distillery' placeholder='Laphroaig' required value='<%= @whisky.distillery %>'>
+</label>
+
+<label for="">
+  Name:
+  <input type="text" name='name' placeholder='PX Cask' required value='<%= @whisky.name %>'>
+</label>
+
+<label for="">
+  ABV%:
+  <input type="number" name='abv' placeholder='48.0' value='<%= @whisky.abv %>'>
+</label>
+
+<label for="">
+  Image:
+  <input type="url" name='image' placeholder='http://...' value='<%= @whisky.image %>'>
+</label>
+
+<button>Edit Whisky</button>
+</form>
