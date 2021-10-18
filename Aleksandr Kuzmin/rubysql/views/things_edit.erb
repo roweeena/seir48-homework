@@ -1,0 +1,28 @@
+<h1>New activity</h1>
+
+<form action="/things" method="post">
+  <label>
+Name:
+<input type="text" name="name" placeholder="Activity" required>
+
+
+  </label>
+  <label>
+  Description:
+
+
+  <textarea type="text" name="description" placeholder="description..." required value="<%=@thing.description%>" rows="8" cols="80"></textarea>
+
+
+  </label>
+
+
+
+<label>
+Image:
+<input type="url" name="image" placeholder="http://....">
+
+
+</label>
+<button>Create activity</button>
+</form>

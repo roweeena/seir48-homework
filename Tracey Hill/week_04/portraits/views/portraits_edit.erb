@@ -1,0 +1,23 @@
+<h1> Edit portrait</h1>
+
+<form action="/portraits/<%= @portrait["id"]%>" method="post">
+    <label>
+        Title:
+    </label>
+    <input name="title" placeholder="Valentina" required value="<%= @portrait["title"] %>">
+    <label>
+        Artist:
+    </label>
+    <input name="artist" placeholder="Santos" value="<%= @portrait["artist"] %>">
+    <label>
+        Medium:
+    </label>
+    <input name="medium" placeholder="Charcoal on paper" value="<%= @portrait["medium"] %>">
+    <label>
+        URL:
+    </label>
+    <input type="url" name="image" placeholder="http://"value="<%= @portrait["image"] %>">
+
+<button>Update portrait</button>        
+
+</form>

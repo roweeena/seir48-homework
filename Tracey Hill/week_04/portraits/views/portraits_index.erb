@@ -1,0 +1,16 @@
+<h1>All Portraits</h1>
+
+<div class="index">
+    <% @portraits.each do |portrait| %> 
+        <div class="portrait">
+            <p>
+                <a href="portraits/<%= portrait["id"] %>">
+                    <%= portrait["title"] %>
+                </a>
+            </p>
+            <div class="thumb"> 
+                <img src="<%= portrait["image"] %>" alt="<%= portrait["title"] %>">
+            </div>
+        </div> 
+    <% end %>
+</div> 

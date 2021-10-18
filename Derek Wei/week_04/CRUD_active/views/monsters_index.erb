@@ -1,0 +1,9 @@
+<h1>Monster Cards</h1>
+
+<% @monsters.each do |monster| %>
+  <p>
+    <a href="/monsters/<%= monster.id %>">
+      <%= monster.name %>
+    </a>
+  </p>
+<% end %>

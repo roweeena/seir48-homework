@@ -1,0 +1,167 @@
+* {
+	margin: 0 auto;
+}
+
+#container {
+	margin: 2% auto;
+	width:  960px;
+	font-family: "Arial", sans-serif;
+}
+
+/* header {
+	display:  inline;
+} */
+
+nav {
+	background: black;
+	color: white;
+	width: 100%;
+}
+
+ul {
+	margin-left: 14%;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 20px;
+	/* padding-left: 0;
+	margin: 0; */
+	font-family: "Arial", sans-serif;
+	font-size: 14px;
+}
+
+li:hover {
+	background: url(../images/bg_nav_rollover.png);
+}
+
+nav ul li a {
+	text-decoration: none;
+	color:  white;
+}
+
+#logo {
+	display: inline;
+}
+
+
+#hero-banner {
+	margin-top: 20px;
+	width: 100%;
+}
+
+#shadow {
+	margin-top: -4px;
+}
+
+#indented {
+	border: #ecd8d859;
+	border-style: inset;
+	display: table;
+	margin: 0 auto;
+	width: 900px;
+	padding: 10px;
+}
+
+#indented p {
+	display: table-cell;
+	width: 70%;
+	vertical-align:  top;
+	font-size: 16px;
+}
+
+#indented img {
+	display: table-cell;
+	padding-left: 100px;
+}
+
+
+.home-boxes {
+	margin: 20px auto;
+	display: table;
+}
+
+.home-boxes p {
+	max-width: 85%;
+	font-size: 12px;
+}
+
+.home-boxes a {
+	max-width: 85%;
+	font-size: 12px;
+	text-decoration: none;
+	color: skyblue;
+}
+
+.home-boxes img {
+	border: solid 6px #ecd8d859;
+	padding: 1px;
+}
+
+#box1 {
+	display: table-cell;
+	margin-right: 20px;
+}
+
+#box2 {
+	display: table-cell;
+	margin-right: 20px;
+}
+
+#box3 {
+	display: table-cell;
+}
+/*-----------------------------------------------------------------------------
+=05 SOCIAL MEDIA
+-----------------------------------------------------------------------------*/
+
+#socialMedia {
+float: right;
+display: inline-block;
+}
+
+#socialMedia ul {
+margin: 0;
+}
+
+#socialMedia ul li {
+	 display:inline-block;
+	 width:60px;
+	 height:60px;
+	 background:blue;
+	 text-indent:-9999em;
+}
+
+#socialMedia ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+
+#socialMedia ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+
+#socialMedia ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+
+#socialMedia ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+
+
+
+#socialMedia ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+
+#socialMedia ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+
+#socialMedia ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+#socialMedia ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
+}

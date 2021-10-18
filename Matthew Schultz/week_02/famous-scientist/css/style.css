@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&display=swap');
+body {
+  font-family: 'IBM Plex Serif', serif;
+  background-color: #290529b3;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #111;
+  padding: 12px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+main {
+  width: 68%;
+  display: inline-block;
+}
+
+main img {
+  margin: 0 auto;
+  display: block;
+  width: 600px;
+}
+
+aside {
+  width: 27%;
+  display: inline-block;
+  vertical-align: top;
+  border: 3px solid purple;
+}
+
+h1 {
+  text-align: center;
+  font-size: 400%;
+  padding: 5px;
+  box-shadow: 0px 0px 15px black;
+  border: 4px solid black;
+}
+
+h2 {
+  padding-left: 12px;
+  text-align: left;
+}
+
+p {
+  padding-left: 12px;
+}
+
+nav {
+  display: inline;
+  text-align: right;
+  font-size: 15px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  padding: 8px;
+  font-size: 200%;
+  height: 40px;
+  line-height: 20px;
+}
+
+li a{
+  font-size: 70%;
+  color: purple;
+  text-decoration: none;
+}

@@ -1,0 +1,22 @@
+<h1>Edit Distillery Entry</h1>
+
+<form action="/distilleries/<%= @distillery.id %>" method='post'>
+
+  <label for="">
+    Name:
+    <input type="text" name='name' placeholder='Laphroaig' required value='<%= @distillery.name %>'>
+  </label>
+
+  <label for="">
+    Location:
+    <input type="text" name='location' placeholder='Islay, Scotland' value='<%= @distillery.location %>'>
+  </label>
+
+  <label for="">
+    Logo:
+    <input type="url" name='image' placeholder='http://...' value='<%= @distillery.logo %>'>
+  </label>
+
+  <button>Edit Distillery</button>
+
+</form>

@@ -1,0 +1,14 @@
+<h2><%= @book.title %></h2>
+<h3>Author: <em><%= @book.author%></em></h3>
+<% unless @book.cover.nil? %>
+<img class="feature" src="<%= @book.cover %>" alt="<%= @book.title %>">
+<% end %>
+<% unless @book.description.nil? %>
+<p><%= @book.description %></p>
+<% end %>
+
+<div class="controls">
+  <button>Delete</button>
+  <a href="/books/<%= @book.id %>/delete">Delete</a>
+  <a href="/books/<%= @book.id %>/edit">Edit</a>
+</div>
