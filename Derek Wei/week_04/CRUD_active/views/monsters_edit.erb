@@ -29,7 +29,9 @@
   <label>
     Owned by:
     <select name="duelist_id" placeholder="e.g. Yugi Muto" required>
-      <option value="<%= @monster.duelist_id %>"><%= @monster.duelist.name %></option>
+      <% Duelist.all.each do |duelist| %>
+        <option value="<%= duelist.id %>" <%= "selected" if duelist.id == @monster.duelist_id %>><%= duelist.name %></option>
+      <% end %>
     </select>
   </label>
 
