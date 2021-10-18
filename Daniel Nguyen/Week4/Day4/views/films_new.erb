@@ -1,0 +1,30 @@
+<h1>Add film</h1>
+
+<form action="/films" method="post">
+  <label>
+    Title:
+    <input name="title" placeholder="Parasite" required>
+  </label>
+
+  <label>
+    Director:
+    <input name="director" placeholder="Bong Joon-ho">
+  </label>
+
+  <label>
+    Year:
+    <input type="number" name="year" placeholder="2020">
+  </label>
+
+  <label>
+    Description:
+    <textarea name="description" rows="1" cols="74" placeholder="A short summary of the film"></textarea>
+  </label>
+
+  <label>
+    Rating:
+    <input type="range" min="0" max="4" step="0.5" name="rating" >
+  </label>
+
+  <button>Submit</button>
+</form>

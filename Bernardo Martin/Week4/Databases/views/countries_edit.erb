@@ -1,0 +1,28 @@
+<h1>Edit Info</h1>
+
+<form action="/countries/<%=@country["id"]%>" method="post">
+
+  <label >
+    Name:
+    <input type="text" name="name" placeholder="Name of Country" required value= "<%=@country["name"]%>" >
+  </label>
+
+  <label >
+    Population:
+    <input type="INTEGER" name="population" placeholder="111111111" required value= "<%=@country["population"]%>" >
+  </label>
+
+  <label >
+    Official language:
+    <input type="text" name="language" placeholder="English" required value= "<%=@country["language"]%>" >
+  </label>
+
+  <label >
+    Flag:
+    <input type="url" name="flag" placeholder="http://" required value= "<%=@country["flag"]%>" >
+  </label>
+
+  <button>EDIT</button>
+
+
+</form>

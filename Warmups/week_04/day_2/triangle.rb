@@ -7,15 +7,14 @@
 
 def is_triangle (a, b,c)
 
-  # puts a + b > c && b + c > a && a + c > b
-
-  max = [a,b, c].max # find value in the array
-
+  # puts a + b > c && b + c > a && a + c > b => one line of code, works
+  #another way:
+  max = [a, b, c].max # find value in the array
   sum = a + b + c
-
   puts sum - max > max
 
 end
+
   # is_triangle(1,2,2) #true
   # is_triangle(5,1,2) #false
   # is_triangle(4,2,3) #true
