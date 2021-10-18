@@ -1,0 +1,16 @@
+<h1>All works</h1>
+
+<div class="index">
+    <% @works.each do |work| %> 
+        <div class="work">
+            <p>
+                <a href="works/<%= work.id %>">
+                    <%= work.title%>
+                </a>
+            </p>
+            <div class="thumb"> 
+                <img src="<%= work.image %>" alt="<%= work.title %>">
+            </div>
+        </div> 
+    <% end %>
+</div> 

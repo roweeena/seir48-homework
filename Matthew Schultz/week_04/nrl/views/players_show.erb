@@ -1,0 +1,8 @@
+<h1><%= @player.name %></h1>
+<h3><%= @player.dob %></h3>
+<h2><%= @player.team %></h2>
+
+<div class='controls'>
+  <a href="/players/<%=@player.id%>/edit">Edit player</a>
+  <a href="/players/<%=@player.id%>/delete">Delete player</a>
+</div>

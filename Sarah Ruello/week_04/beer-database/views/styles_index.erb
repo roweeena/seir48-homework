@@ -1,0 +1,9 @@
+<h2>All styles</h2>
+
+ <!-- <%= 2+ 4 %> echoing tag -->
+
+<!-- <% %>  non-echoing tag -->
+
+<% @styles.each do |style| %>
+    <p><a href=/styles/<%= style["id"] %>><%= style['name'] %></a></p> 
+<% end %>

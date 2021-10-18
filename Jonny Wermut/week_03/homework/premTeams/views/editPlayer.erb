@@ -1,0 +1,24 @@
+<h1> Edit player </h1>
+
+<form action="/players/edit/<%= @player.id %>" method="post">
+	<label>Name
+		<input name="name" type="text" value="<%= @player.name %>" required>
+	</label>
+	<label>Team ID
+		<input name="teamId" type="text" value="<%= @player.team_id %>" required>
+	</label>
+	<label>Position
+		<input name="position" type="text" value="<%= @player.position %>" required>
+	</label>
+	<label>Goals
+		<input name="goals" type="integer" value="<%= @player.goals %>" required>
+	</label>
+	<label>Assists
+		<input name="assists" type="integer" value="<%= @player.assists %>" required>
+	</label>
+	<label>Best Goal
+		<input name="bestGoal" type="text" value="<%= @player.goalVideo %>">
+	</label>
+	<br>
+	<button>Edit player</button>
+</form>

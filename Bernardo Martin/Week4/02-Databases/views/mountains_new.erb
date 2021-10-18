@@ -1,0 +1,20 @@
+<h1>Add a new Mountain to the list</h1>
+<form action="/mountains" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" placeholder="Name" required>
+  </label>
+  <label>
+    Location:
+    <input type="text" name="location" placeholder="Australia" required>
+  </label>
+  <label>
+    Meters above sea level:
+    <input type="integer" name="height" placeholder="11111" required>
+  </label>
+  <label>
+    Image url:
+    <input type="url" name="image" placeholder="http://..." required>
+  </label>
+  <button>ADD</button>
+</form>

@@ -1,0 +1,21 @@
+<h1>Edit NRL Players</h1>
+
+<form action='/players/<%=@player.id%>' method="post">
+  <label>
+    Name:
+    <input name="name" value="<%= @player.name %>" required>
+  </label><br>
+
+  <label>
+    Team:
+    <input name="team" value="<%= @player.team %>" required>
+  </label><br>
+
+  <label>
+    D.O.B:
+    <input name="dob" value="<%= @player.dob %>">
+  </label><br><br>
+
+  <button>Save changes</button>
+
+</form>
