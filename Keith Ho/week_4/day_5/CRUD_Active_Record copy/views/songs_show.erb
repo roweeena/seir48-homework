@@ -1,0 +1,21 @@
+<h1>
+  <%= @song.name %>
+  <% if @song.thumbs_up == 1 %>
+    <span>| 👍</span>
+  <% end %>
+</h1>
+
+<% @albums.each do |album| %>
+  <% if album.name == @song.album.upcase %>
+  <h3>(Album: <a href="/albums/<%=album.id%>"><%= @song.album.upcase %></a>)</h3>
+  <% end %>
+<% end %>
+
+<% unless @song.image.nil? || @song.image.empty? %>
+  <iframe src="<%= @song.image %>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% end %>
+
+<div class="controls">
+  <a href="/songs/<%= @song.id %>/edit">Edit Song</a>
+  <a href="/songs/<%= @song.id %>/delete">Delete Song</a>
+</div>
