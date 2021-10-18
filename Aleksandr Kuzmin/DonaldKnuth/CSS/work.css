@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Raleway:ital,wght@0,100;0,200;1,100;1,200&display=swap');
+
+
+
+body {
+  margin: 0;
+  font-family: 'Ephesis', cursive;
+  background-color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin:  auto;
+  background-color: white;
+  padding: 1em;
+
+}
+main {
+ padding-top: 5em;
+ border-radius: 0.5em;
+ box-shadow: 20px 5px 5px grey;
+ padding-bottom: 10em;
+
+}

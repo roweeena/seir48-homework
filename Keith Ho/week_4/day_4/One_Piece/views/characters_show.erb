@@ -1,0 +1,12 @@
+<h1><%= @character["name"] %></h1>
+
+<h2>Ability: <%=  @character["ability"] %></h2>
+
+<% unless @character["image"].nil? || @character["image"].empty? %>
+  <img src="<%= @character["image"] %>" alt="<%= @character["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/characters/<%= @character["id"] %>/edit">Edit Character</a>
+  <a href="/characters/<%= @character["id"] %>/delete">Delete Character</a>
+</div>

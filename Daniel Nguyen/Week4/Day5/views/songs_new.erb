@@ -1,0 +1,35 @@
+<h1>Add a new song</h1>
+
+<form action="/songs" method="post">
+  <label>
+    Title:
+    <input name="title" required>
+  </label>
+
+  <label>
+    Artist:
+    <input name="artist" required>
+  </label>
+
+  <label>
+    Album:
+    <input name="album">
+  </label>
+
+  <label>
+    Year:
+    <input type="number" name="year" placeholder="Year released">
+  </label>
+
+  <label>
+    Length:
+    <input type="number" name="length" placeholder="Song length in seconds">
+  </label>
+
+  <label>
+    YouTube URL:
+    <input type="url" name="image" placeholder="http://">
+  </label>
+
+  <button>Submit</button>
+</form>

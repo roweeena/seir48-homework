@@ -1,0 +1,14 @@
+<h1>All Films</h1>
+
+<form action="/films/new">
+  <input type="submit" value="+   Add film" />
+</form>
+
+<% @films.each do |film| %>
+  <p>
+    <%= film["rating"] %>
+    <a href="/films/<%= film["id"] %>">
+      <%= film["title"] %>
+    </a>
+  </p>
+<% end %>

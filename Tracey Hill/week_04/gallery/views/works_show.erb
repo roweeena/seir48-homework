@@ -1,0 +1,11 @@
+<h1> <%= @work.title %></h1>
+
+<h2>Artist: <%= @work.artist %></h2>
+<% unless @work.image.nil? || @work.image.empty? %>
+<img src="<%= @work.image %>" alt="<%= @work.title %>">
+<% end %>
+
+<div class="controls">
+    <a href="/works/<%= @work.id %>/edit">Edit work</a>
+    <a href="/works/<%= @work.id %>/delete">Delete work</a>
+</div>

@@ -32,9 +32,7 @@ let indexSearchLineFrom = linesArr.indexOf(choiceFromLine); // choosing a start 
 /////////////////////////indexes from stations //////////////////////////////////
 const choiceFromStation = prompt("Where would you like to start you journey?");
 
-let indexSearchStationFromL = lineL.indexOf(choiceFromStation);
-let indexSearchStationFrom6 = line6.indexOf(choiceFromStation);
-let indexSearchStationFromN = lineN.indexOf(choiceFromStation);
+
 //const indexLinefromArr = [ indexSearchStationFromL, indexSearchStationFrom6, indexSearchStationFromN]; ///stations
 
 
@@ -50,9 +48,8 @@ let indexSearchLineTo = linesArr.indexOf(choiceToLine); // choosing a destinatio
 ////////////////////////////// to stations //////////////////////////////////////
 const choiceToStation = prompt("Which station would you like to go?");
 
-let indexSearchStationToL = lineL.indexOf(choiceToStation);
-let indexSearchStationTo6 = line6.indexOf(choiceToStation);
-let indexSearchStationToN = lineN.indexOf(choiceToStation);
+//
+
 //let indexLineToArr = [ indexSearchToL, indexSearchTo6, indexSearchToN]; // stations  to
 
 
@@ -64,52 +61,56 @@ let indexSearchStationToN = lineN.indexOf(choiceToStation);
 
 function planTrip (choiceFromLine, choiceFrom, choiceToLine, choiceTo) {
 ///////////////////////////////////////////////////////////
-function searchStations(indexSearchLineFrom,indexSearchLineTo) {
+function searchStations() {
 //Checking LineIndex = StationIndex
 
 
 
+
+
 if (indexSearchLineFrom === 0)
-{ indexSearchLineFrom = indexSearchStationFromN;
+{ let indexSearchStationFromN = lineN.indexOf(choiceFromStation);
 console.log(indexSearchLineFrom);
 
 }
 if (indexSearchLineTo === 0) {
-  indexSearchLineTo = indexSearchStationToN;
-  console.log(indexSearchLineTo);
-
-}
-if (indexSearchLineFrom === 2)
-{ indexSearchLineFrom = indexSearchStationFromL;
-console.log(indexSearchLineFrom);
-
-}
-if (indexSearchLineTo === 2) {
-  indexSearchLineTo = indexSearchStationToL;
-  console.log(indexSearchLineTo);
+  let indexSearchStationTo = lineN.indexOf(choiceToStation);
+  console.log(indexSearchStationTo);
 
 }
 if (indexSearchLineFrom === 1)
-{ indexSearchLineFrom = indexSearchStationFrom6;
+{ let indexSearchStationFrom6 = line6.indexOf(choiceFromStation);
+
 console.log(indexSearchLineFrom);
 
 }
 if (indexSearchLineTo === 1) {
-  indexSearchLineTo = indexSearchStationTo6;
-  console.log(indexSearchLineTo);
+  let indexSearchStationTo = line6.indexOf(choiceToStation);
+  console.log(indexSearchStationTo);
+
+}
+if (indexSearchLineFrom === 2)
+{ let indexSearchStationFromL = lineL.indexOf(choiceFromStation);
+console.log(indexSearchLineFrom);
+
+}
+if (indexSearchLineTo === 2) {
+  let indexSearchStationTo = lineL.indexOf(choiceToStation);
+  console.log(indexSearchStationTo);
 
 }
 
-return indexSearchLineFrom,indexSearchLineTo;
+
+return indexSearchLineFrom,indexSearchLineTo, indexSearchStationTo; // lines = station
 
 
 }
 
-console.log(`${searchStations(indexSearchLineFrom,indexSearchLineTo)}`)
+searchStations()
 // If choice not found on L line go to Union Square
-function needUs(indexLineToArr) {
+function needUs(indexSearchLineTo) {
 
-  if(indexLineToArr.indexOf("-1")) {
+  if(indexSearchLineTo.indexOf("-1")) {
     indexSearchToL = lineL.indexOf("Union Square");
     indexSearchTo6 = line6.indexOf("Union Square");
     indexSearchToN = lineN.indexOf("Union Square");

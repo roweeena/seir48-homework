@@ -1,0 +1,7 @@
+<p>Welcome to components</p>
+
+<% @components.each do |cp| %>
+<ul>
+<li><a href="/components/<%= cp.id %>"><strong><%= cp.cpu %></strong></a></li>
+</ul>
+<% end %>

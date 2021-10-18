@@ -1,0 +1,10 @@
+<h2>All Sauces</h2>
+
+
+ <!-- <%= 2+ 4 %> echoing tag -->
+
+<!-- <% %>  non-echoing tag -->
+
+<% @hotsauces.each do |hotsauce| %>
+    <p><a href=/hotsauces/<%= hotsauce["id"] %>><%= hotsauce['name'] %></a></p> 
+<% end %>
