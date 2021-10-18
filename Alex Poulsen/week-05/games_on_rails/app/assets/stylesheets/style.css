@@ -1,0 +1,22 @@
+body {
+  background-color: blue;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 980px;
+  height: 80vh;
+  background-color: aliceblue;
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+nav {
+  padding: 1em;
+  text-align: center;
+  background-color: lightblue;
+}
+
+nav a {
+  padding: 1em;
+}
