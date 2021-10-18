@@ -18,8 +18,12 @@
     <p>
     <label>
     <span class="label-name">Style:</span>
-    <input name="style_id" placeholder="Style e.g. IPA, Stout...">
-    </label>
+    <select name="style_id" id="">
+      <% Style.all.each do |style| %>
+        <option value="<%= style.id %>" style="width: 200px;"><%= style.name %></option>
+        <% end %>
+        </select>
+     </label>
     </p>
     <p>
     <label>
