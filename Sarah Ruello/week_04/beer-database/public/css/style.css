@@ -24,13 +24,13 @@ body {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 13px;
   padding: 20px;
-  min-width: fit-content;
   background-color: rgba(255, 142, 67, 0.2);
 }
 
 .flex-child:first-child {
   margin-right: 20px;
-  max-width: 20%;
+  max-width: 25%;
+  width: fit-content;
 }
 
 .label-name {
@@ -46,8 +46,25 @@ body {
   top: 12em;
 }
 
+.beer-display,
+.beer-image {
+  display: inline-block;
+  margin-block: auto;
+}
+.beer-display {
+  width: 400px;
+}
+.beer-image {
+  position: relative;
+}
+
+.footer {
+  padding: 20px 0px;
+}
+
 a {
   text-decoration: none;
+  font-size: 14px;
 }
 
 /* unvisited link */

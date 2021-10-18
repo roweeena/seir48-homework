@@ -1,21 +1,21 @@
 
-<div class="beerdisplay">
-
+<div class="beer-display">
 <h3>Name: <%= @beer["name"] %> </h3>
 <h3>Brand: <%= @beer["brand"] %> </h3>
 <h3>Style: <%= @beer.style[:name] %> </h3>
 <h3>ABV: <%= @beer["abv"] %> </h3>
 <h3>Country: <%= @beer["country"] %> </h3>
 
-
+</div>
+<div class="beer-image">
 <!-- prevent broken empty img tags displaying-->
 <% unless @beer["image"].nil? || @beer["image"].empty? %>
-    <h3>Image: <img src="<%= @beer["image"] %>" alt="<%= @beer["name"] %>"></h3>
+    <img src="<%= @beer["image"] %>" alt="<%= @beer["name"] %>" width="200">
 <% end %>
-
 <!-- <%= %> echoing tag ----->
 <!-- <% %> non-echoing tag -->
 </div>
+
 <div class="footer">
     <a href="/beers/<%= @beer["id"] %>/edit">Edit beer</a> ⋅ 
     <a href="/beers/<%= @beer["id"] %>/delete">Delete beer</a>
