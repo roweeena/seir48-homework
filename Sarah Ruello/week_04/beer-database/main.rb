@@ -20,18 +20,26 @@ class Style < ActiveRecord::Base
 end  
 
 class Beer < ActiveRecord::Base
-    belongs_to :style
+    belongs_to :style, :optional => false
+end    
+
+
+# start pry from browser if you need it
+get '/pry' do 
+    require 'pry'
+    binding.pry
 end    
 
 get '/' do
-    @beers = Beer.all
-    @styles = Style.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
+    # @beers = Beer.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     erb :home 
 end
 
 # INDEX - show all beers:
 get '/beers' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     # pass data down to view
     erb :beers_index
@@ -39,7 +47,7 @@ end
 
 # NEW - Beer form page:
 get '/beers/new' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     erb :beers_new
 end    
@@ -49,7 +57,7 @@ post '/beers' do
     beer = Beer.new 
     beer.name = params[:name]
     beer.brand = params[:brand]
-    beer.style_id = params[:style_id]
+    beer.style_id = params[:style_id] #association
     beer.abv = params[:abv]
     beer.country = params[:country]
     beer.image = params[:image]
@@ -60,15 +68,15 @@ end
 
 # SHOW - a single Beer:
 get '/beers/:id' do
-    @beers = Beer.all
-    @styles = Style.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
+    @styles = Style.all.sort_by {|style| style["name"]}
     @beer = Beer.find params[:id]  #extract first Beer from array   
     erb :beers_show
 end
 
 # EDIT - a single Beer:
 get '/beers/:id/edit' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     @beer = Beer.find params[:id] #extract first Beer from array   
     erb :beers_edit
@@ -89,7 +97,7 @@ end
 
 # DELETE - deletes Beer:
 get '/beers/:id/delete' do 
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     beer = Beer.find params[:id] 
     beer.destroy
@@ -100,14 +108,14 @@ end
 
 #INDEX
 get '/styles' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     erb :styles_index
 end
 
 #NEW
 get '/styles/new' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     erb :styles_new
 end   
@@ -123,7 +131,7 @@ end
 
 #SHOW  
 get '/styles/:id' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     @style = Style.find params[:id]    
     erb :styles_show
@@ -132,7 +140,7 @@ end
 # WHY DO YOU NOT DISPLAY PROPERLY
 #EDIT 
 get '/styles/:id/edit' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     @style = Style.find params[:id]   
     erb :styles_edit
@@ -140,7 +148,7 @@ end
 
 #UPDATE 
 post '/styles/:id' do
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     style = Style.find params[:id] 
     style.name = params[:name]
@@ -151,7 +159,7 @@ end
 
 # DELETE
 get '/styles/:id/delete' do 
-    @beers = Beer.all
+    @beers = Beer.all.sort_by {|beer| beer["name"]}
     @styles = Style.all
     style = Style.find params[:id] 
     style.destroy
