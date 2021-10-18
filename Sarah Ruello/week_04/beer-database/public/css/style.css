@@ -30,7 +30,7 @@ body {
 .flex-child:first-child {
   margin-right: 20px;
   max-width: 25%;
-  width: fit-content;
+  min-width: fit-content;
 }
 
 .label-name {
