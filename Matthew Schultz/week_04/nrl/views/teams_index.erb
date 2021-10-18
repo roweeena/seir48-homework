@@ -1,0 +1,9 @@
+<h1>NRL Teams</h1>
+
+<% @teams.each do |team| %>
+  <p>
+    <a href="/teams/<%= team["id"] %>">
+      <%= team["mascot"] %>
+    </a>
+  </p>
+<% end %>

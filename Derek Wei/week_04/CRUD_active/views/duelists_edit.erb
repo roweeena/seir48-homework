@@ -1,0 +1,25 @@
+<h1>Edit Duelist</h1>
+
+<form action="/duelists/<%= @duelist.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="e.g. Seto Kaiba" value="<%= @duelist.name %>" required>
+  </label>
+
+  <label>
+    Age:
+    <input name="age" placeholder="e.g. 21" value="<%= @duelist.age %>" required>
+  </label>
+
+  <label>
+    Gender:
+    <input name="gender" placeholder="e.g. M" value="<%= @duelist.gender %>" required>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @duelist.image %>">
+  </label>
+
+  <button>Update Duelist</button>
+</form>

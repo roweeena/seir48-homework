@@ -1,0 +1,33 @@
+<p>View Components</p>
+
+<h3>CPU:</h3>
+<h4><%=@cp.cpu%></h4>
+
+<h3>Ram memory:</h3>
+<h4><%=@cp.ram%></h4>
+
+<h3>Graphis card:</h3>
+<h4><%= @cp.gpu %></h4>
+
+<h3>SDD:</h3>
+<h4><%= @cp.ssd %></h4>
+
+<h3>Hdd:</h3>
+<h4><%= @cp.hdd %></h4>
+
+<h3>Power supply:</h3>
+<h4><%= @cp.powersupply %></h4>
+
+<h3>Wifi Included:</h3>
+<h4><%= @cp.wifi %></h4>
+
+<h3>Cooling type:</h3>
+<h4><%= @cp.cooler %></h4>
+
+<h3>Blueray Indluded:</h3>
+<h4><%= @cp.blueray %></h4>
+
+<div class="cpcontol">
+  <a href="/components/<%= @cp.id%>/edit">edit</a>
+  <a href="/components/<%= @cp.id%>/delete">delete</a>
+  </div>

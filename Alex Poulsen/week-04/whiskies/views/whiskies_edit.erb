@@ -1,0 +1,31 @@
+<h1>Edit your whisky</h1>
+
+<form action="/whiskies/<%=@whisky['id']%>" method='post'>
+
+  <label>
+    Distillery:
+    <input type="text" name='distillery' placeholder="Laphroaig" required value='<%=@whisky['distillery']%>'>
+  </label>
+
+  <label>
+    Name:
+    <input type="text" name='name' placeholder="PX Cask" required value='<%=@whisky['name']%>'>
+  </label>
+
+  <label>
+    Location:
+    <input type="text" name="location" placeholder="Islay, Scotland" value='<%=@whisky['location']%>'>
+  </label>
+
+  <label>
+    ABV:
+    <input type="number" name='abv' placeholder="48.0" value='<%=@whisky['abv']%>'>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name='image' placeholder="https://..." value='<%=@whisky['image']%>'>
+  </label>
+
+  <button>Edit Entry</button>
+</form>

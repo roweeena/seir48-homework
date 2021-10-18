@@ -1,0 +1,11 @@
+<h1>All Songs</h1>
+
+<form action="/songs/new">
+  <input type="submit" value="+ Add new songs" />
+</form>
+
+<% @songs.each do |song| %>
+  <p>
+    <a href="/songs/<%= song.id %>"><%= song.title %></a> – <%= song.artist %>
+  </p>
+<% end %>

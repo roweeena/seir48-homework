@@ -1,0 +1,12 @@
+<h1> <%=@place["name"] %> </h1>
+
+<h2> <%= @place["description"]%> </h2>
+<% unless @place.image.nil? || @place.image.empty? %>
+<img src="<%= @place.image %>" alt=" <%= @place.image %>">
+<% end %>
+
+
+<div class="controls">
+  <a href="/places/<%= @place.id%>/edit">Edit place</a>
+  |
+  <a href="/places/<%= @place.id%>/delete">Delete place</a>

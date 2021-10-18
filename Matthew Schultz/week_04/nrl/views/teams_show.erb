@@ -1,0 +1,8 @@
+<h1><%= "#{@team.location} #{@team.mascot}"%></h1>
+
+<img src="<%= @team.logo %>">
+
+<div class='controls'>
+  <a href="/teams/<%=@team.id%>/edit">Edit team</a>
+  <a href="/teams/<%=@team.id%>/delete">Delete team</a>
+</div>

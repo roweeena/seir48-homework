@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&display=swap');
 body {
   font-family: 'IBM Plex Serif', serif;
-  background-color: #c7b199;
+  background-color: #290529b3;
   color: white;
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   border-bottom-right-radius: 18px;
 }
 main {
-  width: 100%;
+  width: 68%;
   display: inline-block;
 }
 
@@ -30,6 +30,7 @@ aside {
   width: 27%;
   display: inline-block;
   vertical-align: top;
+  border: 3px solid purple;
 }
 
 h1 {
@@ -52,8 +53,17 @@ p {
 nav {
   display: inline;
   text-align: right;
+  font-size: 15px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  color: #fff;
   text-transform: uppercase;
-}
+  letter-spacing: 2px;
+  position: relative;
+  }
 
 nav ul {
   list-style: none;
@@ -70,9 +80,7 @@ nav li {
 }
 
 li a{
-  border: 2px solid white;
   font-size: 70%;
-  background-color: #c7b199;
-  color: #111;
+  color: purple;
   text-decoration: none;
 }

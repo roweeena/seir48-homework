@@ -1,0 +1,9 @@
+<h1>All of the Old Oak Juices</h1>
+
+<% @whiskies.each do |whisky| %>
+  <p>
+    <a href="/whiskies/<%= whisky.id %>">
+      <%= whisky.name %>
+    </a>
+  </p>
+<%end %>
