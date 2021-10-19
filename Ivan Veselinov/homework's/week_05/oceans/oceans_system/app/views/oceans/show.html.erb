@@ -1,0 +1,20 @@
+<p><mark><%= @ocean.name %></mark> Ocean</p>
+
+<%= image_tag @ocean.image, :class => 'feature' if @ocean.image.present? %>
+
+<ul>
+  <li>Ocean name: <mark><%=  @ocean.name %></mark></li>
+  <li>Country name: <mark><%= truncate @ocean.country, :length => 30 %></mark> </li>
+  <li>Water Type: <%= @ocean.water %></li>
+  <li>Water volume: <%= number_to_human @ocean.watervolume %> Cubic Km</li>
+  <li>Temperature: <%= @ocean.temperature %>°C</li>
+  <li>Max width: <%= number_to_human @ocean.maxwidth %> Km</li>
+  <li>Max Depth: <%= number_to_human @ocean.maxdepth %> metters</li>
+
+
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Ocean', ocean_edit_path(@ocean.id) %>
+  <%= button_to 'Delete Ocean', ocean_path(@ocean.id), :method => 'delete'%>
+</div>
