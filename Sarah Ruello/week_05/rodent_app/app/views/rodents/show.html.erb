@@ -1,0 +1,19 @@
+
+<h1><%= @rodent.name %></h1>
+
+<%= image_tag @rodent.image, :class => 'feature' if @rodent.image.present? %>
+
+<div class="details">
+<ul>
+  <li><span class="label-name">Name:</span> <%= @rodent.name %></li>
+  <li><span class="label-name">Family:</span> <%= @rodent.family %></li>
+  <li><span class="label-name">Lifespan:</span> <%= @rodent.lifespan %> years</li>
+  <li><span class="label-name">Diet:</span> <%= @rodent.diet %></li>
+</ul>
+</div>
+<div class="footer">
+<%= link_to 'Edit rodent', edit_rodent_path(@rodent.id) %>
+<br>
+<br>
+<%= button_to 'Delete rodent', rodent_path(@rodent.id), :method => 'delete', :class => 'btn'%>
+</div>

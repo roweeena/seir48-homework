@@ -1,0 +1,16 @@
+<h1>Edit <%=@climber.name%>'s information:</h1>
+<form action="/climbers/<%=@climber.id%>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" placeholder="Name" required value="<%=@climber.name%>">
+  </label>
+  <label>
+    Surname:
+    <input type="text" name="surname" placeholder="Surname" required value="<%=@climber.surname%>">
+  </label>
+  <label>
+    Nationality:
+    <input type="text" name="nationality" placeholder="Italian" required value="<%=@climber.nationality%>">
+  </label>
+  <button>EDIT</button>
+</form>

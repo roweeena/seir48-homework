@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RodentApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="flex-container">
+      <div class="flex-child">
+          <%= yield %>
+      <div class="navbar">
+        <nav>
+      <%= link_to 'All rodents', rodents_path %> 🌰 
+      <%= link_to 'New rodent', new_rodent_path %> 
+        </nav>
+  </div>      
+    </div>
+  </div>      
+  
+  </body>
+</html>
