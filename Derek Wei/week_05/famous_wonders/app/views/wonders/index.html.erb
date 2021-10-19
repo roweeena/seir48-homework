@@ -1,0 +1,17 @@
+<h1>Wonders of the Ancient World</h1>
+
+<% @wonders.each do |wonder| %>
+<p>
+  <ul>
+  <% if wonder.location.empty? || wonder.location.nil? %>
+    <li><%=link_to wonder.name, wonder_path(wonder.id) %></li>
+  <% else %>
+    <li><%=link_to wonder.name, wonder_path(wonder.id) %> of <%= wonder.location %></li>
+  <% end %>
+  </ul>
+</p>
+<% end %>
+
+<div id="new_wonder_button">
+  <%= button_to 'New wonder', new_wonder_path, :method => 'get' %>
+</div>
