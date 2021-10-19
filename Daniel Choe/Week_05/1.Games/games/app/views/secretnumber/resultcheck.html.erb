@@ -1,0 +1,8 @@
+<h1>Game Result</h1>
+
+<% if @rand_num == params[:num].to_i %>
+    <p>Congratulations, you have chosen the right number!</p>
+    <a href="/secret-number">Play Again</a>
+<% else %>
+  <p>You have chosen the wrong number, <a href="/secret-number">try again.</a><p>
+<% end %>

@@ -1,0 +1,12 @@
+<h1><%= @food["name"].capitalize %></h1>
+
+<p>Cuisine: <%= @food["cuisine"].capitalize %></p>
+
+<% unless @food["image"].nil? or @food["image"].empty? %>
+<img src="<%= @food["image"] %>" alt="<%= @food["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/foods/<%= @food["id"] %>/edit">Edit Food</a>
+  <a href="/foods/<%= @food["id"] %>/delete">Delete Food</a>
+</div>
