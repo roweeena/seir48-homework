@@ -1,5 +1,5 @@
 body {
-    background-image: url("/img/bg.jpg");
+    background-image: url("bg2.jpg");
     background-color: beige; 
     font-family: 'Raleway', sans-serif;
 }
@@ -50,22 +50,13 @@ label {
 input {
     margin: 5px 15px;
     padding: 10px;
-    max-width: 350px;
+    max-width: 550px;
 }
 
 button {
     margin: 40px;
     padding: 10px;
     max-width: 350px;
-}
-.home {
-    background-image: url("/img/mp.png");
-    background-size: cover;
-}
-
-.thumb img {
-    width: 100px;
-
 }
 
 .index {
@@ -74,7 +65,15 @@ button {
     align-content: center;
     flex-wrap: wrap;
 }
-.portrait {
+.gallery {
     padding: 10px 20px 30px 40px;
 }
+.info {
+    list-style: none;
+    padding: 0.5em;
+    
+}
 
+.info li {
+    line-height: 2.15em;
+}
