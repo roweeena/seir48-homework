@@ -1,0 +1,25 @@
+<h1>Edit Player</h1>
+
+<form action="<%= player_path(@player.id) %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="<%= @player.name %>" value="<%= @player.name %>" required>
+  </label>
+
+  <label>
+    Position:
+    <input name="position" placeholder="<%= @player.position %>" value="<%= @player.position %>" required>
+  </label>
+
+  <label>
+    Club:
+    <input name="club" placeholder="<%= @player.club %>" value="<%= @player.club %>" maxlength="3" required>
+  </label>
+
+  <label class="scores-input-container">
+    Scores (as CSV):
+    <input class="scores-input" name="scores" placeholder="<%= @player.scores %>" value="<%= @player.scores %>">
+  </label>
+
+  <button>Submit changes</button>
+</form>

@@ -1,0 +1,7 @@
+<h1>All Galleries</h1>
+
+<% @galleries.each do |gallery| %>
+  <p>
+    <%= link_to gallery.name, gallery_path(gallery.id) %> has <%= pluralize gallery.works, 'work' %>.
+  </p>
+<% end %>

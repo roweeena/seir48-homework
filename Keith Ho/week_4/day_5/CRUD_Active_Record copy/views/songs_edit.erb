@@ -13,7 +13,7 @@
 
   <label>
     Do you like it?
-    <input type="checkbox" name="thumbs_up">
+    <input type="checkbox" name="thumbs_up" <%= "checked" if @song.thumbs_up == 1  %>>
   </label>
 
   <label>

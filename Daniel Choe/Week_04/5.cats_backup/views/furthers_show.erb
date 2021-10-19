@@ -1,0 +1,12 @@
+<h1> <%= @further.breed %> </h1>
+
+<p>Origin: <%= @further.origin %></p>
+
+<p>Coat Length: <%= @further.coat_length %></p>
+
+
+
+<div class="controls">
+  <a href="/further_information/<%= @further.id %>/edit">Edit Information</a>
+  <a href="/further_information/<%= @further.id %>/delete">Delete Information</a>
+</div>
