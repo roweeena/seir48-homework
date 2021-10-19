@@ -1,0 +1,15 @@
+<h3>Movie name: <%=@movie.name%></h3>
+<h4>Year of making: <%= @movie.year%></h4>
+<h4>Director: <%= @movie.director%></h4>
+<%  unless @movie.image.nil? || @movie["image"].empty? %>
+<img src="<%=@movie.image%>" alt="">
+<% end %>
+
+<h4>Trailer:</h4>
+<iframe width="560" height="315" src="<%= @movie.trailer%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="controls">
+    <a href="/movies/<%= @movie.id %>/edit">Edit movie</a>
+    <a href="/movies/<%= @movie.id %>/delete">Delete movie</a>
+</div>
+
+
