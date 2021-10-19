@@ -1,0 +1,13 @@
+
+<h1>Game Result</h1>
+
+<% if @comp_move == params[:throw].to_i %>
+    <p>Congratulations, you have defeated your opponent!</p>
+    <a href="/games/rock_paper_scissors">Play Again</a>
+<% else %>
+  <p>You lost to your opponent, <a href="/games/rock_paper_scissors">try again.</a><p>
+<% end %>
+
+<div class="flier">
+  <iframe src="https://giphy.com/embed/3o7btWJVxQ9mCSqU1i" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/imoji-halloween-3o7btWJVxQ9mCSqU1i"></a></p>
+</div>
