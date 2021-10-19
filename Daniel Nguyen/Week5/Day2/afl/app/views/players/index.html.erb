@@ -1,22 +1,23 @@
 <h1>Players</h1>
 
-<form action="/players/new">
-  <input type="submit" value="+ Add new player" />
-</form>
-
 <table>
   <tr>
-    <th>Player</th>
-    <th>Pos</th>
-    <th>Club</th>
-    <th>Average</th>
+    <th colspan="4">Player</th>
+    <th colspan="2">Pos</th>
+    <th colspan="2">Club</th>
+    <th colspan="2">Average</th>
   </tr>
   <% @players.each do |player| %>
     <tr>
-      <td><%= link_to player.name, player_path(player.id) %></td>
-      <td><%= player.position %></td>
-      <td><%= player.club %></td>
-      <td><%= player.average %></td>
+      <td colspan="4"><%= link_to player.name, player_path(player.id) %></td>
+      <td colspan="2"><%= player.position %></td>
+      <td colspan="2"><%= player.club %></td>
+      <td colspan="2"><%= player.average %></td>
+      <td><%= link_to "Edit", edit_player_path(player.id) %></td>
+      <td><%= link_to "Delete", player_path(player.id), :method => 'delete' %></td>
     </tr>
   <% end %>
+  <tr>
+    <td colspan="12"><%= link_to "+ Add new player", new_player_path %></td>
+  </tr>
 </table>
