@@ -1,0 +1,36 @@
+<h1>New Wonder</h1>
+
+<form action="<%= wonders_path %>" method="post">
+
+  <label>
+    Name:
+    <input name="name" placeholder="e.g. Golden Gate Bridge" required>
+  </label>
+
+  <label>
+    Year of Origin:
+    <input name="year" type="number" placeholder="e.g. 2002">
+  </label>
+
+  <label>
+    Location:
+    <input name="location" placeholder="e.g. My backyard">
+  </label>
+
+  <label>
+    Description:
+    <textarea name="description" cols="30" rows="10" placeholder="Description goes here"></textarea>
+  </label>
+
+  <label>
+    Image:
+    <input name="image" type="url" placeholder="http://...">
+  </label>
+
+  <label>
+    Video:
+    <input name="video" type="url" placeholder="http://...">
+  </label>
+
+  <button>Create new wonder</button>
+</form>
