@@ -1,3 +1,7 @@
+.scores-input-container {
+  width: 100%;
+}
+
 .scores-input {
-  width: 36vw;
+  width: 100%;
 }
