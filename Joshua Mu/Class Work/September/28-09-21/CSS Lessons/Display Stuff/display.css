@@ -1,0 +1,13 @@
+body {
+    background-color: green;
+}
+.spooky:hover {
+    background-color: black;
+
+}
+
+.spooky:hover span {
+    transition: 2s all;
+    visibility: visible;
+    color: yellow;
+}

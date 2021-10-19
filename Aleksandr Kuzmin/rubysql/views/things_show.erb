@@ -1,0 +1,12 @@
+<h1> <%=@thing["name"] %> </h1>
+
+<h2> <%= @thing["description"]%> </h2>
+<% unless @thing.image.nil? || @thing.image.empty? %>
+<img src="<%= @thing.image %>" alt=" <%= @thing.image %>">
+<% end %>
+
+
+<div class="controls">
+  <a href="/things/<%= @thing.id%>/edit">Edit activity</a>
+  |
+  <a href="/things/<%= @thing.id%>/delete">Delete activity</a>

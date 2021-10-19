@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+margin: 0 auto;
+}
+
+.container_main{
+  margin-top: 30px;
+  padding-top: 10px;
+  background-color: rgba(181, 175, 175, 0.8);
+  font-size: 18px;
+  min-height: 950px;
+}
+
+a{
+  margin-left: 10px;
+  font-size: 22px;
+  color: green;
+}
+
+a:hover{
+  color: red;
+  font-size: 22px;
+}
+
+
+button{
+  font-family: 'Bebas Neue', cursive;
+  width: 150px;
+  height: 70px;
+  font-size: 22px;
+}
+button:hover{
+  color: red;
+  font-size:25px;
+}
+
+h2{
+  font-size: 22px;
+}
+
+input{
+  width: 220px;
+  margin-left: 10px;
+  font-size:22px;
+}
+label{
+  margin-left: 10px;
+}
+
+p{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  font-size: 35px;
+}
+
+h1{
+  font-family: 'Bebas Neue', cursive;
+    /* font-family: 'Oswald', sans-serif; */
+  padding-top: 100px;
+  text-align: center;
+  font-size: 70px;
+}
+
+h3{
+  font-family: 'Bebas Neue', cursive;
+  margin-left: 10px;
+  font-size: 22px;
+}
+h4{
+  font-family: 'Bebas Neue', cursive;
+  color: green;
+  margin-left: 10px;
+  font-size: 22px;
+}

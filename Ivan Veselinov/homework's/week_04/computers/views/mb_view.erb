@@ -1,0 +1,24 @@
+<p>View motherboard:</p>
+<h3>Motherboard name:</h3>
+<h4><%= @motherboards.name%></h4>
+
+<h3>Motherboard model:</h3>
+<h4><%= @motherboards.model%></h4>
+
+<h3>Motherboard socket:</h3>
+<h4><%= @motherboards.socket %></h4>
+
+<% unless @motherboards.image.nil? || @motherboards.image.empty?%>
+<img src="<%= @motherboards.image %>" alt="<%= @motherboards.model %>">
+<% end %>
+
+<% unless @motherboards.video.nil? || @motherboards.video.empty?%>
+<iframe width="600" height="500" src="<%= @motherboards.video %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<% end %>
+
+<div class='controls'>
+  <a href="/motherboards/<%= @motherboards.id %>/edit">edit</a>
+  <a href="/motherboards/<%=@motherboards.id%>/delete">delete</a>
+  </div>

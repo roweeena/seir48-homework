@@ -1,0 +1,12 @@
+<h2>Edit style:</h2>
+ <!-- <%= %> echoing tag ----->
+<!-- <% %>  non-echoing tag -->
+
+<form action="/styles/<%= @style["id"] %>" method="post">
+    <label>
+    Name:
+    <input name="name" placeholder="Name" required value="<%= @style["name"] %>">
+    </label>
+    
+    <button>Update</button>
+</form>

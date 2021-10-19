@@ -1,0 +1,15 @@
+<h1>Welcome to <%=@house["adress"]%></h1>
+
+<h2>House owner name: <%=@house["name"]%></h2>
+<h2>House owner surname: <%=@house["surname"]%></h2>
+<h3>House adress: <%=@house["adress"]%></h3>
+
+<% unless @house["image"].nil? || @house["image"].empty? %>
+<img src="<%= @house["image"] %>" alt="<%= @house["image"] %>">
+<% end %>
+
+<div class"functions">
+  <a href="/agency">go back</a>
+  <a href="/agency/<%=@house["id"]%>/update">Update</a>
+  <a href="/agency/<%=@house["id"]%>/delete">Delete</a>
+</div>
