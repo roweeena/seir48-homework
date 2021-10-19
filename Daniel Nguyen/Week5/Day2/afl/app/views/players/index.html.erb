@@ -1,4 +1,4 @@
-<h1>Players Index</h1>
+<h1>Players</h1>
 
 <table>
   <tr>
@@ -6,11 +6,10 @@
     <th>Pos</th>
     <th>Club</th>
     <th>Average</th>
-    <!-- <th>Scores</th> -->
   </tr>
   <% @players.each do |player| %>
     <tr>
-      <td><%= player.name %></td>
+      <td><%= link_to player.name, player_path(player.id) %></td>
       <td><%= player.position %></td>
       <td><%= player.club %></td>
       <td><%= player.average %></td>

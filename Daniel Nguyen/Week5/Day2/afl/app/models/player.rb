@@ -1,6 +1,9 @@
 class Player < ActiveRecord::Base
-  def average
+  def scores_as_i
     all_scores = self.scores.split(',').map {|n| n.to_i}
-    (all_scores.sum.to_f / all_scores.size).round(2)
+  end
+
+  def average
+    (scores_as_i.sum.to_f / scores_as_i.size).round(2)
   end
 end

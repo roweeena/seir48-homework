@@ -2,10 +2,8 @@ class PlayersController < ApplicationController
   def index
     @players = Player.all
   end
-  # NEW
-  # CREATE
-  # SHOW
-  # EDIT
-  # UPDATE
-  # DELETE
+
+  def show
+    @player = Player.find params[:id]
+  end
 end
