@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/players/:id' => 'players#show', :as => :player
   get '/players/:id/edit' => 'players#edit', :as => :edit_player
   post '/players/:id' => 'players#update'
-  # DELETE
+  delete '/players/:id'=> 'players#destroy'
 end

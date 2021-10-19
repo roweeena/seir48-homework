@@ -17,7 +17,6 @@ class PlayersController < ApplicationController
     player.club = params[:club].upcase
     player.scores = params[:scores]
     player.save
-
     redirect_to player_path(player.id)
   end
 
@@ -32,7 +31,12 @@ class PlayersController < ApplicationController
     player.club = params[:club].upcase
     player.scores = params[:scores]
     player.save
-
     redirect_to player_path(player.id)
+  end
+
+  def destroy
+    player = Player.find params[:id]
+    player.destroy
+    redirect_to players_path
   end
 end
