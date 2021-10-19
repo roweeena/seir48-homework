@@ -1,8 +1,7 @@
 require "pry"
 
 class Robot
-  attr_accessor :name
-  attr_reader :instruction_count, :created_at, :last_updated
+  attr_reader :name, :instruction_count, :created_at, :last_updated
 
   def initialize (name = generate_name)
     @name = name
@@ -31,8 +30,8 @@ class Robot
 
   def timers
     @instruction_count += 1
-    since_last_boot = (Time.new - @last_updated).round()
-    since_creation = (Time.new - @created_at).round()
+    since_last_boot = (Time.new - @last_updated).to_i
+    since_creation = (Time.new - @created_at).to_i
     "#{ since_last_boot } seconds since last boot, #{ since_creation } seconds since creation"
   end
 end
