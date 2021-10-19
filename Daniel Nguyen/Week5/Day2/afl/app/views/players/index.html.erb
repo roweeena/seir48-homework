@@ -1,1 +1,19 @@
 <h1>Players Index</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Pos</th>
+    <th>Club</th>
+    <th>Average</th>
+    <!-- <th>Scores</th> -->
+  </tr>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.position %></td>
+      <td><%= player.club %></td>
+      <td><%= player.average %></td>
+    </tr>
+  <% end %>
+</table>
