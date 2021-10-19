@@ -1,0 +1,8 @@
+<h2>Edit - <%= @library.name %></h2>
+
+<form action="/libraries/<%= @library.id %>" method="post">
+  <input type="text" name="name" value="<%= @library.name %>" placeholder="Library name" autofocus>
+  <input type="text" name="location" value="<%= @library.location %>" placeholder="Location">
+
+  <button>Update Library</button>
+</form>

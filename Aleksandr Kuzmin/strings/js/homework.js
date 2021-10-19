@@ -11,54 +11,26 @@
 //   DrEvil(10): 10 dollars
 //   DrEvil(1000000): 1000000 dollars (pinky)
 
-function DrEvil(amount) {
-  if (amount < 1000000){
-    console.log(amount + " dollars")
-  return amount + " dollars";
-}
-  else if (amount === 1000000){
-
-    console.log(1000000 + "(pinky)");
-    return 1000000 + "dollars (pinky)";
-  }
-}
-
-DrEvil(1000);
-
-
-
+// function DrEvil(amount) {
+//   if (amount < 1000000){
+//     console.log(amount + " dollars")
+//   return amount + " dollars";
+// }
+//   else if (amount === 1000000){
 //
-
-// ```
+//     console.log(1000000 + "(pinky)");
+//     return 1000000 + "dollars (pinky)";
+//   }
+// }
 //
-// ## MixUp
+// DrEvil(1000);
 //
-// Create a function called mixUp. It should take in two strings, and return the concatenation
-//of the two strings (separated by a space) slicing out and swapping the first 2 characters of each.
- //You can assume that the strings are at least 2 characters long. For example:
-// ```
-//   mixUp('mix', 'pod'): 'pox mid'
-//   mixUp('dog', 'dinner'): 'dig donner'
-// Look up the JavaScript string reference to find methods which may be useful!
-
-function mixUp(str1, str2) {
+// DrEvil(1000000);
+// y be useful!
 
 
 
-
-const newStr = str1.slice(0) str2.slice(0);
-
-console.log(str1 +" "+ str2);
-
-
-return str1 +" "+ str2;
-
-
-}
-mixUp("look", "up");
-
-
-
+$('p').funText(33, 'candy');
 
 // ```
 //

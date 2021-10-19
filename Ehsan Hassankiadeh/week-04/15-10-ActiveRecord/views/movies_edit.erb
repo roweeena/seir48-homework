@@ -1,0 +1,24 @@
+<h2>Edit the movie</h2>
+<form action="/movies/<%= @movie.id%>" method="post">
+   <label for="">
+    Name: <input name="name" type="text" placeholder="Blow" required value="<%=@movie.name%>">
+    </label>
+
+    <label for="">
+    Year: <input name="year" type="text" placeholder="1991" required value="<%=@movie.year%>">
+    </label>
+
+    <label for="">
+    Director: <input name="director" type="text" placeholder="Kiarostami" required value="<%=@movie.director%>">
+    </label>
+
+    <label for="">
+    Image: <input name="image" type="url" placeholder="http://.." required value="<%=@movie.image%>">
+    </label>
+
+    <label for="">
+    Trailer : <input name="trailer" type="url" placeholder="http://.." required value="<%=@movie.trailer%>">
+    </label>
+
+    <button>Submit the update</button>
+</form>

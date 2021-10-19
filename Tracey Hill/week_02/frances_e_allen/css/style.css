@@ -1,0 +1,83 @@
+body {
+  background-color: #f5f1d1;
+}
+
+#container {
+  background: no-repeat center center;
+  background-image: url("../img/background.png");
+  width: 960px;
+  height: 720px;
+  padding: 20px 0 0px 90px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wrapper {
+  display: flex;
+}
+
+main {
+  flex: 0 0 65%;
+}
+h1 {
+  color: #f5f1d1;
+  font-family: "Domine", serif;
+  font-size: 60px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #dc5150;
+  font-family: "Domine", serif;
+  font-variant: small-caps;
+}
+
+aside {
+  flex: 1;
+  padding-top: 35px;
+}
+
+img {
+  width: 250px;
+}
+
+p {
+  color: #f5f1d1;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.45em;
+  width: 85%;
+}
+
+a {
+  color: #dc5150;
+}
+
+a:hover {
+  color: darkred;
+}
+
+ul {
+  color: #f5f1d1;
+  font-family: "Raleway", sans-se;
+  width: 85%;
+}
+
+aside ul,
+nav ul {
+  color: #f5f1d1;
+  font-family: "Raleway", sans-se;
+  width: 85%;
+  list-style-type: none;
+}
+
+li > a {
+  font-family: "Domine", serif;
+  font-variant: small-caps;
+}
+#topnav li {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+}
+#topnav a {
+  color: #f5f1d1;
+}

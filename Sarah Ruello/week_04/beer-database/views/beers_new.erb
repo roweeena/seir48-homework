@@ -1,0 +1,47 @@
+<h2>New beer</h2>
+ <!-- <%= 2+ 4 %> echoing tag -->
+<!-- <% %>  non-echoing tag -->
+
+<form action="/beers" method="post">
+    <p>
+    <label>
+    <span class="label-name">Name:</span>
+    <input name="name" placeholder="Beer name" required>
+    </label> 
+    </p>
+    <p>
+    <label>
+        <span class="label-name">Brand:</span>
+    <input name="brand" placeholder="Brand name">
+    </label>
+    </p>
+    <p>
+    <label>
+    <span class="label-name">Style:</span>
+    <select name="style_id" id="">
+      <% Style.all.each do |style| %>
+        <option value="<%= style.id %>" style="width: 200px;"><%= style.name %></option>
+        <% end %>
+        </select>
+     </label>
+    </p>
+    <p>
+    <label>
+    <span class="label-name">ABV:</span>
+    <input name="abv" placeholder="0.0%">
+    </label>
+    </p>
+    <p>
+    <label>
+    <span class="label-name">Country:</span>
+    <input name="country" placeholder="Country">
+    </label>
+    </p>
+    <p>
+    <label>
+    <span class="label-name">Image:</span>
+    <input type="url" name="image" placeholder="http://...">
+    </label>
+    </p>
+    <button>Create</button>
+</form>

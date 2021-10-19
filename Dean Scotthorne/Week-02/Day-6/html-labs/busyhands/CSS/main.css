@@ -1,0 +1,55 @@
+
+
+header {
+  background: black;
+  padding: 38px;
+
+
+}
+nav {
+  margin-left: 126px;
+}
+img {
+  /* width: 80%; */
+  max-width: 100%;
+  margin-top: 100px;
+  margin-bottom: -100px;
+
+
+}
+
+a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.div1 {
+  background-image: url("../images/bg_body.jpg");
+  background-size: 1200px;
+}
+.div2 {
+  background-image: url("../images/bg_body.jpg");
+  background-size: 1200px;
+  padding: 200px;
+}
+.hero {
+max-width: 120%;
+align-self: center;
+margin-left: 148px;
+margin-right: auto;
+width: 79%;
+}
+.logo {
+
+  margin-left: 140px;
+  margin-right: 50px;
+
+  margin-top: -57px;
+
+}
+
+
+
+}

@@ -1,0 +1,11 @@
+<h1><%=@climber.name%>'s Information:</h1>
+<ul>
+  <li> Name: <%=@climber.name%> </li>
+  <li> Surname: <%=@climber.surname%> </li>
+  <li> Nationality: <%=@climber.nationality%> </li>
+</ul>
+
+<div class="second_nav">
+<a href="/climbers/<%=@climber.id%>/edit"> Edit </a>
+<a href="/climbers/<%=@climber.id%>/delete"> Delete </a>
+</div>
