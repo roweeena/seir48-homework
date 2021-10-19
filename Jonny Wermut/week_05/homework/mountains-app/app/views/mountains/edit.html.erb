@@ -1,0 +1,19 @@
+<h1>Testing edit</h1>
+<form action="<%= mountain_edit_path(@mountain.id)%>" method="post">
+<label>Name:
+	<input type="text" name='name' value='<%= @mountain.name %>'>
+</label>
+<label>Height:
+	<input type="text" name='height' value='<%= @mountain.height %>'>
+</label>
+<label>Year first climbed:
+	<input type="text" name='climbedOn' value='<%= @mountain.firstClimbedOn %>'>
+</label>
+<label>First climbed by:
+	<input type="text" name='climbedBy' value='<%= @mountain.firstClimbedBy %>'>
+</label>
+<label>Image:
+	<input type="url" name='image' value='<%= @mountain.image %>'>
+</label>
+<button>Edit</button>
+</form>
