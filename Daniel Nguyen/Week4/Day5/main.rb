@@ -13,9 +13,11 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 # MODELS: ======================================================================
 
 class Artist < ActiveRecord::Base
+  has_many :songs, dependent: :destroy
 end
 
 class Song < ActiveRecord::Base
+  belongs_to :artist
 end
 
 # ==============================================================================
@@ -94,7 +96,7 @@ end
 
 # CREATE
 post '/songs' do
-  song = Song.create(
+  @song = @artist.songs.create(
     title: params[:title],
     artist: params[:artist],
     album: params[:album],
@@ -103,7 +105,7 @@ post '/songs' do
     url: params[:url],
   )
 
-  redirect to("/songs/#{ song.id }")
+  redirect to("/songs/#{ @song.id }")
 end
 
 # SHOW
