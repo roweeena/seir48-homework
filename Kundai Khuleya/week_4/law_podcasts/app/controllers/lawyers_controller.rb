@@ -1,6 +1,7 @@
-class LawyersController < ActiveRecord::Base
+class LawyersController < ApplicationController
+
   def index
-    @lawyers = Lawyers.all
+    @lawyers = Lawyer.all
 end
 
 def show
