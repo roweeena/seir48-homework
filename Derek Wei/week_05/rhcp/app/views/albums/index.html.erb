@@ -1,0 +1,6 @@
+<h1>Albums of Red Hot Chili Peppers</h1>
+
+<% @albums.each do |album| %>
+  <h2><%= link_to album.name, album %></h2>
+  <%= link_to image_tag(album.image, :class => 'thumb'), album if album.image.present? %>
+<% end %>

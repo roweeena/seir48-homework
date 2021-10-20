@@ -1,0 +1,17 @@
+<h1><%= @album.name %></h1>
+
+<%= image_tag @album.image, :class => 'feature' if @album.image.present? %>
+<ul>
+  <li>Title: <%= @album.name %></li>
+  <li>Year: <%= @album.year %></li>
+  <% if @album.length.present? %>
+    <li>Length: <%= @album.length %></li>
+  <% end %>
+  <li>Number of songs: <%= @album.no_of_songs %></li>
+</ul>
+
+
+<div class="controls">
+  <%= button_to 'Edit album', edit_album_path(@album), :method => 'get' %>
+  <%= button_to 'Delete album', @album, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>
