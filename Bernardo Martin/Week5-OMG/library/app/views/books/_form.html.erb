@@ -1,0 +1,14 @@
+<%= form_for @book do |f| %>
+  <%= f.label :title, :class => 'forms' %>
+  <%= f.text_field :title, :required => true, :class => 'forms' %>
+  <%= f.label :author_id, :class => 'forms'%>
+  <%= f.select :author_id, Author.pluck(:name, :id), :include_blank => true %>
+  <%= f.label :price, :class => 'forms' %>
+  <%= f.number_field :price, :class => 'forms' %>
+  <%= f.label :published, :class => 'forms' %>
+  <%= f.date_field :published, :class => 'forms' %>
+  <%= f.label :image, "Book Cover", :class => 'forms' %>
+  <%= f.url_field :image, :class => 'forms' %>
+  <%= f.submit :class => 'buttons'%>
+
+<% end %>
