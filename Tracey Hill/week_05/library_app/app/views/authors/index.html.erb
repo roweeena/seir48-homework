@@ -1,0 +1,11 @@
+<h1>All Authors</h1>
+<div class="index container">
+<% @authors.each do |author| %>
+ <div class="card"> 
+
+  <%= image_tag author.image, :class => 'thumb' if author.image.present? %>
+
+  <%= link_to author.name, author %></li>
+ </div>
+<% end %>
+</div>
