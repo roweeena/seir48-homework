@@ -1,0 +1,16 @@
+<h2>Edit the Actor's Info</h2>
+<form action="/actors/<%= @actor.id%>" method="post">
+   <label for="">
+    Name: <input name="name" type="text" placeholder="Blow" required value="<%=@actor.name%>">
+    </label>
+
+    <label for="">
+    Date of Birth: <input name="date_of_birth" type="text" placeholder="1991" required value="<%=@actor.date_of_birth%>">
+    </label>
+
+    <label for="">
+    Image: <input name="image" type="url" placeholder="http://.." required value="<%=@actor.image%>">
+    </label>
+
+    <button>Submit the update</button>
+</form>

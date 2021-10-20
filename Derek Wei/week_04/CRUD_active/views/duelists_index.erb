@@ -1,0 +1,9 @@
+<h1>Duelists</h1>
+
+<% @duelists.each do |duelist| %>
+  <p>
+    <a href="/duelists/<%= duelist.id %>">
+      <%= duelist.name %>
+    </a>
+  </p>
+<% end %>

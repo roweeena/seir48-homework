@@ -306,7 +306,7 @@
 
 
 ###########################################################################
-############################## Warmup 18/10 ###############################
+############################## Warmup 19/10 ###############################
 
 # # Roman Numerals
 
@@ -354,32 +354,90 @@
 
 # Do this in Ruby.
 
-def romanise(num)
+# def romanise(num)
 
-roman = {
-	1000 => 'M',
-	900 => 'CM',
-	500 => 'D',
-	400 => 'CD',
-	100 => 'C',
-	90 => 'XC',
-	50 => 'L',
-	40 => 'XL',
-	10 => 'X',
-	9 => 'IX',
-	5 => 'V',
-	4 => 'IV',
-	1 => 'I'
-}
-	string = ""
-	roman.each do |value, letter| 
-    	string << letter*(num / value) # 'M' x (123 / 100 x 1, 123 / 10 x 2, III x 3)
-		num = num % value  	
-	end
-	return string
+# roman = {
+# 	1000 => 'M',
+# 	900 => 'CM',
+# 	500 => 'D',
+# 	400 => 'CD',
+# 	100 => 'C',
+# 	90 => 'XC',
+# 	50 => 'L',
+# 	40 => 'XL',
+# 	10 => 'X',
+# 	9 => 'IX',
+# 	5 => 'V',
+# 	4 => 'IV',
+# 	1 => 'I'
+# }
+# 	string = ""
+# 	roman.each do |value, letter| 
+#     	string << letter*(num / value) # '123' x (123 / 100 x 1, 23 / 10 x 2, III x 3)
+# 		num = num % value  	
+# 	end
+# 	return string
 	
-end 
+# end 
 
-puts romanise(123) # CXXIII
-puts romanise(1876)
-puts romanise(325)
+# puts romanise(123) # CXXIII
+# puts romanise(1876)
+# puts romanise(325)
+
+###########################################################################
+############################## Warmup 20/10 ###############################
+
+# Luhn Formula
+
+# Write a program that can take a number and determine whether or not it is 
+# valid per the Luhn formula.
+
+# This number must pass the following test:
+
+# Counting from rightmost digit (which is the check digit) and moving left, 
+# double the value of every second digit. For any digits that thus become 10 or 
+# more, subtract 9 from the result.
+
+# E.g., 1111 becomes 2121, while 8763 becomes 7733 (from 2×6=12 → 12-9=3 
+# 	and 2×8=16 → 16-9=7).
+
+# Add all these digits together. For example, if 1111 becomes 2121, then 
+# 2+1+2+1 is 6; and 8763 becomes 7733, so 7+7+3+3 is 20.
+
+# If the total ends in 0 (put another way, if the total modulus 10 is 0), 
+# then the number is valid according to the Luhn formula; otherwise it is 
+# not valid. So, 1111 is not valid (as shown above, it comes out to 6), 
+# while 8763 is valid (as shown above, it comes out to 20).
+
+# Write a program that, given a number, can check if it is valid per the Luhn formula.
+
+# ```ruby
+# luhn 3554
+# # => false
+
+# luhn 8763
+# # => true
+# ```
+
+def luhn(num)	
+	sum = 0
+	nums = num.to_s.split("")
+	# each_with_index iterates through each element in an array or hash, 
+	# and extracts the element, as well as the index:
+	nums.each_with_index do |n, i|
+		sum += if (i.even?)
+			n.to_i * 2 > 9 ? n.to_i * 2 - 9 : n.to_i * 2
+		else
+			n.to_i
+		end
+	end	
+	if sum % 10 == 0
+		puts "true"
+	else
+		puts "false"
+	end
+end
+						
+
+luhn(3554)
+luhn(8763)

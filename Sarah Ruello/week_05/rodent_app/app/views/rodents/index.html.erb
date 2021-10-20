@@ -1,9 +1,10 @@
+<center>
 <h1>🦫 RodentApp 🐿️</h1>
 
-<h4>RODENTS ALL DAY, ALL NIGHT</h4>
-
+<p style="font-style: italic; letter-spacing: 2px;">rodents all day, all night</p>
+</center>
 <% @rodents.each do |rodent| %>
   <p>
-  🌱  <%= link_to rodent.name, rodent_path(rodent.id) %> is a <%= rodent.family %>.
+  🌱  <%= link_to rodent.name, rodent_path(rodent.id) %>
   </p>
 <% end %>
