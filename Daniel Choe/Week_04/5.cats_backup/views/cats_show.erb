@@ -1,0 +1,10 @@
+<h1> <%= @cat.breed %> </h1>
+
+<p>Coat pattern: <%= @cat.coat_pattern %></p>
+
+<img src="<%= @cat.image %>" alt="<%= @cat.breed %>">
+
+<div class="controls">
+  <a href="/cats/<%= @cat.id %>/edit">Edit Cat</a>
+  <a href="/cats/<%= @cat.id %>/delete">Delete Cat</a>
+</div>
