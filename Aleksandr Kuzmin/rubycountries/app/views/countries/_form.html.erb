@@ -1,0 +1,14 @@
+<%= form_for @country do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, :required => true%>
+<%= f.label :capital %>
+<%= f.text_field :capital%>
+<%= f.label :currency%>
+<%= f.text_field :currency%>
+<%= f.label :formation %>
+<%= f.text_field :formation %>
+<%= f.label :image %>
+<%= f.url_field :image %>
+<%= f.submit %>
+
+<% end %>
