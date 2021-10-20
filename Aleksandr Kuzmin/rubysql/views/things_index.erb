@@ -1,0 +1,10 @@
+<h1>All activities</h1>
+
+
+<% @things.each do |thing| %>
+<p>
+  <a href="/things/<%=thing["id"]%>">
+  <%= thing['name']%>
+  </a>
+</p>
+<% end %>

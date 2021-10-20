@@ -1,0 +1,44 @@
+<h1>New Monster</h1>
+
+<form action="/monsters" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="e.g. Dark Magician" required>
+  </label>
+
+  <label>
+    Type:
+    <input name="mtype" placeholder="e.g. Spellcaster" required>
+  </label>
+
+  <label>
+    Element:
+    <input name="element" placeholder="e.g. DARK" required>
+  </label>
+
+  <label>
+    ATK:
+    <input name="atk" placeholder="e.g. 2500" required>
+  </label>
+
+  <label>
+    DEF:
+    <input name="def" placeholder="e.g. 2100" required>
+  </label>
+
+  <label>
+    Owned by:
+    <select name="duelist_id" placeholder="e.g. Yugi Muto" required>
+    <% @duelist.each do |duelist|%>
+      <option value="<%= duelist.id %>"><%= duelist.name %></option>
+    <% end %>
+    </select>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://...">
+  </label>
+
+  <button>Create New Monster</button>
+</form>

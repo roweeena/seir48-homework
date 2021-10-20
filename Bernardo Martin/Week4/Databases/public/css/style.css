@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Varela+Round&display=swap');
+
+body {
+  background-image: url("https://i.pinimg.com/originals/ed/5c/75/ed5c750b9aa5581ec41cb05409543078.jpg");
+  font-family: 'Varela Round', sans-serif;
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Londrina Solid', cursive;
+}
+
+.container {
+  background-color: rgb(102, 153, 153, 0.3);
+  width: 960px;
+  height: 95vh;
+  padding: 15px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 13px;
+  font-size: 18px;
+}
+
+a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+img {
+  margin: 10px auto;
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+li {
+  margin: 7px 2px;
+}
+
+label {
+  display: block;
+  margin: 15px auto;
+}
+
+button {
+  margin: 0 462px;
+  padding: 0;
+  font-size: 20px;
+  height: 33px;
+  width: 105px;
+  border-radius: 4px;
+  background-image: url('https://as1.ftcdn.net/v2/jpg/01/85/33/36/500_F_185333649_F4heF1H4PlbdUOKftKxdyoBJqWHCy5W3.jpg');
+}

@@ -11,7 +11,7 @@ const subway = {
 
   planTrip: function (lineFrom, stationFrom, lineTo, stationTo) {
     if (stationFrom === "Union Square" && lineFrom !== lineTo) {
-      return [ this.singleLineTrip(lineTo, "Union Square", stationTo) ];
+      return [ this.ssingleLineTrip(lineTo, "Union Square", stationTo) ];
     } else if (stationTo === "Union Square" && lineFrom !== lineTo) {
       return [ this.singleLineTrip(lineFrom, stationFrom, "Union Square") ];
     } else if (lineFrom === lineTo) {

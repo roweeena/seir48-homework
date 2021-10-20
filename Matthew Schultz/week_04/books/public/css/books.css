@@ -1,0 +1,13 @@
+body {
+  background-image: url('/images/background.jpeg');
+  color: white;
+}
+
+.container {
+  max-width: 660px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1em;
+  min-height: 90vh;
+  text-align: center;
+}

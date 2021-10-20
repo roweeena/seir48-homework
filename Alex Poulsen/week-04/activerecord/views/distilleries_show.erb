@@ -1,0 +1,12 @@
+<h1> <%= @distillery.name %> </h1>
+
+<h4> Location: <%= @distillery.location %> </h4>
+
+<% unless @distillery.logo.nil? || @distillery.logo.empty? %>
+  <img src="<%= @distillery.logo %>" alt=" <%= @distillery.name %>">
+<% end %>
+
+<div class="controls">
+  <a href="/distilleries/<%= @distillery.id %>/edit">Edit Distillery</a>
+  <a href="/distilleries/<%= @distillery.id %>/delete">Delete Distillery</a>
+</div>

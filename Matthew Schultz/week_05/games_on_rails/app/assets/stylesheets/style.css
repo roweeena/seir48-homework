@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rampart+One&display=swap');
+
+body {
+  background-color: black;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p, form {
+  font-size: 40px;
+}
+
+select, button {
+  font-size: 25px;
+}
+
+.container {
+  background-color: violet;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 940px;
+  min-height: 90vh;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: 'Rampart One', cursive;
+  text-align: center;
+  background-color: black;
+  color: violet;
+  margin: 0 auto;
+}
+
+.container a{
+  font-size: 24px;
+  padding-right: 30px;
+  text-decoration: none;
+  text-align: right;
+  text-transform: uppercase;
+  color: black;
+}
+
+.container img {
+  width:700px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+#homepage {
+  font-size: 40px;
+}
+
+#eightball {
+  width: 300px;
+}

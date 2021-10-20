@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Roboto&display=swap');
+body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+header
+{
+    display: block;
+    background-color: rgb(111, 75, 122);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+h1
+{
+    margin: 0px;
+    padding: 25px 0 25px 0;
+    color:white;
+    font-family: 'Electrolize', sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
+h2
+{
+    margin: 0px;  
+}
+p.biography
+{
+    width: 1265px;
+    display: inline-block;
+}
+div.movie
+{
+    width:inherit;
+    margin: 0px;
+}
+img
+{
+    width: 475px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px;
+}
+div.carrer
+{
+    display: grid;
+    grid-auto-columns: calc(100% - 200px);
+}
+img.carrer
+{
+    margin: auto;
+    height: 350px;
+    width: auto;
+}
+img.portait
+{
+    display:inline;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px;
+}
+div.body
+{
+    padding: 55px;
+    margin: 0px 100px 0 100px;
+    background-color: rgb(36, 36, 36);
+    min-height: 715px;
+}
+div.running
+{
+    background-color: rgb(20, 20, 20);
+    min-height: 0px;
+    height: 360px;
+    width: 500px;
+    padding: 10px;
+    margin: 0px 0px 0px 25px ;
+    border-radius: 5px;
+}
+ul
+{
+    margin: 0px;
+}
+li
+{
+    margin: 5px 0 5px 0;
+    padding: 10px 0px 10px 0px;
+}
+nav
+{
+    height: 50px;    
+    background-color: rgb(80, 55, 87);
+}
+nav ul 
+{
+    padding: 0px;
+    list-style: none;
+    position: relative;
+    margin: 0px;
+}
+nav ul li
+{
+    text-align: center;
+    line-height:150%;
+    display: inline-block;
+    font-size: 25px;
+    padding: 2.5px 25px 0px 15px;
+}
+a
+{
+    text-decoration: none;
+    color: white;
+}
+hr
+{
+    margin: 25px 0px;
+}
+
+div.movie
+{
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+iframe
+{
+    right: 0;
+    position: relative;
+    top: 0;
+    margin-left: 63%;
+}

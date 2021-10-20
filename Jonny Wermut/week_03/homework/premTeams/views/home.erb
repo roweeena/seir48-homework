@@ -1,0 +1,9 @@
+<h1>Welcome to the home of all EPL football teams</h1>
+
+<% @teams.each do |team| %>
+	<a href="/teams/<%= team.id %>"> 
+	<p> <%= team.name %> </p>
+	</a>
+<% end %>
+
+<a href="/teams/add"><button>Add a new team</button></a>

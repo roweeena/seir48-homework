@@ -1,0 +1,44 @@
+<h1>Edit Monster</h1>
+
+<form action="/monsters/<%= @monster.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="e.g. Dark Magician" value="<%= @monster.name %>" required>
+  </label>
+
+  <label>
+    Type:
+    <input name="mtype" placeholder="e.g. Spellcaster" value="<%= @monster.mtype %>" required>
+  </label>
+
+  <label>
+    Element:
+    <input name="element" placeholder="e.g. DARK" value="<%= @monster.element %>" required>
+  </label>
+
+  <label>
+    ATK:
+    <input name="atk" placeholder="e.g. 2500" value="<%= @monster.atk %>" required>
+  </label>
+
+  <label>
+    DEF:
+    <input name="def" placeholder="e.g. 2100" value="<%= @monster.def %>" required>
+  </label>
+
+  <label>
+    Owned by:
+    <select name="duelist_id" placeholder="e.g. Yugi Muto" required>
+      <% Duelist.all.each do |duelist| %>
+        <option value="<%= duelist.id %>" <%= "selected" if duelist.id == @monster.duelist_id %>><%= duelist.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @monster.image %>">
+  </label>
+
+  <button>Update Monster Attributes</button>
+</form>
