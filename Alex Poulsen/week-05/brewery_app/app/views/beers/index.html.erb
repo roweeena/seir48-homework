@@ -1,0 +1,5 @@
+<h1>All Beers</h1>
+
+<% @beers.each do |beer| %>
+  <%= link_to image_tag(beer.image), beer %>
+<% end %>
