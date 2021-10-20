@@ -1,0 +1,19 @@
+<h1><%= @driver.name %></h1>
+
+<%= image_tag @driver.image, :class => 'feature' %>
+
+  <ul>
+    <li>Nationality: <%= @driver.nationality %></li>
+    <li>Team: <%= @driver.team %></li>
+    <li>Date of Birth: <%= @driver.dob.strftime '%B %e, %Y' %></li>
+    <li>Current Ranking: <%= @driver.current_ranking %></li>
+    <% @driver.tracks.each do |track| %>
+      <li>Last Track Victor: <%= link_to track.name, track  %></li>
+    <% end %>
+  </ul>
+
+
+<div class="controls">
+  <%= button_to "Edit Driver", edit_driver_path(@driver.id), :method => 'get' %>
+  <%= button_to "Delete Driver", @driver, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>

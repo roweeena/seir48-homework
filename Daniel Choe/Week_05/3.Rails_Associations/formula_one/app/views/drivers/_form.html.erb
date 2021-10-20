@@ -1,0 +1,21 @@
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+
+  <%= f.label :nationality %>
+  <%= f.text_field :nationality %>
+
+  <%= f.label :team %>
+  <%= f.text_field :team%>
+
+  <%= f.label :dob %>
+  <%= f.text_field :dob %>
+
+  <%= f.label :current_ranking %>
+  <%= f.text_field :current_ranking %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.submit %>
+<% end %>
