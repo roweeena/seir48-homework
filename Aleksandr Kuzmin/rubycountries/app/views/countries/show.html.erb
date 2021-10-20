@@ -1,0 +1,16 @@
+<h1><%= @country.name %></h1>
+
+<%= image_tag @country.image, :class => 'feature' if @country.image.present? %>
+
+<li>Name: <%= @country.capital %></li>
+<li>Currency: <%= @country.currency %></li>
+
+<li>Formation: <%= @country.formation.strftime "%B %e, %Y" if @country.formation.present? %></li>
+
+
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit country', edit_country_path(@country) %>
+  <%= link_to 'Delete country', @country, :method => 'delete', :class => 'hotdogs', :data => { :confirm => 'Are you sure?' } %>
+</div>
