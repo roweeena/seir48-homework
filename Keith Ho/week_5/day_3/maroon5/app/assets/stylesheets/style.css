@@ -1,0 +1,82 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  /* background-image: url("/assets/images/background.jpg"); */
+  background-image: url("https://i.pinimg.com/originals/81/45/15/814515761737adc1e0c802f8fb5e74fc.jpg");
+  color: white;
+  background-size: 100%;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+nav {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+}
+
+a:hover {
+  box-shadow: 0 0 20px 10px rgba(0, 140, 186, 0.5);
+}
+
+img {
+  height: 500px;
+  margin: 20px;
+}
+
+img:hover {
+  box-shadow: 0 0 20px 10px rgba(0, 140, 186, 0.5);
+}
+
+.songs-container {
+  margin-left: 40%;
+}
+
+li {
+  font-size: 20px;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.controls {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.feature {
+  max-height: 30em;
+}
+
+.albums a {
+  margin: 0;
+}
+
+.album-container {
+  display: inline-block;
+}
+
+.new_album, .new_song {
+  font-size: 20px;
+}
+
+.song-show {
+  margin-left: 35%;
+  margin-bottom: 50px;
+}
+
+.song-show a {
+  font-size: 25px;
+}
