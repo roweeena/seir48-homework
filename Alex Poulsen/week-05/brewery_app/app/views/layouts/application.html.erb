@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BreweryApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+      <%= link_to "All Breweries", breweries_path %>
+      <%= link_to "New Breweries", new_brewery_path %>
+      |
+      <%= link_to "All Beers", beers_path %>
+      <%= link_to "New Beers", new_beer_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

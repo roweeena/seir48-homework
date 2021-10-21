@@ -1,0 +1,29 @@
+<h1>Edit place</h1>
+
+<form  action="/places/<%=@place["id"] %>"  method="post">
+<label>
+Name:
+<input type="text" name="name" placeholder="Noosa" required value="<%=@place.name%>">
+
+</label>
+
+<p class="jsx-3560926977 Typography text-body-3 font-bold font-body text-current text-neutral-600 pb-1">TODAY</p>
+
+<label>
+Description:
+
+
+<textarea type="text" name="description" placeholder="description..." required value="<%=@place.description%>" rows="8" cols="80"></textarea>
+
+
+</label>
+
+<label>
+
+Image:
+<input type="url" name="image" placeholder="http://...." value="<%=@place.name%>">
+
+
+</label>
+<button>Update place</button>
+</form>

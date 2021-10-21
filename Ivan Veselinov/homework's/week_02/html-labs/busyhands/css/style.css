@@ -1,0 +1,46 @@
+body{
+background: url(..images/bg_body.jpg) no-repeat;
+margin: 0 auto;
+}
+
+#header{
+  background-color: black;
+  background: url("../images/shadow_slider.png") no repeat;
+  background-position: center;
+  margin: 0 auto;
+  color:white;
+  text-align: center;
+}
+ul li {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+#social{
+  width: 980px;
+  height: 300px;
+  display: inline;
+}
+
+.socialNav{
+    background: url("../images/socialNav.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 300px;
+    height: 150px;
+    margin-top:30px;
+    padding-top: 30px;
+
+}
+
+.logo{
+  background: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 300px;
+  height: 150px;
+  padding-bottom: 5px;
+}

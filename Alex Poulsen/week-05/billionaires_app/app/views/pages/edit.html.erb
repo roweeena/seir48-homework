@@ -1,0 +1,32 @@
+<h1>Edit Billionaire</h1>
+
+<form action="<%= billionaire_path(@billionaire.id) %>" method='post'>
+
+  <label for="">
+    Name:
+    <input type="text" name='name' required value="<%= @billionaire.name %>">
+  </label>
+
+  <label for="">
+    Age:
+    <input type="number" name='age' value="<%= @billionaire.age %>">
+  </label>
+
+  <label for="">
+    Residence
+    <input type="text" name='residence' value="<%= @billionaire.residence %>">
+  </label>
+
+  <label for="">
+    Net Worth:
+    <input type="number" name='net_worth' required value="<%= @billionaire.net_worth %>">
+  </label>
+
+  <label for="">
+    Hobbies:
+    <input type="text" name='hobbies' value="<%= @billionaire.hobbies %>">
+  </label>
+
+  <button>Edit Billionaire</button>
+
+</form>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+      <a href="/">Home</a>
+      |
+      <a href="/games/magic_eight_ball">Magic 8 Ball</a>
+      |
+      <a href="/games/secret_number">Secret Number</a>
+      |
+      <a href="/games/rock_paper_scissors">Rock Paper Scissors</a>
+    </nav>
+
+    <%= yield %>
+
+  </body>
+</html>

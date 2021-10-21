@@ -28,17 +28,34 @@ const catWalk = function() {
     };
 };
 ////////////////////////////////////////////////////
-const catWalkLeft = function() {
+let forward = true;
 
-    const oldpos = parseInt(catDaddy.style.left);
-    const newpos = oldpos + 10
+const catWalkLoop = function() {
+
+  if (forward){
+
+    let oldpos = parseInt(catDaddy.style.left);
+    const newpos = oldpos + 5;
     catDaddy.style.left = newpos + 'px';
 
-    if (oldpos <= catDaddy.width) {
-      stopCatWalk();
-      catDaddy.style.transform = "scaleX(+1)";
+    if (oldpos >= window.innerWidth- catDaddy.width && forward === true) {
+      catDaddy.style.transform = "scaleX(-1)";
+      forward = false;
     };
-}
+
+  }
+  else {
+
+    let oldpos = parseInt(catDaddy.style.left);
+    const newpos = oldpos - 5;
+    catDaddy.style.left = newpos + 'px';
+  }
+
+    if ( parseInt(catDaddy.style.left) <= 0 && forward === false) {
+      catDaddy.style.transform = "scaleX(+1)";
+      forward = true;
+    }
+};
 ///////////////////
 const stopCatWalk = function () {
   clearInterval(timerID);
@@ -50,4 +67,4 @@ const catWalkInit = function () {
 
 catWalkInit();
 
-timerID = setInterval(catWalk, 50);
+timerID = setInterval(catWalkLoop, 25);

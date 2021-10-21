@@ -1,20 +1,21 @@
+* {
+	margin: 0 auto;
+}
+
 #container {
 	margin: 2% auto;
 	width:  960px;
 	font-family: "Arial", sans-serif;
 }
 
-header {
+/* header {
 	display:  inline;
-}
+} */
 
 nav {
 	background: black;
 	color: white;
 	width: 100%;
-	padding: 8px;
-    margin-left: -8px;
-    margin-top: -8px;
 }
 
 ul {
@@ -23,14 +24,14 @@ ul {
 
 nav ul li {
 	display: inline-block;
-	padding-right: 20px;
-	padding-left: 0;
-	margin: 0;
+	padding: 20px;
+	/* padding-left: 0;
+	margin: 0; */
 	font-family: "Arial", sans-serif;
 	font-size: 14px;
 }
 
-nav ul li:hover {
+li:hover {
 	background: url(../images/bg_nav_rollover.png);
 }
 
@@ -110,8 +111,8 @@ nav ul li a {
 #box3 {
 	display: table-cell;
 }
-/*----------------------------------------------------------------------------- 
-=05 SOCIAL MEDIA  
+/*-----------------------------------------------------------------------------
+=05 SOCIAL MEDIA
 -----------------------------------------------------------------------------*/
 
 #socialMedia {
@@ -127,7 +128,7 @@ margin: 0;
 	 display:inline-block;
 	 width:60px;
 	 height:60px;
-	 background:blue;	
+	 background:blue;
 	 text-indent:-9999em;
 }
 
@@ -136,31 +137,31 @@ margin: 0;
 }
 
 #socialMedia ul li.twitter {
-	background:url(../images/socialNav.png) -60px 64px; 
+	background:url(../images/socialNav.png) -60px 64px;
 }
 
 #socialMedia ul li.facebook {
-	background:url(../images/socialNav.png) -120px 64px; 
+	background:url(../images/socialNav.png) -120px 64px;
 }
 
 #socialMedia ul li.rss {
-	background:url(../images/socialNav.png) -180px 64px; 
+	background:url(../images/socialNav.png) -180px 64px;
 }
 
 
 
 #socialMedia ul li.linkedIn:hover {
-	background:url(../images/socialNav.png) 0px 0px; 
+	background:url(../images/socialNav.png) 0px 0px;
 }
 
 #socialMedia ul li.twitter:hover {
-	background:url(../images/socialNav.png) -60px 0px; 
+	background:url(../images/socialNav.png) -60px 0px;
 }
 
 #socialMedia ul li.facebook:hover {
-	background:url(../images/socialNav.png) -120px 0px; 
+	background:url(../images/socialNav.png) -120px 0px;
 }
 
 #socialMedia ul li.rss:hover {
-	background:url(../images/socialNav.png) -180px 0px; 
+	background:url(../images/socialNav.png) -180px 0px;
 }

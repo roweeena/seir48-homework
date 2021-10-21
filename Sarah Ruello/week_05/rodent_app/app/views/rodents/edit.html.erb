@@ -1,0 +1,32 @@
+<h1>Edit rodent</h1>
+
+
+<form action="<%= rodent_path(@rodent.id) %>" method="post">
+
+<label>
+<span class="label-name">Name:</span>
+<input type="text" name="name" required value="<%=@rodent.name%>">
+</label><br>
+
+<label>
+<span class="label-name">Family:</span>
+<input type="text" name="family" value="<%=@rodent.family%>">
+</label><br>
+
+<label>
+<span class="label-name">Lifespan:</span>
+<input type="number" name="lifespan" value="<%=@rodent.lifespan%>">
+</label><br>
+
+<label>
+<span class="label-name">Diet:</span>
+<input type="text" name="diet" value="<%=@rodent.diet%>">
+</label><br>
+
+<label>
+<span class="label-name">Image:</span>
+<input type="url" name="image" value="<%=@rodent.image%>">
+</label><br>
+
+<button>Submit</button>
+</form>

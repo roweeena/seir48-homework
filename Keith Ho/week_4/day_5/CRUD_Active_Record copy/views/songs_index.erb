@@ -1,0 +1,12 @@
+<h1>All Songs</h1>
+
+<% @songs.each do |song| %>
+  <p>
+    <a href="/songs/<%= song.id %>">
+      <%= song.name %>
+    </a>
+      <% if song.thumbs_up == 1 %>
+        <span>| 👍</span>
+      <% end %>
+  </p>
+<% end %>

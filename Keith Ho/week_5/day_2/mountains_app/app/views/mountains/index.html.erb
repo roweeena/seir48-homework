@@ -1,0 +1,10 @@
+<h1>Seven Summits</h1>
+<h3>Highest Mountains of each of the seven traditional continents</h3>
+
+<% @mountains.each do |mountain| %>
+<div class="form-container">
+  <p>
+    <%= link_to mountain.name, mountain_path(mountain.id) %> is located in <%= mountain.country %>, <%= mountain.continent %>.
+  </p>
+</div>
+<% end %>

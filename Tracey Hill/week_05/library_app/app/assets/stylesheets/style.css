@@ -1,0 +1,116 @@
+body {
+    background-image: url("/img/bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: beige; 
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Actor', sans-serif;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    min-height: 60vh; 
+}
+
+.top_nav {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    min-height: 5vh; 
+}
+
+img {
+    max-width: 710px;
+}
+
+nav, body a {
+    padding: 0 10px;
+}
+
+h1 {
+    margin:15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+label {
+    margin: 10px;
+    max-width: 350px;
+}
+
+input {
+    margin: 5px 15px;
+    padding: 10px;
+    max-width: 350px;
+}
+
+button {
+    margin: 40px;
+    padding: 10px;
+    max-width: 350px;
+}
+.home {
+    background-image: url("/img/mp.png");
+    background-size: cover;
+}
+
+.card {
+    justify-content: flex-end;
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    width: 15%;
+}
+
+select {
+    margin: 20px 10px;
+    padding: 10px;
+    max-width: 350px;
+}
+
+.thumb-wrapper {
+    height: 150px;
+}
+
+.book {
+    width: 100px;
+    display: inline;
+}
+
+.thumb {
+    width: 100px;
+    display: block;
+}
+
+.index {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.portrait {
+    padding: 10px 20px 30px 40px;
+}
+
+.feature {
+    width: 250px;
+}
+
+ul {
+    list-style: none;
+    line-height: 30px;
+}
