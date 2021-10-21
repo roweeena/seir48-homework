@@ -2,7 +2,9 @@
 
 <ul>
   <li>Title: <%= @song.name %></li>
-  <li>Description: <%= @song.description %></li>
+  <% if @song.album.present? %>
+    <li>Album: <%= link_to @song.album.name, @song.album %></li>
+  <% end %>
 </ul>
 
 <% unless @song.video.nil? || @song.video.empty? %>
@@ -11,6 +13,7 @@
 </div>
 <% end %>
 
+<p><%= @song.description %></p>
 
 <div class="controls">
   <%= button_to 'Edit song', edit_song_path(@song), :method => 'get' %>

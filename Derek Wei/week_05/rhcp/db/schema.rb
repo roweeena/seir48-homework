@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_224006) do
+ActiveRecord::Schema.define(version: 2021_10_21_001528) do
 
   create_table "albums", force: :cascade do |t|
     t.text "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_224006) do
     t.text "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "album_id"
   end
 
 end

@@ -1,9 +1,15 @@
 <%= form_for @song do |f| %>
   <%= f.label :name, 'Title' %>
   <%= f.text_field :name, :required => true %>
+
+  <%= f.label :album_id %>
+  <%= f.select :album_id, Album.pluck(:name, :id), :include_blank => true %>
+
   <%= f.label :description %>
   <%= f.text_field :description, :width => 30 %>
+
   <%= f.label :video %>
   <%= f.url_field :video, :placeholder => "http://..." %>
+
   <%= f.submit %>
 <% end %>

@@ -1,13 +1,18 @@
 <%= form_for @album do |f| %>
   <%= f.label :name, 'Title' %>
   <%= f.text_field :name, :required => true %>
+
   <%= f.label :year %>
   <%= f.text_field :year %>
+
   <%= f.label :length %>
   <%= f.text_field :length, :placeholder => "e.g. 40:32" %>
+
   <%= f.label :no_of_songs %>
   <%= f.text_field :no_of_songs %>
+
   <%= f.label :image %>
   <%= f.url_field :image, :placeholder => "http://..." %>
+  
   <%= f.submit %>
 <% end %>
