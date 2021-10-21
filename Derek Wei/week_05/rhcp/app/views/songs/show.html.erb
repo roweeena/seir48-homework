@@ -1,2 +1,18 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1><%= @song.name %></h1>
+
+<ul>
+  <li>Title: <%= @song.name %></li>
+  <li>Description: <%= @song.description %></li>
+</ul>
+
+<% unless @song.video.nil? || @song.video.empty? %>
+<div class="video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @song.video.split('v=')[1]%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<% end %>
+
+
+<div class="controls">
+  <%= button_to 'Edit song', edit_song_path(@song), :method => 'get' %>
+  <%= button_to 'Delete song', @song, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>
