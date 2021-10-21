@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <%= link_to "All Authors", authors_path, :class => 'navegator' %>
+        <%= link_to "New Author", new_author_path, :class => 'navegator' %>
+        |
+        <%= link_to "All Books", books_path, :class => 'navegator' %>
+        <%= link_to "New Book", new_book_path, :class => 'navegator' %>
+      </nav>
+      <%= yield %>
+    </div>
+  </body>
+</html>

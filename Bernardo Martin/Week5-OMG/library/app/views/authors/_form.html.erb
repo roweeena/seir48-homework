@@ -1,0 +1,11 @@
+<%= form_for @author do |f| %>
+  <%= f.label :name, :class => 'forms'%>
+  <%= f.text_field :name, :required => true, :class => 'forms' %>
+  <%= f.label :nationality, :class => 'forms' %>
+  <%= f.text_field :nationality, :class => 'forms' %>
+  <%= f.label :num_of_books, "Number of publications", :class => 'forms' %>
+  <%= f.number_field :num_of_books, :class => 'forms' %>
+  <%= f.label :image, :class => 'forms' %>
+  <%= f.url_field :image, :class => 'forms' %>
+  <%= f.submit :class => 'buttons' %>
+<% end %>

@@ -1,0 +1,20 @@
+<h1><%= @player.name %></h1>
+<h3><%= @player.position %> | <%= @player.club %></h3>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Score</th>
+  </tr>
+  <% @player.scores_as_i.each_with_index do |score, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= score %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="controls">
+  <%= link_to 'Edit', edit_player_path %>
+  <%= link_to 'Delete', player_path(@player.id), :method => 'delete' %>
+</div>

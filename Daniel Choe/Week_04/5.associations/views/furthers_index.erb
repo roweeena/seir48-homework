@@ -1,0 +1,10 @@
+<h1>Further Cat Information</h1>
+
+
+  <% @furthers.each do |info| %>
+  <p>
+    <a href="/further_information/<%= info.id %>">
+    <%= info.breed %>
+    </a>
+  </p>
+  <% end %>
