@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+  list-style-position: inside;
+}
+
+nav {
+  text-align: center;
+}
+.feature {
+  max-width: 35%;
+}
+
+.logo {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+.track_thumb {
+  width: 150px;
+}
+
+.driver, .track {
+  float: left;
+  width: 50%;
+}
+
+.driver_thumb {
+  width: 120px;
+  border-radius: 50%;
+}

@@ -1,0 +1,8 @@
+<h1>All Racing Tracks</h1>
+
+<% @tracks.each do |track| %>
+  <p class = "track">
+    <%= link_to image_tag(track.image, :class => 'track_thumb'), track_path(track.id) %><br>
+    <%= link_to track.name, track_path(track.id) %>
+  </p>
+<% end %>

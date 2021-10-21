@@ -1,0 +1,21 @@
+<%= form_for @beer do |f| %>
+ <p>  
+  <span class="label-name"><%= f.label :beer_name %></span>
+  <%= f.text_field :beer_name, :required => true %>
+ </p>   
+ <p>
+  <span class="label-name"><%= f.label :brand %></span>
+  <%= f.text_field :brand %>
+ </p> 
+  <span class="label-name"><%= f.label :abv, 'ABV %' %></span>
+  <%= f.text_field :abv %>
+ <p>
+  <span class="label-name"><%= f.label :image %></span>
+  <%= f.url_field :image %>
+ </p>    
+ <p>
+  <span class="label-name"><%= f.label :style_id %></span>
+  <%= f.select :style_id, Style.pluck(:style_name, :id), :include_blank => true %>
+ </p>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,30 @@
+=> [[32m#<Beer:0x000055934f9adef8[0m
+  id: [1;34m1[0m,
+  beer_name: [31m[1;31m"[0m[31mFat Nerd Vanilla Porter[1;31m"[0m[31m[0m,
+  brand: [31m[1;31m"[0m[31mYulli's[1;31m"[0m[31m[0m,
+  abv: [1;35m6.0[0m,
+  image:
+   [31m[1;31m"[0m[31mhttps://cdn11.bigcommerce.com/s-4dsnxp/images/stencil/500x659/products/4095/10991/Yullis_Fat_Nerd_Vanilla_Porter__14421.1627375523.png?c=2[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m20[0m [1;34;4mOct[0m [1;34m2021[0m [1;34m08[0m:[1;34m01[0m:[1;35m35.201683000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m20[0m [1;34;4mOct[0m [1;34m2021[0m [1;34m08[0m:[1;34m01[0m:[1;35m35.201683000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  style_name: [1;36mnil[0m[32m>[0m,
+ [32m#<Beer:0x0000559350471290[0m
+  id: [1;34m2[0m,
+  beer_name: [31m[1;31m"[0m[31mSecond Jab Hoppy Saison[1;31m"[0m[31m[0m,
+  brand: [31m[1;31m"[0m[31mBadlands[1;31m"[0m[31m[0m,
+  abv: [1;35m7.5[0m,
+  image:
+   [31m[1;31m"[0m[31mhttps://cdn11.bigcommerce.com/s-4dsnxp/images/stencil/500x659/products/10040/11385/Badlands_Second_Jab_Hoppy_Saison_440ml_Can__67124.1632974293.png?c=2[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m20[0m [1;34;4mOct[0m [1;34m2021[0m [1;34m08[0m:[1;34m01[0m:[1;35m35.219719000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m20[0m [1;34;4mOct[0m [1;34m2021[0m [1;34m08[0m:[1;34m01[0m:[1;35m35.219719000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  style_name: [1;36mnil[0m[32m>[0m,
+ [32m#<Beer:0x00005593504711c8[0m
+  id: [1;34m3[0m,
+  beer_name: [31m[1;31m"[0m[31mCoffee Milk Stout[1;31m"[0m[31m[0m,
+  brand: [31m[1;31m"[0m[31mBatch Brewing Co.[1;31m"[0m[31m[0m,
+  abv: [1;35m4.4[0m,
+  image:
+   [31m[1;31m"[0m[31mhttps://cdn11.bigcommerce.com/s-4dsnxp/images/stencil/500x659/products/9567/10908/Batch_Coffee_Milk_Stout_375ml_Can__00701.1626248644.png?c=2[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m20[0m [1;34;4mOct[0m [1;34m2021[0m [1;34m08[0m:[1;34m01[0m:[1;35m35.231361000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m20[0m [1;34;4mOct[0m [1;34m2021[0m [1;34m08[0m:[1;34m01[0m:[1;35m35.231361000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  style_name: [1;36mnil[0m[32m>[0m]
