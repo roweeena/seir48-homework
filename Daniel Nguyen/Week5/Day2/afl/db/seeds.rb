@@ -2,5 +2,4 @@ Player.create :name => 'Jack Steele', :position => 'MID', :club => 'STK', :score
 
 Player.create :name => 'Max Gawn', :position => 'RUC', :club => 'MEL', :scores => '73,108,135,132,131,107,72,108,105,129,118,108,119,,97,96,108,95,119,109,84,97,139'
 
-
 puts "Database seeded. #{ Player.count } players created"

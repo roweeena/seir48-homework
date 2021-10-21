@@ -50,12 +50,6 @@ nav a:hover {
   color: black;
 }
 
-nav a.active {
-  background-color: limegreen;
-  color: white;
-
-}
-
 h1 {
   padding: 0.5em;
 }

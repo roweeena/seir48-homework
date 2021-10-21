@@ -1,0 +1,21 @@
+<h1>
+  <%= @song.name %>
+  <% if @song.thumbs_up == true %>
+    <span>👍</span>
+  <% else %>
+    <span>👎</span>
+  <% end %>
+</h1>
+
+<% if @song.album.present? %>
+  <p>Album: <%= link_to @song.album.name, @song.album %></p>
+<% end %>
+
+<% unless @song.link.nil? || @song.link.empty? %>
+  <iframe src="<%= @song.link %>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% end %>
+
+<div class="controls">
+  <%= link_to "Edit Song", edit_song_path(@song) %>
+  <%= link_to "Delete Song", @song, :method => "delete", :data => { :confirm => "Are you sure you want to delete this song?!" } %>
+</div>

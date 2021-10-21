@@ -27,7 +27,7 @@ class AuthorsController < ApplicationController
   end
 
   def update
-    author = Artist.find params[:id]
+    author = Author.find params[:id]
     author.update author_params
     redirect_to author
   end
