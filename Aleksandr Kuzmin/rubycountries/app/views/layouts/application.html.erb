@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countries</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container">
+    <nav>
+      <%= link_to 'All countries', countries_path %>
+      <%= link_to 'New country', new_country_path %>
+
+      <%= link_to 'All cities', cities_path %>
+      <%= link_to 'New city', new_city_path %>
+
+    </nav>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

@@ -211,7 +211,7 @@
 #   scrabble('expulsion');
 
 ###########################################################################
-############################## Warmup 15/10 ###############################
+############################## Warmup 18/10 ###############################
 
 #   # Robot Factory 🤖
 # You run a robot factory. As robots are created, they roll off the conveyor belt as empty, mindless husks of machinery -- until you first boot them up.
@@ -263,42 +263,181 @@
 # => "8 seconds since last boot, 29 seconds since creation"
 # ``
 
-require 'pry'
+# require 'pry'
 
-class Robot 
-	attr_reader :instruction_count
+# class Robot 
+# 	attr_reader :instruction_count
 
-    def initialize 
-		@name = generate_name
-		@instruction_count = 0
-		@created_at = Time.now
-		@reset_at = Time.now
-    end 
+#     def initialize 
+# 		@name = generate_name
+# 		@instruction_count = 0
+# 		@created_at = Time.now
+# 		@reset_at = Time.now
+#     end 
 
-	def generate_name 
-		digits = ("000".."999").to_a.sample
-		letters = ('AA'..'ZZ').to_a.sample
-		letters + digits
+# 	def generate_name 
+# 		digits = ("000".."999").to_a.sample
+# 		letters = ('AA'..'ZZ').to_a.sample
+# 		letters + digits
+# 	end	
+
+# 	def name	
+# 		@instruction_count += 1
+# 		puts "My name is #{@name}"
+# 	end	
+
+# 	def reset 
+# 		@instruction_count += 1
+# 		@name = generate_name
+# 		@reset_at = Time.now	
+# 	end
+
+# 	def timers 
+# 		time_since_reset = Time.now - @reset_at
+# 		time_since_creation = Time.now - @created_at
+
+# 		message = "#{time_since_reset.round(2)} seconds since last boot, 
+# 		#{time_since_creation.round(2)} since creation."
+# 	end
+
+# end
+
+# binding.pry
+
+
+###########################################################################
+############################## Warmup 19/10 ###############################
+
+# # Roman Numerals
+
+# The Romans were a clever bunch. They conquered most of Europe and ruled it 
+# for hundreds of years. They invented concrete and straight roads and even bikinis.
+# One thing they never discovered though was the number zero. This made writing 
+# and dating extensive histories of their exploits slightly more challenging, 
+# but the system of numbers they came up with is still in use today. For example, 
+# the BBC uses Roman numerals to date their programmes.
+
+# The Romans wrote numbers using letters - I, V, X, L, C, D, M. (notice these 
+# letters have lots of straight lines and are hence easy to hack into stone 
+# tablets using a chisel).
+
+# ```plain
+#  1  => I
+# 10  => X
+#  7  => VII
+# ```
+
+# Write a program that will convert Arabic numerals to Roman numerals.
+
+# There is no need to be able to convert numbers larger than about 3000. (The Romans 
+# themselves didn't tend to go any higher)
+
+# Wikipedia says: "Modern Roman numerals ... are written by expressing each digit 
+# separately starting with the left most digit and skipping any digit with a value 
+# of zero."
+
+# To see this in practice, consider the example of 1990.
+
+# ```
+# In Roman numerals 1990 is MCMXC:
+
+# 1000=M 900=CM 90=XC
+
+# 2008 is written as MMVIII:
+
+# 2000=MM 8=VIII
+# ```
+
+# See [this website](https://www.rapidtables.com/math/symbols/roman_numerals.html) 
+# for the table of Roman Numbers you will need to check for.
+
+
+# Do this in Ruby.
+
+# def romanise(num)
+
+# roman = {
+# 	1000 => 'M',
+# 	900 => 'CM',
+# 	500 => 'D',
+# 	400 => 'CD',
+# 	100 => 'C',
+# 	90 => 'XC',
+# 	50 => 'L',
+# 	40 => 'XL',
+# 	10 => 'X',
+# 	9 => 'IX',
+# 	5 => 'V',
+# 	4 => 'IV',
+# 	1 => 'I'
+# }
+# 	string = ""
+# 	roman.each do |value, letter| 
+#     	string << letter*(num / value) # '123' x (123 / 100 x 1, 23 / 10 x 2, III x 3)
+# 		num = num % value  	
+# 	end
+# 	return string
+	
+# end 
+
+# puts romanise(123) # CXXIII
+# puts romanise(1876)
+# puts romanise(325)
+
+###########################################################################
+############################## Warmup 20/10 ###############################
+
+# Luhn Formula
+
+# Write a program that can take a number and determine whether or not it is 
+# valid per the Luhn formula.
+
+# This number must pass the following test:
+
+# Counting from rightmost digit (which is the check digit) and moving left, 
+# double the value of every second digit. For any digits that thus become 10 or 
+# more, subtract 9 from the result.
+
+# E.g., 1111 becomes 2121, while 8763 becomes 7733 (from 2×6=12 → 12-9=3 
+# 	and 2×8=16 → 16-9=7).
+
+# Add all these digits together. For example, if 1111 becomes 2121, then 
+# 2+1+2+1 is 6; and 8763 becomes 7733, so 7+7+3+3 is 20.
+
+# If the total ends in 0 (put another way, if the total modulus 10 is 0), 
+# then the number is valid according to the Luhn formula; otherwise it is 
+# not valid. So, 1111 is not valid (as shown above, it comes out to 6), 
+# while 8763 is valid (as shown above, it comes out to 20).
+
+# Write a program that, given a number, can check if it is valid per the Luhn formula.
+
+# ```ruby
+# luhn 3554
+# # => false
+
+# luhn 8763
+# # => true
+# ```
+
+def luhn(num)	
+	sum = 0
+	nums = num.to_s.split("")
+	# each_with_index iterates through each element in an array or hash, 
+	# and extracts the element, as well as the index:
+	nums.each_with_index do |n, i|
+		sum += if (i.even?)
+			n.to_i * 2 > 9 ? n.to_i * 2 - 9 : n.to_i * 2
+		else
+			n.to_i
+		end
 	end	
-
-	def name	
-		@instruction_count += 1
-		puts "My name is #{@name}"
-	end	
-
-	def reset 
-		@instruction_count += 1
-		@name = generate_name
-		@reset_at = Time.now	
+	if sum % 10 == 0
+		puts "true"
+	else
+		puts "false"
 	end
-
-	def timers 
-		time_since_reset = Time.now - @reset_at
-		time_since_creation = Time.now - @created_at
-
-		message = "#{time_since_reset.round(2)} seconds since last boot, #{time_since_creation.round(2)} since creation."
-	end
-
 end
+						
 
-binding.pry
+luhn(3554)
+luhn(8763)

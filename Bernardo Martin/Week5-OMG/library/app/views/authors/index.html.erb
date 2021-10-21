@@ -1,0 +1,10 @@
+<h1>Welcome to Bernie's library. Find your favorite authors.</h1>
+
+<h2>Check the list.</h2>
+<% @authors.each do |author| %>
+  <div class="index">
+    <%= image_tag author.image, :class => 'thumb' if author.image.present? %>
+    <p>  <%=link_to author.name, author %> </p>
+  </div>
+
+<% end %>
