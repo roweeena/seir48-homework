@@ -1,0 +1,22 @@
+<%= form_for @track do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+
+
+  <%= f.label :track_type %>
+  <%= f.text_field :track_type %>
+
+  <%= f.label :length %>
+  <%= f.text_field :length %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :driver_id %>
+  <%= f.select :driver_id, Driver.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.submit %>
+<% end %>

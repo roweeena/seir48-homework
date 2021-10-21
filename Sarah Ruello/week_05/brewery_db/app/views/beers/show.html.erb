@@ -1,0 +1,18 @@
+
+<div class="beer-display">
+<h3>Name: <%= @beer.beer_name %></h3>
+<h3>Brand: <%= @beer.brand %> </h3>
+<h3>Style: <%= @beer.style.style_name %> </h3> <!--Need to fix update to add style_id -->
+<h3>ABV: <%= @beer.abv %> %</h3>
+
+</div>
+<div class="beer-image">
+<%= image_tag @beer.image, :class => 'beer-image' %>
+</div>
+
+<div class="navbar">
+  <nav>
+  <%= link_to 'Edit beer', edit_beer_path(@beer) %> |
+  <%= link_to 'Delete beer', @beer, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  </nav>  
+</div>    

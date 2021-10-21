@@ -1,0 +1,9 @@
+<h1>Foods</h1>
+
+<% @foods.each do |food| %>
+<p>
+  <a href="/foods/<%= food["id"] %>">
+    <%= food["name"] %>
+  </a>
+</p>
+<% end %>

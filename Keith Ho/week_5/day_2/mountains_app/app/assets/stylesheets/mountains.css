@@ -1,0 +1,68 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: #A2D2FF;
+}
+
+li {
+  text-align: left;
+}
+
+ul {
+  margin-left: 40%;
+}
+
+a {
+  display: inline;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+  box-shadow: 0 0 5px 5px #888888;
+}
+
+button {
+  border: none;
+  background-color: #A2D2FF;
+  font-size: 20px;
+  height: 20px;
+}
+
+button:hover {
+
+  color: blue;
+  box-shadow: 0 0 5px 5px #888888;
+}
+
+form {
+  display: inline;
+}
+
+.form-container {
+  text-align: left;
+  margin-left: 40%;
+}
+
+label {
+  display: block;
+}
+
+.edit-form button {
+  display: block;
+  margin: 20px auto;
+}
+
+.new-form button {
+  display: block;
+  margin: 20px auto;
+}
+
+label {
+  margin: 20px;
+}
+
+.feature {
+  max-width: 20em;
+}

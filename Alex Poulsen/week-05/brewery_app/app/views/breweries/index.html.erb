@@ -1,0 +1,5 @@
+<h1>Lex's Guide to Good Breweries</h1>
+
+<% @breweries.each do |b| %>
+  <%= link_to image_tag(b.logo), b %>
+<% end %>
