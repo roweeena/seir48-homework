@@ -1,0 +1,12 @@
+<h1>All Musicians</h1>
+
+<%= @musicians.each do |musician| %>
+<%= image_tag musician.image, :class => "thumb" if musician.image.present? %>
+
+<ul>
+<li>Name: <%= link_to musician.name, musician %> </li>
+<li>Nationality: <%= musician.nationality %></li>
+<li>Biography: <%= musician.biography %></li>
+</ul>
+
+<% end %>
