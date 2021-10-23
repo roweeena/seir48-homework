@@ -1,0 +1,83 @@
+body{
+  background-image: url("/assets/road.png");
+
+  min-width: 100%;
+  background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+
+  /* background-color: gray; */
+}
+.container{
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  max-width: 960px;
+  min-height: 960px;
+padding-left: 20px;
+}
+.feature{
+  max-width: 30em;
+}
+
+.thumb{
+  max-width: 9em;
+}
+
+.thumbs{
+  max-width: 10em;
+}
+
+.new_bus{
+  font-size: 24px;
+}
+
+.new_driver{
+  font-size: 24px;
+}
+
+.label {
+  font-size: 22px;
+  width: 10em;
+  height: 1em;
+  color: blue;
+}
+
+.buttons{
+  width: 10em;
+}
+
+a{
+  margin-bottom: 20px;
+  text-align: center;
+  color:white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+a:hover {
+  font-style: italic;
+  color:limegreen;
+  font-size: 26px;
+}
+
+.show{
+  font-size: 22px;
+  color: limegreen;
+}
+
+h1{
+  color: green;
+  text-align: center;
+}
+
+.show_model{
+  color: limegreen;
+  font-size: 22px;
+}
+
+
+
+.dot{
+  font-size: 20px;
+}
