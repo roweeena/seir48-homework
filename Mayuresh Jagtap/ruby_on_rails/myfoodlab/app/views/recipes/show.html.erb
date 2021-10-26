@@ -8,6 +8,6 @@
   <li>Course Type 🍽 : <%= @recipe.course %>  </li>
   <li>Serves 👨‍👩‍👦 : <%= @recipe.serves %> persons </li>
   <li>Main Recipe 🍳 : <%= @recipe.main_recipe %> </li>
-  <li>Youtube Video 🎥 : <%= @recipe.video.html_safe %> </li>
-
 </ul>
+<p>Youtube Video 🎥 :</p>
+<%= @recipe.video.html_safe %> 
