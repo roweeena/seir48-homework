@@ -1,0 +1,13 @@
+<h1> <%= @recipe.title %></h1>
+
+<%= image_tag @recipe.image, :class => 'thumb' if @recipe.image.present? %>
+
+<ul>
+  <li>Preparation Time ⏱ : <%= @recipe.prep_time %> mins </li>
+  <li>Cooking Time ⏱ : <%= @recipe.cook_time %> mins </li>
+  <li>Course Type 🍽 : <%= @recipe.course %>  </li>
+  <li>Serves 👨‍👩‍👦 : <%= @recipe.serves %> persons </li>
+  <li>Main Recipe 🍳 : <%= @recipe.main_recipe %> </li>
+  <li>Youtube Video 🎥 : <%= @recipe.video.html_safe %> </li>
+
+</ul>
