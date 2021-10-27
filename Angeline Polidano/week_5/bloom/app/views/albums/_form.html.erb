@@ -1,0 +1,15 @@
+<%= form_for @album do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :released %>
+<%= f.text_field :released %>
+
+<%= f.label :image %>
+<%= f.text_field :image %>
+
+<%= f.label :musician_id %>
+<%= f.select :musician_id, Musician.pluck(:name, :id), :include_blank => true %>
+<%= f.submit %>
+
+<% end %>
