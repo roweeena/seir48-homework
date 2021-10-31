@@ -1,0 +1,23 @@
+<%= form_for @author do |f| %>
+    <p>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+    </p>
+    <p>
+        <%= f.label :nationality %>
+        <%= f.text_field :nationality %>
+    </p>
+    <p>
+        <%= f.label :dob, "Date of Birth" %>
+        <%= f.date_field :dob %>
+    </p>
+    <p>
+        <%= f.label :genre %>
+        <%= f.text_field :genre %>
+    </p>
+    <p>
+        <%= f.label :image %>
+        <%= f.url_field :image %>
+    </p>
+    <%= f.submit("Create author") %>
+<% end %>
