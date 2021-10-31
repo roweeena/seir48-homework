@@ -15,15 +15,15 @@ console.log(
 );
 
 const flatten = function (array) {
-  // // Doesn't account for ',' as an element
-  // return array.join().split(',');
-
   // // Basic flatten; one level deep.
   // flattenedArray = [];
   // while (array.length > 0) {
   //   flattenedArray.push( array.shift() )
   // }
   // return flattenedArray;
+  
+  // // Doesn't account for ',' as an element
+  // return array.join().split(',');
 
   // Correct version (incomplete)
   flattenedArray = [];
