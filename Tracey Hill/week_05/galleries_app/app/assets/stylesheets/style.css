@@ -1,0 +1,79 @@
+body {
+    background-image: url("bg2.jpg");
+    background-color: beige; 
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Actor', sans-serif;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    min-height: 60vh; 
+}
+
+.top_nav {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    min-height: 5vh; 
+}
+
+img {
+    max-width: 710px;
+}
+
+nav, body a {
+    padding: 0 10px;
+}
+
+h1 {
+    margin: 0 0 15px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+label {
+    margin: 10px;
+    max-width: 350px;
+}
+
+input {
+    margin: 5px 15px;
+    padding: 10px;
+    max-width: 550px;
+}
+
+button {
+    margin: 40px;
+    padding: 10px;
+    max-width: 350px;
+}
+
+.index {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.gallery {
+    padding: 10px 20px 30px 40px;
+}
+.info {
+    list-style: none;
+    padding: 0.5em;
+    
+}
+
+.info li {
+    line-height: 2.15em;
+}

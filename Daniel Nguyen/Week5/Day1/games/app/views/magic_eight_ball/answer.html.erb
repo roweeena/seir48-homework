@@ -1,0 +1,12 @@
+<h1>Magic Eight Ball</h1>
+
+<label>
+  Question
+  <input name="question" value="<%= params[:question] %>" readonly>
+</label>
+
+<br>
+
+<p><%= @answer %></p>
+
+<a href="/games/magic_eight_ball">Ask another question</a>

@@ -1,0 +1,17 @@
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :published %>
+  <%= f.text_field :published %>
+  <%= f.label :pages %>
+  <%= f.text_field :pages %>
+  <%= f.label :language %>
+  <%= f.text_field :language %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.label :author_id %>
+  <%= f.select :author_id, Author.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.submit %>
+<% end %>

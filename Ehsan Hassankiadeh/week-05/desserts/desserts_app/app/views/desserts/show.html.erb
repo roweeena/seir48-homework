@@ -1,0 +1,12 @@
+<h1><%=@dessert.name%></h1>
+<%= image_tag @dessert.image if @dessert.image.present? %>
+<ul>
+    <li>Name: <%=@dessert.name %></li>
+    <li>Country: <%=@dessert.country %></li>
+    <li>Area: <%=@dessert.area %></li>
+    <li>Discover: <%=@dessert.discover %></li>
+</ul>
+<div class="controls">
+    <%= link_to 'Edit Desert', edit_dessert_path(@dessert.id)%>
+    <%= button_to 'Delete Desert', dessert_path(@dessert.id), :method => 'delete'%>
+</div>

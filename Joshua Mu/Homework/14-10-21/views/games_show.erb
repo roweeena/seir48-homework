@@ -1,0 +1,7 @@
+<h1><%= @game["name"] %></h1>
+<h2>Description: <%= @game["description"] %></h2>
+<h3>Rating: <%= @game["rating"]%></h3>
+<div class="controls">
+  <a href="/games/<%= @games["id"] %>/edit">Edit butterfly</a>
+  <a href="/games/<%= @games["id"] %>/delete">Delete butterfly</a>
+</div>

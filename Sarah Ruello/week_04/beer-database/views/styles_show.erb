@@ -1,18 +1,23 @@
 
 <h2>Name: <%= @style["name"] %> </h2>
-<h2>ID: <%= @style["id"] %> </h2>
+<!-- %# <h2>ID: <%= @style["id"] %> -->
 <!-- <%= %> echoing tag ----->
 <!-- <% %> non-echoing tag -->
 
- <%# TODO: %>
- <%# Get this to cycle through and show only beers with that style_id %>
-    <% @beers.each do |beer| %>
-        <%# <% if @beers["style_id"] == @style["id"] do  %> 
-        <p><a href=/beers/<%= beer["id"] %>><%= beer["name"] %></a></p> 
-        <%# <% end %> 
+<p>
+<!-- for each beer in particular |style| -->
+<% @style.beers.each do |style| %>
+      <li>
+        <a href="/style/<%= style.id %>">
+          <%= style.name %>
+        </a>
+      </li>
     <% end %>
+</p>
 
+<nav>
 <div class="footer">
     <a href="/styles/<%= @style["id"] %>/edit">Edit style</a> ⋅ 
     <a href="/styles/<%= @style["id"] %>/delete">Delete style</a>
 </div>    
+</nav>

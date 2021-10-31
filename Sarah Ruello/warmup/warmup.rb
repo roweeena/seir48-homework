@@ -165,47 +165,279 @@
 # - You can play a `:double` or a `:triple` word.
 
 
-  def scrabble(string)
-      points = {
-  	"a" => 1,
-  	"e" => 1,
-  	"i" => 1,
-  	"o" => 1,
-  	"u" => 1,
-  	"l" => 1,
-  	"n" => 1,
-  	"r" => 1,
-  	"s" => 1,
-  	"t" => 1,
-  	"d" => 2,
-  	"g" => 2,
-  	"b" => 3,
-  	"c" => 3,
-  	"m" => 3,
-  	"p" => 3,
-  	"f" => 4,
-  	"h" => 4,
-  	"v" => 4,
-  	"w" => 4,
-  	"y" => 4,
-  	"k" => 5,
-  	"j" => 8,
-  	"x" => 8,
-  	"q" => 10,
-  	"z" => 10,
-  }
+#   def scrabble(string)
+#       points = {
+#   	"a" => 1,
+#   	"e" => 1,
+#   	"i" => 1,
+#   	"o" => 1,
+#   	"u" => 1,
+#   	"l" => 1,
+#   	"n" => 1,
+#   	"r" => 1,
+#   	"s" => 1,
+#   	"t" => 1,
+#   	"d" => 2,
+#   	"g" => 2,
+#   	"b" => 3,
+#   	"c" => 3,
+#   	"m" => 3,
+#   	"p" => 3,
+#   	"f" => 4,
+#   	"h" => 4,
+#   	"v" => 4,
+#   	"w" => 4,
+#   	"y" => 4,
+#   	"k" => 5,
+#   	"j" => 8,
+#   	"x" => 8,
+#   	"q" => 10,
+#   	"z" => 10,
+#   }
 
-  score = 0
+#   score = 0
 
-  points[double] *= 2 unless double == ''
+#   points[double] *= 2 unless double == ''
 
-  string.each_char do |i|
-      score += points[i]
-    end
+#   string.each_char do |i|
+#       score += points[i]
+#     end
 
-  puts "Your score is: #{score}"
+#   puts "Your score is: #{score}"
 
-  end
+#   end
   
-  scrabble('cabbage');
-  scrabble('expulsion');
+#   scrabble('cabbage');
+#   scrabble('expulsion');
+
+###########################################################################
+############################## Warmup 18/10 ###############################
+
+#   # Robot Factory 🤖
+# You run a robot factory. As robots are created, they roll off the conveyor belt as empty, mindless husks of machinery -- until you first boot them up.
+# The first time you boot them up, a random name is randomly generated, and assigned to itself by the robot.
+# Names typically take the format of things like "BX777" or "SD234".
+# For instance:
+# ```rb
+# robot1 = Robot.new
+# puts robot1.name
+# => "BX777"
+# robot2 = Robot.new
+# puts robot2.name
+# => "SD234"
+# puts robot2.name
+# => "SD234"
+# ```
+# Every once in a while we need to reset a robot to its factory settings, which means that their name gets wiped. The next time you ask, it gives a new name.
+# if I say:
+# ```rb
+# robot3 = Robot.new
+# puts robot3.name
+# => "RF629"
+# robot3.reset
+# puts robot3.name
+# => "ZC532"
+# ```
+# ## Extensions 🧯
+# ### Counters 🔢
+# It's important that we not overwork our robots. While resetting to factory defaults is great, the wear and tear on the robot mechanisms doesn't go away.
+# For every action our robot takes, we should keep track of it.
+# ```rb
+# robot3 = Robot.new
+# puts robot3.name
+# puts robot3.name
+# robot3.reset
+# puts robot3.name
+# puts robot3.name
+# puts robot3.instruction_count
+# => 5
+# ```
+# ### Robot Time ⌚️
+# Number of instructions is important, but so is the total age of the robot.
+# ```rb
+# robot3 = Robot.new
+# puts robot3.timers
+# => "21 seconds since last boot, 21 seconds since creation"
+# robot3.reset
+# puts robot3.timers
+# => "8 seconds since last boot, 29 seconds since creation"
+# ``
+
+# require 'pry'
+
+# class Robot 
+# 	attr_reader :instruction_count
+
+#     def initialize 
+# 		@name = generate_name
+# 		@instruction_count = 0
+# 		@created_at = Time.now
+# 		@reset_at = Time.now
+#     end 
+
+# 	def generate_name 
+# 		digits = ("000".."999").to_a.sample
+# 		letters = ('AA'..'ZZ').to_a.sample
+# 		letters + digits
+# 	end	
+
+# 	def name	
+# 		@instruction_count += 1
+# 		puts "My name is #{@name}"
+# 	end	
+
+# 	def reset 
+# 		@instruction_count += 1
+# 		@name = generate_name
+# 		@reset_at = Time.now	
+# 	end
+
+# 	def timers 
+# 		time_since_reset = Time.now - @reset_at
+# 		time_since_creation = Time.now - @created_at
+
+# 		message = "#{time_since_reset.round(2)} seconds since last boot, 
+# 		#{time_since_creation.round(2)} since creation."
+# 	end
+
+# end
+
+# binding.pry
+
+
+###########################################################################
+############################## Warmup 19/10 ###############################
+
+# # Roman Numerals
+
+# The Romans were a clever bunch. They conquered most of Europe and ruled it 
+# for hundreds of years. They invented concrete and straight roads and even bikinis.
+# One thing they never discovered though was the number zero. This made writing 
+# and dating extensive histories of their exploits slightly more challenging, 
+# but the system of numbers they came up with is still in use today. For example, 
+# the BBC uses Roman numerals to date their programmes.
+
+# The Romans wrote numbers using letters - I, V, X, L, C, D, M. (notice these 
+# letters have lots of straight lines and are hence easy to hack into stone 
+# tablets using a chisel).
+
+# ```plain
+#  1  => I
+# 10  => X
+#  7  => VII
+# ```
+
+# Write a program that will convert Arabic numerals to Roman numerals.
+
+# There is no need to be able to convert numbers larger than about 3000. (The Romans 
+# themselves didn't tend to go any higher)
+
+# Wikipedia says: "Modern Roman numerals ... are written by expressing each digit 
+# separately starting with the left most digit and skipping any digit with a value 
+# of zero."
+
+# To see this in practice, consider the example of 1990.
+
+# ```
+# In Roman numerals 1990 is MCMXC:
+
+# 1000=M 900=CM 90=XC
+
+# 2008 is written as MMVIII:
+
+# 2000=MM 8=VIII
+# ```
+
+# See [this website](https://www.rapidtables.com/math/symbols/roman_numerals.html) 
+# for the table of Roman Numbers you will need to check for.
+
+
+# Do this in Ruby.
+
+# def romanise(num)
+
+# roman = {
+# 	1000 => 'M',
+# 	900 => 'CM',
+# 	500 => 'D',
+# 	400 => 'CD',
+# 	100 => 'C',
+# 	90 => 'XC',
+# 	50 => 'L',
+# 	40 => 'XL',
+# 	10 => 'X',
+# 	9 => 'IX',
+# 	5 => 'V',
+# 	4 => 'IV',
+# 	1 => 'I'
+# }
+# 	string = ""
+# 	roman.each do |value, letter| 
+#     	string << letter*(num / value) # '123' x (123 / 100 x 1, 23 / 10 x 2, III x 3)
+# 		num = num % value  	
+# 	end
+# 	return string
+	
+# end 
+
+# puts romanise(123) # CXXIII
+# puts romanise(1876)
+# puts romanise(325)
+
+###########################################################################
+############################## Warmup 20/10 ###############################
+
+# Luhn Formula
+
+# Write a program that can take a number and determine whether or not it is 
+# valid per the Luhn formula.
+
+# This number must pass the following test:
+
+# Counting from rightmost digit (which is the check digit) and moving left, 
+# double the value of every second digit. For any digits that thus become 10 or 
+# more, subtract 9 from the result.
+
+# E.g., 1111 becomes 2121, while 8763 becomes 7733 (from 2×6=12 → 12-9=3 
+# 	and 2×8=16 → 16-9=7).
+
+# Add all these digits together. For example, if 1111 becomes 2121, then 
+# 2+1+2+1 is 6; and 8763 becomes 7733, so 7+7+3+3 is 20.
+
+# If the total ends in 0 (put another way, if the total modulus 10 is 0), 
+# then the number is valid according to the Luhn formula; otherwise it is 
+# not valid. So, 1111 is not valid (as shown above, it comes out to 6), 
+# while 8763 is valid (as shown above, it comes out to 20).
+
+# Write a program that, given a number, can check if it is valid per the Luhn formula.
+
+# ```ruby
+# luhn 3554
+# # => false
+
+# luhn 8763
+# # => true
+# ```
+
+def luhn(num)	
+	sum = 0
+	nums = num.to_s.split("")
+	# each_with_index iterates through each element in an array or hash, 
+	# and extracts the element, as well as the index:
+	nums.each_with_index do |n, i|
+		sum += if (i.even?)
+			n.to_i * 2 > 9 ? n.to_i * 2 - 9 : n.to_i * 2
+		else
+			n.to_i
+		end
+	end	
+	if sum % 10 == 0
+		puts "true"
+	else
+		puts "false"
+	end
+end
+						
+
+luhn(3554)
+luhn(8763)

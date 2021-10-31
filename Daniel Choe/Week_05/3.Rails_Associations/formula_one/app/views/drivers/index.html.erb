@@ -1,0 +1,11 @@
+<h1>Formula One Drivers</h1>
+
+<% @drivers.each do |driver| %>
+  <%# <%= image_tag driver.image, :class => 'feature' if driver.image.present? %>
+  <p class = "driver">
+    <%= link_to image_tag(driver.image, :class => 'driver_thumb'), driver_path(driver.id) %><br>
+    <%= link_to driver.name, driver_path(driver.id) %><br>
+    Current Season Ranking: <%= driver.current_ranking %>
+  </p>
+
+<% end %>

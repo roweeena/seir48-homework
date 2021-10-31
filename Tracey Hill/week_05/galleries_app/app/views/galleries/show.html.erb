@@ -1,0 +1,15 @@
+<h1><%= @gallery.name %></h1>
+
+<%= image_tag @gallery.image, :class => 'feature' if @gallery.image.present? %>
+
+<ul class="info">
+  <li>Location: <%= @gallery.location %></li>
+  <li>Year Opened: <%= @gallery.year_opened %></li>
+  <li>Number of Works: <%= @gallery.works %></li>
+  <li>Floor Area: <%= @gallery.area %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit gallery', edit_gallery_path(@gallery.id) %>
+  <%= button_to 'Delete gallery', gallery_path(@gallery.id), :method => 'delete' %>
+</div>

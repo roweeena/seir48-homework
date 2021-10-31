@@ -1,0 +1,15 @@
+.container {
+    background-image: url("images/bg_blurb.jpg");
+}
+.slots {
+    display: inline-block;
+    margin: 0 auto;
+}
+.request {
+    width: 100%;
+    padding: 10px;
+}
+.blurbButt {
+    position:absolute;
+    right: 10px;
+}

@@ -1,0 +1,11 @@
+<h1> <mark>Oceans</mark></h1>
+
+<% @oceans.each do |ocean| %>
+<p>
+
+ <%= link_to ocean.name, ocean_path(ocean.id) %>
+</p>
+<% end %>
+<div class="homeimage">
+<%= image_tag 'ocean.jpeg' %>
+ </div>

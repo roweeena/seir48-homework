@@ -1,0 +1,43 @@
+
+<form action="<%= ocean_path(@ocean.id) %>" method="post">
+  <label>
+    Ocean Name:
+    <input name="name" value="<%= @ocean.name %>" required>
+  </label>
+
+  <label>
+    Country Name:
+    <input name="country" value="<%= @ocean.country %>">
+  </label>
+
+  <label>
+    Type of Water:
+    <input name="text" value="<%= @ocean.water %>" name="water">
+  </label>
+
+  <label>
+    Water Volume:
+    <input type="number" value="<%= @ocean.watervolume %>" name="watervolume">
+  </label>
+
+  <label>
+    Temperature:
+    <input type="number" value="<%= @ocean.temperature %>" name="temperature">
+  </label>
+
+  <label>
+    Ocean Width:
+    <input type="number" value="<%= @ocean.maxwidth %>" name="maxwidth">
+  </label>
+
+  <label>
+    Ocean Depth:
+    <input type="number" value="<%= @ocean.maxdepth %>" name="maxdepth">
+  </label>
+
+  <label>
+    Ocean Image:
+    <input type="url" value="<%= @ocean.image %>" name="image">
+  </label>
+  <button>Update</button>
+</form>

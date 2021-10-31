@@ -1,0 +1,9 @@
+body {
+  background-color: green;
+}
+
+.container {
+  background-color: pink;
+  width: 500px;
+  justify-content: center;
+}

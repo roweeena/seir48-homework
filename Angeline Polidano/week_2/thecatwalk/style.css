@@ -1,0 +1,10 @@
+body {
+ /* background:url("https://cdn.pixabay.com/photo/2015/04/20/13/22/clouds-731260_1280.jpg") center bottom/cover no-repeat content-box local; */
+/* img-size: 100%; */
+/* max-width: 960px; */
+background-color: rgba(255, 0, 4, 0.56);
+}
+
+.img img {
+  filter: drop-shadow(4px 4px 12px #ffffff);
+}
