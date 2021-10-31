@@ -21,7 +21,7 @@ const flatten = function (array) {
   //   flattenedArray.push( array.shift() )
   // }
   // return flattenedArray;
-  
+
   // // Doesn't account for ',' as an element
   // return array.join().split(',');
 
