@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+
+    <div class="container">
+
+      <nav>
+          <%= link_to 'All Books', books_path  %>
+          |
+          <%= link_to 'New Book',  new_book_path  %>
+
+        </nav>
+
+    <%= yield %>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<h1>
+  <%= @author.author %>
+</h1>
+
+<%= image_tag (@author.image) %>
+
+<ul>
+  <li>Nationality: <%= @author.nationality %> </li>
+  <li>DOB: <%= @author.dob %>  </li>
+  <li>Genre: <%= @author.genre %> </li>
+</ul>
+
+<div class="contols">
+  <%= link_to("Edit Author", "/authors/#{@author.id}/edit") %>
+  <%= link_to("Delete Author", "/authors/#{@author.id}", method: :delete, data: { confirm: "Are you sure?"} ) %>
+
+</div>
