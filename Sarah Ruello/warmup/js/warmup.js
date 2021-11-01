@@ -259,34 +259,80 @@
 //
 // Add scores up to reach a target number, using object.keys:
 
-const allergen = {
-  1: "eggs",
-  2: "peanuts",
-  4: "shellfish",
-  8: "strawberries",
-  16: "tomatoes",
-  32: "chocolate",
-  64: "pollen",
-  128: "cats",
-};
+// const allergen = {
+//   1: "eggs",
+//   2: "peanuts",
+//   4: "shellfish",
+//   8: "strawberries",
+//   16: "tomatoes",
+//   32: "chocolate",
+//   64: "pollen",
+//   128: "cats",
+// };
 
-function badFoods(value) {
-  let allergies = [];
-  // Object.entries() method returns an array of a given object's own enumerable
-  // string - keyed property[key, value] pairs.
-  // assigning to two variables at once here:
-  for (const [id, name] of Object.entries(allergen)) {
-    //  console.log(`${id}: ${name}`);
-    if (id & value) {
-      allergies.push(name);
-    }
-  }
-  return allergies;
-}
+// function badFoods(value) {
+//   let allergies = [];
+//   // Object.entries() method returns an array of a given object's own enumerable
+//   // string - keyed property[key, value] pairs.
+//   // assigning to two variables at once here:
+//   for (const [id, name] of Object.entries(allergen)) {
+//     //  console.log(`${id}: ${name}`);
+//     if (id & value) {
+//       allergies.push(name);
+//     }
+//   }
+//   return allergies;
+// }
 
-console.log(badFoods(34));
-console.log(badFoods(30));
-console.log(badFoods(13));
+// console.log(badFoods(34));
+// console.log(badFoods(30));
+// console.log(badFoods(13));
 
 //////////////////////////////////////////////////////////////////////////
-// ---------------------------12/10/21------------------------------------
+// ---------------------------01/11/21------------------------------------
+// Arrays - Flatten and Reverse
+
+// The goal of this exercise is to manipulate arrays by creating a function
+//   that can reverse an array and by creating a function that can flatten an array.
+//   Do not use any libraries to complete this task - write this stuff from scratch using
+//   standard JS methods and objects.
+
+// Make two functions:
+// - reverse
+// - flatten
+
+// reverse( [1, 2, 3, 4] );
+// // => [ 4, 3, 2, 1 ]
+// flatten( ["Hello", ["World", 42] ] );
+// // => [ "Hello", "World", 42 ]
+
+// -----------------------------
+//   You only need to make flatten work to one level deep! You should be able to flatten
+// this - ["Hello", ["World"]] - but not this - ["Hello", [[["World"]]]]
+
+// -----------------------------
+// Bonus
+// Make one that flattens any array that you pass into it: ["Hello", [[["World"], 42]]] ->
+//   ["Hello", "World", 42]
+
+function reversedArray(array) {
+  // quick way:
+  // let backwards = array.reverse();
+  let reversedArray = [];
+
+  for (let i = array.length - 1; i >= 0; i--) {
+    reversedArray.push(array[i]);
+  }
+
+  return reversedArray;
+}
+
+function flatten(array) {
+  // quick way:
+  let flatBoi = array.flat(1); // specify levels of array to flatten
+  return flatBoi;
+}
+
+console.log(reversedArray([1, 2, 3, 4]));
+
+console.log(flatten(["Hello", ["World", 42]]));

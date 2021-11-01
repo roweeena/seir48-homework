@@ -1,0 +1,22 @@
+<h1>Edit Cat</h1>
+
+<form action="/cats/<%= @cat.id %>" method="post">
+
+  <label>
+    Breed:
+    <input name="breed" type="text" placeholder="persian cat" required value="<%= @cat.breed %>">
+  </label>
+
+  <label>
+    Coat Pattern:
+    <input name="coat_pattern" type="text" placeholder="evenly solid" value="<%= @cat.coat_pattern %>">
+  </label>
+
+  <label>
+    Image URL:
+    <input name="image" type="url" placeholder="http://..." value="<%= @cat.image %>">
+  </label>
+
+  <button>Update Cat</button>
+
+</form>

@@ -1,0 +1,6 @@
+<h1>All deserts</h1>
+<%@desserts.each do |dessert|%>
+<p>
+<%=link_to dessert.name, dessert_path(dessert.id) %>
+</p>
+<%end%>
