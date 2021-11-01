@@ -5,14 +5,14 @@ const countingValleys = function (sequence) {
   for (let i = 0; i < sequence.length; i++) {
     // Calculate altitude after current step
     if (sequence[i] === 'U') {
-      altitude += 1;
+      altitude++;
     } else if (sequence[i] === 'D') {
-      altitude -= 1;
+      altitude--;
     }
 
     // We can count a valley if we went UP and are now at sea level
     if (sequence[i] == 'U' && altitude === 0) {
-      valleys += 1;
+      valleys++;
     }
   }
 
