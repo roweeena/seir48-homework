@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'works#index'
+  root :to => 'authors#index'
   resources :authors
   resources :books
 end
