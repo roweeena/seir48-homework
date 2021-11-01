@@ -1,0 +1,5 @@
+<h1>Components List</h1>
+
+<% @components.each do |component| %>
+<li>Part name:<%= link_to component.name, component_path(component.id) %></li>
+<% end %>

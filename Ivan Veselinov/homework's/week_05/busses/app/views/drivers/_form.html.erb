@@ -1,0 +1,31 @@
+<%= form_for @driver do |f| %>
+
+<%= f.label :name %>
+<br>
+<%= f.text_field :name, :class => 'label', :required => true %>
+</br>
+<%= f.label :surname %>
+<br>
+<%= f.text_field :surname, :class => 'label', :required => true %>
+</br>
+<%= f.label :dob %>
+<br>
+<%= f.text_field :dob, :class => 'label', :placeholder => 'DD-MM-YYYY', :required => true %>
+</br>
+<%= f.label :today %>
+<br>
+<%= f.date_field :today, :class => 'label', :required => true %>
+</br>
+<%= f.label :image %>
+<br>
+<%= f.url_field :image, :class => 'label'%>
+</br>
+<br>
+<%= f.label :bus_id %>
+ <%= f.select :bus_id, Bus.pluck(:model, :id), :include_blank => true %>
+</br>
+<br>
+<%= f.submit %>
+</br>
+
+<% end %>
