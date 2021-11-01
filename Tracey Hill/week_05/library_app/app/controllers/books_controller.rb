@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
     def index
-      @books = Book.all
+      @books = Book.all.sort_by {|book| book.title}
     end
   
     def show

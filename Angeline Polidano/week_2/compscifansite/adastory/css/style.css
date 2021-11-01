@@ -1,0 +1,40 @@
+
+body {
+  background:rgba(59, 0, 255, 0.25); /* #321 => #332211 */
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
+nav {
+  text-align: left;
+}
+
+nav a {
+  color: gold;
+  font: 200%;
+}
+
+.squiggleimg img {
+  max-width: 100%;
+}
+
+
+
+.heading {
+  text-align: center;
+color: gold;
+font-size: 450%;
+padding: 0.6em;
+}
+
+.paragraphtext {
+  color: #fff;
+  font-style: italic, bold;
+  font-size: 35%
+
+}
+
+.squiggleimg {
+ padding: 40px;
+  image-size: 100%;
+}

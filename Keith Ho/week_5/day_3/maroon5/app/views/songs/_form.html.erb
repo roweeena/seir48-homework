@@ -1,0 +1,15 @@
+<%= form_for @song do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, :required => true %>
+
+<%= f.label :link %>
+<%= f.url_field :link %>
+
+<%= f.label :thumbs_up, "Do you like it?" %>
+<%= f.check_box :thumbs_up %>
+
+<%= f.label :album_id %>
+<%= f.select :album_id, Album.pluck(:name, :id), :include_blank => true %>
+
+<%= f.submit %>
+<% end %>
