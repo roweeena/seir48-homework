@@ -1,0 +1,17 @@
+body{
+  background-color: #ccd;
+}
+
+
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+}
+.thumb{
+  height: 12em;
+
+}
+
+.feature{
+  max-height: 30em;
+}

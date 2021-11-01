@@ -1,0 +1,22 @@
+<h1><%= @buses.model %></h1>
+
+<%= image_tag @buses.image, :class => 'feature' if @buses.image.present? %>
+<div class="show">
+<ul>
+  <li>Model: <%= @buses.model %></li>
+  <li>Year of Manufacturing <%= @buses.year %></li>
+  <li>Bus Number: <%= @buses.number %></li>
+  <li>Bus Lines: <%= @buses.lines %></li>
+  <li>Bus Stops: <%= @buses.stops %></li>
+  <li>Driver Photo:</li>
+</ul>
+</div>
+<% @buses.drivers.each do |driver| %>
+<%= link_to image_tag(driver.image, :class => 'thumbs'), driver %>
+<% end %>
+
+<div class="controls_menu">
+  <%= link_to 'Edit field', edit_bus_path(@buses) %>
+  <%= link_to 'Delete', @buses, :method => 'delete', :data =>{ :confirm => 'Are you sure?'} %>
+
+</div>
