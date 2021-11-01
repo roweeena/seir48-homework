@@ -1,0 +1,9 @@
+<h2>The results are in</h2>
+
+<p>You chose <%= params[:player_choice] %></p>
+
+<%= image_tag Dir.new(Rails.root.to_s + "/app/assets/images/").to_a.select{|f|    f.downcase.match(/\.jpg|\.jpeg|\.png|\.gif/) }.sample %>
+
+<p>The computer chose <%= @computer_choice %></p>
+
+<p><%= @result %></p>
