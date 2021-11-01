@@ -1,0 +1,48 @@
+<h1>Edit Mountain</h1>
+
+<form class="edit-form" action="<%= mountain_path(@mountain.id) %>" method="post">
+  
+  <div class="form-container">
+    <label>
+      Name:
+      <input name="name" required value="<%= @mountain.name %>">
+    </label>
+
+    <label>
+      Image:
+      <input type="url" name="image" value="<%= @mountain.image %>">
+    </label>
+
+    <label>
+      Elevation:
+      <input type="number" name="elevation" value="<%= @mountain.elevation %>">
+    </label>
+
+    <label>
+      Latitude:
+      <input type="number" name="latitude" value="<%= @mountain.latitude %>">
+    </label>
+
+    <label>
+      Longitude:
+      <input type="number" name="longitude" value="<%= @mountain.longitude %>">
+    </label>
+
+    <label>
+      Country:
+      <input type="text" name="country" value="<%= @mountain.country %>">
+    </label>
+
+    <label>
+      Continent:
+      <input type="text" name="continent" value="<%= @mountain.continent %>">
+    </label>
+
+    <label>
+      First Ascent Year:
+      <input type="number" name="first_ascent" value="<%= @mountain.first_ascent %>">
+    </label>
+  </div>
+
+  <button>Update Mountain</button>
+</form>

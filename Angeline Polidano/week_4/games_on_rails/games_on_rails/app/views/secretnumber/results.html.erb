@@ -1,0 +1,16 @@
+<h1>Here you go!</h1>
+
+
+<p>
+  <% if
+  @guess == @random_number %>
+
+  "correct! <%= @random_number %> you guessed it!"
+
+  <% else %>
+
+    "Too bad mate the number was <%= @random_number %>"
+
+    <% end %>
+
+</p>

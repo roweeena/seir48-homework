@@ -1,0 +1,5 @@
+<h1>ALL BOOKS</h1>
+
+<% @books.each do |book| %>
+  <%= link_to image_tag(book.image, :class => 'feature'), book  if book.image.present? %>
+<% end %>

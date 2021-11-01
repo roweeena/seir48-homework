@@ -13,6 +13,15 @@ body {
   width: 55%;
 }
 
+li {
+  display: inline-block;
+}
+
+nav li + li:before {
+  content: " | ";
+  padding: 0 10px;
+}
+
 .flex-container {
   margin: 0 auto;
   display: flex;

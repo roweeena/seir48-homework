@@ -1,0 +1,15 @@
+<h1><%= @author.name %>'s Details </h1>
+
+<%=image_tag @author.image, :class => 'feature'%>
+<ul>
+  <li> Nationality: <%= @author.nationality %></li>
+  <li> Number of publications: <%= @author.num_of_books %></li>
+</ul>
+<% @author.books.each do |work| %>
+  <%= link_to image_tag(work.image, :class => 'small_frame'), work %>
+<% end %>
+
+<div class="directory">
+  <%= link_to 'Edit', edit_author_path(@author), :data => {:confirm => "Are you sure you want to edit this author?"} %>
+  <%= link_to 'Delete', @author, :method => 'delete', :data => {:confirm => "Do you want to delete this author?"} %>
+</div>
