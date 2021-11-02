@@ -1,0 +1,15 @@
+<%= form_for @listing do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :availability %>
+  <%= f.text_field :availability, :placeholder => 'NSW' %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.label :breeder_id %>
+  <%= f.select :breeder_id, @myBreeders.pluck(:name, :id), :include_blank => true %>
+  <%= f.submit %>
+<% end %>

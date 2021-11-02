@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myfoodlab</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'Home', recipes_path %>
+      <% if @current_user.present? %>
+      <% if @current_user.admin? %>
+      <%= link_to 'All users', users_path %>
+      <% end %>
+      <%= link_to 'New myfood', new_myfood_path %>
+      <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete' %>
+      <% else %>
+      <%= link_to 'Sign up', new_user_path %>
+      <%= link_to 'Sign in', login_path %>
+    <% end %>
+    </nav>
+    <div class ="container">
+    <%= yield %>
+    </div>
+  </body>
+</html>

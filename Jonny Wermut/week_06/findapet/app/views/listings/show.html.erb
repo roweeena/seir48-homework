@@ -1,0 +1,19 @@
+<h1> <%= @listing.name %> </h1>
+
+<%= image_tag @listing.image if @listing.image.present? %>
+
+<div class="container">
+<ul>
+<li> <%= @listing.price %> </li> 
+<li> <%= @listing.availability  %> </li> 
+<li> <%= @listing.description %> </li>
+<% if @listing.breeder.present? %>
+<li> Breeder: <%= link_to @listing.breeder.name, breeder_path(@breeder_id) %> </li>
+</ul>
+</div>
+<% end %>
+
+<% if @current_user.present? && @current_user.isBreeder? %>
+<%= link_to 'Edit listing', edit_listing_path %>
+<%= link_to 'Delete listing', @listing, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+<% end %>
