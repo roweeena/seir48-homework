@@ -1,4 +1,4 @@
-console.log('Monday Monday Monday');
+//console.log('Monday Monday Monday');
 
 const fetchBook = function () {
   const xhr = new XMLHttpRequest();
