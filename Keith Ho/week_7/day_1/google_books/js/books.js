@@ -1,5 +1,7 @@
 
-const fetchBooks = function(){
+const fetchBooks = function(event){
+  event.preventDefault();
+
   const xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function(){
@@ -8,7 +10,7 @@ const fetchBooks = function(){
     }
 
     const data = JSON.parse(xhr.responseText);
-
+  
     const img = document.createElement("img");
     const p = document.createElement("p");
 
@@ -22,6 +24,19 @@ const fetchBooks = function(){
 
   xhr.open("GET", `https://www.googleapis.com/books/v1/volumes?q=title:${ input }`);
   xhr.send();
+
 };
 
-document.getElementById("fetch").addEventListener("click", fetchBooks);
+document.getElementById("container").addEventListener("submit", fetchBooks);
+
+
+const fetchBooks = function(event){
+  event.preventDefault();
+  const input = $("#input").val();
+
+  $.ajax(`https://www.googleapis.com/books/v1/volumes?q=title:${ input }`).done(function(data){
+    $("#img").attr("src", data.items[0].volumeInfo.imageLinks.thumbnail).appendTo("body");
+  });
+};
+
+$("#container").on("submit", fetchBooks);
