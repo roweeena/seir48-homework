@@ -1,0 +1,22 @@
+<h1> <%= @breeder.name %></h1>
+
+<ul>
+<li> <%= @breeder.city %> </li> 
+<li> <%= @breeder.state %> </li> 
+<li> <%= image_tag @breeder.photo %> </li>
+
+<h2>Our breeds </h2>
+<% @breeder.breeds.each do |breed| %>
+<li> <%= breed.name %> </li>
+<li> <%= breed.origin %> </li>
+<% if breed.photo.present? %>
+<li> <%= image_tag breed.photo %> </li>
+<% end %>
+<% end %>
+</ul>
+
+<% if @current_user.present? && @current_user.isBreeder? %>
+<%= link_to 'Edit breeder', edit_breeder_path %>
+<%= link_to 'Delete breeder', @breeder, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+<%= link_to 'View users', user_path %>
+<% end %>

@@ -1,0 +1,12 @@
+<h1> <%= @pet.name %> </h1>
+
+	<%= image_tag @pet.image, :class=>'feature' if @pet.image.present? %>
+
+<ul>
+	<li><strong>DOB:</strong>  <%= @pet.dob %> </li>
+	<li><strong>Breeder:</strong>  <%= link_to @pet.breeder.name, @pet.breeder %> </li>
+</ul>
+
+<%= link_to 'Edit', edit_pet_path(@pet.id) %>
+<br>
+<%= link_to 'Delete pet', @pet, :method => 'delete', :class => 'hotdogs', :data => { :confirm => 'Are you sure?' } %>
