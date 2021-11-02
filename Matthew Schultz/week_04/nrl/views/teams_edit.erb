@@ -1,0 +1,21 @@
+<h1>Edit NRL Team</h1>
+
+<form action='/teams/<%=@team.id%>' method="post">
+  <label>
+    Location:
+    <input name="location" value="<%= @team.location %>" required>
+  </label><br>
+
+  <label>
+    Mascot:
+    <input name="mascot" value="<%= @team.mascot %>" required>
+  </label><br>
+
+  <label>
+    Logo:
+    <input type="url" name="logo" value="<%= @team.logo %>">
+  </label><br><br>
+
+  <button>Save changes</button>
+
+</form>

@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap");
+
+* {
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 1rem;
+}
+
+/* font-size of the page scales with the size of the browser window, 
+  using rems for all headings and fonts for fully responsive text */
+html {
+  font-size: calc(60% + 0.8vmin);
+}
+
+body {
+  margin: 20px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.main {
+  max-width: 51rem;
+  margin: 0 auto;
+}
+
+.navbar {
+  position: absolute;
+  bottom: 0px;
+  padding: 2px 2px 20px 0px;
+}
+
+/* two columns in flex box */
+.flex-container {
+  margin: 0 auto;
+  display: flex;
+  min-height: 400px;
+  justify-content: center;
+}
+
+.flex-child {
+  position: relative;
+  flex: 1;
+  border-radius: 13px;
+  padding: 20px;
+  background-color: rgba(255, 142, 67, 0.2);
+  min-width: 450 px;
+}
+
+.flex-child:first-child {
+  margin-right: 15px;
+  max-width: 25%;
+  min-width: fit-content;
+  padding-right: 25px;
+}
+
+.label-name {
+  color: rgba(133, 49, 0, 0.692);
+  display: inline-block; /* can't assign width to inline element */
+  width: 85px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.beer-display,
+.beer-image {
+  display: inline-block;
+  margin-block: auto;
+}
+.beer-display {
+  width: 16rem;
+}
+.beer-image {
+  position: relative;
+  width: 13rem;
+  float: right;
+}
+
+/* remove bullets from lists and lessen indent */
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding-left: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: rgb(255, 30, 0);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(255, 102, 0);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 170, 72);
+}
+
+/* selected link */
+a:active {
+  color: rgb(255, 209, 110);
+}

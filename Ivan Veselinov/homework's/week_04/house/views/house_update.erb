@@ -1,0 +1,24 @@
+<p>Welcome to edit forms</p>
+
+<form action="/agency/<%=@house["id"]%>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%=@house["name"] %>" name" required>
+  </label>
+
+  <label>
+    Surname:
+    <input type="text" name="surname" value="<%=@house["surname"] %>" surname" required>
+  </label>
+
+  <label>
+    Adress:
+    <input type="text" name="adress" value="<%=@house["adress"] %>"" required>
+  </label>
+
+  <label>
+    Photo:
+    <input type="url" name="image" value="<%=@house["image"] %>">
+  </label>
+    <button>Submit form</button>
+</form>

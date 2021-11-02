@@ -1,0 +1,30 @@
+<h1><%= @wonder.name %></h1>
+
+<%= image_tag @wonder.image, :class => 'feature' if @wonder.image.present? %>
+
+<ul>
+  <% unless @wonder.location.empty? || @wonder.location.nil? %>
+    <li>Location: <%= @wonder.location %> </li>
+  <% end %>
+  <% if !@wonder.year.is_a? Numeric %>
+  <% elsif @wonder.year >= 0 %>
+    <li>Year of Origin: <%= @wonder.year %> AD</li>
+  <% else %>
+    <li>Year of Origin: <%= -@wonder.year %> BC</li>
+  <% end %>
+</ul>
+
+<p>
+  <%= @wonder.description %>
+</p>
+
+<% unless @wonder.video.nil? %>
+<div class="video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @wonder.video.split('v=')[1]%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<% end %>
+
+<div class="controls">
+  <%= button_to 'Edit wonder', edit_wonder_path(@wonder.id), :method => 'get' %>
+  <%= button_to 'Delete wonder', wonder_path(@wonder.id), :method => 'delete' %>
+</div>

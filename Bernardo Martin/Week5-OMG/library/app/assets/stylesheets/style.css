@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Signika:wght@300;600&display=swap');
+body {
+  background-color: #F5EE9E;
+}
+
+.container {
+  background-color: #99907D;
+  max-width: 960px;
+  height: 95vh;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Abel', sans-serif;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.thumb {
+  max-height: 12em;
+}
+
+.feature {
+  max-height: 20em;
+}
+.feature:hover {
+  border-bottom-right-radius: 30px;
+}
+
+.small_frame {
+  max-height: 8em;
+}
+
+.index {
+  display: inline-block;
+}
+.index p{
+  text-align: center;
+}
+
+.forms {
+  display: block;
+  width: 300px;
+  height: 30px;
+  border-style: none;
+  border-radius: 4px;
+  text-align: left;
+  margin-top: 7px;
+  color: #F5EE9E;
+  padding-left: 5px;
+  font-family: 'Signika', sans-serif;
+}
+
+select {
+  width: 305px;
+  height: 34px;
+  border-radius: 4px;
+  border-style: none;
+  display: block;
+  margin-top: 7px;
+  color: #F5EE9E;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.directory {
+  text-align: right;
+  margin-right: 25px;
+}
+
+nav {
+    background-color: rgba(226, 194, 255);
+    margin: 0 -30px;
+    height: 40px;
+    line-height: 40px;
+    color: #690375;
+}
+
+a {
+  text-decoration: none;
+  color: #F5EE9E;
+  margin-left: 5px;
+}
+.navegator {
+  color: #690375;
+  font-size: 17px;
+}
+.buttons {
+  margin: 6px auto;
+  border-style: none;
+  width: 150px;
+  height: 30px;
+
+
+}

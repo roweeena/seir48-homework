@@ -1,0 +1,12 @@
+<%= form_for @city do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :formation %>
+<%= f.date_field :formation%>
+<%= f.label :image %>
+<%= f.url_field :image %>
+<%= f.label :country_id %>
+<%= f.select :country_id, Country.pluck(:name, :id), :include_blank => true %>
+
+<%= f.submit %>
+<% end %>

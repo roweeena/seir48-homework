@@ -1,0 +1,7 @@
+<h1>Whisky Index</h1>
+
+<% @all_whiskies.each do |whisky| %>
+<p>
+  <a href=" /whiskies/<%= whisky['id'] %> "><%= whisky['distillery']%> <%= whisky['name'] %> </a>
+</p>
+<% end %>

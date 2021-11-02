@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FormulaOne</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "The Drivers", drivers_path %>
+      |
+      <%= link_to "Add Driver", new_driver_path %>
+      |
+      <%= link_to "Racing Tracks", tracks_path %>
+      |
+      <%= link_to "Add Track", new_track_path %>
+    </nav>
+
+    <a href="/">
+      <img class='logo' src="https://1000logos.net/wp-content/uploads/2021/06/F1-logo.png" alt="">
+    </a>
+
+
+
+    <%= yield %>
+  </body>
+</html>

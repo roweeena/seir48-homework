@@ -1,0 +1,11 @@
+<h1>All Libraries</h1>
+
+<ul>
+  <% @libraries.each do |library| %>
+    <li>
+      <a href="/libraries/<%= library.id %>">
+        <%= library.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>

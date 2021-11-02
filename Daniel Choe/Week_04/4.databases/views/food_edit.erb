@@ -1,0 +1,20 @@
+<h1>Edit Food</h1>
+
+<form action="/foods/<%= @food["id"] %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" placeholder="spaghetti" required value="<%= @food["name"] %>">
+  </label>
+
+  <label>
+    Cuisine:
+    <input type="text" name="cuisine" placeholder="italian" value="<%= @food["cuisine"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @food["image"] %>">
+  </label>
+
+  <button>Update food</button>
+</form>

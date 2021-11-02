@@ -1,0 +1,29 @@
+<p>Please make Edit</p>
+
+<form action="/motherboards/<%=@mb.id%>" method="post">
+  <label>
+    Motherboard Name:
+    <input name="name" value="<%=@mb.name%>" required>
+  </label>
+
+  <label>
+      Motherboard Model:
+      <input name="model" value="<%=@mb.model%>" required>
+  </label>
+
+  <label>
+    Motherboard Socket:
+    <input name="socket" value="<%=@mb.socket%>" required>
+  </label>
+
+  <label>
+    Motherboard Image:
+    <input type="url" name="image" value="<%=@mb.image%>" >
+  </label>
+
+  <label>
+    Motherboard Video:
+    <input type="url" name="video" value="<%=@mb.video%>" >
+  </label>
+        <button>Submit</button>
+</form>

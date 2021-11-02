@@ -1,0 +1,7 @@
+<h1><strike>Evil Personified</strike> Billionaires Index</h1>
+
+<% @billionaires.each do |b| %>
+  <p>
+    <%= link_to b.name, billionaire_path(b.id) %>
+  </p>
+  <% end %>

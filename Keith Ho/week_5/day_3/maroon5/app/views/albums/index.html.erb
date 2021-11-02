@@ -1,0 +1,22 @@
+<h1>All Albums</h1>
+
+  <% @albums.each do |album| %>
+  <div class="album-container">
+
+  <%= image_tag album.image, :class => "thumb" if album.image.present? %>
+    <ul>
+      <li class="albums">
+        Album: <%= link_to album.name, album_path(album.id) %>
+        <% if album.thumbs_up == true %>
+          <span>👍</span>
+        <% else %>
+          <span>👎</span>
+        <% end %>
+      </li>
+      <% if album.released.present? %>
+        <li>Released: <%= album.released.strftime '%B %e, %Y' %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <% end %>

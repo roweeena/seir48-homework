@@ -1,0 +1,27 @@
+def show_menu
+puts"Calculator" # Check out .center to make this look nicer
+puts "<><> dividing line coming soon <><>" # todo
+
+puts "[a]- Addition"
+# TODO: Add the other operations here (multiply divide and subtract)
+
+puts "[q]- Quit"
+
+print "Enter your choice"
+
+end
+
+
+show_menu
+
+menu_choice = gets.chomp.downcase
+
+until menu_choice == "q"
+ puts "doing some work for you" # todo: actually do som work
+
+  show_menu
+  menu_choice = gets.chomp.downcase
+ end
+
+
+puts "Thanks for using this crappy calculator."

@@ -1,0 +1,31 @@
+<%= form_for @bus do |f| %>
+
+<%= f.label :model %>
+<br>
+<%= f.text_field :model, :class => 'label', :required => true %>
+</br>
+<%= f.label :year %>
+<br>
+<%= f.text_field :year, :class => 'label' %>
+</br>
+<%= f.label :number %>
+<br>
+<%= f.text_field :number, :class => 'label' %>
+</br>
+<%= f.label :lines%>
+<br>
+<%= f.text_field :lines, :class => 'label' %>
+</br>
+<%= f.label :stops%>
+<br>
+<%= f.text_field :stops, :class => 'label' %>
+</br>
+<%= f.label :image%>
+<br>
+<%= f.url_field :image, :class => 'label', :requested => true %>
+</br>
+<br>
+<%= f.submit %>
+</br>
+
+<% end %>

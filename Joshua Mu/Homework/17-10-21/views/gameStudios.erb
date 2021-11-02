@@ -1,0 +1,8 @@
+<h1>All Game Studios</h1>
+<% @gameStudios.each do |gameStudio| %>
+  <p>
+    <a href="/game-studios/<%= gameStudio["id"]%>%">
+      <%= gameStudio["name"]%>
+    </a>
+  </p>
+<% end %>

@@ -1,0 +1,7 @@
+<% if @word_count % 5 == 0 %>
+  <h1>Maybe.</h1>
+<% elsif @word_count.odd? %>
+  <h1>Yes.</h1>
+<% else %>
+  <h1>No.</h1>
+<% end %>

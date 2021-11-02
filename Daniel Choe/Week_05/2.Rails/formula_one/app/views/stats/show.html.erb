@@ -1,0 +1,15 @@
+<h1>Driver Information</h1>
+
+<%= image_tag @stat.image, :class => 'feature' if @stat.image.present? %>
+
+<ul>
+  <li>Name: <%= @stat.full_name %></li>
+  <li>Team: <%= @stat.team %></li>
+  <li>Points: <%= @stat.points %></li>
+
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit Driver", edit_stat_path %>
+  <%= link_to "Delete Driver", stat_path(@stat.id), :method => 'delete' %>
+</div>
