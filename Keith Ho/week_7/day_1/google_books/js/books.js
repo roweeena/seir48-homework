@@ -10,7 +10,7 @@ const fetchBooks = function(event){
     }
 
     const data = JSON.parse(xhr.responseText);
-  
+
     const img = document.createElement("img");
     const p = document.createElement("p");
 

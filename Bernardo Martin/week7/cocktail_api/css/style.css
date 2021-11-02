@@ -1,0 +1,14 @@
+img {
+  max-width: 300px;
+  margin: 15px auto;
+}
+body {
+  background: pink;
+}
+
+.container {
+  max-width: 960px;
+  padding: 30px;
+  background-color: grey;
+  color: white;
+}

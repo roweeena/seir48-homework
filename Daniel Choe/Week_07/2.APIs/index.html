@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Google Books</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1><a href="index.html">Current Temperature Search</a></h1>
+
+  <form class='form'>
+    <label>
+      <input id="search" type="text" name="city" placeholder="City name" required>
+    </label>
+    <button id="button" type="button">Search</button>
+  </form>
+
+  <div id='results'></div>
+  <div id='current'></div>
+  <div id='map'></div>
+  <!-- This is where the results from the search will go. -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- this is connecting to a host library. -->
+  <script src="js/weather.js"></script>
+</body>
+</html>
