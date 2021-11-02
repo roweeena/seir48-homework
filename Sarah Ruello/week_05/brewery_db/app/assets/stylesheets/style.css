@@ -2,28 +2,34 @@
 
 * {
   font-family: "Noto Sans Mono", monospace;
+  font-size: 1rem;
+}
+
+/* font-size of the page scales with the size of the browser window, 
+  using rems for all headings and fonts for fully responsive text */
+html {
+  font-size: calc(60% + 0.8vmin);
 }
 
 body {
   margin: 20px;
 }
 
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
 .main {
+  max-width: 51rem;
   margin: 0 auto;
-  width: 61%;
-}
-
-li {
-  list-style-type: none;
-}
-
-nav li + li:before {
-  content: " | ";
-  padding: 0 10px;
-}
-
-ul {
-  padding-left: 15px;
 }
 
 .navbar {
@@ -32,6 +38,7 @@ ul {
   padding: 2px 2px 20px 0px;
 }
 
+/* two columns in flex box */
 .flex-container {
   margin: 0 auto;
   display: flex;
@@ -42,7 +49,6 @@ ul {
 .flex-child {
   position: relative;
   flex: 1;
-  border: 2px solid rgb(0, 0, 0);
   border-radius: 13px;
   padding: 20px;
   background-color: rgba(255, 142, 67, 0.2);
@@ -50,9 +56,10 @@ ul {
 }
 
 .flex-child:first-child {
-  margin-right: 20px;
+  margin-right: 15px;
   max-width: 25%;
   min-width: fit-content;
+  padding-right: 25px;
 }
 
 .label-name {
@@ -69,17 +76,25 @@ ul {
   margin-block: auto;
 }
 .beer-display {
-  width: 400px;
+  width: 16rem;
 }
 .beer-image {
   position: relative;
-  width: 200px;
+  width: 13rem;
   float: right;
+}
+
+/* remove bullets from lists and lessen indent */
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding-left: 15px;
 }
 
 a {
   text-decoration: none;
-  font-size: 14px;
 }
 
 /* unvisited link */

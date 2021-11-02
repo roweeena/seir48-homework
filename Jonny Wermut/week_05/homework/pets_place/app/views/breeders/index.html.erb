@@ -1,0 +1,5 @@
+<% @breeders.each do |breeder| %>
+<p> <%= link_to breeder.name, breeder_path(breeder.id) %> </p>
+<% end %>
+
+<%= link_to "Add a new breeder", new_breeder_path %>

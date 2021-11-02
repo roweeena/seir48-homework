@@ -1,0 +1,41 @@
+body{
+  background-color: aliceblue;
+}
+
+.container{
+  margin:0 auto;
+  max-height: 960px;
+  max-width: 960px;
+  min-height: 960px;
+  background-color: grey;
+  font-size: 22px;
+}
+
+button{
+  margin: 0 auto;
+  font-size:30px;
+}
+
+input{
+  font-size: 30px;
+  margin-left: 300px;
+  margin-top:20px;
+}
+
+img{
+  margin-left: 350px;
+  margin-top: 160px;
+  width: 300px;
+  height: 350px;
+}
+
+#phone_name{
+  font-size: 30px;
+  margin-left: 350px;
+  color: limegreen;
+}
+
+h1{
+  color:limegreen;
+  margin-left: 150px;
+}
