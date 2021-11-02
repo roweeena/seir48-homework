@@ -1,0 +1,11 @@
+<h1><%= @city.name %></h1>
+
+<%= image_tag @city.image, :class => 'feature' %>
+<ul>
+<li>Name: <%= @city.name %></li>
+<% if @city.country.present? %>
+<li>Country: <%= link_to @city.country.name, @city.country %></li>
+<% end %>
+<li>Formation: <%= @city.formation %></li>
+
+</ul>

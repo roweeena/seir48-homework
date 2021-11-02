@@ -1,0 +1,5 @@
+<h1>All cities</h1>
+
+<% @cities.each do |city| %>
+<%= link_to image_tag(city.image, :class => 'thumb'), city %>
+<% end %>

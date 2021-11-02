@@ -8,9 +8,9 @@
   <% end %>
   <% if !@wonder.year.is_a? Numeric %>
   <% elsif @wonder.year >= 0 %>
-    <li>Year of Origin (AD): <%= @wonder.year %></li>
+    <li>Year of Origin: <%= @wonder.year %> AD</li>
   <% else %>
-    <li>Year of Origin (BC): <%= -@wonder.year %></li>
+    <li>Year of Origin: <%= -@wonder.year %> BC</li>
   <% end %>
 </ul>
 

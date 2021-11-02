@@ -1,0 +1,14 @@
+<h1>All Songs</h1>
+
+<% @songs.each do |song| %>
+  <ul class="songs-container">
+    <li>
+      <%= link_to song.name, song_path(song.id) %>
+      <% if song.thumbs_up == true %>
+        <span>👍</span>
+      <% else %>
+        <span>👎</span>
+      <% end %>
+    </li>
+  </ul>
+<% end %>

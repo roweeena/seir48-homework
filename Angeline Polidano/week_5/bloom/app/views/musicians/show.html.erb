@@ -1,0 +1,18 @@
+<h1><%= @musician.name %></h1>
+
+<%= image_tag @musician.image, :class => 'feature' if @musician.image.present? %>
+<ul>
+  <li>Name: <%= @musician.name %></li>
+  <li>Nationality: <%= @musician.nationality %></li>
+  <li>Date of birth: <%= @musician.dob.strftime '%A, %B %e, %Y' if @musician.dob.present? %></li>
+  <li>Period: <%= @musician.period %></li>
+</ul>
+
+<% @musician.works.each do |work| %>
+  <%= link_to image_tag(work.image, :class => 'thumb'), work %>
+<% end %>
+
+<div class="controls">
+  <%= link_to 'Edit musician', edit_musician_path(@musician) %>
+  <%= link_to 'Delete musician', @musician, :method => 'delete', :class => 'hotdogs', :data => { :confirm => 'Are you sure?' } %>
+</div>

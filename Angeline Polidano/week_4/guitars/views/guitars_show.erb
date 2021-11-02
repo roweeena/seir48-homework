@@ -1,0 +1,12 @@
+<h1><%= @guitar["brand"] %></h1>
+
+<h2>model: <%= @guitar["model"] %></h2>
+
+<% unless @guitar["image"].nil? || @guitar["image"].empty? %>
+  <img src="<%= @guitar["image"] %>" alt="<%= @guitar["brand"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/guitars<%= @guitar["id"] %>/edit">Edit guitar</a>
+  <a href="/guitars/<%= @guitar["id"] %>/delete">Delete guitar</a>
+</div>

@@ -1,0 +1,27 @@
+<h1>Edit Album</h1>
+
+<form action="/albums" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="King Of Limbs" required="<%= @album.name %>">
+  </label>
+
+  <%# <label>
+  Artist:
+    <input name="artist_id" placeholder="Radio Head" required>
+  </label> %>
+
+  <label>
+  Year:
+    <input name="year" placeholder="2007" required="<%= @album.year %>">
+  </label>
+
+
+  <label>
+    Image:
+  <input type="url" name="image" placeholder="http://..." value ="<%= @album.image %>">
+  </label>
+
+
+  <button>Add Album</button>
+</form>

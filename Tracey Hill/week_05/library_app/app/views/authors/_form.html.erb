@@ -1,0 +1,15 @@
+<%= form_for @author do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+  <%= f.label :born, 'Country of birth' %>
+  <%= f.text_field :born %>
+  <%= f.label :dob, 'Date of birth' %>
+  <%= f.text_field :dob, :placeholder => 'YYYY-MM-DD' %>
+  <%= f.label :genre%>
+  <%= f.text_field :genre %>
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.submit %>
+<% end %>
