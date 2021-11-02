@@ -1,0 +1,15 @@
+<h1><%= @brewery.name %></h1>
+
+<%= image_tag(@brewery.logo) if @brewery.logo.present? %>
+
+<p> <%= @brewery.name %> </p>
+<p> <%= @brewery.location %></p>
+
+<% @brewery.beers.each do |beer| %>
+  <%= link_to image_tag(beer.image), beer %>
+<% end %>
+
+<div class="controls">
+  <%= link_to "Edit Brewery", edit_brewery_path %>
+  <%= link_to "Delete Brewery", brewery_path, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>

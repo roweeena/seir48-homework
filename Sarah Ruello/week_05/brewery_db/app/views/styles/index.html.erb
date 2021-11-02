@@ -1,0 +1,12 @@
+<h2>All styles</h2>
+
+ <!-- <%= 2+ 4 %> echoing tag -->
+
+<!-- <% %>  non-echoing tag -->
+
+<% @styles.each do |style| %>
+    <ul>
+        <li><%= link_to style.style_name, style %> </li>
+        <li style="font-size: 12px;">Total listed: <%= style.beers.count %></li>
+    </ul>
+<% end %>

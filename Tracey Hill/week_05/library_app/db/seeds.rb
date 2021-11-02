@@ -1,0 +1,38 @@
+Author.destroy_all
+
+Author.create(:name => 'Alison Croggon', :born => 'South Africa', :dob => '1962-09-19', :website => 'http://www.alisoncroggon.com/', :genre => 'Fantasy, Poetry, Young Adult', :image => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Alison_Croggon%2C_February_2019_%28cropped%29.jpg/220px-Alison_Croggon%2C_February_2019_%28cropped%29.jpg')
+Author.create(:name => 'Trudy Canavan', :born => 'Australia', :dob => '1969-10-23', :website => 'http://www.trudicanavan.com', :genre => 'Science Fiction & Fantasy', :image => 'https://hachette.imgix.net/authors/3954.jpg?auto=compress,format&w=440')
+Author.create(:name => 'Diana Gibaldon', :born => 'United States', :dob => '1952-01-11', :website => 'http://www.dianagabaldon.com/', :genre => 'Science Fiction & Fantasy, Historical Fiction, Romance', :image => 'https://images.gr-assets.com/photos/1320096626p8/367773.jpg')
+Author.create(:name => 'Robin Hobb', :born => 'United States', :dob => '1952-03-05', :website => 'http://www.robinhobb.com', :genre => 'Science Fiction & Fantasy, History, Mystery', :image => 'https://images.gr-assets.com/authors/1397885202p8/25307.jpg')
+Author.create(:name => 'Kate Elliott', :born => 'United States', :dob => '1958-07-27', :website => 'http://www.kateelliott.com/', :genre => 'Science Fiction & Fantasy, Young Adult, Romance', :image => 'https://images.gr-assets.com/authors/1418093298p8/8660.jpg')
+Author.create(:name => 'N. K. Jemisin', :born => 'United States', :dob => '1972-09-19', :website => 'http://nkjemisin.com', :genre => 'Science Fiction & Fantasy',  :image => 'https://images.gr-assets.com/authors/1438215930p8/2917917.jpg')
+Author.create(:name => 'S. A. Chakraborty', :born => 'United States', :dob => '1985-12-07', :website => 'http://www.sachakraborty.com/', :genre => 'Fantasy, Historical Fiction, Science Fiction', :image => 'https://images.gr-assets.com/authors/1495447627p8/16002992.jpg')
+Author.create(:name => 'Erin Morgenstern', :born => 'United States', :dob => '1978-07-08', :website => 'http://erinmorgenstern.com', :genre => 'Literature & Fiction, Fantasy', :image => 'https://images.gr-assets.com/authors/1552589582p8/4370565.jpg')
+Author.create(:name => 'Glenda Larke', :born => 'Australia', :dob => '1945-01-01', :website => 'http://glendalarke.com/', :genre => 'Science Fiction & Fantasy', :image => 'https://images.gr-assets.com/authors/1277495909p8/3857639.jpg')
+Author.create(:name => 'Sarah Ash', :born => 'United Kingdom', :dob => '1950-01-01', :website => 'http://www.sarah-ash.com', :genre => 'Science Fiction & Fantasy, Historical Fiction', :image => 'https://images.gr-assets.com/authors/1482140735p8/127082.jpg')
+Author.create(:name => 'Katherine Kerr', :born => 'United States', :dob => '1944-01-01', :website => 'http://www.deverry.com/', :genre => 'Science Fiction & Fantasy', :image => 'https://images.gr-assets.com/authors/1418184371p8/44003.jpg')
+Author.create(:name => 'Holly Black', :born => 'United States', :dob => '1971-11-10', :website => 'http://www.blackholly.com/', :genre => 'Fantasy, Young Adult', :image => 'https://images.gr-assets.com/authors/1589911274p8/25422.jpg')
+Author.create(:name => 'Tara Moss', :born => 'Canada', :dob => '1973-10-02', :website => 'http://www.taramoss.com', :genre => 'Historical Fiction, Mystery, Biography', :image => 'https://images.gr-assets.com/authors/1568334221p8/207498.jpg')
+Author.create(:name => 'Sara Douglass', :born => 'Austrlaia', :dob => '1957-06-02', :website => 'http://www.saradouglassworlds.com', :genre => 'Science Fiction & Fantasy', :image => 'https://images.gr-assets.com/authors/1404249116p8/82540.jpg')
+Author.create(:name => 'Lucy Holland', :born => 'United Kingdom', :dob => '1983-04-21', :website => 'http://lucyhounsom.co.uk/', :genre => 'Historical Fiction, Fantasy', :image => 'https://images.gr-assets.com/authors/1618127356p8/21370819.jpg')
+Author.create(:name => 'Juliet Marillier', :born => 'New Zealand', :dob => '1948-07-27', :website => 'http://www.julietmarillier.com/', :genre => 'Science Fiction & Fantasy, Historical Fiction, Young Adult', :image => 'https://images.gr-assets.com/authors/1373081365p5/8649.jpg')
+Author.create(:name => 'Sarah J. Maas', :born => 'United States', :dob => '1986-03-05', :website => 'http://sarahjmaas.com/', :genre => 'Fantasy, Romance, Young Adult', :image => 'https://images.gr-assets.com/authors/1582137198p8/3433047.jpg')
+Author.create(:name => 'Ursula K. Le Guin', :born => 'United States', :dob => '1929-10-21', :website => 'http://www.ursulakleguin.com ', :genre => 'Science Fiction & Fantasy, Young Adult, Nonfiction', :image => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ursula_Le_Guin_%283551195631%29_%28cropped%29.jpg/800px-Ursula_Le_Guin_%283551195631%29_%28cropped%29.jpg')
+Author.create(:name => 'Mary Stewart', :born => 'United Kingdom', :dob => '1916-09-17', :website => 'http://www.worldcat.org/identities/lccn-n79-62771', :genre => 'Fiction, Romance, Suspense', :image => 'https://upload.wikimedia.org/wikipedia/en/5/5f/Mary_Stewart_%28novelist%29.jpg')
+Author.create(:name => 'Isobelle Carmody', :born => 'Australia', :dob => '1958-06-16', :website => 'http://isobellecarmody.net.au', :genre => 'Science Fiction & Fantasy, Literature & Fiction', :image => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Isobelle_Carmody_-_Writing_There%2C_Living_Here_The_Difference_of_Distance_%288058654733%29.jpg/800px-Isobelle_Carmody_-_Writing_There%2C_Living_Here_The_Difference_of_Distance_%288058654733%29.jpg')
+Author.create(:name => 'Traci Harding', :born => 'Australia', :dob => '1964-08-28', :website => 'https://www.traciharding.com/', :genre => 'Science Fiction & Fantasy', :image => 'https://images.gr-assets.com/authors/1360971544p8/396497.jpg')
+Author.create(:name => 'Marianne de Pierres', :born => 'Australia', :dob => '1961-01-05', :website => 'http://www.mariannedepierres.com/', :genre => 'Science Fiction & Fantasy', :image => 'https://upload.wikimedia.org/wikipedia/commons/3/3d/MarianneDePierres.JPG')
+Author.create(:name => 'Kerry Greenwood', :born => 'Australia', :dob => '1954-06-17', :website => 'http://www.phrynefisher.com/aboutkerry.html', :genre => 'Mystery & Thrillers', :image => 'https://images.gr-assets.com/authors/1454939133p8/48067.jpg')
+Author.create(:name => 'Fiona McIntosh', :born => 'United Kingdom', :dob => '1960-03-14', :website => 'http://www.fionamcintosh.com', :genre => 'Historical Fiction, Fantasy, Crime', :image => 'https://images.gr-assets.com/authors/1386047401p8/47792.jpg')
+
+puts "#{ Author.count } authors created."
+
+Book.destroy_all
+
+Book.create(:title => 'The Riddle: Pellinor 2', :published => '2012', :pages=> '303', :language => 'en', :image => 'https://jackets.dmmserver.com/media/356/97814063/9781406339420.jpg', :author_id => '')
+Book.create(:title => 'The Gift: Pellinor 1', :published => '2016', :pages=> '308', :language => 'en', :image => 'https://jackets.dmmserver.com/media/356/97814063/9781406339482.jpg', :author_id => '')
+Book.create(:title => 'The Crow: Pellinor 3', :published => '2016', :pages=> '316', :language => 'en', :image => 'https://jackets.dmmserver.com/media/356/97814063/9781406339475.jpg', :author_id => '')
+Book.create(:title => 'The Singing: Pellinor 4', :published => '2016', :pages=> '287', :language => 'en', :image => 'https://jackets.dmmserver.com/media/356/97814063/9781406339437.jpg', :author_id => '')
+Book.create(:title => 'The Magicians Guild', :published => '2010', :pages=> '465', :language => 'en', :image => 'https://jackets.dmmserver.com/media/356/97818414/9781841499604.jpg', :author_id => '')
+
+puts "#{ Book.count } books created."

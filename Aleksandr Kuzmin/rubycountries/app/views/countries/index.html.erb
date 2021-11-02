@@ -1,0 +1,13 @@
+<h1>All countries</h1>
+<%= @countries.each do |country| %>
+<%= image_tag country.image, :class => 'thumb' if country.image.present? %>
+<ul>
+  <li>Name: <%= link_to country.name, country %></li>
+  <li>Capital: <%= country.capital %></li>
+  <li>Currency: <%= country.currency %></li>
+  <% if country.formation.present? %>
+  <li>Formation: <%= country.formation.strftime "%B %e, %Y" %></li>
+  <% end %>
+
+</ul>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_for @book do |f| %>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true %>
+</p>
+<p>
+  <%= f.label :published %>
+  <%= f.text_field :published, required: true %>
+</p>
+<p>
+  <%= f.label :genre %>
+  <%= f.text_field :genre, required: true %>
+</p>
+<p>
+  <%= f.label :language %>
+  <%= f.text_field :language, required: true %>
+</p>
+<p>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+</p>
+
+<p>
+  <%= f.label :author_id %>
+</p>
+
+<%= f.submit %>
+<% end %>

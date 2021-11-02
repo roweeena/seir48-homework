@@ -1,0 +1,17 @@
+
+<h2>Name: <%= @style.style_name %> </h2>
+
+<p>Originated in: <%= @style.origin_country %>
+
+<!-- for each beer in particular |style| -->
+<% @style.beers.each do |beer| %>
+    <li><%= link_to beer.beer_name, beer %></li>
+<% end %>
+</p>
+
+<nav>
+<div class="navbar">
+  <%= link_to 'Edit style', edit_style_path(@style) %> |
+  <%= link_to 'Delete style', @style, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>    
+</nav>

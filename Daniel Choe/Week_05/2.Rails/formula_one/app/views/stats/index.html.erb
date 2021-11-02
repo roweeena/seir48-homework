@@ -1,0 +1,8 @@
+<h1>Formula One Drivers</h1>
+
+<% @stats.each do |driver| %>
+  <p>
+    <%= link_to driver.full_name, stat_path(driver.id) %>
+    <%# you must use a different path for the (driver.id) to work. %>
+  </p>
+<% end %>

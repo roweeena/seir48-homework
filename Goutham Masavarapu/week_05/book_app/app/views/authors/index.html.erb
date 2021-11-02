@@ -1,0 +1,12 @@
+<h1>All authors</h1>
+
+<% @authors.each do |author| %>
+<%= image_tag author.image, :class =>'thumb' if author.image.present? %>
+
+  <ul>
+
+
+    <li>Genre: <%= author.genre %></li>
+    
+  </ul>
+<% end %>
