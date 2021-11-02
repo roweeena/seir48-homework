@@ -1,0 +1,18 @@
+<h1><%= @billionaire.name %></h1>
+
+<ul>
+  <li>Name: <%= @billionaire.name %></li>
+  <li>Age: <%= @billionaire.age %></li>
+  <li>Residence: <%= @billionaire.residence %></li>
+  <li>Net Worth: <%= number_to_human @billionaire.net_worth %></li>
+  <li>Hobbies: <%= @billionaire.hobbies %></li>
+</ul>
+
+<h2>Fun Fact</h2>
+
+<p>It would take the average Australian worker <%= number_to_human @wealth_time %> years to acculmulate that wealth</p>
+
+<div class="controls">
+  <%= link_to "Edit Billionaire", edit_billionaire_path(@billionaire.id) %>
+  <%= button_to "Delete Billionaire", billionaire_path(@billionaire.id), :method => :delete %>
+</div>

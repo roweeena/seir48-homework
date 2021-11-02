@@ -1,0 +1,11 @@
+<%= form_for @style do |f| %>
+<p> 
+ <span class="label-name"><%= f.label :style_name %></span>
+ <%= f.text_field :style_name, :required => true %>
+</p> 
+<p>
+ <span class="label-name"><%= f.label :origin_country %></span>
+ <%= f.text_field :origin_country %>
+</p>
+  <%= f.submit %>
+<% end %>

@@ -40,7 +40,7 @@ end
 # INDEX - show all beers:
 get '/beers' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     # pass data down to view
     erb :beers_index
 end
@@ -48,7 +48,7 @@ end
 # NEW - Beer form page:
 get '/beers/new' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     erb :beers_new
 end    
 
@@ -77,7 +77,7 @@ end
 # EDIT - a single Beer:
 get '/beers/:id/edit' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     @beer = Beer.find params[:id] #extract first Beer from array   
     erb :beers_edit
 end    
@@ -98,7 +98,7 @@ end
 # DELETE - deletes Beer:
 get '/beers/:id/delete' do 
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     beer = Beer.find params[:id] 
     beer.destroy
     redirect to("/beers")
@@ -109,14 +109,14 @@ end
 #INDEX
 get '/styles' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     erb :styles_index
 end
 
 #NEW
 get '/styles/new' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     erb :styles_new
 end   
 
@@ -132,7 +132,7 @@ end
 #SHOW  
 get '/styles/:id' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     @style = Style.find params[:id]    
     erb :styles_show
 end
@@ -141,7 +141,7 @@ end
 #EDIT 
 get '/styles/:id/edit' do
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     @style = Style.find params[:id]   
     erb :styles_edit
 end    
@@ -160,7 +160,7 @@ end
 # DELETE
 get '/styles/:id/delete' do 
     @beers = Beer.all.sort_by {|beer| beer["name"]}
-    @styles = Style.all
+    @styles = Style.all.sort_by {|style| style["name"]}
     style = Style.find params[:id] 
     style.destroy
     redirect to("/styles")
