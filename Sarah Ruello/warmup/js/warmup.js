@@ -315,24 +315,73 @@
 // Make one that flattens any array that you pass into it: ["Hello", [[["World"], 42]]] ->
 //   ["Hello", "World", 42]
 
-function reversedArray(array) {
-  // quick way:
-  // let backwards = array.reverse();
-  let reversedArray = [];
+// function reversedArray(array) {
+//   // quick way:
+//   // let backwards = array.reverse();
+//   let reversedArray = [];
 
-  for (let i = array.length - 1; i >= 0; i--) {
-    reversedArray.push(array[i]);
-  }
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     reversedArray.push(array[i]);
+//   }
 
-  return reversedArray;
+//   return reversedArray;
+// }
+
+// function flatten(array) {
+//   // quick way:
+//   let flatBoi = array.flat(1); // specify levels of array to flatten
+//   return flatBoi;
+// }
+
+// console.log(reversedArray([1, 2, 3, 4]));
+
+// console.log(flatten(["Hello", ["World", 42]]));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------02/11/21------------------------------------
+
+// # Counting Valleys
+// An avid hiker keeps meticulous records of their hikes.During the last hike that took exactly
+// some number of steps, for every step it was noted if it was an uphill`U`, or a downhill, `D`
+// step.Hikes always start and end at sea level, and each step up or down represents a 1 unit
+// change in altitude.We define the following terms:
+// - A mountain is a sequence of consecutive steps above sea level, starting with a step up from
+// sea level and ending with a step down to sea level.
+// - A valley is a sequence of consecutive steps below sea level, starting with a step down from
+// sea level and ending with a step up to sea level.
+// Write a function that accepts a string as a sequence of up and down steps during a hike, return
+// the number of valleys walked through.
+// ```js
+// counting_valleys('UDDDUDUU')
+// // => expect to return 1
+// ```
+// ### Explanation
+// If we represent `_` as sea level, a step up as `/`, and a step down as `\`, the hike can be drawn as:
+// ```
+// _/\      / \
+//    \    /   \ /
+//     \/\/
+// ```
+
+function counting_valleys(string) {
+  let elevation = 0;
+  let valleys = 0;
+
+  string.split("").forEach((letter) => {
+    if (letter == "U") {
+      elevation++;
+      if (elevation == 0) {
+        valleys++;
+      }
+    } else {
+      elevation--;
+    }
+  });
+  return valleys;
 }
 
-function flatten(array) {
-  // quick way:
-  let flatBoi = array.flat(1); // specify levels of array to flatten
-  return flatBoi;
-}
+console.log(counting_valleys("UDDDUDUU"));
+console.log(counting_valleys("DDUUDDUDUUUD"));
 
-console.log(reversedArray([1, 2, 3, 4]));
-
-console.log(flatten(["Hello", ["World", 42]]));
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------03/11/21------------------------------------

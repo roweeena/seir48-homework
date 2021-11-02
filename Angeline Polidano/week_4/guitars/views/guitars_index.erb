@@ -1,0 +1,12 @@
+<h1>My guitars</h1>
+
+<% @guitars.each do |guitar| %>
+
+  <p>
+    <a href="/guitars/<%= guitar["id"] %>">
+      <%= guitar["brand"] %>
+      <%= guitar["model"] %>
+      <%= guitar["year"] %>
+    </a>
+  </p>
+<% end %>
