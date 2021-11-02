@@ -1,0 +1,2 @@
+class BreedersUser < ApplicationRecord
+end
