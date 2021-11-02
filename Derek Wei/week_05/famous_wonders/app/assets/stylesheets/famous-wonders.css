@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
+
+/* * { border: 1px solid blue; } */
+
+.feature {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+body {
+  font-family: 'Quattrocento', serif;
+  background-color: brown;
+  background-image: url(https://wallpaperaccess.com/full/208973.jpg);
+  background-size: cover;
+}
+
+.container {
+  max-width: 960px; /* lazy responsive container */
+  margin: 0 auto; /* center */
+  background: rgba(20, 20, 20, 0.8);
+  padding: 2em;
+  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+  color: white;
+}
+
+nav {
+  margin: 0 auto;
+  min-width: 100%;
+  min-height: 50px;
+  background-color: crimson;
+  text-align: right;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+nav a.active {
+  background-color: limegreen;
+  color: white;
+
+}
+
+h1 {
+  padding: 0.5em;
+}
+
+.controls {
+  display: inline-flex;
+}
+
+form {
+  margin: 2em 0 0 10px;
+}
+
+a {
+  color: white;
+}
+
+label {
+  display: grid;
+  grid-template-columns: 50%;
+  margin: 1em;
+}
+
+button {
+  margin: 2em 1em;
+}
+
+#new_wonder_button {
+  margin: 2em 1em;
+}

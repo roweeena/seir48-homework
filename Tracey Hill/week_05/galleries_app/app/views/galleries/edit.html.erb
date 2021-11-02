@@ -1,0 +1,35 @@
+<h1>Edit Gallery</h1>
+
+<form action="<%= gallery_path(@gallery.id) %>" method="post">
+  <label>
+    Name:
+    <input name="name" required value="<%= @gallery.name %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @gallery.image %>">
+  </label>
+
+  <label>
+    Location:
+    <input name="location" value="<%= @gallery.location %>">
+  </label>
+
+  <label>
+    Year opened:
+    <input type="number" name="year_opened" value="<%= @gallery.year_opened %>">
+  </label>
+
+  <label>
+    Number of works:
+    <input type="number" name="works" value="<%= @gallery.works %>">
+  </label>
+
+  <label>
+    Floor Area:
+    <input type="number" name="area" value="<%= @gallery.area %>">
+  </label>
+
+    <button>Update gallery</button>
+</form>

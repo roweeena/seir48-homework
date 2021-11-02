@@ -1,0 +1,33 @@
+<h1>New Billionaire Form</h1>
+<h3>Don't do this</h3>
+
+<form action="<%= billionaires_path %>" method='post'>
+
+  <label for="">
+    Name:
+    <input type="text" name='name' required>
+  </label>
+
+  <label for="">
+    Age:
+    <input type="number" name='age'>
+  </label>
+
+  <label for="">
+    Residence
+    <input type="text" name='residence'>
+  </label>
+
+  <label for="">
+    Net Worth:
+    <input type="number" name='net_worth' required>
+  </label>
+
+  <label for="">
+    Hobbies:
+    <input type="text" name='hobbies'>
+  </label>
+
+  <button>Create Billionaire</button>
+
+</form>

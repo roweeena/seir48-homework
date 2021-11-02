@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OceansSystem</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'Home', oceans_path %>
+      <%= link_to 'New', new_ocean_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

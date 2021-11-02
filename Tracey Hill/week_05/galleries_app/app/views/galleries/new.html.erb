@@ -1,0 +1,36 @@
+<h1>New Gallery</h1>
+
+<form action="<%= galleries_path %>" method="post">
+
+  <label>
+    Name:
+    <input name="name" required>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+
+  <label>
+    Location:
+    <input name="location">
+  </label>
+
+  <label>
+    Year Opened:
+    <input type="number" name="year_opened">
+  </label>
+
+  <label>
+    Number of works:
+    <input type="number" name="works">
+  </label>
+
+  <label>
+    Floor Area:
+    <input type="number" name="area">
+  </label>
+
+    <button>Create gallery</button>
+</form>

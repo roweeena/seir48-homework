@@ -24,10 +24,8 @@ def count_nucleotides string ## parametar
 string.each_char do |char|
   if nucleotides.keys.include? char
     nucleotides[char] += 1
-
   else
-
-    nucleotides["error"] += 1
+    nucleotides["err"] letter += 1
   end
 end
   puts nucleotides
