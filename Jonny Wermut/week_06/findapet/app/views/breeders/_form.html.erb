@@ -1,0 +1,11 @@
+<%= form_for @breeder do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <%= f.label 'state' %>
+  <%= f.text_field :state, :placeholder => 'NSW' %>
+  <%= f.label :photo %>
+  <%= f.url_field :photo %>
+  <%= f.submit %>
+<% end %>
