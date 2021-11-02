@@ -259,34 +259,129 @@
 //
 // Add scores up to reach a target number, using object.keys:
 
-const allergen = {
-  1: "eggs",
-  2: "peanuts",
-  4: "shellfish",
-  8: "strawberries",
-  16: "tomatoes",
-  32: "chocolate",
-  64: "pollen",
-  128: "cats",
-};
+// const allergen = {
+//   1: "eggs",
+//   2: "peanuts",
+//   4: "shellfish",
+//   8: "strawberries",
+//   16: "tomatoes",
+//   32: "chocolate",
+//   64: "pollen",
+//   128: "cats",
+// };
 
-function badFoods(value) {
-  let allergies = [];
-  // Object.entries() method returns an array of a given object's own enumerable
-  // string - keyed property[key, value] pairs.
-  // assigning to two variables at once here:
-  for (const [id, name] of Object.entries(allergen)) {
-    //  console.log(`${id}: ${name}`);
-    if (id & value) {
-      allergies.push(name);
-    }
-  }
-  return allergies;
-}
+// function badFoods(value) {
+//   let allergies = [];
+//   // Object.entries() method returns an array of a given object's own enumerable
+//   // string - keyed property[key, value] pairs.
+//   // assigning to two variables at once here:
+//   for (const [id, name] of Object.entries(allergen)) {
+//     //  console.log(`${id}: ${name}`);
+//     if (id & value) {
+//       allergies.push(name);
+//     }
+//   }
+//   return allergies;
+// }
 
-console.log(badFoods(34));
-console.log(badFoods(30));
-console.log(badFoods(13));
+// console.log(badFoods(34));
+// console.log(badFoods(30));
+// console.log(badFoods(13));
 
 //////////////////////////////////////////////////////////////////////////
-// ---------------------------12/10/21------------------------------------
+// ---------------------------01/11/21------------------------------------
+// Arrays - Flatten and Reverse
+
+// The goal of this exercise is to manipulate arrays by creating a function
+//   that can reverse an array and by creating a function that can flatten an array.
+//   Do not use any libraries to complete this task - write this stuff from scratch using
+//   standard JS methods and objects.
+
+// Make two functions:
+// - reverse
+// - flatten
+
+// reverse( [1, 2, 3, 4] );
+// // => [ 4, 3, 2, 1 ]
+// flatten( ["Hello", ["World", 42] ] );
+// // => [ "Hello", "World", 42 ]
+
+// -----------------------------
+//   You only need to make flatten work to one level deep! You should be able to flatten
+// this - ["Hello", ["World"]] - but not this - ["Hello", [[["World"]]]]
+
+// -----------------------------
+// Bonus
+// Make one that flattens any array that you pass into it: ["Hello", [[["World"], 42]]] ->
+//   ["Hello", "World", 42]
+
+// function reversedArray(array) {
+//   // quick way:
+//   // let backwards = array.reverse();
+//   let reversedArray = [];
+
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     reversedArray.push(array[i]);
+//   }
+
+//   return reversedArray;
+// }
+
+// function flatten(array) {
+//   // quick way:
+//   let flatBoi = array.flat(1); // specify levels of array to flatten
+//   return flatBoi;
+// }
+
+// console.log(reversedArray([1, 2, 3, 4]));
+
+// console.log(flatten(["Hello", ["World", 42]]));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------02/11/21------------------------------------
+
+// # Counting Valleys
+// An avid hiker keeps meticulous records of their hikes.During the last hike that took exactly
+// some number of steps, for every step it was noted if it was an uphill`U`, or a downhill, `D`
+// step.Hikes always start and end at sea level, and each step up or down represents a 1 unit
+// change in altitude.We define the following terms:
+// - A mountain is a sequence of consecutive steps above sea level, starting with a step up from
+// sea level and ending with a step down to sea level.
+// - A valley is a sequence of consecutive steps below sea level, starting with a step down from
+// sea level and ending with a step up to sea level.
+// Write a function that accepts a string as a sequence of up and down steps during a hike, return
+// the number of valleys walked through.
+// ```js
+// counting_valleys('UDDDUDUU')
+// // => expect to return 1
+// ```
+// ### Explanation
+// If we represent `_` as sea level, a step up as `/`, and a step down as `\`, the hike can be drawn as:
+// ```
+// _/\      / \
+//    \    /   \ /
+//     \/\/
+// ```
+
+function counting_valleys(string) {
+  let elevation = 0;
+  let valleys = 0;
+
+  string.split("").forEach((letter) => {
+    if (letter == "U") {
+      elevation++;
+      if (elevation == 0) {
+        valleys++;
+      }
+    } else {
+      elevation--;
+    }
+  });
+  return valleys;
+}
+
+console.log(counting_valleys("UDDDUDUU"));
+console.log(counting_valleys("DDUUDDUDUUUD"));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------03/11/21------------------------------------
