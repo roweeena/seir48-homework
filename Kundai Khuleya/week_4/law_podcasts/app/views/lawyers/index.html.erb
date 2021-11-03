@@ -1,0 +1,7 @@
+<h1>All Lawyers on Law Podcasts</h1>
+
+<% @lawyers.each do |lawyer| %>
+  <p>
+    <%= link_to lawyer.name, lawyer_path(lawyer.id) %> has <%= pluralize lawyer.firm, 'firm' %>.
+  </p>
+<% end %>
