@@ -10,17 +10,20 @@
 
   <h1>Google Books API</h1>
 
-  <input id="query" name="query" placeholder="Search by title" required>
-  <button id="search">Search</button>
-
-  <script src="js/script.js"></script>
+  <form>
+    <input id="query" name="query" placeholder="Search by title" required autofocus>
+    <button>Search</button>
+  </form>
 
   <div id="book">
     <h1 id="title"></h1>
     <h3 id="authors"></h3>
     <p id="description"></p>
-    <img src="" alt="" id="cover">
+    <img id="cover">
   </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>

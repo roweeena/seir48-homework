@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Varela+Round&display=swap');
+
+.container {
+ margin: 0 auto;
+ width:  960px;
+ background-image: url('../images/bowie.png');
+ background-repeat: no-repeat;
+ font-family: 'Alfa Slab One', cursive;;
+ color: floralwhite;
+ min-height: 800px;
+}
+
+div.photo {
+    margin: 0 auto;
+    max-width: 900px; 
+    padding: 10px;
+}
+
+img {
+    max-width: 900px;
+}
+
+h1, h2, label {
+    padding: 10px;
+    margin:  0;
+}

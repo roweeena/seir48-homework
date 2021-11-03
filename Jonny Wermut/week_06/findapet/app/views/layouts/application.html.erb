@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FindaPet</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+    <nav>
+      <ul>
+      <li><%= link_to 'Home', root_path %></li>
+
+      <% if @current_user.present? %>
+
+        <% if @current_user.isBreeder? %>
+        <li><%= link_to 'My Listings', listings_path %></li>
+        <li><%= link_to 'Add a listing', new_listing_path %></li>
+        <li><%= link_to 'My Breeders', breeders_path %>
+
+        <% else %>
+        <li><%= link_to 'View breeders', breeders_path %></li>
+        <li><%= link_to 'View listings', listings_path %></li>
+
+        <% end %>
+
+        <li><%= link_to "Log out #{ @current_user.first_name }", login_path, :method => 'delete' %></li>
+
+      <% else %>
+       <li> <%= link_to 'View breeders', breeders_path %></li>
+        <li><%= link_to 'View listings', listings_path %></li>
+        <li><%= link_to 'Sign up', new_user_path %></li>
+        <li><%= link_to 'Sign in', login_path %></li>
+      <% end %>
+    </ul>
+    </nav>
+    <%= yield %>
+    </div>
+  </body>
+</html>
