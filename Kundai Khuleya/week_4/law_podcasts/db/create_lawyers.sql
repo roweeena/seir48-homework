@@ -1,0 +1,6 @@
+CREATE TABLE lawyers (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+firm TEXT,
+image TEXT
+ );
