@@ -2,15 +2,12 @@
 
 header {
   background-color: #191C28;
+  display: flex;
   left: 0;
   padding: 0 1rem;
   position: fixed;
   top: 0;
   width: 100%;
-}
-
-.heading {
-  display: flex;
 }
 
 body {

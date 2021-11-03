@@ -64,7 +64,7 @@ const renderImages = function (results) {
     const thumbnailURL = generateURL(photo);
     const $img = $('<img>', {src: thumbnailURL});
     $img.appendTo('#images');
-  })
+  });
 };
 
 $(document).ready(function () {
