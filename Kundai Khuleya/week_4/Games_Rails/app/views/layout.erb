@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Magic Eight Ball v2 </title>
+        <link rel="stylesheet" href="/stylesheets/main.css" />
+    </head>
+
+    <body>
+        <div>
+            <% if logged_in?%>
+            <div class="navbar">
+                <b><a href="/ask_the_eightball">Home</a></b>
+                <b><a href="/answerlists">Lists</a></b>
+                <b><a href="/answerlists/new">New</a></b>
+            </div>
+            <% end %>
+
+            <br>
+            <h1> Magic Eight Ball </h1>
+
+            <%= yield %>
+
+            <br>
+            <a class="readme" href="/how_to_use"><b> Help? </b></a>
+
+            <footer>
+
+                <% if logged_in? %>
+                    <a href="/logout"><small><b>LOG OUT [ <%= @user.username %> ] </b></small></a>
+                <% end %>
+
+                <small> &copy;2020 MagicEightBallv2 </small>
+
+            </footer>
+        </div>
+    </body>
+</html>

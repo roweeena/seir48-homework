@@ -292,26 +292,41 @@ const fetchHoliday = function(event){
 
   $.ajax(`https://calendarific.com/api/v2/holidays?api_key=db0675eca89ac3e0a53b44305e1b1d98c2bc8446&country=${countryId}&year=${year}`).done(function(data){
     const holidays = data.response.holidays;
-    console.log(holidays);
 
-    for(var key in holidays){
-      console.log(holidays[key]);
-      $("#name").text("Holiday Name: " + holidays[key].name);
-      $("#description").text("Description: " + holidays[key].description);
-      $("#date").text("Date: " + holidays[key].date.iso);
-      $("#type").text("Holiday Type: " + holidays[key].type[0]);
-      $("#locations").text("Locations: " + holidays[key].locations);
-    }
-    // Object.keys(holidays).forEach(function(key){
-    //     $("#name").text("Holiday Name: " + holidays[key].name);
-    //     $("#description").text("Description: " + holidays[key].description);
-    //     $("#date").text("Date: " + holidays[key].date.iso);
-    //     $("#type").text("Holiday Type: " + holidays[key].type[0]);
-    //     $("#locations").text("Locations: " + holidays[key].locations);
-    // });
+    // for(var key in holidays){
+    //   $("#name").text("Holiday Name: " + holidays[key].name);
+    //   $("#description").text("Description: " + holidays[key].description);
+    //   $("#date").text("Date: " + holidays[key].date.iso);
+    //   $("#type").text("Holiday Type: " + holidays[key].type[0]);
+    //   $("#locations").text("Locations: " + holidays[key].locations);
+    // }
+    Object.keys(holidays).forEach(function(key){
+      $("#work").append(
+        `<div>
+        <p>Holiday Name: ${holidays[key].name}</p>
+        <p>Description: ${holidays[key].description}</p>
+        <p>Date: ${holidays[key].date.iso}</p>
+        <p>Holiday Type: ${holidays[key].type[0]}</p>
+        <p>Locations: ${holidays[key].locations}</p>
+        -------------------
+        </div>`);
+
+    });
   });
 
 
 };
 
 $("#holiday").on("submit", fetchHoliday);
+
+const fetchAdvice = function(event){
+  event.preventDefault();
+
+  $.ajax("https://api.adviceslip.com/advice").done(function(data){
+    const text = JSON.parse(data);
+    $("#advice-content").text(text.slip.advice);
+
+  });
+};
+
+$("#advice").on("submit", fetchAdvice);

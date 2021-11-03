@@ -1,0 +1,13 @@
+<hr>
+<h3><a href="/answerlists/new"> Create a New List </a><h3>
+<hr>
+
+<% if @user.answer_lists.size > 0 %>
+    <h4> Select a list below to Update or Delete </h4>
+<% end %>
+<% @user.answer_lists.each do |list| %>
+    <p><a href ='/answerlists/<%= list.id %>/update'><b> <%= list.list_name %> </b></a></p>
+<% end %>
+
+<hr>
+<img src="/images/EightBall.png" alt="Eight ball">
