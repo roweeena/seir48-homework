@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/styles.css">
+	<title></title>
+</head>
+<body>
+<div class="container">
+<h1>Ground control to major Tom</h1>
+<h3></h3>
+<form>
+	<label>Enter a Sol (0 - 3284)
+		<input type="number" name="sol" placeholder="1000" id='sol'>
+	</label>
+	<label> Select a camera
+		<select id="camera" tabindex="0" class="ember-view x-select">        
+			<option id="ember585" value="Any" class="ember-view x-option">Any</option>
+	        <option id="ember587" value="FHAZ" class="ember-view x-option">FHAZ</option>
+	        <option id="ember589" value="NAVCAM" class="ember-view x-option">NAVCAM</option>
+	        <option id="ember591" value="MAST" class="ember-view x-option">MAST</option>
+	        <option id="ember593" value="CHEMCAM" class="ember-view x-option">CHEMCAM</option>
+	        <option id="ember595" value="MAHLI" class="ember-view x-option">MAHLI</option>
+	        <option id="ember597" value="MARDI" class="ember-view x-option">MARDI</option>
+	        <option id="ember599" value="RHAZ" class="ember-view x-option">RHAZ</option>
+		</select>
+	</label>
+	<button id='fetch'>Enter the Sol</button>
+</form>
+<script src = 'js/jquery.js'></script>
+<script src = 'js/javascript.js'></script>
+<div class="photo">
+	<img>
+</div>
+</div>
+</body>
+</html>
