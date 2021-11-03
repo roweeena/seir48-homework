@@ -1,0 +1,25 @@
+<h1>Welcome: <%= @driver.name %></h1>
+
+<div class= "show">
+  
+<ul>
+  <li>Name: <%= @driver.name %></li>
+  <% if @driver.bus.present? %>
+  <li>Busses : <%= link_to @driver.bus.model, @driver.bus %></li>
+  <% end %>
+  <li>Surname:  <%=  @driver.surname %></li>
+  <li>Date of Birth: <%= @driver.dob %></li>
+  <li>Check in: <%= @driver.today%></li>
+  <% if @driver.image.present? %>
+  <li>Driver photo:
+    <br>
+   <%= image_tag @driver.image, :class => 'thumbs' %></li>
+   </br>
+  <% end %>
+</ul>
+</div>
+
+<div class="controlmenu">
+  <%= link_to 'Edit Driver', edit_driver_path(@driver)%>
+  <%= link_to 'Delete', @driver, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>

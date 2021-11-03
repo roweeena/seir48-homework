@@ -419,25 +419,61 @@
 # # => true
 # ```
 
-def luhn(num)	
-	sum = 0
-	nums = num.to_s.split("")
-	# each_with_index iterates through each element in an array or hash, 
-	# and extracts the element, as well as the index:
-	nums.each_with_index do |n, i|
-		sum += if (i.even?)
-			n.to_i * 2 > 9 ? n.to_i * 2 - 9 : n.to_i * 2
-		else
-			n.to_i
-		end
-	end	
-	if sum % 10 == 0
-		puts "true"
-	else
-		puts "false"
-	end
-end
+# def luhn(num)	
+# 	sum = 0
+# 	nums = num.to_s.split("")
+# 	# each_with_index iterates through each element in an array or hash, 
+# 	# and extracts the element, as well as the index:
+# 	nums.each_with_index do |n, i|
+# 		sum += if (i.even?)
+# 			n.to_i * 2 > 9 ? n.to_i * 2 - 9 : n.to_i * 2
+# 		else
+# 			n.to_i
+# 		end
+# 	end	
+# 	if sum % 10 == 0
+# 		puts "true"
+# 	else
+# 		puts "false"
+# 	end
+# end
 						
 
-luhn(3554)
-luhn(8763)
+# luhn(3554)
+# luhn(8763)
+
+###########################################################################
+############################## Warmup 21/10 ###############################
+
+# Grammar
+# “I before E except after C” is perhaps the most famous English spelling rule.
+#  For the purpose of this challenge, the rule says: if “ei” appears in a word,
+#   it must immediately follow “c”. If “ie” appears in a word, it must not
+#    immediately follow “c”.
+# A word also follows the rule if neither “ei” nor “ie” appears anywhere in the 
+# word. 
+# Examples of words that follow this rule are:
+# fiery hierarchy hieroglyphic ceiling inconceivable kendone daily drummachine 
+# one two threeWrite a function that tells you whether or not a given word follows 
+# the “I before E except after C” rule. 
+
+# Bonus - allow the function to return true
+#  if the word matches any of the following words also sleigh stein fahrenheit 
+# 	deifies either nuclei reimburse ancient juicier societies
+
+def grammar	word
+
+	# array for allowed exceptions i.e. sleigh/stein/deifies
+
+	if word.include?("ei") && !word.include?("cei")
+		return false
+	end
+
+	if word.include?("cie")
+		return false
+	end
+	return true	
+end	
+
+puts grammar 'freight'
+puts grammar 'ceiling'
