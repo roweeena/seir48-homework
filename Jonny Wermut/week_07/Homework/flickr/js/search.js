@@ -63,7 +63,7 @@ $(document).ready(function () {
 //Whenever someone submits the form go and search, and append images
   $('#search').on('submit', function (event) {
     event.preventDefault(); // disable the form from being submitted to the server.
-
+    $('div#images').empty();
     const searchTerm = $('#query').val();
     searchFlickr( searchTerm );
   });
