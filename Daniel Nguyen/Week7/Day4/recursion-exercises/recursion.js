@@ -7,21 +7,16 @@ const findMax = function (arr) {
   let max = arr[index];
 
   const helper = function (i) {
-    // console.log(i, max, arr);
-    if (i === arr.length) {
-      return;
-    } else {
-      if (arr[i] > max) {
-        max = arr[i];
-      }
-      helper(i + 1);
+    if (i === arr.length) return;
+    if (arr[i] > max) {
+      max = arr[i];
     }
-  }
+    helper(i + 1);
+  };
 
   helper(index);
-  // console.log('max', max);
   return max;
-}
+};
 
 const factorial = function (n) {
   if (n < 0) return; // negative numbers should return undefined
@@ -30,25 +25,29 @@ const factorial = function (n) {
   let factorial = 1;
 
   const helper = function (i) {
-    // console.log(i, factorial, n);
-    if (i > n) {
-      return;
-    } else {
-      factorial *= i;
-      helper(i + 1);
-    }
-  }
+    if (i > n) return;
+    factorial *= i;
+    helper(i + 1);
+  };
 
   helper(1);
-  // console.log('factorial', factorial);
   return factorial;
-}
+};
 
-function fibonacci(){
-    // This function returns the Nth number in the fibonacci sequence.
-    // https://en.wikipedia.org/wiki/Fibonacci_number
-    // For this function, the first two fibonacci numbers are 1 and 1
-}
+const fibonacci = function (n) {
+  let fibonacci = [0, 1];
+  if (n <= 1) return fibonacci[n];
+
+  const helper = function (i) {
+    if (i > n) return;
+    const next = fibonacci[i-2] + fibonacci[i-1];
+    fibonacci.push(next);
+    helper(i + 1);
+  };
+
+  helper(2);
+  return fibonacci[n];
+};
 
 function coinFlips(){
     // This function returns an array of all possible outcomes from flipping a coin N times.
