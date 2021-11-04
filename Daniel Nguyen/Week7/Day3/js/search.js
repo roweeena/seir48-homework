@@ -1,9 +1,12 @@
 const state = {
   loadingImages: false,
-  pageCount: 0
+  pageCount: 0,
+  lastPage: false
 };
 
 const searchFlickr = function (keywords) {
+  if (state.lastPage || state.loadingImages) return;
+
   state.loadingImages = true;
   renderStateTable();
 
@@ -20,6 +23,9 @@ const searchFlickr = function (keywords) {
     console.log(info);
     state.loadingImages = false;
     state.pageCount++;
+    if (info.photos.page >= info.photos.pages) {
+      state.lastPage = true;
+    }
     renderStateTable();
   });
 };
@@ -73,10 +79,16 @@ $(document).ready(function () {
   $('#search').on('submit', function (event) {
     event.preventDefault();
     const searchTerm = $('#query').val();
+
     state.pageCount = 0;
+    state.lastPage = false;
+
     clearImageGallery();
     searchFlickr(searchTerm);
   });
+
+  // Higher Order Function:
+  const relaxedSearchFlickr = _.debounce(searchFlickr, 4000, true); // Leading edge: don't wait
 
   // Infinite scroll
   $(window).on('scroll', function () {
@@ -84,6 +96,7 @@ $(document).ready(function () {
     if (scrollBottom < 700 && !state.loadingImages) {
       const searchTerm = $('#query').val();
       searchFlickr(searchTerm);
+      // relaxedSearchFlickr(searchTerm);
     }
   });
 });
