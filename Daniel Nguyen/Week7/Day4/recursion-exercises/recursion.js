@@ -7,11 +7,10 @@ const findMax = function (arr) {
   let max = arr[index];
 
   const helper = function (i) {
-    console.log(i, max, arr);
+    // console.log(i, max, arr);
     if (i === arr.length) {
       return;
-    }
-    else {
+    } else {
       if (arr[i] > max) {
         max = arr[i];
       }
@@ -20,11 +19,29 @@ const findMax = function (arr) {
   }
 
   helper(index);
+  // console.log('max', max);
   return max;
 }
 
 const factorial = function (n) {
-    // This function returns the factorial of a given number.
+  if (n < 0) return; // negative numbers should return undefined
+  else if (n <= 1) return 1; // 0! and 1! should equal 1; no need to continue.
+
+  let factorial = 1;
+
+  const helper = function (i) {
+    // console.log(i, factorial, n);
+    if (i > n) {
+      return;
+    } else {
+      factorial *= i;
+      helper(i + 1);
+    }
+  }
+
+  helper(1);
+  // console.log('factorial', factorial);
+  return factorial;
 }
 
 function fibonacci(){
