@@ -6,7 +6,6 @@ const findMax = function (arr) {
   const index = 0;
   let max = arr[index];
 
-
   const helper = function (i) {
     console.log(i, max, arr);
     if (i === arr.length) {
