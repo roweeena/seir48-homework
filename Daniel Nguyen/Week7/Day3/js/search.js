@@ -87,12 +87,16 @@ $(document).ready(function () {
     searchFlickr(searchTerm);
   });
 
+  // Higher Order Function:
+  const relaxedSearchFlickr = _.debounce(searchFlickr, 4000, true); // Leading edge: don't wait
+
   // Infinite scroll
   $(window).on('scroll', function () {
     const scrollBottom = $(document).height() - $(window).scrollTop() - $(window).height();
     if (scrollBottom < 700 && !state.loadingImages) {
       const searchTerm = $('#query').val();
       searchFlickr(searchTerm);
+      // relaxedSearchFlickr(searchTerm);
     }
   });
 });
