@@ -1,4 +1,7 @@
-const fetchCover = function() {
+const fetchCover = function(event) {
+
+  event.preventDefault(); //Keeps us on the same page - doesn't send to server
+
   const xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function () {
@@ -19,4 +22,4 @@ const fetchCover = function() {
 
 };
 
-document.getElementById('fetch').addEventListener('click', fetchCover);
+document.querySelector('form').addEventListener('submit', fetchCover);

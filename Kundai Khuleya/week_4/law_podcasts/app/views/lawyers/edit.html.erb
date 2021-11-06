@@ -1,0 +1,23 @@
+<h1>Edit Lawyer</h1>
+
+<form action="<%= lawyer_path(@lawyer.id) %>" method="post">
+  <label>
+    Name:
+    <input name="name" required value="<%= @lawyer.name %>">
+  </label>
+
+
+  <label>
+    Firm:
+    <input name="name" required<%= @lawyer.firm %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @lawyer.image %>">
+  </label>
+
+
+
+    <button>Update lawyer</button>
+</form>
