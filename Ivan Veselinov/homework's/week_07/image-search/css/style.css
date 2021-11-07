@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Kanit:wght@200&display=swap');
+
+body{
+ background-image: url("../images/background.jpg");
+}
+
+#container{
+
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  padding-left: 50px;
+  max-width: 980px;
+  min-height: 960px;
+}
+
+#search{
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+input{
+  font-size: 25px;
+}
+
+h1{
+  font-family: 'Fruktur', cursive;
+  padding-top: 10px;
+  font-size: 65px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+button{
+  margin-top: 11px;
+  font-size: 25px;
+}
+
+nav{
+  margin-left: 20px;
+  margin-top: 10px;
+  position: fixed;
+}
+a{
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+a:hover{
+  text-decoration: underline;
+  color:green;
+  font-size:23px;
+}
