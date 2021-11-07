@@ -1,0 +1,14 @@
+<h1><%= @lawyer.name %></h1>
+
+<%= image_tag @lawyer.image, :class => 'feature' if @lawyer.image.present? %>
+
+<ul>
+  <li>Name: <%= @lawyer.name %></li>
+  <li>Firm: <%= @lawyer.firm %></li>
+
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit lawyer', edit_lawyer_path(@lawyer.id) %>
+  <%= button_to 'Delete lawyer', lawyer_path(@lawyer.id), :method => 'delete' %>
+</div>

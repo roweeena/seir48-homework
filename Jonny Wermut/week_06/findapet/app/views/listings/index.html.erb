@@ -1,0 +1,18 @@
+<h1>Listings</h1>
+
+<% @listings.each do |listing| %>
+	 <div class='listing'>
+	 	<div class="image">
+	 		<%= image_tag listing.image if listing.image.present? %>
+	 	</div>
+	 	<div class="info">
+	 		<ul>
+	 		<li> <%= listing.name %> </li> 
+	 		<li><%= listing.price %> </li>
+	 		<li><%= listing.availability %> </li>
+	 		<li><%= listing.description %> </li>
+	 		<li> <%= link_to 'See full listing', listing %> </li>
+	 		</ul>
+	 	</div>
+	 </div>
+	<% end %>

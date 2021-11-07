@@ -72,7 +72,8 @@ function isPalindrome(input){
   return output == input
 }
 ```
-0(N!)
+// 0(N!)
+0(N)
 
 #### #6
 ```javascript
@@ -118,4 +119,5 @@ function isPrime(num){
   return true
 }
 ```
-0(log(N))
+// 0(log(N))
+0(N)

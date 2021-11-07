@@ -1,0 +1,17 @@
+<%= form_for @breeder do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :breedType %>
+  <%= f.text_field :breedType %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,23 @@
+<div class="answereightball">
+
+    <br><br><br><br>
+    <p class="question"> <%= @question %>? </p>
+
+    <br>
+    <div class="answer">
+
+        <% if @answer.nil? %>
+            <h1> <%= @default %> </h1>
+        <% else %>
+            <h1> <%= @answer.content %> </h1>
+        <% end %>
+
+    </div>
+    <br>
+
+    <br><br><br><br><br>
+    <button class="shake" onClick="window.location.reload();">SHAKE AGAIN</button>
+    <br>
+    <p><a href="/ask_the_eightball">ASK A NEW QUESTION</a></p>
+
+</div>
