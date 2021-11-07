@@ -46,7 +46,7 @@ function factorial (n) {
   }
 }
 ```
-#### Answer: O(N!)
+#### Answer: O(N)
 
 #### #4
 
@@ -87,7 +87,7 @@ function sumOfDivisors (n) {
   return result;
 }
 ```
-#### Answer: O(log(N))
+#### Answer: O(infinity)
 
 #### #7
 ```javascript
@@ -102,7 +102,7 @@ function printAllNumbersThenSumPairs (numArray) {
   });
 }
 ```
-#### Answer: O(N^2)
+#### Answer: O(N)
 
 #### #8
 ```javascript
@@ -118,4 +118,4 @@ function isPrime (num) {
   return true;
 }
 ```
-#### Answer: O(log(N))
+#### Answer: O(N)
