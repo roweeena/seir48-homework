@@ -1,0 +1,22 @@
+<h1> <%= @breeder.name %> </h1>
+
+	<%= image_tag @breeder.image, :class=>'feature' if @breeder.image.present? %>
+
+<ul>
+	<li><strong>Location:</strong>  <%= @breeder.location %> </li>
+	<li><strong>About:</strong>  <%= @breeder.about %> </li>
+
+	<li><strong>Phone:</strong> <%= @breeder.phone %> </li>
+	<li><strong>Email:</strong> <%= @breeder.email %> </li>
+	<li><strong>Breed:</strong> <%= @breeder.breedType %> </li>
+</ul>
+
+<h2>Pets</h2>
+<% @breeder.pets.each do |pet| %>
+	<h3> <%= pet.name %> </h3>
+  <%= link_to image_tag(pet.image, :class => 'thumb'), pet %>
+<% end %>
+
+<%= link_to 'Edit', edit_breeder_path(@breeder.id) %>
+<br>
+<%= link_to 'Delete breeder', @breeder, :method => 'delete', :class => 'hotdogs', :data => { :confirm => 'Are you sure?' } %>

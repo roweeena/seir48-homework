@@ -1,0 +1,9 @@
+<h1> My_Food_Lab Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+
+<ul>
+  <li>Name: <%= link_to recipe.title, recipe %> </li>
+</ul>
+<%= image_tag recipe.image, :class => 'thumb' if recipe.image.present? %>
+ <% end %>
