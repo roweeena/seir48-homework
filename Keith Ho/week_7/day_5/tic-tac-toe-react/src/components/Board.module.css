@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+.gridContainer {
+  margin-top: 100px;
+  margin-left: 35%;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  justify-content: center;
+  text-align: center;
+}
+
+.item0 {
+  border-right: 5px solid #EAE3C8;
+  border-bottom: 5px solid #EAE3C8;
+}
+
+.item1 {
+  border-right: 5px solid #EAE3C8;
+  border-bottom: 5px solid #EAE3C8;
+  border-left: 5px solid #EAE3C8;
+}
+
+.item2 {
+  border-left: 5px solid #EAE3C8;
+  border-bottom: 5px solid #EAE3C8;
+}
+
+.item3 {
+  border-right: 5px solid #EAE3C8;
+  border-bottom: 5px solid #EAE3C8;
+  border-top: 5px solid #EAE3C8;
+}
+
+.item4 {
+  border: 5px solid #EAE3C8;
+}
+
+.item5 {
+  border-top: 5px solid #EAE3C8;
+  border-bottom: 5px solid #EAE3C8;
+  border-left: 5px solid #EAE3C8;
+}
+
+.item6 {
+  border-right: 5px solid #EAE3C8;
+  border-top: 5px solid #EAE3C8;
+}
+
+.item7 {
+  border-right: 5px solid #EAE3C8;
+  border-top: 5px solid #EAE3C8;
+  border-left: 5px solid #EAE3C8;
+}
+
+.item8 {
+  border-top: 5px solid #EAE3C8;
+  border-left: 5px solid #EAE3C8;
+}
