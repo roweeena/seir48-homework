@@ -37,12 +37,6 @@ const renderBoard = function () {
         // second, the y coordinate of the square clicked
         // third, the number value of the square clicked. This is the number to change.
         // fourth, the new number to change the flooded squares to.
-        console.table({
-          x,
-          y,
-          currentTarget: parseInt($(e.currentTarget).attr('num')),
-          currentColor
-        });
       });
       $row.append($gameSquare);
     }
@@ -72,6 +66,28 @@ const renderSquare = function (x, y) {
 // fill in this function, and be sure to call the renderSquare function to update the UI!
 // use the gameBoard object defined above, make changes in the gameBoard, then renderSquare.
 // renderSquare takes in the x and y coordinates of the square that should be updated on the board.
-function recursiveFlood(x, y, targetValue, newValue){
-   // YOUR CODE GOES HERE
-}
+const recursiveFlood = function (x, y, targetValue, newValue) {
+
+  // Colour clicked square
+  gameBoard[y][x] = newValue;
+  renderSquare(x, y);
+
+  // Colour adjacent squares to the left
+  const floodLeft = function (x) {
+    if (gameBoard[y][x] !== targetValue) return;
+    gameBoard[y][x] = newValue;
+    renderSquare(x, y);
+    floodLeft(x - 1);
+  };
+
+  // Colour adjacent squares to the right
+  const floodRight = function (x) {
+    if (gameBoard[y][x] !== targetValue) return;
+    gameBoard[y][x] = newValue;
+    renderSquare(x, y);
+    floodRight(x + 1);
+  };
+
+  floodLeft(x - 1);
+  floodRight(x + 1);
+};
