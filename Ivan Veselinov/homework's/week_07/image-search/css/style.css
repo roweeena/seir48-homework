@@ -54,3 +54,14 @@ a:hover{
   color:green;
   font-size:23px;
 }
+
+img{
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 200px;
+  min-height: 200px;
+}

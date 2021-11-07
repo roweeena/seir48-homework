@@ -1,31 +1,43 @@
 // console.log(`hey`, $.fn.jquery, _.VERSION); // test js,jquery,underscore
+let page = 1;
+let lastPage = false;
+
+const state = {
+  page: 1,
+  lastPage: false,
+  requestInProgress: false
+}
 
 const searchFlickr = function(keywords){   //GLOBAL FUNCTION
+  if (state.lastPage === true || state.requestInProgress) return;
   console.log(`Searching Flickr for`, keywords);
-
+  page++;
   // You are not expected to understand this !!
   const flickrURL = 'https://api.flickr.com/services/rest?jsoncallback=?';
+  state.requestInProgress = true;
   $.getJSON(flickrURL, {
     method: 'flickr.photos.search', //not to be confused with HTTP methods like POST
-    page: _.random(0, 500),
+    page: state.page++,   //_.random(0, 500)
     api_key: '2f5ac274ecfac5a455f38745704ad084',
     text: keywords,
     format: 'json'
   }).done(showImages).done(function (info){
+    if (info.photos.page >= info.photos.pages){
+      state.lastPage = true;
+    }
     console.log(info);
+    state.requestInProgress = false;
   });
 };
 
 
 const showImages = function (results){
 _(results.photos.photo).each(function (photo){
-const thumbnailURL = generateURL (photo);
+ const thumbnailURL = generateURL (photo);
 // console.log(thumbnailURL);
 const $img = $(`<img>`, {src: thumbnailURL});
 $img.appendTo(`#images`);
-
-
-})
+ });
 }
 
 const generateURL = function (p){
@@ -47,6 +59,10 @@ $(document).ready(function(){
 $('#search').on('submit', function (event){
   event.preventDefault(); // disable the form from being submited to the server.
   // console.log(`submit`); // does submit work !
+
+  state.page = 1;
+  lastPage =false;
+  $('img').remove();
 
   //get the search terms
   const searchTerm = $('#query').val(); // get value from search
