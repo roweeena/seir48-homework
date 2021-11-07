@@ -45,8 +45,8 @@ class Game extends Component {
     const moves = history.map((step, move) => {
       const desc = move ? "Go to move #" + move : "Go to game start";
       return (
-        <li key={move}>
-            <button onClick={() => this.jumpTo(move)}>{ desc }</button>
+        <li key={move} className="btn-list">
+            <button className="btn" onClick={() => this.jumpTo(move)}>{ desc }</button>
         </li>
       );
     });
@@ -58,13 +58,11 @@ class Game extends Component {
 
     return (
       <div>
+        <div style={{fontSize: "30px"}}>{ status }</div>
         <div>
           <Board grids={current.grids} onClick={(i) => this.handleClick(i)}/>
         </div>
-        <div>
-          <div style={{fontSize: "30px"}}>{ status }</div>
-          <ol>{ moves }</ol>
-        </div>
+        <ol>{ moves }</ol>
       </div>
     );
   }

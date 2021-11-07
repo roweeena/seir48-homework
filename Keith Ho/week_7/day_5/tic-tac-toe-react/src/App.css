@@ -52,3 +52,20 @@ body {
   font-size: 75px;
   font-family: 'Quicksand', sans-serif;
 }
+
+.btn-list {
+  list-style: none;
+}
+
+.btn {
+  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  color: #EAE3C8;
+}
+
+.btn:hover{
+  color: white;
+}
