@@ -60,8 +60,5 @@ function renderSquare(x, y){
 //renderSquare takes in the x and y coordinates of the square that should be updated on the board.
 function recursiveFlood(x, y, targetValue, newValue){
    // YOUR CODE GOES HERE
-   renderSquare(x, y+1);
-   renderSquare(x, y-1);
-   renderSquare(x+1, y);
-   renderSquare(x-1, y);
 }
+
