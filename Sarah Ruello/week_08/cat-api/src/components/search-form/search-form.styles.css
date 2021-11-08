@@ -1,0 +1,31 @@
+.search {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 150px;
+  line-height: 20px;
+  margin-bottom: 30px;
+  border-radius: 7px 0px 0px 7px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 150px;
+  line-height: 20px;
+  border-radius: 0px 7px 7px 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #6f3988;
+  color: white;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}

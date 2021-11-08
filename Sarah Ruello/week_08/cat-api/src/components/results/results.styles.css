@@ -1,0 +1,38 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffffa9;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container:hover {
+  transform: scale(1.1);
+}
+
+.cat-img {
+  max-width: 300px;
+  max-height: 290px;
+  border-radius: 50px;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.cat-info {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+h2,
+h3 {
+  line-height: 0.5;
+}
