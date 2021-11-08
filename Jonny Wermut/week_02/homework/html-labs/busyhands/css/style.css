@@ -1,9 +1,3 @@
-#container {
-	margin: 2% auto;
-	width:  960px;
-	font-family: "Arial", sans-serif;
-}
-
 header {
 	display:  inline;
 }
@@ -13,8 +7,17 @@ nav {
 	color: white;
 	width: 100%;
 	padding: 8px;
-    margin-left: -8px;
-    margin-top: -8px;
+	left:  0;
+    top:  0;
+    position:  fixed;
+}
+
+
+footer {
+	height: 200px;
+	background-color: black;
+	color:  white;
+	width:  100%;
 }
 
 ul {
@@ -37,6 +40,13 @@ nav ul li:hover {
 nav ul li a {
 	text-decoration: none;
 	color:  white;
+}
+
+.container {
+	margin: 2% auto;
+	width:  960px;
+	font-family: "Arial", sans-serif;
+	margin-top: 80px;
 }
 
 #logo {
