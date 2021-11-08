@@ -17,7 +17,10 @@ class App extends Component {
 
   //
   fetchPopularComposers() {
-    this.setState({ loading: true });
+    this.setState({
+      loading: true,
+      composers: []
+    });
 
     const url = 'https://api.openopus.org/composer/list/pop.json';
     axios(url).then((response) => {
@@ -35,7 +38,7 @@ class App extends Component {
       <div>
         <h1>Composers</h1>
         <button onClick={ this.fetchPopularComposers } >
-          {buttonInnerHTML}
+          { buttonInnerHTML }
         </button>
         <Gallery composers={ this.state.composers } />
       </div>
