@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
+  background-color: #2B2A33;
+  color: #FBFBFE;
   font-family: 'Noto Sans', sans-serif;
+}
+
+button {
+  background-color: #42414D;
+  border: none;
+  border-radius: 0.5rem;
+  color: #FBFBFE;
+  cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
+  padding: 1rem;
+}
+
+button:hover, button:active {
+  background-color: #52525E;
 }
