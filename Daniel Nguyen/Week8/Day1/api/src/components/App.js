@@ -53,7 +53,6 @@ class App extends Component {
   renderFetchButton (button) {
     return (
       <FetchButton
-        loading={ this.state.loading }
         onClick={ button.onClick }
         value={ button.value }
       />
@@ -73,7 +72,7 @@ class App extends Component {
           <h1>Composers</h1>
           { fetchButtons.map(this.renderFetchButton) }
         </header>
-        <Gallery composers={ this.state.composers } />
+        <Gallery loading={ this.state.loading } composers={ this.state.composers } />
       </div>
     );
   }
