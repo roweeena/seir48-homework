@@ -1,3 +1,5 @@
+import './css/Gallery.css';
+
 const Gallery = (props) => {
   const renderComposer = function (composer) {
     return (
@@ -9,8 +11,8 @@ const Gallery = (props) => {
   };
 
   return (
-    <div>
-      { props.composers.map(renderComposer) }
+    <div className="gallery">
+      { props.composers.length > 0 ? props.composers.map(renderComposer) : '(No composers to show)' }
     </div>
   );
 };
