@@ -5,11 +5,11 @@
     display: inline-block;
 }
 div[num="0"] {
-    background: red;
+    background: #cc3333;
 }
 div[num="1"] {
-    background: green;
+    background: #339966;
 }
 div[num="2"] {
-    background: blue;
+    background: #3399cc;
 }
