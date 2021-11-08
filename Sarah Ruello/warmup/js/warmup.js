@@ -363,25 +363,52 @@
 //     \/\/
 // ```
 
-function counting_valleys(string) {
-  let elevation = 0;
-  let valleys = 0;
+// function counting_valleys(string) {
+//   let elevation = 0;
+//   let valleys = 0;
 
-  string.split("").forEach((letter) => {
-    if (letter == "U") {
-      elevation++;
-      if (elevation == 0) {
-        valleys++;
-      }
-    } else {
-      elevation--;
-    }
-  });
-  return valleys;
-}
+//   string.split("").forEach((letter) => {
+//     if (letter == "U") {
+//       elevation++;
+//       if (elevation == 0) {
+//         valleys++;
+//       }
+//     } else {
+//       elevation--;
+//     }
+//   });
+//   return valleys;
+// }
 
-console.log(counting_valleys("UDDDUDUU"));
-console.log(counting_valleys("DDUUDDUDUUUD"));
+// console.log(counting_valleys("UDDDUDUU"));
+// console.log(counting_valleys("DDUUDDUDUUUD"));
 
 //////////////////////////////////////////////////////////////////////////
 // ---------------------------03/11/21------------------------------------
+// Even and Odd sums
+// Take in an array and return an array of the sums of even and odd numbers.
+// For bonus points, use forEach in your solution.
+// evenOddSums([50, 60, 60, 45, 71]); => [170, 116]
+
+function evenOddSums(array) {
+  evens = 0;
+  odds = 0;
+  squashed = [];
+
+  array.forEach((e) => {
+    if (e % 2 == 1) {
+      odds += e;
+    }
+    if (e % 2 == 0) {
+      evens += e;
+    }
+  });
+
+  squashed.push(evens);
+  squashed.push(odds);
+
+  return squashed;
+}
+
+console.log(evenOddSums([50, 60, 60, 45, 71])); // => [170, 116]
+console.log(evenOddSums([5, 68, 38, 4, 71]));
