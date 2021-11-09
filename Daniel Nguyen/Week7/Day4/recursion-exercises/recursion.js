@@ -2,6 +2,7 @@
 // You will have to figure out what parameters to include
 // All functions must use recursion
 
+// This function returns the largest number in a given array.
 const findMax = function (arr) {
   const index = 0;
   let max = arr[index];
@@ -20,6 +21,7 @@ const findMax = function (arr) {
   return max;
 };
 
+// This function returns the factorial of a given number.
 const factorial = function (n) {
   if (n < 0) return; // negative numbers should return undefined
   else if (n <= 1) return 1; // 0! and 1! should equal 1; no need to continue.
@@ -38,6 +40,7 @@ const factorial = function (n) {
   return factorial;
 };
 
+// This function returns the Nth number in the fibonacci sequence.
 const fibonacci = function (n) {
   const fibonacci = [0, 1];
   if (n <= 1) return fibonacci[n];
@@ -55,46 +58,45 @@ const fibonacci = function (n) {
   return fibonacci[n];
 };
 
+// This function returns an array of all possible outcomes from flipping a coin N times.
 const coinFlips = function (n) {
     // For example, coinFlips(2) would return the following:
     // ["HH", "HT", "TH", "TT"]
 
-    const combos = [];
+    let c = 0;
+    let f = 0;
+    let isHeads = true;
 
-    // Parent helper: recurs n times
-    const recurPerPossibility = function (f) {
-      if (combos.length === n*n) return;
+    const combos = Array(2**n).fill(
+      Array(n).fill(null);
+    );
 
-      let currentPossibility = '';
-
-
-      // Child helper: recurs 2 times
-      const recurPerFlip = function (p) {
-        if (currentPossibility.length === n) return;
-
-        // TODO: Do the thing
-        currentPossibility += p;
+    const recurPerCombo = function (c) {
+      if (c === 2**n) return;
 
 
-        // Check if 'H' is required
-        // Check if 'T' is required
-        // All combos at once??
-        // Another nested helper??
-
-
-        recurPerFlip(p + 1);
-      }
-
-      recurPerFlip(0);
-      combos.push(currentPossibility);
-      recurPerPossibility(f + 1);
+      recurPerCombo(c + 1);
     }
+    recurPerCombo(0);
 
-    recurPerPossibility(0);
     console.log('n:', n, 'combos:', combos);
     return combos;
 }
 
+const recurPerPossibility = function (p, combos, n) {
+  // Base case
+  if (combos.length === 2 ** n) return combos;
+
+  // Action
+  const cumulativeCombos = combos;
+  const currentCombo = p;
+  cumulativeCombos.push(currentCombo);
+
+  // Recursive case
+  recurPerPossibility(p + 1, cumulativeCombos, n)
+};
+
+// This function returns an array of all combinations of the given letters
 const letterCombinations = function (chars) {
     // This function returns an array of all combinations of the given letters
     // Input type: Array of single characters
@@ -103,7 +105,15 @@ const letterCombinations = function (chars) {
 
     const combos = [];
 
-    // console.log('chars:', chars, 'combos:', combos);
+    const helper = function (i) {
+      if (i == chars.length) {
+
+      }
+    }
+    helper(0);
+
+
+    console.log('chars:', chars, 'combos:', combos);
     return combos;
 }
 
