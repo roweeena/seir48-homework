@@ -1,0 +1,23 @@
+body {
+  background-color: peachpuff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  font-size: 200%;
+  background-color: #ccc;
+  padding: 1em;
+}
+
+header.active {
+  background-color: #1f838a;
+}
+
+img {
+  width: 100%;
+}
