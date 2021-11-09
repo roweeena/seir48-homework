@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../index.css';
+
 
 class Weather extends Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class Weather extends Component {
   render() {
     return (
       <div class="searching">
-        <h1>Whether The Weather</h1>
+        <h1>Which Weather</h1>
         <SearchForm onSubmit={ this.fetchWeather } />
         <WeatherInfo data={ this.state.weatherData } />
       </div>
@@ -86,8 +88,19 @@ const WeatherInfo = (props) => {
         <img src={`http://openweathermap.org/img/w/${ props.data.weather[0].icon }.png` } alt={props.data.weather[0].description} />
         <h4>{props.data.weather[0].main}: {props.data.weather[0].description}</h4>
       </div>
+
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 export default Weather;
