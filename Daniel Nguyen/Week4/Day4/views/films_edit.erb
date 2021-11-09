@@ -1,0 +1,30 @@
+<h1>Edit film</h1>
+
+<form action="/films/<%= @film["id"] %>" method="post">
+  <label>
+    Title:
+    <input name="title" placeholder="Parasite" required value="<%= @film["title"] %>">
+  </label>
+
+  <label>
+    Director:
+    <input name="director" placeholder="Bong Joon-ho" value="<%= @film["director"] %>">
+  </label>
+
+  <label>
+    Year:
+    <input type="number" name="year" placeholder="2020" value="<%= @film["year"] %>">
+  </label>
+
+  <label>
+    Description:
+    <textarea name="description" rows="2" cols="74" placeholder="A short summary of the film"><%= @film["description"] %></textarea>
+  </label>
+
+  <label>
+    Rating:
+    <input type="range" min="0" max="4" step="0.5" name="rating" value="<%= @film["rating"] %>" >
+  </label>
+
+  <button>Submit</button>
+</form>

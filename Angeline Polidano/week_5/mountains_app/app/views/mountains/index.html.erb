@@ -1,0 +1,14 @@
+<h1>Mountains of the World:</h1>
+  <div class="links">
+<% @mountains.each do |mountain| %>
+</div>
+
+<div class="image">
+<%= image_tag 'teafuji.jpg' %>
+</div>
+<p>
+<%= link_to mountain.name, mountain_path(mountain.id) %>
+</p>
+
+
+<% end %>

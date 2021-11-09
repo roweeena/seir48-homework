@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Varela+Round&display=swap');
+
+body {
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1614634680.jpg");
+  font-family: 'Varela Round', sans-serif;
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Londrina Solid', cursive;
+}
+
+.container {
+  background-color: rgb(102, 153, 153, 0.3);
+  width: 960px;
+  height: 95vh;
+  padding: 15px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 13px;
+  font-size: 18px;
+}
+
+a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+img {
+  margin: 10px auto;
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+li {
+  margin: 7px 2px;
+}
+
+label {
+  display: block;
+  margin: 15px auto;
+}
+
+button {
+  margin: 0 462px;
+  padding: 0;
+  font-size: 20px;
+  height: 33px;
+  width: 105px;
+  border-radius: 4px;
+  
+}

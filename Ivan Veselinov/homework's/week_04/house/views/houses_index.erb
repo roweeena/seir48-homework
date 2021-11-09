@@ -1,0 +1,9 @@
+<p>House catalog</p>
+
+<% @houses.each do |house| %>
+<p>
+  <a href="/agency/<%= house["id"] %>">
+  <%= house["adress"] %>
+  </a>
+</p>
+<% end %>

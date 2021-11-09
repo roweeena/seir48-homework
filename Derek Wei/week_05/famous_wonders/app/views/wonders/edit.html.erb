@@ -1,0 +1,36 @@
+<h1>Edit Wonder</h1>
+
+<form action="<%= wonder_path(@wonder.id) %>" method="post">
+
+  <label>
+    Name:
+    <input name="name" value="<%= @wonder.name %>" placeholder="e.g. Golden Gate Bridge" required>
+  </label>
+
+  <label>
+    Year of Origin:
+    <input name="year" type="number" value="<%= @wonder.year %>" placeholder="e.g. 2002">
+  </label>
+
+  <label>
+    Location:
+    <input name="location" value="<%= @wonder.location %>" placeholder="e.g. My backyard">
+  </label>
+
+  <label>
+    Description:
+    <textarea name="description" cols="30" rows="10"><%= @wonder.description %></textarea>
+  </label>
+
+  <label>
+    Image:
+    <input name="image" type="url" value="<%= @wonder.image %>" placeholder="http://...">
+  </label>
+
+  <label>
+    Video:
+    <input name="video" type="url" value="<%= @wonder.video %>" placeholder="http://...">
+  </label>
+
+  <button>Update wonder</button>
+</form>

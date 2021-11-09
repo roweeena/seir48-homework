@@ -1,0 +1,20 @@
+<h1>Edit Album</h1>
+
+<form action="/albums/<%= @album.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" value="<%= @album.name %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @album.image %>">
+  </label>
+
+  <label>
+    Do you like it?
+    <input type="checkbox" name="thumbs_up" <%= "checked" if @album.thumbs_up == 1  %>>
+  </label>
+
+  <button>Update Album</button>
+</form>

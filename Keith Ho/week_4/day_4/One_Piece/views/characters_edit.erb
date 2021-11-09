@@ -1,0 +1,20 @@
+<h1>Edit Character</h1>
+
+<form action="/characters/<%= @character["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" value="<%= @character["name"] %>" required>
+  </label>
+
+  <label>
+    Ability:
+    <input name="ability" value="<%= @character["ability"]%>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @character["image"]%>">
+  </label>
+
+  <button>Update Character</button>
+</form>

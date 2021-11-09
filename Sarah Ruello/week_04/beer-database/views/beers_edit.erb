@@ -1,0 +1,54 @@
+<h2>Edit beer</h2>
+ <!-- <%= %> echoing tag ----->
+<!-- <% %>  non-echoing tag -->
+
+<form action="/beers/<%= @beer["id"] %>" method="post">
+    <p>
+    <label>
+    <span class="label-name">Name:</span>
+    <input name="name" value="<%= @beer["name"] %>" required>
+    </label> 
+    </p>
+
+    <p>
+    <label>
+        <span class="label-name">Brand:</span>
+    <input name="brand" value="<%= @beer["brand"] %>">
+    </label>
+    </p>
+
+    <p>
+    <span class="label-name">Style:</span>
+    <select name="style_id" id="">
+      <% Style.all.each do |style| %>
+      <!-- Preselects with style from previous beer style_id -->
+        <option value="<%= style.id %>" style="width: 200px;" <%= "selected" if style.id == @beer.style_id %>><%= style.name %></option>
+        <% end %>
+        </select>
+     </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">ABV:</span>
+    <input name="abv" value="<%= @beer["abv"] %>">
+    </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">Country:</span>
+    <input name="country" value="<%= @beer["country"] %>">
+    </label>
+    </p>
+
+    <p>
+    <label>
+    <span class="label-name">Image:</span>
+    <input type="url" name="image" value="<%= @beer["image"] %>">
+    </label>
+    </p>
+
+    <button>Update</button>
+</form>
+

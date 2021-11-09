@@ -1,0 +1,22 @@
+<h1>Edit Information</h1>
+
+<form action="/further_information/<%= @further.id %>" method="post">
+
+  <label>
+    Breed:
+    <input name="breed" type="text" placeholder="persian cat" required value="<%= @further.breed %>">
+  </label>
+
+  <label>
+    Origin:
+    <input name="origin" type="text" placeholder="greece" value="<%= @further.origin %>">
+  </label>
+
+  <label>
+    Coat Length:
+    <input name="coat_length" type="text" placeholder="long" value="<%= @further.coat_length %>">
+  </label>
+
+  <button>Update Information</button>
+
+</form>

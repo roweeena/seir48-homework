@@ -1,0 +1,15 @@
+<%= form_for @album do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, :required => true %>
+
+<%= f.label :released, "Released Date" %>
+<%= f.text_field :released, :placeholder => "YYYY-MM-DD" %>
+
+<%= f.label :image %>
+<%= f.url_field :image %>
+
+<%= f.label :thumbs_up, "Do you like it?" %>
+<%= f.check_box :thumbs_up %>
+
+<%= f.submit %>
+<% end %>

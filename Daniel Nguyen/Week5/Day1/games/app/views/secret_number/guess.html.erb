@@ -1,0 +1,9 @@
+<h1>Secret Number</h1>
+
+<form action="/games/secret_number/result">
+  <% (1..10).each do |i| %>
+    <span>
+      <button name="guess" value=<%= i %>><%= i %></button>
+    </span>
+  <% end %>
+</form>

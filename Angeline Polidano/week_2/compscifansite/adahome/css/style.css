@@ -1,0 +1,95 @@
+/*
+* { border: 1px solid limegreen; }  Easy CSS debugging */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+  background:rgba(59, 0, 255, 0.25); /* #321 => #332211 */
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+.container {
+  max-width: 960px; /* lazy responsive container */
+  margin: 0 auto; /* center */
+  background-color:rgba(59, 0, 255, 0.25);
+  padding: 1em;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.fas fa-dna {
+  padding: 40px
+}
+nav {
+  text-align: left;
+}
+
+nav a {
+  color: gold;
+  font: 200%;
+}
+
+h1 {
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  font-size: 450%;
+  padding: 0.6em;
+
+
+}
+
+main {
+  width: 100%;
+  display: inline-block;
+}
+
+.genius {
+font: 100%;
+text-color: white;
+font-style: oblique;
+}
+
+h2{
+  text-align: center;
+  letter-spacing: 5px;
+  color: white;
+}
+.tagline {
+  color: #fff;
+  font-style: italic;
+  font-size: 150%
+
+}
+
+
+main img {
+  display: block; /* Can't set margins on display: inline (the default for img) */
+  margin: 0 auto;
+}
+
+aside {
+  width: 97%; /* In CSS: 75% + 20% =~ 100% */
+  display: inline-block;
+  vertical-align: top;
+  background-color: white; /* IRL: use more tasteful colors */
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 15px 15px black;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+
+aside ul {
+  padding-left: 18px;
+}

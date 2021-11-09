@@ -1,0 +1,11 @@
+<h3>Actor's name: <%=@actor.name%></h3>
+<h4>Date of Birth: <%= @actor.date_of_birth%></h4>
+
+<%  unless @actor.image.nil? || @actor["image"].empty? %>
+<img src="<%=@actor.image%>" alt="">
+<% end %>
+
+<div class="controls">
+    <a href="/actors/<%= @actor.id %>/edit">Edit actor</a>
+    <a href="/actors/<%= @actor.id %>/delete">Delete actor</a>
+</div>

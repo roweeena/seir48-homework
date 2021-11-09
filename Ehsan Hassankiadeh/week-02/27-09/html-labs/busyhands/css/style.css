@@ -1,0 +1,15 @@
+.home-box  {
+  /* width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; */
+  /* background-color: black; */
+  display: inline-block;
+}
+.home-box-1 {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */

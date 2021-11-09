@@ -1,0 +1,18 @@
+<h1><%= @monster.name %></h1>
+
+<ul>
+  <li>Type: <%= @monster.mtype %></li>
+  <li>Element: <%= @monster.element %></li>
+  <li>ATK: <%= @monster.atk %></li>
+  <li>DEF: <%= @monster.def %></li>
+</ul>
+<p>Owned by <a href="/duelists/<%= @monster.duelist.id %>" ><%= @monster.duelist.name %></a></p>
+<% unless @monster.image.nil? || @monster.image.empty? %>
+  <img src="<%= @monster.image %>" alt="<%= @monster.name %>">
+<% end %>
+
+
+<div class="controls">
+  <a href="/monsters/<%= @monster.id %>/edit">Edit monster</a>
+  <a href="/monsters/<%= @monster.id %>/delete">Delete monster</a>
+</div>

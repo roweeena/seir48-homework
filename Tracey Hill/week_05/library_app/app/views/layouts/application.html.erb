@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Actor&family=Raleway&display=swap" rel="stylesheet">  
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <%= link_to 'All authors', authors_path %>
+        <%= link_to 'New author', new_author_path %>
+        |
+        <%= link_to 'All books', books_path %>
+        <%= link_to 'New book', new_book_path %>
+      </nav>
+      <%= yield %>
+    </div>
+  </body>
+</html>

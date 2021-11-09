@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Busses</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'Home Busses ', buses_path %>
+      <%= link_to 'Input Bus |', new_bus_path %>
+
+      <%= link_to 'Home Drivers ', drivers_path%>
+      <%= link_to 'Input Driver ', new_driver_path %>
+
+    </nav>
+    <div class="container">
+    <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<form action="/answerlists/<%= @list.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+
+    <input type="submit" value="Update" class="button">
+    <br>
+    <input type="text" name="list_name" value="<%= @list.list_name %>" placeholder="Name of Answer List" class="input_box" required>
+    <br>
+
+    <% counter = 0%>
+    <% while counter < 20 %>
+        <%if counter < 1%>
+            <small><br><input type="text" name="answers[]" value="<%= @list.answers[counter].content  %>" placeholder="Add an Answer HERE" maxlength="25" class="input_box" required></small>
+        <% else %>
+            <%if @list.answers[counter].nil?%>
+                <small><br><input type="text" name="answers[]" value="" placeholder="Add an Answer HERE" maxlength="25" class="input_box"></small>
+            <% else %>
+                <small><br><input type="text" name="answers[]" value="<%= @list.answers[counter].content %>" placeholder="Add an Answer HERE" maxlength="25" class="input_box"></small>
+            <% end %>
+        <% end %>
+        <% counter += 1%>
+    <% end %>
+
+    <br>
+    <input type="submit" value="Update" class="button">
+
+</form>
+
+<br>
+<form action="/answerlists/<%= @list.id %>/delete" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete" class="button">
+</form>
+<br>

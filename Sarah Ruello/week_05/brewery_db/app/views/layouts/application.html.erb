@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BreweryDb</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="main">
+      <nav>
+          <%= link_to 'All styles', styles_path %>    |
+          <%= link_to 'New style', new_style_path %>  |
+          <%= link_to 'All beers', beers_path %>      |
+          <%= link_to 'New beer', new_beer_path %>    |
+          <%= link_to 'Home', '/' %>
+      </nav>
+
+    <h1>Beers 🍺</h1>
+
+    <div class="flex-container">
+      <div class="flex-child col1">
+        <h2>All Beers</h2>
+
+          <% @beers.each do |beer| %>
+          <ul>
+              <li><%= link_to beer.beer_name, beer %></li> 
+          </ul>    
+          <% end %>
+
+          <h2>All Styles</h2>
+          <% @styles.each do |style| %>
+            <ul>
+              <li><%= link_to style.style_name, style %></li>
+            </ul>
+          <% end %>
+      </div>
+      
+      <div class="flex-child col2">
+        <!---------------------Dynamic Content Starts------------------------>
+        <%= yield %>
+        <!---------------------Dynamic Content Ends-------------------------->
+
+      </div>
+    </div>
+</div>
+
+</body>
+</html>

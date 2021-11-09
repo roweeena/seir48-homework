@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap");
+
+* {
+  font-family: "Noto Sans Mono", monospace;
+}
+
+body {
+  margin: 20px;
+}
+
+.main {
+  margin: 0 auto;
+  width: 55%;
+}
+
+li {
+  display: inline-block;
+}
+
+nav li + li:before {
+  content: " | ";
+  padding: 0 10px;
+}
+
+.flex-container {
+  margin: 0 auto;
+  display: flex;
+  min-height: 400px;
+}
+
+.flex-child {
+  flex: 1;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 13px;
+  padding: 20px;
+  background-color: rgba(255, 142, 67, 0.2);
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+  max-width: 25%;
+  min-width: fit-content;
+}
+
+.label-name {
+  color: rgba(172, 49, 0, 0.692);
+  display: inline-block; /* can't assing width to inline element */
+  width: 85px;
+}
+
+/* TODO: get this little shit to stick to bottom of flex2: */
+.footer {
+  display: flex;
+  align-items: flex-end;
+  top: 12em;
+}
+
+.beer-display,
+.beer-image {
+  display: inline-block;
+  margin-block: auto;
+}
+.beer-display {
+  width: 400px;
+}
+.beer-image {
+  position: relative;
+}
+
+.footer {
+  padding: 20px 0px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* unvisited link */
+a:link {
+  color: rgb(255, 30, 0);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(255, 102, 0);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 170, 72);
+}
+
+/* selected link */
+a:active {
+  color: rgb(255, 209, 110);
+}

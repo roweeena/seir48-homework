@@ -1,0 +1,58 @@
+// Create a variable to store a reference to the img.
+// Change the style of the img to have a "left" of "0px", so that it starts at the left hand of the screens.
+//
+// Create a function called catWalk() that moves the cat 10 pixels to the right of where it started, by changing the "left" style property.
+//
+// Call that function every 50 milliseconds. Your cat should now be moving across the screen from left to right. Hurrah!
+//
+// Bonus #1: When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever.
+//
+// Bonus #2: When the cat reaches the right-hand of the screen, make them move backwards instead. They should keep walking back and forth forever and ever.
+//
+// Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk.
+//
+// Bonus #4: Pretty much go nuts or whatever
+
+
+const img = document.getElementsByTagName('img')[0];
+img.style.position = 'absolute';
+img.style.left = '0px';
+
+const startTime = new Date().getTime();
+const catWalk = function(){
+  const currTime = new Date(). getTime();
+  const newLeft = ((currTime - startTime) / 1000) * 100;
+  const newTop = 0
+  if (newLeft > 1300){
+    startTime = currTime};
+    console.log(newLeft);
+    img.style.left = newLeft + "px";
+    img.style.top = newTop + "px";
+    window.requestAnimationFrame(catWalk);
+  const countdown = 10;
+  while (countdown > 0){
+    
+
+  }
+};
+catWalk();
+
+img.style.opacity = 1.0;
+const fadeAway = function (){
+  img.style.opacity = img.style.opacity - 0.01;
+  if (img.style.opacity < 0.5){
+    clearInterval(timerID);
+  }
+};
+
+const timerID = setInterval(fadeAway, 100);
+
+
+
+
+const button = document.getElementById('say');
+ const greet = function (){
+ const myName = document.getElementById("myname").value
+ alert("Hi, " + myName);
+};
+button.addEventListener('click', greet);
