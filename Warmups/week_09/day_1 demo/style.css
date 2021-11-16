@@ -1,0 +1,31 @@
+
+
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+/* css boilerplate */
+
+.card{
+  border:1px solid #eeeeee;
+  padding:30px 20px;
+}
+
+.container{
+  display: flex;
+}
+
+foot{
+  width: 100%;
+  background: #eeeeee;
+  padding:20px 50px;
+  margin-top:30px;
+  display: block;
+  box-shadow: 0 50vh 0 50vh #eeeeee;
+
+}
+
+
+@media only screen and (max-width: 800px) {
+    body {
+      background-color: lightblue;
+    }
+}
