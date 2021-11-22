@@ -1,19 +1,34 @@
 function insertionSort (items) {
-  // Loop through each element
+  const iterate = function (i) {
+    // Base case: return if the whole array has been iterated through
+    if (i === items.length) return;
 
-  // store the current item value so it can be placed correctly
-  // in the sorted portion of the array
+    // Actions:
 
-  // Loop backward through the sorted portion of the array
-  // and scoot everything over until you find the right place to
-  // insert the value you're working with
+    // store the current element
+    const current = items[i];
 
-  // Copy each item to the next slot over, as long as the value is smaller
-  // than the item in the sorted array we're looking at (items[j] > value)
+    // Compare the current element and its preceding element
+    const loopBack = function (j) {
+      // Base cases: return if no insertion swap required
+      //  - the current is already greater than the preceding, or
+      //  - the current index is 0 (there will be no preceding element to check)
+      if (items[j] > items[j - 1] || j === 0) return;
 
-  // We can now insert the item in its sorted location
+      // Action: swap current and its preceding element
+      items[j] = items[j - 1];
+      items[j - 1] = current;
 
-  // Remember to return the list!
+      // Recursive case: move to next previous element
+      loopBack(j - 1);
+    }
+    loopBack(i);
+
+    // Recursive case: move on to the next element
+    iterate(i + 1);
+  }
+  // Check each element, starting at the second, because the first will have no preceding elements to check against
+  iterate(1);
   return items;
 }
 
