@@ -531,29 +531,110 @@
 // There is a pair at indices: [0, 3]
 // There is a pair at indices: [1, 2]
 
-const pairwise = function (array, num) {
-  const indexList = []; // store indices
+// const pairwise = function (array, num) {
+//   const indexList = []; // store indices
 
-  array.forEach((element, index) => {
-    const value = num - element; //
-    const indexNum = array.indexOf(value); // get index of value
+//   array.forEach((element, index) => {
+//     const value = num - element; //
+//     const indexNum = array.indexOf(value); // get index of value
 
-    console.log(
-      `The ${num} subtracted from the ${element} is ${value} at index ${indexNum}`
-    );
+//     console.log(
+//       `The ${num} subtracted from the ${element} is ${value} at index ${indexNum}`
+//     );
 
-    // if indexNum is -1, there is no corresponding value in array
-    if (indexNum >= 0) {
-      if (!indexList.includes(indexNum) && !indexList.includes(index)) {
-        indexList.push(index, indexNum);
-        console.log(indexList);
-      }
+//     // if indexNum is -1, there is no corresponding value in array
+//     if (indexNum >= 0) {
+//       if (!indexList.includes(indexNum) && !indexList.includes(index)) {
+//         indexList.push(index, indexNum);
+//         console.log(indexList);
+//       }
+//     }
+//   });
+//   let sum = indexList.reduce((a, b) => a + b);
+//   return sum;
+// };
+
+// // test here
+// console.log(pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10));
+// console.log(pairwise([7, 9, 11, 13, 15], 20));
+
+/////////////////////// D's solution:
+// function pairwise(array, sum) {
+//   let indexSum = 0;
+//   let indexPairs = [];
+//   // putting unique numbers in a Set():
+//   let valueHits = new Set();
+
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       if (
+//         array[i] + array[j] === sum &&
+//         !(valueHits.has(array[i]) && valueHits.has(array[j]))
+//       ) {
+//         indexSum += i + j;
+//         valueHits.add(array[i]);
+//         valueHits.add(array[j]);
+//         indexPairs.push([i, j]);
+//       }
+//     }
+//   }
+
+//   return [indexSum, indexPairs];
+// }
+
+// console.log(pairwise([7, 9, 11, 13, 15], 20));
+// console.log(pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10));
+
+// # The Collatz conjecture
+// The Collatz conjecture is a conjecture in mathematics named after Lothar Collatz, who first proposed
+// it in 1937. It's also known as the 3n + 1 conjecture, the Ulam conjecture, the Kakutani's problem,
+//     the Thwaites conjecture, Hasse's problem or the Syracuse problem, the sequence of numbers that
+// results is referred to as the hailstone numbers or the wondrous numbers.
+
+// The problem is defined as follows:
+
+// ```
+// Take any positive integer n. If n is even, divide it by 2 to get n / 2.
+// If n is odd, multiply it by 3 and add 1 to obtain 3n + 1.
+// Repeat the process indefinitely.
+// ```
+// The conjecture is that no matter what number you start with, you will always eventually reach 1.
+
+// Your aim to create a function that will count how many times it takes for a particular number to reach 1.
+
+// ## Task
+// Write a program that given a number, verifies this conjecture for all positive numbers greater than
+// one.Ideally your program will output when it has completed, how many cycles it ran for and all the
+// steps it took to reach the end.
+
+// Examples to verify your program can be found https://en.wikipedia.org/wiki/Collatz_conjecture.
+
+function collatz(num) {
+  let counter = 0;
+  while (num !== 1) {
+    if (num % 2 == 0) {
+      num = num / 2;
+    } else if (num % 2 == 1) {
+      num = num * 3 + 1;
     }
-  });
-  let sum = indexList.reduce((a, b) => a + b);
-  return sum;
-};
+    counter++;
+  }
+  console.log(`Final num is ${num} and counter is ${counter}`);
+}
 
-// test here
-console.log(pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10));
-console.log(pairwise([7, 9, 11, 13, 15], 20));
+collatz(12);
+
+function collatz_recursive(num, count = 0) {
+  if (num === 1) {
+    console.log(`The final count is ${count}`);
+    return count;
+  }
+
+  if (num % 2 == 0) {
+    return collatz_recursive(num / 2, count + 1);
+  } else {
+    return collatz_recursive(num * 3 + 1, count + 1);
+  }
+}
+
+collatz_recursive(12);
