@@ -39,22 +39,21 @@ function factorial(num, i = 1, result = 1){
 factorial(3);
 factorial(5);
 
-let arr  = [1, 1];
-function fibonacci(num, i = 3, result = 0){
+function fibonacci(num, i = 2, result = 0, arr = [1, 1]){
     // This function returns the Nth number in the fibonacci sequence.
     // https://en.wikipedia.org/wiki/Fibonacci_number
     // For this function, the first two fibonacci numbers are 1 and 1
-  if (num === 1 || num === 2){
-    return 1;
+  if (num <= 2){
+    return arr[0];
   }
 
-  if (i > num){
+  if (i === num){
     return result;
   }
-  result = arr[i - 2] + arr[i - 3];
+  result = arr[i - 1] + arr[i - 2];
   arr.push(result);
 
-  return fibonacci(num, i + 1, result);
+  return fibonacci(num, i + 1, result, arr);
 }
 fibonacci(1);
 fibonacci(2);
