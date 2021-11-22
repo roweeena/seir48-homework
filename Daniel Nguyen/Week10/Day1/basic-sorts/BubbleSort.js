@@ -1,4 +1,5 @@
 function bubbleSort(array) {
+  // Loop will only start if true. Will be reset to false immediately.
   let swapHappened = true;
 
   const loop = function () {
