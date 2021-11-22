@@ -1,21 +1,39 @@
 function bubbleSort(array) {
-    // Make some sort of loop that keeps happening if there were any swaps
-    // that happened this turn
+  let swapHappened = true;
 
-    // reset swapHappened to false each time so we can detect if a swap
-    // happened in this specific iteration.
+  const loop = function () {
+    // Base case: if no swap happened on the last loop, then the array is sorted
+    if (!swapHappened) return;
 
-    // Make another loop (inside the first one) to go through one 
-    // round of swapping from the start of the list to the end
-    
-    // Inside inner loop:
-    // compare each pair of elements near each other
-    // swap them if the bigger one was at a lower index.
+    // Actions:
 
-    // Make sure to keep track of whether a swap happened!
+    // Reset to false, in order to track any swaps for the current iteration
+    swapHappened = false;
+    // Iterate through the array
+    const checkBubble = function (i) {
+      // Base case: return once all adjacent pairs have been checked
+      if (i === array.length - 1) return;
 
-    // After both loops have exited, remember to return the array
-    return array;
+      // Action:
+      // Check the current element and the next element
+      // If the current element is larger than the next, then swap them
+      if (array[i] > array[i + 1]) {
+        const temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+        swapHappened = true;
+      }
+
+      // Recursive case
+      checkBubble(i + 1);
+    }
+    checkBubble(0);
+
+    // Recursive case
+    loop();
+  }
+  loop();
+  return array;
 }
 
 module.exports = bubbleSort;
