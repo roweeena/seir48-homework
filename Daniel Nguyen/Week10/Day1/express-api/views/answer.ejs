@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeopardy!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+
+  <h2><%= category %> for $<%= value %></h2>
+  <h1><%= question %></h1>
+  <h1>What is... <%= answer %>?</h1>
+
+  <form action="/game">
+    <input type="submit" value="Back to questions">
+  </form>
+
+</body>
