@@ -390,25 +390,257 @@
 // For bonus points, use forEach in your solution.
 // evenOddSums([50, 60, 60, 45, 71]); => [170, 116]
 
-function evenOddSums(array) {
-  evens = 0;
-  odds = 0;
-  squashed = [];
+// function evenOddSums(array) {
+//   evens = 0;
+//   odds = 0;
+//   squashed = [];
 
-  array.forEach((e) => {
-    if (e % 2 == 1) {
-      odds += e;
+//   array.forEach((e) => {
+//     if (e % 2 == 1) {
+//       odds += e;
+//     }
+//     if (e % 2 == 0) {
+//       evens += e;
+//     }
+//   });
+
+//   squashed.push(evens);
+//   squashed.push(odds);
+
+//   return squashed;
+// }
+
+// console.log(evenOddSums([50, 60, 60, 45, 71])); // => [170, 116]
+// console.log(evenOddSums([5, 68, 38, 4, 71]));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------04/11/21------------------------------------
+
+// ## Recurring Letters
+
+// Create a function that takes in a sentence and outputs the letter that's repeated
+// most frequently.
+
+// ```js
+// recurringLetter('just a simple sentence chilling');
+// // => The recurring letter of "just a simple sentence chilling" is e
+// ```
+
+// Use simple sentences with regular spaces between each word(like in the sentence
+//   you are reading) but if you want you can account for other characters such as !@#$%^&*? etc..
+
+// *Hint:* You'll need to loop and count each of the letters.
+
+// **Bonus:** Create another function that capitalises a letter within the sentence.
+// ```js
+// capitaliseLetter('just a simple sentence chilling', 'e');
+// => just a simplE sEntEncE chilling
+
+// function recurringLetter(string) {
+//   string.split("").forEach((letter) => {
+
+// }
+
+// recurringLetter('just a simple sentence chilling');
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------04/11/21------------------------------------
+
+// Given a number, return a string with dash '-' marks before and after each odd integer,
+// but do not begin or end the string with a dash mark.
+
+// -----------------
+// Tests:
+
+// dashatize(274), "2-7-4", "Should return 2-7-4");
+// dashatize(5311), "5-3-1-1", "Should return 5-3-1-1");
+// dashatize(86320), "86-3-20", "Should return 86-3-20");
+// dashatize(974302), "9-7-4-3-02", "Should return 9-7-4-3-02");
+// dashatize(NaN), "NaN", "Should return NaN");
+// dashatize(0), "0", "Should return 0");
+// dashatize(-1), "1", "Should return 1");
+// dashatize(-28369), "28-3-6-9", "Should return 28-3-6-9");
+
+// function dashatize(num) {
+//   if (isNaN(num)) {
+//     return num;
+//   }
+
+//   let digits = num.toString().split("");
+//   let result = "";
+
+//   digits.forEach((e) => {
+//     if (e % 2 !== 0) {
+//       result += "-";
+//       result += e;
+//       result += "-";
+//     } else {
+//       result += e;
+//     }
+//   });
+
+//   result = result.replace(/--/g, "-");
+
+//   if (result.startsWith("-")) {
+//     // result = result.substr(1, 5); ???? hmm
+//   }
+
+//   if (result.endsWith("-")) {
+//     result = result.substr(0, result.length - 1);
+//   }
+
+//   console.log(result);
+// }
+
+// dashatize(-28369);
+// dashatize(86320);
+// dashatize(974302);
+// dashatize(274);
+// dashatize(NaN);
+// dashatize(0);
+// dashatize(-1);
+// dashatize(5311);
+// dashatize("pony");
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------08/11/21------------------------------------
+//  # Pairwise
+
+//  Write a function that accepts an array and a number, from the array find the element
+//  pairs whose sum equal to that number, and return the sum of their indices.
+
+//  If there are multiple valid pairs that have the same numeric elements but different
+// indices, return the smallest sum of indices.Once an element has been used, it cannot
+// be reused to pair with another.
+
+// For example:
+// ```js
+// pairwise([7, 9, 11, 13, 15], 20)
+// // => return 6
+// // The pairs that sum to 20 are [7, 13], [9, 11] at indices: 0, 3, 1, 2 (total: 6).
+
+// // pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10)
+// // // => returns 11.
+// // // The pairs that sum to 10 are [1, 9], [12, -2] at indices: 0, 6, 2, 3 (total: 11).
+// ```
+// ## Bonus
+
+// Find and return all the pairs of indices in the array when the sum is equal to a specific number.
+// For example, pairwise([7, 9, 11, 13, 15], 20) returns:
+
+// There is a pair at indices: [0, 3]
+// There is a pair at indices: [1, 2]
+
+// const pairwise = function (array, num) {
+//   const indexList = []; // store indices
+
+//   array.forEach((element, index) => {
+//     const value = num - element; //
+//     const indexNum = array.indexOf(value); // get index of value
+
+//     console.log(
+//       `The ${num} subtracted from the ${element} is ${value} at index ${indexNum}`
+//     );
+
+//     // if indexNum is -1, there is no corresponding value in array
+//     if (indexNum >= 0) {
+//       if (!indexList.includes(indexNum) && !indexList.includes(index)) {
+//         indexList.push(index, indexNum);
+//         console.log(indexList);
+//       }
+//     }
+//   });
+//   let sum = indexList.reduce((a, b) => a + b);
+//   return sum;
+// };
+
+// // test here
+// console.log(pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10));
+// console.log(pairwise([7, 9, 11, 13, 15], 20));
+
+/////////////////////// D's solution:
+// function pairwise(array, sum) {
+//   let indexSum = 0;
+//   let indexPairs = [];
+//   // putting unique numbers in a Set():
+//   let valueHits = new Set();
+
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       if (
+//         array[i] + array[j] === sum &&
+//         !(valueHits.has(array[i]) && valueHits.has(array[j]))
+//       ) {
+//         indexSum += i + j;
+//         valueHits.add(array[i]);
+//         valueHits.add(array[j]);
+//         indexPairs.push([i, j]);
+//       }
+//     }
+//   }
+
+//   return [indexSum, indexPairs];
+// }
+
+// console.log(pairwise([7, 9, 11, 13, 15], 20));
+// console.log(pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10));
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------22/11/21------------------------------------
+
+// # The Collatz conjecture
+// The Collatz conjecture is a conjecture in mathematics named after Lothar Collatz, who first proposed
+// it in 1937. It's also known as the 3n + 1 conjecture, the Ulam conjecture, the Kakutani's problem,
+//     the Thwaites conjecture, Hasse's problem or the Syracuse problem, the sequence of numbers that
+// results is referred to as the hailstone numbers or the wondrous numbers.
+
+// The problem is defined as follows:
+
+// ```
+// Take any positive integer n. If n is even, divide it by 2 to get n / 2.
+// If n is odd, multiply it by 3 and add 1 to obtain 3n + 1.
+// Repeat the process indefinitely.
+// ```
+// The conjecture is that no matter what number you start with, you will always eventually reach 1.
+
+// Your aim to create a function that will count how many times it takes for a particular number to reach 1.
+
+// ## Task
+// Write a program that given a number, verifies this conjecture for all positive numbers greater than
+// one.Ideally your program will output when it has completed, how many cycles it ran for and all the
+// steps it took to reach the end.
+
+// Examples to verify your program can be found https://en.wikipedia.org/wiki/Collatz_conjecture.
+
+function collatz(num) {
+  let counter = 0;
+  while (num !== 1) {
+    if (num % 2 == 0) {
+      num = num / 2;
+    } else if (num % 2 == 1) {
+      num = num * 3 + 1;
     }
-    if (e % 2 == 0) {
-      evens += e;
-    }
-  });
-
-  squashed.push(evens);
-  squashed.push(odds);
-
-  return squashed;
+    counter++;
+  }
+  console.log(`Final num is ${num} and counter is ${counter}`);
 }
 
-console.log(evenOddSums([50, 60, 60, 45, 71])); // => [170, 116]
-console.log(evenOddSums([5, 68, 38, 4, 71]));
+collatz(12); // 1, 9
+
+function collatz_recursive(num, count = 0) {
+  if (num === 1) {
+    console.log(`The final count is ${count}`);
+    return count;
+  }
+
+  if (num % 2 == 0) {
+    return collatz_recursive(num / 2, count + 1);
+  } else {
+    return collatz_recursive(num * 3 + 1, count + 1);
+  }
+}
+
+collatz_recursive(12); // 9
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------23/11/21------------------------------------
