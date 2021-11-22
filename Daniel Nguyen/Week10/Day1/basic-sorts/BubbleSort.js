@@ -7,16 +7,16 @@ function bubbleSort(array) {
 
     // Actions:
 
-    // Reset to false, in order to track any swaps for the current iteration
+    // reset to false, in order to track any swaps for the current iteration
     swapHappened = false;
-    // Iterate through each adjacent pair (a bubble) in the array
+    // iterate through each adjacent pair (a bubble) in the array
     const checkBubble = function (i) {
       // Base case: return once all adjacent pairs have been checked
       if (i === array.length - 1) return;
 
       // Action:
-      // Check the current element and the next element
-      // If the current element is larger than the next, then swap them
+      // check the current element and the next element
+      // if the current element is larger than the next, then swap them
       if (array[i] > array[i + 1]) {
         const temp = array[i];
         array[i] = array[i + 1];
