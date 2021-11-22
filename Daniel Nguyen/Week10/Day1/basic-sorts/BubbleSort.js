@@ -9,7 +9,7 @@ function bubbleSort(array) {
 
     // Reset to false, in order to track any swaps for the current iteration
     swapHappened = false;
-    // Iterate through the array
+    // Iterate through each adjacent pair (a bubble) in the array
     const checkBubble = function (i) {
       // Base case: return once all adjacent pairs have been checked
       if (i === array.length - 1) return;
