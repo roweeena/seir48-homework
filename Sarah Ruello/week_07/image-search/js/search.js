@@ -1,8 +1,31 @@
 console.log("hey", $.fn.jquery, _.VERSION); // check js loads
 
-const flickrURL = "https://api.flickr.com/services/rest?jsoncallback=?";
-const currentscrollHeight = 0;
-let counter = 2;
+const state = {
+  page: 1,
+  lastPage: false,
+};
+
+const searchFlickr = function (keywords) {
+  // if you have reached the last page, return:
+  if (state.lastPage) return;
+  console.log("searching Flickr for ", keywords);
+  const flickrURL = "https://api.flickr.com/services/rest?jsoncallback=?";
+
+  $.getJSON(flickrURL, {
+    method: "flickr.photos.search",
+    api_key: "2f5ac274ecfac5a455f38745704ad084",
+    text: keywords,
+    page: state.page++,
+    format: "json",
+  })
+    .done(showImages)
+    .done(function (info) {
+      if (info.photos.page >= info.photos.pages) {
+        state.lastPage = true;
+      }
+      console.log(info);
+    });
+};
 
 const showImages = function (results) {
   _(results.photos.photo).each(function (photo) {
@@ -44,51 +67,27 @@ $(document).ready(function () {
     event.preventDefault(); // disable form from being submitted
     console.log("Submit");
 
+    state.page = 1;
+    state.lastPage = false;
+    $(".cards").empty();
+
     const searchTerm = $("#query").val();
-    console.log(searchTerm);
     searchFlickr(searchTerm);
-    callPage(counter, searchTerm);
   });
 
-  const searchFlickr = function (keywords) {
-    $(".cards").empty();
-    console.log("searching Flickr for ", keywords);
-
-    $.getJSON(flickrURL, {
-      method: "flickr.photos.search",
-      api_key: "2f5ac274ecfac5a455f38745704ad084",
-      text: keywords,
-      format: "json",
-    }).done(showImages);
-  };
-
-  const callPage = function (counter, searchTerm) {
-    console.log("next page: ", counter);
-
-    $.getJSON(flickrURL, {
-      method: "flickr.photos.search",
-      api_key: "2f5ac274ecfac5a455f38745704ad084",
-      page: counter,
-      text: searchTerm,
-      format: "json",
-    }).done(showImages);
-  };
+  // Higher Order Function:
+  // "this is the function i don't want to run too often" - only request every 4s
+  const relaxedSearchFlickr = _.debounce(searchFlickr, 4000, true); // Leading edge: don't wait
 
   // twitchy:
   $(window).on("scroll", function () {
-    const searchTerm = $("#query").val();
-    const scrollHeight = $(document).height();
-    const scrollPos = Math.floor($(window).height() + $(window).scrollTop());
-    const isBottom = scrollHeight - 400 < scrollPos;
-
     const scrollBottom =
       $(document).height() - $(window).scrollTop() - $(window).height();
-    console.log(scrollBottom);
 
-    if (isBottom && currentscrollHeight < scrollHeight) {
-      callPage(counter, searchTerm);
-      counter++;
-      currentscrollHeight = scrollHeight;
+    if (scrollBottom < 700) {
+      // TODO: adjust the conditional to suit your taste
+      const searchTerm = $("#query").val();
+      relaxedSearchFlickr(searchTerm);
     }
   });
 });
