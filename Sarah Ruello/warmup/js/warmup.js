@@ -585,6 +585,9 @@
 // console.log(pairwise([7, 9, 11, 13, 15], 20));
 // console.log(pairwise([1, 6, 12, -2, 0, 7, 9, 9], 10));
 
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------22/11/21------------------------------------
+
 // # The Collatz conjecture
 // The Collatz conjecture is a conjecture in mathematics named after Lothar Collatz, who first proposed
 // it in 1937. It's also known as the 3n + 1 conjecture, the Ulam conjecture, the Kakutani's problem,
@@ -622,7 +625,7 @@ function collatz(num) {
   console.log(`Final num is ${num} and counter is ${counter}`);
 }
 
-collatz(12);
+collatz(12); // 1, 9
 
 function collatz_recursive(num, count = 0) {
   if (num === 1) {
@@ -637,4 +640,7 @@ function collatz_recursive(num, count = 0) {
   }
 }
 
-collatz_recursive(12);
+collatz_recursive(12); // 9
+
+//////////////////////////////////////////////////////////////////////////
+// ---------------------------23/11/21------------------------------------
