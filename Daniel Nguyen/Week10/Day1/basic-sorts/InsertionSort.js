@@ -3,21 +3,15 @@ function insertionSort (items) {
     // Base case: return if the whole array has been iterated through
     if (i === items.length) return;
 
-    // Actions:
-
-    // store the current element
-    const current = items[i];
-
-    // Compare the current element and its preceding element
+    // Action: compare the current element and its preceding element
     const loopBack = function (j) {
       // Base cases: return if no insertion swap required
       //  - the current is already greater than the preceding, or
       //  - the current index is 0 (there will be no preceding element to check)
       if (items[j] > items[j - 1] || j === 0) return;
 
-      // Action: swap current and its preceding element
-      items[j] = items[j - 1];
-      items[j - 1] = current;
+      // Action: swap current and its preceding element using destructuring
+      [ items[j], items[j - 1]] = [ items[j - 1], items[j] ];
 
       // Recursive case: move to next previous element
       loopBack(j - 1);
