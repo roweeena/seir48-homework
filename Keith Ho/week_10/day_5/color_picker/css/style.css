@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+
+#hexCode {
+  z-index: 10;
+}
+#coordinate {
+  height: 50px;
+  width: 50px;
+  border: 1px solid lightgray;
+}

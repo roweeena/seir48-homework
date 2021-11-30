@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon!</title>
+    <link rel='stylesheet' href='/css/style.css'>
+  </head>
+  <body>
+    <h1><%= name.toUpperCase() %></h1>
+
+    <img src='<%= pokemon.sprites.front_default %>' alt='pokemon'>
+
+    <p>Ability: <%= pokemon.abilities[0].name.toUpperCase() %></p>
+
+  </body>
+</html>
