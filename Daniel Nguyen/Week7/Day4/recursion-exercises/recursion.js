@@ -3,22 +3,18 @@
 // All functions must use recursion
 
 // This function returns the largest number in a given array.
-const findMax = function (arr) {
-  const index = 0;
-  let max = arr[index];
+const findMax = function (arr, max=-Infinity) {
+  // Base case
+  if (arr.length === 0) return max;
 
-  const helper = function (i) {
-    if (i === arr.length) return;
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-    // console.log(i, max, arr);
-    helper(i + 1);
-  };
+  // Action
+  if (arr[0] > max) {
+    max = arr[0];
+  }
 
-  helper(index);
-  // console.log('max', max);
-  return max;
+  // Recursive case
+  const rest = arr.slice(1);
+  return findMax(rest, max);
 };
 
 // This function returns the factorial of a given number.
@@ -60,40 +56,23 @@ const fibonacci = function (n) {
 
 // This function returns an array of all possible outcomes from flipping a coin N times.
 const coinFlips = function (n) {
-    // For example, coinFlips(2) would return the following:
-    // ["HH", "HT", "TH", "TT"]
+  const combos = [];
 
-    let c = 0;
-    let f = 0;
-    let isHeads = true;
-
-    const combos = Array(2**n).fill(
-      Array(n).fill(null);
-    );
-
-    const recurPerCombo = function (c) {
-      if (c === 2**n) return;
-
-
-      recurPerCombo(c + 1);
+  // Helper:
+  const flip = function (soFar='') {
+    if (soFar.length === n) {
+      // Base case
+      combos.push( soFar )
+    } else {
+      // Action
+      flip(soFar + 'H');
+      flip(soFar + 'T');
     }
-    recurPerCombo(0);
-
-    console.log('n:', n, 'combos:', combos);
-    return combos;
-}
-
-const recurPerPossibility = function (p, combos, n) {
-  // Base case
-  if (combos.length === 2 ** n) return combos;
-
-  // Action
-  const cumulativeCombos = combos;
-  const currentCombo = p;
-  cumulativeCombos.push(currentCombo);
+  }
 
   // Recursive case
-  recurPerPossibility(p + 1, cumulativeCombos, n)
+  flip();
+  return combos;
 };
 
 // This function returns an array of all combinations of the given letters
@@ -102,19 +81,6 @@ const letterCombinations = function (chars) {
     // Input type: Array of single characters
     // For example, letterCombinations(["a","b","c"]) would return the following:
     // ["a","b","c","ab","ac","ba","bc","ca","cb","abc","acb","bac","bca","cab","cba"]
-
-    const combos = [];
-
-    const helper = function (i) {
-      if (i == chars.length) {
-
-      }
-    }
-    helper(0);
-
-
-    console.log('chars:', chars, 'combos:', combos);
-    return combos;
 }
 
 module.exports = {
