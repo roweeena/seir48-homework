@@ -1,0 +1,9 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(58, 142,180, 1) 0%, rgba(221, 179, 214, 1) 41%, rgba(251, 210, 152, 1) 100%)
+}
+
+#canvas{
+  margin: 0 auto;
+}
