@@ -1,0 +1,87 @@
+
+:root{ 
+  --space1:10px;
+  --space2:20px;
+
+  --grey1: #eeeeee;
+  --grey2: #c2c1c1;
+}
+
+*{ /* the start symbol means 'everything' */
+  border: 1px dotted rgba(93, 216, 93, 0.400); /* <- comment me out, here to show containers */
+  
+  font-family: "helvetica", arial, sans-serif;
+  box-sizing: border-box; /* makes width, height, margins and paddings sane https://css-tricks.com/box-sizing/ */
+}
+
+nav{
+  width: 100%;
+  position: fixed; /* Keeps the header up the top of the page when scrolling */
+
+  border: 1px solid var(--grey1); /* width - style - color */
+  background: white; /* Need to give it a bg, otherwise you'll see the text underneath it on scroll */
+}
+
+main{
+  padding-top: 100px; /* Added padding to the main content container so contents aren't hidden under nav */
+}
+
+/* CARDS */
+.card{
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #c2c1c1;
+  background: #eeeeee;
+
+  width: 100%;
+  min-height: 300px;
+  margin-bottom: var(--space2);
+}
+
+.card-image{
+  flex-grow: 2; /* telling div.card-image to take up as much height/vertical space as it can within it's parent. */
+  
+  background-image: url("../placeholder-image.png");
+  background-size: contain; /* telling the background image to get as large as it can inside it's parent without stretching or slipping */
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-subtitle{
+  padding:var(--space1); 
+}
+
+.wrapper{ /* sits inside each section, sets a maxiumum width for the content */
+  display: flex;
+  flex-wrap: wrap; /* allows the content to shift onto the next row if it can't fit on this one */
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space2);
+}
+
+/* FOOTER */
+footer{
+  width: 100%; 
+  min-height: 200px; /* Better than height here, jsut incase we add a lot of content to the footer later and it needs to stretch to accomidate */
+  background-color: var(--grey2);
+}
+
+@media (min-width: 768px){
+  .card{
+    /* Styling to make the cards wrap onto two collumns instead of just one: */
+
+    max-width: calc(50% - var(--space2));
+    /* 
+      With calc we can perform math in css.
+      Setting the maximum width of the card to be half of the cards parent contianer
+      (.wrapper in this case) minus the space between the cards (--space2 in this case).
+      You can read more about calc here: https://css-tricks.com/a-complete-guide-to-calc-in-css/
+    */
+    margin-right: var(--space2); /* Gap between the cards */
+
+  }
+}
