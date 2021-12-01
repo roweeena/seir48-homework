@@ -1,12 +1,10 @@
-'use strict';
-
-var state = {
+const state = {
   loadingImages: false,
   pageCount: 0,
   lastPage: false
 };
 
-var searchFlickr = function searchFlickr(keywords) {
+const searchFlickr = function (keywords) {
   if (state.lastPage || state.loadingImages) return;
 
   state.loadingImages = true;
@@ -14,13 +12,13 @@ var searchFlickr = function searchFlickr(keywords) {
 
   console.log('Searching for', keywords);
 
-  var flickrURL = 'https://api.flickr.com/services/rest?jsoncallback=?'; // JSONP
+  const flickrURL = 'https://api.flickr.com/services/rest?jsoncallback=?'; // JSONP
   $.getJSON(flickrURL, {
     method: 'flickr.photos.search', // not to be confused with HTTP methods like GET, POST
     api_key: '2f5ac274ecfac5a455f38745704ad084',
     page: state.pageCount + 1,
     text: keywords,
-    format: 'json'
+    format: 'json',
   }).done(renderImages).done(function (info) {
     console.log(info);
     state.loadingImages = false;
@@ -33,30 +31,44 @@ var searchFlickr = function searchFlickr(keywords) {
 };
 
 // Concatenates a Flickr image url, when provided with a Flickr photo object
-var generateURL = function generateURL(p) {
-  return ['http://farm', p.farm, '.static.flickr.com/', p.server, '/', p.id, '_', p.secret, '_q.jpg' // Change 'q' to something else for different sizes (see docs)
+const generateURL = function (p) {
+  return [
+    'http://farm',
+    p.farm,
+    '.static.flickr.com/',
+    p.server,
+    '/',
+    p.id,
+    '_',
+    p.secret,
+    '_q.jpg' // Change 'q' to something else for different sizes (see docs)
   ].join('');
 };
 
 // Adds a <tr> for each property in `state`.
-var renderStateTable = function renderStateTable() {
+const renderStateTable = function () {
   $('tbody').empty();
   _(state).map(function (value, prop) {
-    var $tr = $('\n      <tr>\n        <td>' + prop + '</td>\n        <td>' + value + '</td>\n      </tr>\n    ');
+    const $tr = $(`
+      <tr>
+        <td>${prop}</td>
+        <td>${value}</td>
+      </tr>
+    `);
     $tr.appendTo($('tbody'));
   });
 };
 
 // Clears all images
-var clearImageGallery = function clearImageGallery() {
+const clearImageGallery =  function () {
   $('#images').empty();
 };
 
 // Renders all images for a given search result
-var renderImages = function renderImages(results) {
+const renderImages = function (results) {
   _(results.photos.photo).each(function (photo) {
-    var thumbnailURL = generateURL(photo);
-    var $img = $('<img>', { src: thumbnailURL });
+    const thumbnailURL = generateURL(photo);
+    const $img = $('<img>', {src: thumbnailURL});
     $img.appendTo('#images');
   });
 };
@@ -66,7 +78,7 @@ $(document).ready(function () {
 
   $('#search').on('submit', function (event) {
     event.preventDefault();
-    var searchTerm = $('#query').val();
+    const searchTerm = $('#query').val();
 
     state.pageCount = 0;
     state.lastPage = false;
@@ -76,13 +88,13 @@ $(document).ready(function () {
   });
 
   // Higher Order Function:
-  var relaxedSearchFlickr = _.debounce(searchFlickr, 4000, true); // Leading edge: don't wait
+  const relaxedSearchFlickr = _.debounce(searchFlickr, 4000, true); // Leading edge: don't wait
 
   // Infinite scroll
   $(window).on('scroll', function () {
-    var scrollBottom = $(document).height() - $(window).scrollTop() - $(window).height();
+    const scrollBottom = $(document).height() - $(window).scrollTop() - $(window).height();
     if (scrollBottom < 700 && !state.loadingImages) {
-      var searchTerm = $('#query').val();
+      const searchTerm = $('#query').val();
       searchFlickr(searchTerm);
       // relaxedSearchFlickr(searchTerm);
     }
