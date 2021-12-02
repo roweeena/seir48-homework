@@ -12,7 +12,6 @@ const init = function() {
   renderPlanet();
   renderWire();
   lighting();
-  _handleWindowResize();
 };
 
 const initialiseTHREE = function () {
@@ -105,15 +104,13 @@ const lighting = function () {
   lights.forEach((light) => scene.add(light));
 };
 
-const _handleWindowResize = function () {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
 $(document).ready(function () {
   init();
   animate();
 
-  _handleWindowResize();
+  $(window).resize(() => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
 });
