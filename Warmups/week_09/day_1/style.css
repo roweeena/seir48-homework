@@ -1,0 +1,50 @@
+
+
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+/* css boilerplate
+see https://www.w3schools.com/css/css3_box-sizing.asp*/
+
+:root{
+  --red: red;
+  --border: solid 1px var(--yellow2);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  max-width: none;
+}
+
+
+.card{
+  border:1px solid #e5e5e5;
+  background-color: var(--red);
+  padding: 20px;
+  flex-grow:1;
+  flex-shrink:3;
+}
+
+.ham{
+  flex-grow:2;
+}
+
+.container{
+  background-color: #fefefe;
+  display:flex;
+  background-color:var(--red);
+  flex-wrap: wrap;
+}
+
+foot{
+  width: 100%;
+  background: #eeeeee;
+  padding:20px 40px;
+  margin-top:30px;
+  background-color:var(--red);
+
+  display: block;
+  box-shadow: 0 50vh 0 50vh #eeeeee;
+}

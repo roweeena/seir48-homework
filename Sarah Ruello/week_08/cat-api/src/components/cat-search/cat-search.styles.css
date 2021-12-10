@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+
+h1 {
+  font-family: "Leckerli One", cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: normal;
+}
+
+.card-list {
+  width: 70vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}

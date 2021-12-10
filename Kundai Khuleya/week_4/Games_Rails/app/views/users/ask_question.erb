@@ -1,0 +1,25 @@
+<form action="/answer" method="POST">
+
+    <br><br>
+    <textarea name="question" placeholder="Enter your question here" rows="4" cols="50" class="question" required></textarea>
+
+    <br><br>
+    <select name="list_id" class="drop_down">
+
+        <option value="default" selected> Magic Eight Ball </option>
+
+        <% @user.answer_lists.each do |list|%>
+            <option value="<%= list.id %>"><%= list.list_name %></option>
+        <% end %>
+
+    </select>
+
+    <br><br><br>
+    <input type="submit" value="SHAKE THE EIGHT BALL" class="shake">
+
+</form>
+
+<br><br>
+<a href="/answerlists"><strong>[ Update or Create a New List ]</strong></a>
+
+<p><img src="/images/EightBall.png" alt="Eight ball"></p>
